@@ -75,7 +75,7 @@ export default function Form(props) {
                     type="text"
                     placeholder="Write a review"
                     value={context.textbox}
-                    name={context.textbox}
+                    name="textbox"
                     onChange={context.handleChange}
                   />
                 </label>

@@ -1,7 +1,7 @@
 import React from "react";
 import Home from "./Home";
 import Movie from "./Movie";
-import Review from "./Review";
+import Reviews from "./Reviews";
 
 import { Link, Switch, Route } from "react-router-dom";
 
@@ -31,7 +31,7 @@ export default function Nav() {
           <Movie />
         </Route>
         <Route path="/Reviews">
-          <Review />
+          <Reviews />
         </Route>
       </Switch>
     </div>
