@@ -1,0 +1,51 @@
+body{
+    background-color: grey;
+    color: white;
+}
+
+.mainContainer{
+    justify-content: center;
+    text-align: end;
+    background-color: rgb(225, 219, 103);
+    margin: 8% 5% 2% 5%;
+    padding: 3% 8% 3% 8%;
+}
+
+.friend{
+    float: left;
+    color: rgb(137, 13, 13);
+}
+
+.personAge{
+    float: right;
+    background-color: black;
+    padding: 1%;
+    color:  rgb(225, 219, 103);
+}
+
+.petContainer{
+    display: flex;
+    background-color: black;
+    justify-content: space-evenly;
+    margin: 1em;
+    padding: 2% 2% 0% 2%;
+    text-align: center;
+}
+
+.petName{
+    justify-content: space-evenly;
+    margin: auto;
+    background-color: black;
+    color:  rgb(225, 219, 103);
+    font-size: 1em;
+    font-style: italic;
+    padding: 5px 5px;
+}
+
+.petBreed{
+    padding: 1%;
+    margin: auto;
+    background-color: black;
+    color:  rgb(225, 219, 103);
+    font-size: 1em;
+}

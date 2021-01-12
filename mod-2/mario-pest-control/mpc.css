@@ -1,0 +1,102 @@
+body{
+    background-color: rgba(61, 61, 61, 0.486);
+}
+
+#header{
+    background-color: black;
+    color: rgb(255, 0, 0);
+    margin: 1% 2% 1% 2%;
+    padding: 1%;
+   text-align: center;
+}
+
+#imgs{
+    justify-content: right;
+}
+
+.goombasclass1{
+    background-color: violet;
+    text-align: center;
+}
+
+#goombascontainer{
+background-color: rgb(61, 53, 49);
+color: white;
+margin: 3% 20% 3% 20%;
+padding: 3%;
+text-align: center;
+}
+
+#goombas1{
+font-size: x-large;
+}
+#goombas2{
+    color: gold;
+    font-size: large;
+    font-weight: 900;
+}
+
+#bobombs{
+background-color: brown;
+color: white;
+margin: 3% 20% 3% 20%;
+padding: 3%;
+text-align: center;
+}
+#bobombs1{
+font-size: x-large;
+}
+#bobombs2{
+    color: gold;
+    font-size: large;
+    font-weight: 900;
+}
+
+#cheepcheep{
+background-color: rgb(201, 133, 102);
+color: white;
+margin: 3% 20% 3% 20%;
+padding: 3%;
+text-align: center;
+}
+#cheepcheep1{
+font-size: x-large;
+}
+#cheepcheep2{
+    color: gold;
+    font-size: large;
+    font-weight: 900;
+}
+
+#calc{
+    background-color: rgb(70, 66, 66);
+    text-align: center;
+    margin: 3% 20% 3% 20%;
+    padding: 1%;
+}
+#subbutton{
+    background-color: chartreuse;
+}
+
+#clearGoombasButton{
+    background-color: rgb(189, 24, 57);
+}
+#clearBobombsButton{
+    background-color: rgb(189, 24, 57);
+}
+#clearCheepCheepButton{
+    background-color: rgb(189, 24, 57);
+}
+
+#totalCost{
+    background-color: gold;
+}
+
+footer{
+    background-color: black;
+    color: white;
+    font-size: small;
+    text-align: center;
+    margin: 1% 2% 1% 2%;
+    padding: 1%;
+}

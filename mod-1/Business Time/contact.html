@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Page</title>
+    <link rel="stylesheet" type="text/css" href="contactstyles.css">
+</head>
+<body>
+    <Nav>
+        <li><a href="http://127.0.0.1:5500/Home.html">Home</a></li>
+        <li><a href="http://127.0.0.1:5500/LitterA.html">Litter A</a></li>
+        <li><a href="http://127.0.0.1:5500/LitterB.html">Litter B</a></li>
+        <li><a class="active" href="http://127.0.0.1:5500/contact.html">Contact</a></li>
+      </Nav>
+      <header>
+        <h3>Contact Form</h3>
+    </header>
+
+      <div class="container">
+        <form action="/action_page.php">
+          <label for="fname">First Name</label>
+          <input type="text" id="fname" name="firstname" placeholder="Your name..">
+      
+          <label for="lname">Last Name</label>
+          <input type="text" id="lname" name="lastname" placeholder="Your last name..">
+      
+          <label for="Litter">Litter Choice</label>
+          <select id="Litter" name="Litter">
+            <option value="Litter A">Litter A</option>
+            <option value="Litter B">Litter B</option>
+          </select>
+      
+          <label for="subject">Subject</label>
+          <textarea id="subject" name="subject" placeholder="Tell us about yourself" style="height:200px"></textarea>
+      
+          <input type="submit" value="Submit">
+        </form>
+      </div>
+</body>
+<script src="contact-app.js"></script>
+</html>

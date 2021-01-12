@@ -1,0 +1,17 @@
+body{
+    background-color: rgb(65, 64, 64);
+    text-align: center;
+    color: gold;
+    margin: 15%;
+    padding: 8%;
+}
+
+#clickButton{
+    background-color: black;
+    color: deepskyblue;
+}
+
+#countToDisplay{
+    background-color: peru;
+    color: purple;
+}

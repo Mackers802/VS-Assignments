@@ -1,0 +1,260 @@
+
+body{
+    background: grey;
+
+}
+
+h1 {
+    font-size: xx-large;
+    font-family: fantasy;
+    margin-left: 20px;
+}
+
+/*French Flag*/
+.french-blue {
+    height: 100px;
+    width: 50px;
+    border: grey; 
+    border-width: 1px;
+    position: absolute;
+    background-color: blue;
+    margin-left: 0px;
+
+}
+.french-white {
+    height: 100px;
+    width: 50px;
+    border: grey; 
+    border-width: 1px;
+    position: absolute;
+    background-color: white;
+    margin-left: 50px;
+}
+
+.french-red {
+    height: 100px;
+    width: 50px;
+    border: grey; 
+    border-width: 1px;
+    position: relative;
+    background-color: red;
+    margin-left: 100px;
+}
+
+
+/* German Flag*/
+.german-black {
+    height: 50px;
+    width: 150px;
+    border: grey; 
+    border-width: 1px;
+    position: absolute;
+    background-color: black;
+    margin-top: 0px;
+
+}
+.german-red {
+    height: 50px;
+    width: 150px;
+    border: grey; 
+    border-width: 1px;
+    position: absolute;
+    background-color: red;
+    margin-top: 33px;
+}
+.german-yellow {
+    height: 30px;
+    width: 150px;
+    border: grey; 
+    border-width: 1px;
+    position: absolute;
+    background-color: yellow;
+    margin-top: 66px;
+}
+/* Madagascar Flag*/
+
+.madagascar-white {
+    height: 100px;
+    width: 150px;
+    background-color: white;
+    position: absolute;
+}
+
+.madagascar-red {
+    height: 50px;
+    width: 100px;
+    background-color: red;
+    margin-top: 0px;
+    margin-left: 50px;
+    display: inline-block;
+}
+.madagascar-green {
+        height: 50px;
+        width: 100px;
+        background-color: green;
+        margin-top: 50px;
+        margin-left: 0px;
+        display: inline-block;
+}
+
+/* Swiss Flag*/
+.swiss-red {
+    height: 100px;
+    width: 100px;
+    border: grey; 
+    border-width: 1px;
+    position: absolute;
+    background-color: red;
+    margin-left: 20px;
+
+}
+
+.swiss-white1 {
+    height: 2em;
+    width: 5em;
+    border: grey; 
+    border-width: 1px;
+    background-color: white;
+    position: absolute;
+    margin-left: 30px;
+    margin-top: 33px;
+}
+
+.swiss-white2 {
+    height: 5em;
+    width: 2em;
+    border: grey; 
+    border-width: 1px;
+    background-color: white;
+    position: absolute;
+    margin-left: 54px;
+    margin-top: 10px;
+}
+
+/* Sweden Flag*/
+.sweden-blue {
+    height: 100px;
+    width: 150px;
+    border: grey; 
+    border-width: 1px;
+    position: absolute;
+    background-color: rgb(27, 100, 196);
+
+}
+
+.sweden-yellow-long {
+    height: 25px;
+    width: 150px;
+    border: grey; 
+    border-width: 1px;
+    background-color: rgba(250, 209, 75);
+    position: absolute;
+    margin-left: 0px;
+    margin-top: 38px;
+}
+
+.sweden-yellow-tall {
+    height: 100px;
+    width: 25px;
+    border: grey; 
+    border-width: 1px;
+    background-color: rgba(250, 209, 75);
+    position: absolute;
+    margin-left: 38px;
+    margin-top: 0px;
+}
+
+/* Gambia Flag*/
+.gambia-red {
+    height: 30px;
+    width: 150px;
+    border: grey; 
+    border-width: 1px;
+    position: absolute;
+    background-color:red;
+
+}
+
+.gambia-white1 {
+            height: 10px;
+            width: 150px;
+            background-color:white;
+            margin-top: 50px;
+}
+
+.gambia-blue {
+    height: 20px;
+    width: 150px;
+    border: grey; 
+    border-width: 1px;
+    background-color: blue;
+    position: absolute;
+}
+
+.gambia-white2 {
+        height: 10px;
+        width: 150px;
+        background-color: white;
+        position: absolute;
+        margin-top: 20px;
+}
+
+.gambia-green {
+        height: 30px;
+        width: 150px;
+        background-color: green;
+        position: absolute;
+        margin-top: 30px;
+}
+
+/* Japan Flag*/
+.japan-white {
+    height: 100px;
+    width: 150px;
+    background-color: white;
+    position: absolute;
+}
+
+.japan-circle-red {
+    height: 50px;
+    width: 50px;
+    background-color: red;
+    border-radius: 50px;
+    margin-top: 25px;
+    margin-left: 50px;
+
+}
+
+/*Niger Flag*/
+.niger-orange {
+    height: 30px;
+    width: 150px;
+    background-color:tomato;
+    position: absolute;
+}
+
+.niger-white {
+    height: 30px;
+    width: 150px;
+    background-color: white;
+    margin-top: 25px;
+    position: relative;
+}
+
+.niger-orange-circle {
+    height: 25px;
+    width: 25px;
+    background-color:tomato;
+    border-radius: 40px;
+    position: absolute;
+    left: 65px;
+    top: 2px;
+    
+}
+
+.niger-green {
+    height: 30px;
+    width: 150px;
+    background-color: greenyellow;
+
+}

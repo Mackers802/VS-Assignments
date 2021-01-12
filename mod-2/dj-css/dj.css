@@ -1,0 +1,83 @@
+body{
+    background-color: rgb(60, 95, 84);
+    text-align: center;
+}
+h1{
+    background-color: honeydew;
+    transition: background-color 1s linear 1s;
+}
+h1:hover{
+    background-color: rgb(170, 88, 115)
+}
+
+#cont1{
+    background-color: rgb(1, 7, 7);
+    color: gold;
+    transition-delay: .3s;
+    transition-duration: 3s;
+    width: 50px;
+    padding: 50px;
+}
+#cont1:hover{
+    filter: blur(4px);
+    background-color: rgb(47, 47, 70);
+}
+
+#cont2{
+    background-color: rgb(3, 27, 27);
+    color: gold;
+    width: 20%;
+    padding: 5%;
+}
+#cont2:hover{
+    width: 20%;
+    padding: 3%;
+    border: lavender;
+    border-width: 15px;
+    transition-delay: 1s;
+    transition-duration: 4s;
+}
+
+#cont3{
+    background-color: rgb(9, 53, 53);
+    color: gold;
+    border-style: dotted;
+    border: 20px;
+    transition: 2s;
+}
+#cont3:hover{
+    border-style: dotted;
+    border-color: coral;
+    border-radius: 50px;
+}
+
+#cont4{
+    background-color: rgb(21, 104, 104);
+    box-shadow: 4px 10px cornflowerblue;
+    color: gold;
+    transition-delay: 1s;
+    transition-duration: 1s;
+}
+#cont4:hover{
+box-shadow: 3px 8px crimson;
+}
+
+#cont5{
+    background-color: rgb(28, 151, 151);
+    border: darkblue;
+    border-style: groove;
+    border-width: 8%;
+    color: gold;
+    transition-delay: 1s;
+    transition-duration: 1s;
+}
+#cont5:hover{
+    border-style: ridge;
+    border-width: 15px;
+    border-bottom-color: darkgreen;
+    border-top-color: darkgreen;
+    border-bottom-left-radius: 20%;
+    border-bottom-right-radius: 20%;
+    border-top-left-radius: 20%;
+    border-top-right-radius: 20%;
+}

@@ -1,0 +1,12 @@
+body{
+    background-color: rgb(215, 202, 175);
+}
+.cards{
+    display: block;
+    margin: 10% 15%;
+    padding: 5% 10%;
+    color: black;
+    text-align: center;
+    background-color: rgba(131, 205, 200, 0.915);
+    border: 10px dashed rgb(188, 105, 23);
+}

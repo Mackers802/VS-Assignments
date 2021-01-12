@@ -1,0 +1,238 @@
+@media only screen and (min-width: 768px){
+* {
+    box-sizing: border-box; 
+    font-size: 0px;
+}
+
+body{
+    background-color: white;
+    border: solid;
+    border-width: 25px;
+    border-color: white;
+}
+/*light pink container*/
+.light-pink-container{
+    border-width: 5px 5px 5px 0px;
+    border-color: white;
+    margin-bottom: 5px;
+    
+    
+}
+.light-pink-box{
+    background-color: #F5C6D6;
+    height: 100px;
+    width: 100%;
+    border-width: 0px 0px 5px 0px;
+    border-color: white;
+}
+
+/*dark pink container*/
+.dark-pink-container{
+   
+}
+
+.Dark-pink-box1{
+    background-color: #EE2E84;
+    height: 100px;
+    width: 25%;
+    display: inline-block;
+    border: solid;
+    border-width: 5px 5px 5px 0px;
+    border-color: white;
+}
+
+.Dark-pink-box2{
+    background-color: #EE2E84;
+    height: 100px;
+    width: 25%;
+    display: inline-block;
+    border: solid;
+    border-width: 5px;
+    border-color: white;
+}
+
+.Dark-pink-box3{
+    background-color: #EE2E84;
+    height: 100px;
+    width: 25%;
+    display: inline-block;
+    border: solid;
+    border-width: 5px;
+    border-color: white;
+}
+
+.Dark-pink-box4{
+    background-color: #EE2E84;
+    height: 100px;
+    width: 25%;
+    display: inline-block;
+    border: solid;
+    border-width: 5px 0px 5px 5px;
+    border-color: white;
+}
+
+/*light blue container*/
+.light-blue-container{
+
+}
+
+.Light-blue1{
+    background-color: #85CFD8;
+    height: 100px;
+    width: 50%;
+    display: inline-block;
+    border: solid;
+    border-width: 5px 5px 5px 0px;
+    border-color: white;
+} 
+
+.Light-blue2{
+    background-color: #85CFD8;
+    height: 100px;
+    width: 50%;
+    display: inline-block;
+    border: solid;
+    border-width: 5px 0px 5px 5px;
+    border-color: white;
+}
+
+/*green and orange container*/
+.green-orange-container{
+
+}
+.green-box{
+    background-color: #8DC63F;
+    height: 100px;
+    width: 75%;
+    display: inline-block;
+    border: solid;
+    border-width: 5px 5px 5px 0px;
+    border-color: white;
+}
+
+.orange-box{
+    background-color: #E76E34;
+    height: 100px;
+    width: 25%;
+    display: inline-block;
+    border: solid;
+    border-width: 5px 0px 5px 5px;
+    border-color: white;
+}
+}
+
+@media only screen and (max-width: 767px){
+    * {
+        box-sizing: border-box; 
+        font-size: 0px;
+    }
+    
+    body{
+        background-color: white;
+        border: solid;
+        border-width: 25px;
+        border-color: white;
+    }
+    /*light pink container*/
+    .light-pink-container{
+        border: solid;
+        border-width: 1px;
+        border-color: white;
+        margin-bottom: 1px;
+    }
+    .light-pink-box{
+        background-color: #F5C6D6;
+        height: 100px;
+        width: 100%;
+    
+    }
+    
+    /*dark pink container*/
+    .dark-pink-container{
+   
+    }
+    
+    .Dark-pink-box1{
+        background-color: #EE2E84;
+        height: 100px;
+        width: 100%;
+        border-color: white;
+        border-width: 0px 0px 1px 0px;
+    }
+    
+    .Dark-pink-box2{
+        background-color: #EE2E84;
+        height: 100px;
+        width: 100%;
+        border: solid;
+        border-color: white;
+        border-width: 1px 0px 0px 0px;
+    }
+    
+    .Dark-pink-box3{
+        background-color: #EE2E84;
+        height: 100px;
+        width: 100%;
+        border: solid;
+        border-color: white;
+        border-width: 1px 0px;
+    }
+    
+    .Dark-pink-box4{
+        background-color: #EE2E84;
+        height: 100px;
+        width: 100%;
+        border: solid;
+        border-color: white;
+        border-width: 0px;
+    }
+    
+    /*light blue container*/
+    .light-blue-container{
+        border: solid;
+        border-width: 1px;
+        border-color: white;
+    }
+    
+    .Light-blue1{
+        background-color: #85CFD8;
+        height: 100px;
+        width: 100%;
+        border: solid;
+        border-color: white;
+        border-width: 1px 0px;
+    } 
+    
+    .Light-blue2{
+        background-color: #85CFD8;
+        height: 100px;
+        width: 100%;
+        border: solid;
+        border-color: white;
+        border-width: 0px 0px 1px 0px;
+    }
+    
+    /*green and orange container*/
+    .green-orange-container{
+        border: solid;
+        border-width: 1px;
+        border-color: white;
+    }
+    .green-box{
+        background-color: #8DC63F;
+        height: 100px;
+        width: 100%;
+        border: solid;
+        border-color: white;
+        border-width: 0px;
+    }
+    
+    .orange-box{
+        background-color: #E76E34;
+        height: 100px;
+        width: 100%;
+        border: solid;
+        border-color: white;
+        border-width: 1px 0px 0px 0px;
+    }
+}

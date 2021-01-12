@@ -1,0 +1,118 @@
+
+  /* ---------------------------- Fonts ------------------------------------------------------- */
+
+  /* ---------------------------- CSS --------------------------------------------------------- */
+
+body{
+    background-color: white;
+    margin: 0;
+    padding: 0;
+}
+
+.headerContainer{
+    /* background-repeat: none; */
+    background-position: center;
+    object-fit: contain;
+    background-image: url("https://startbootstrap.github.io/startbootstrap-clean-blog/img/home-bg.jpg");
+    width: 100%;
+    height:55vh;
+}
+
+/* .navBarHolder{
+
+} */
+
+.headerTitle{
+    margin: 175px;
+    font-size: 2.5em;
+    text-align: center;
+    color: white;
+    font-weight: bold;
+    font-family: 'Open Sans';
+}
+
+.headerText{
+    font-size: 1em;
+    text-align: center;
+    color: white;
+}
+
+/* .navBar{
+    justify-content: right;
+} */
+
+.navLeftside{
+    Color: white;
+    float: left;
+    font-size: .75em;
+    margin: .25% 5%;
+}
+
+.navRightside{
+    font-size: .5em;
+    margin: .25% .5% 0% .25%;
+    display: flex;
+    float: right;
+    Color: white;
+    justify-content: space-around;
+}
+
+.navLeftside > *{
+    margin: 15px 20px;
+}
+
+.navRightside > *{
+    margin: 15px 20px;
+}
+
+.footerWrapper{
+    display: block;
+    justify-content: space-around;
+    text-align: center;
+}
+
+.footerContainer{
+    display: inline;
+    color: black;
+}
+
+.olderPost{
+    margin: 1% 10%;
+    float: right;
+    color: white;
+    background-color: #0085a1;
+    border-color: #0085a1;
+    font-size: 14px;
+    font-weight: 800;
+    padding: 15px 25px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    border-radius: 0;
+    font-family: 'Open Sans','Helvetica Neue',Helvetica,Arial,sans-serif;
+}
+
+.blogPostWrapper{
+    width: 25%;
+    background-color: white; 
+    border-bottom: grey solid 1px;
+}
+
+.blogPostContainer{
+    margin: 0% 5%;
+    text-align: left;
+    padding: 0% 25%;
+    background-color: white;
+    
+}
+
+.blogPostDate{
+    margin: 0% 5%;
+    text-align: left;
+    padding: 0% 25%;
+    background-color: white;
+}
+
+/* .circles{
+    border-radius: 50%;
+    width: 30px;
+} */

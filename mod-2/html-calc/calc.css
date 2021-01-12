@@ -1,0 +1,71 @@
+/* 
+Requirements:
+Your website will have 3 colors
+Your website will have proper padding/spacing to lay things out nicely 
+*/
+
+body{
+    background-color: rgb(101, 76, 117);
+}
+h1{
+    background-color: rgb(223, 191, 89);
+    padding: 2%;
+    margin: 3%;
+    justify-content: center;
+}
+
+h2{
+   background-color:rgb(223, 191, 89);
+    justify-content: center;
+    margin: 3%;
+    padding: 2%;
+}
+
+#bigDiv{
+    background-color: rgb(220, 191, 240);
+    margin: 3%;
+    padding: 2%;
+}
+
+#this-is-my-form{
+    background-color: wheat;
+    margin: 5%, 20%;
+    padding: 5%, 20%;
+}
+
+#container1{
+background-color:rgb(223, 191, 89);
+justify-content: center;
+margin: 3%;
+padding: 2%;
+}
+
+#container2{
+background-color:rgb(223, 191, 89);
+justify-content: center;
+margin: 3%;
+padding: 2%;
+}
+
+#container3{
+background-color:rgb(223, 191, 89);
+justify-content: center;
+margin: 3%;
+padding: 2%;
+}
+
+.num1{
+background-color: rgb(236, 215, 122);
+width: 9em;
+}
+
+.num2{
+    background-color:rgb(236, 215, 122);
+    width: 9em;
+}
+
+.buttons{
+    background-color: rgb(0, 0, 0);
+    color: whitesmoke;
+    width: 9em;
+}

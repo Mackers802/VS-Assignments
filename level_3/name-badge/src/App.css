@@ -1,0 +1,28 @@
+body{
+  background-color: white;
+  color: white;
+  margin: 10%;
+  padding: 5%;
+  border: 3px solid black;
+  border-radius: 5%;
+}
+
+.form{
+  display: inline-block;
+  grid-template-rows: repeat(4);
+  margin: 5px;
+  background-color: rgb(203, 135, 135);
+  color: white;
+  padding: 1%;
+  grid-gap: 5px;
+  border: 3px solid black;
+}
+
+.badge{
+  background-color: rgb(129, 64, 64);
+  margin: 1vh;
+  border: 3px solid black;
+  border-radius: 5%;
+  color: white;
+
+}

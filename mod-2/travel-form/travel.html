@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Form</title>
+    <link rel="stylesheet" href="travel.css">
+</head>
+<body> 
+    <h1>Welcome to Cant take you anywhere Airlines</h1>
+    <h3>Okay so we pretty much fly nowhere but tell us aboiut your travel plans anyway</h3>
+ <form id="myForm">
+    <input name="firstName" type="text" placeholder="First Name"/>
+    <input name="lastName" type="text" placeholder="Last Name"/>
+    <input name="age" type="number" placeholder="Age"/>
+<br>
+<br>
+    Male: <input name="gender" type="radio" value="male"/>
+    Female: <input name="gender" type="radio" value="female"/>
+    Unsure: <input name="gender" type="radio" value="Unsure"/>
+<br>
+<br>
+Where I would like to go...<select name="places" > 
+    <option value="somwhere">Somewhere</option>
+    <option value="BFNW">BF Nowhere</option>
+    <option value="home">Home</option>
+</select>
+<br>
+<br>
+<h3>Alergies</h3>
+Tree Nuts <input name="alergies" value="tree nuts" type="checkbox" placeholder="Tree Nuts"/>
+Shelfish <input name="alergies" value="shelfish" type="checkbox" placeholder="Shelfish"/>
+People <input name="alergies" value="people" type="checkbox" placeholder="People"/>
+<br>
+<br>
+<button>Submit</button>
+</form>
+
+</body>
+<script src="travel.js"></script>
+</html>

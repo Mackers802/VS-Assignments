@@ -1,0 +1,109 @@
+body{
+    background-color: rgb(110, 98, 98);
+    color: white;
+    margin: 25%;
+}
+
+.squares{
+    display: grid;
+    border: 1px solid black;
+    grid-gap: 3px;
+    padding: 3px;
+    grid-template-columns: 1fr 1fr;
+    width: auto;
+}
+
+/* .boardWrapper{
+    margin: 25%;
+    border: solid 1px red;
+} */
+
+/* .boardContainer{
+    display: flex;
+    width: 204px;
+    border: solid 1px black;
+    color: rgb(1, 1, 0);
+}
+
+.divOne{
+    display: inline-block;
+    padding: 20px;
+    margin: 15px 15px;
+    text-align: center;
+    height: 2em;
+    width: 2em;
+    background-color: yellow;
+}
+
+.buttonOne{
+    text-align: center;
+    margin: 5%;
+    height: 20px;
+    width: 20px;
+}
+
+.divTwo{
+    display: inline-block;
+    margin: 15px 15px;
+    padding: 20px;
+    text-align: center;
+    height: 2em;
+    width: 2em;
+    background-color: green;
+}
+
+.divThree{
+    display: inline-block;
+    margin: 15px 15px;
+    padding: 20px;
+    text-align: center;
+    height: 2em;
+    width: 2em;
+    background-color: blue;
+}
+
+.divFour{
+    display: inline-block;
+    margin: 15px 15px;
+    padding: 20px;
+    text-align: center;
+    height: 2em;
+    width: 2em;
+    background-color: red;
+} */
+
+/* .five{
+    display: inline-block;
+    margin: 15px 15px;
+    text-align: center;
+    height: 2em;
+    width: 2em;
+    background-color: orange;
+}
+
+.six{
+    display: inline-block;
+    margin: 15px 15px;
+    text-align: center;
+    height: 2em;
+    width: 2em;
+    background-color: purple;
+}
+
+.seven{
+    display: inline-block;
+    margin: 15px 15px;
+    text-align: center;
+    height: 2em;
+    width: 2em;
+    background-color: olivedrab;
+}
+
+.eight{
+    display: inline-block;
+    margin: 15px 15px;
+    text-align: center;
+    height: 2em;
+    width: 2em;
+    background-color: chartreuse;
+} */

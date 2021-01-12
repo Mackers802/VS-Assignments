@@ -1,0 +1,11 @@
+.badge{
+    display: inline-block;
+    grid-template-rows: repeat(4);
+    justify-content: center;
+    margin: 5px;
+    background-color: rgb(203, 135, 135);
+    color: white;
+    padding: 1%;
+    gap: 5px;
+    border: 3px solid black;
+}

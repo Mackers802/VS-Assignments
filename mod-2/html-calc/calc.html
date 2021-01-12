@@ -1,0 +1,45 @@
+<!-- 
+Requirements:
+You will have one section (<div>) for each math operation (so 3 sections) total
+Each section has two inputs to take the first and second numbers -->
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>HTML Calculator</title>
+        <link rel="stylesheet" href="calc.css">
+    </head>
+    <body>
+        <h1>Here is my simple calculator!!</h1>
+        <form id="this-is-my-form">
+            <div id="bigDiv">
+                <h2>Choose your Numbers, hit the button, get your Answers...</h2>
+                <div id="container1" name="container1">
+                    <input class="num1" type="number" name="firstNumber" placeholder="Enter Number"/>
+                    <input class="num2" type="number" name="secondNumber" placeholder="Enter Number"/>
+                    <button class="buttons" name="addButton">Add Button</button>
+                </div>
+        <!-- </form> -->
+        <!-- <form> -->
+                <br>
+                <div id="container2" name="container2">
+                    <input class="num1" type="number" name="thirdNumber" placeholder="Enter Number"/>
+                    <input class="num2" type="number" name="forthNumber" placeholder="Enter Number"/>
+                    <button class="buttons" name="subtractButton">Subtract Button</button>
+                </div>
+        <!-- </form> -->
+                <br>
+        <!-- <form> -->
+                <div id="container3" name="container3">
+                    <input class="num1" type="number" name="fifthNumber" placeholder="Enter Number"/>
+                    <input class="num2" type="number" name="sixthNumber" placeholder="Enter Number"/>
+                    <button class="buttons" name="multiplyButton">Multiply Button</button>
+                </div>
+        <!-- </form>      -->
+            </div>
+        </form>
+    </body>
+    <script src="calc.js"></script>
+    </html>

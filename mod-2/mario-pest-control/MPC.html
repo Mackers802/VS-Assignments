@@ -1,0 +1,105 @@
+<!-- Project Requirements
+The website must contain the following:
+
+A list displaying each baddie by type. Each list item must:
+Have baddie image
+Have baddie name
+Show price of that baddie
+Have an input box to enter the total caught of that type
+A total price at the bottom that adds sums the total cost of baddies caught
+(must use Javascript for this math - no hard coded values)
+A footer showing:
+Mario's email address
+Mario's company website url
+Mario's physical address
+A large title at the top of the page entitled "Mario Pest Control" -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="mpc.css">
+    <title>Document</title>
+</head>
+<body>
+    <header id="header">
+    <h1>Mario Pest Control</h1>
+    <h3>
+        <ul>Mario's pest calculator for fair and honest pricing</ul>
+        <ul>Input number of each pest exterminated</ul>
+        <ul>Hit the Submit button at the bottom to get the cost</ul></h3>
+</header>
+<form id="marioPestControlForm">
+    <div id="goombascontainer">
+        <div id="goombas1">
+            <h3>Goombas</h3>
+        </div>
+        <div id="goombas2">
+            <p class="coins">5 Coins Ea</p>
+        </div>
+        <div id="goombas3">
+            <img id="imgs" src="https://upload.wikimedia.org/wikipedia/en/c/ce/Goomba.PNG" alt="Picture of a Goomba from Mario" width="20%" height="20%">
+        </div>
+        <br>
+        <div id="goombas4">
+            <input name="goombasCount" type="number" placeholder="Goombas Count">
+            <!-- <button name="clearGoombasButton" id="clearGoombasButton">Reset Count</button> -->
+        </div>
+    </div>
+
+    <div id="bobombs">
+        <div id="bobombs1">
+            <h3>Bob-ombs</h3>
+        </div>
+        <div id="bobombs2">
+            <p class="coins">7 Coins Ea</p>
+        </div>
+        <div id="bobombs3">
+            <img id="imgs" src="https://www.mariowiki.com/images/4/47/PMCS_Sprite_-_Big_Bob-omb.png" alt="Picture of a Goomba from Mario" width="20%" height="20%">
+        </div>
+        <br>
+        <div id="bobombs4">
+            <input name="bobombsCount" type="number" placeholder="Bob-ombs Count">
+            <!-- <button name="clearBobombsButton" id="clearBobombsButton">Reset Count</button> -->
+        </div>
+    </div>
+
+    <div id="cheepcheep">
+        <div id="cheepcheep1">
+            <h3>Cheep-Cheeps</h3>
+        </div>
+        <div id="cheepcheep2">
+            <p class="coins">11 Coins Ea</p>
+        </div>
+        <div id="cheepcheep3">
+            <img id="imgs" src="https://www.mariowiki.com/images/thumb/c/c2/NSLU_Deep_Cheep_Artwork.png/1200px-NSLU_Deep_Cheep_Artwork.png" alt="Picture of a Goomba from Mario" width="20%" height="20%">
+        </div>
+        <br>
+        <div id="cheepcheep4">
+            <input name="cheepCount" type="number" placeholder="Cheep-Cheep Count">
+            <!-- <button name="clearCheepCheepButton" id="clearCheepCheepButton">Reset Count</button> -->
+        </div>
+    </div>
+
+    <div id="calc">
+        <button name="submitButton" id="subbutton">Submit for Total Cost </button>
+        <div name="totalCost" id="totalCost"></div>
+    </div>
+
+</form>
+    <footer id="contactContainer" name="contactcontainer">
+        <ul>
+        Mario.MarioPestControl@gmail.com
+        </ul>
+        <ul>
+        URL Link: <a href="http://127.0.0.1:5501/MPC.html?goombasCount=&bobombsCount=&cheepCount=&submitButton=">Mario Pest control Site</a>
+        </ul>
+        <ul>
+        Address: 1983 ln, Nintendo K0, Japan
+        </ul>
+
+    </footer>
+</body>
+<script src="mpc.js"></script>
+</html>

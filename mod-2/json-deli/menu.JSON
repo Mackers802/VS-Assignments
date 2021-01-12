@@ -1,0 +1,90 @@
+{
+    "Menu": {
+        "Appitizer's": [
+                            {
+                                "name": "Matzz Sticks",
+                                "ingredients": ["Cheese", "Bread", "Random Seasonings"],
+                                "discription": "Just real some good fried cheese and bread"
+                            },
+                            {
+                                "name": "Poke Bowls",
+                                "ingredients": ["Fish", "Sea Weed", "Seseme seeds", "Some various Spices"],
+                                "discription": "Fish, Sea Weed, and Sesme seeds swirled around in a bowl"
+                            },
+                            {
+                                "name": "Poutine",
+                                "ingredients": ["Potato cut into fries", "Lots of gravy","Pepper"],
+                                "discription": "Really tasty potatos covered in gravy"
+                            }
+        ],
+        "Cold Sandys": [
+            {
+                "name": "Italian",
+                "ingredients": ["Bread of choice", "Meat", "Cheese", "veggies", "Random Seasonings"],
+                "discription": "Typical Meat, Cheese, Bread, and veggies Ital Sammy"
+            },
+            {
+                "name": "Robusto",
+                "ingredients": ["Bread", "All The MEATS", "Cheese", "veggies", "Some various Spices"],
+                "discription": "You like ALL the Meats on your sammy, this ones for you. "
+            },
+            {
+                "name": "Election Day",
+                "ingredients": ["Smelly Cheese", "Orange Cheeese","Your choice of meats"],
+                "discription": "Crazy combo of food, just like the election"
+            }
+
+        ],
+        "Hot Sandys": [
+            {
+                "name": "Meatball Sub",
+                "ingredients": ["Meatballs", "Matzz Cheese", "Bread", "Random Seasonings"],
+                "discription": "Grandmas Meatballs, cheese and bread"
+            },
+            {
+                "name": "Hot Tomalie",
+                "ingredients": ["Tomalies", "Bread", "Cheese", "Some various Spices"],
+                "discription": "Tomalies on your choice of bread"
+            },
+            {
+                "name": "Hot Potato",
+                "ingredients": ["Potato's", "Lots of gravy", "potato bread", "Pepper"],
+                "discription": "Really tasty potatos covered in gravy grilled between two pieces of bread"
+            }
+        ],
+        "Desserts": [
+            {
+                "name": "Lava Cake",
+                "ingredients": ["Chocolate", "More Chocolate", "even more chocolate"],
+                "discription": "Lots of chocolate, with more hot chocolate in cake form"
+            },
+            {
+                "name": "Brownies",
+                "ingredients": ["chocolate", "flour", "oil", "M&M's"],
+                "discription": "Extra chocolatly brownies"
+            },
+            {
+                "name": "Neo Ice cream",
+                "ingredients": ["Cream", "Vinilla", "chocolate", "Strawberrys"],
+                "discription": "Chocolate, vinilla, and strawberry ice cream"
+            }
+        ],
+        "Drinks": [
+            {
+                "name": "Martini",
+                "ingredients": ["Gin", "more gin", "bitters"],
+                "discription": "Shaken not stirred martini"
+            },
+            {
+                "name": "Old fashioned",
+                "ingredients": ["Bourbon", "Bitters", "2 fingers"],
+                "discription": "Bourbon over ice with bitters"
+            },
+            {
+                "name": "Golden Hour",
+                "ingredients": ["tequilla", "orange juice", "mango nectar"],
+                "discription": "Golden tequilla mixed with orange juice and mango nectar"
+            }
+        ]
+    }
+}
