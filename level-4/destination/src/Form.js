@@ -80,7 +80,7 @@ export default function Form(props) {
                   />
                 </label>
               </div>
-              <button onClick={context.submitReview}>Submit Movie Rating</button>
+              <button onClick= {(e) => {context.submitReview(e)}}>Submit Movie Rating</button>
             </form>
           </div>
         );

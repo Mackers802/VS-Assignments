@@ -14,10 +14,9 @@ class Context extends Component {
     id: "",
     // Extra state
     starRating: false,
-    name: "",
-    movie: {},
     textbox: "",
     reviews: [],
+    rating: ""
   };
 
   // Action 1)
@@ -64,18 +63,22 @@ class Context extends Component {
   };
 
   handleChange = (e) => {
-    e.preventDefault();
-    const { name, value } = e.target.value;
-    this.setState({
-      [name]: value,
+    const { name, value } = e.target;
+    this.setState(prevState => {
+      return{
+        ...prevState,
+        // starRating: ...starRating, 
+        // textbox: ...this.state.textbox,
+        [name]: value,
+      }
     });
   };
 
+  // handles the radio button
   onValueChange = (e) => {
     const { value } = e.target;
-    this.setState((prevState) => {
+    this.setState(prevState => {
       return {
-        // ...this.state,
         starRating: value,
       };
     });
@@ -86,16 +89,18 @@ class Context extends Component {
     console.log("submit")
     this.setState(prevState => {
       const rating = {
-        starRating: prevState.starRating,
-        textbox: prevState.textbox,
+        starRating: this.state.starRating,
+        textbox: this.state.textbox,
       };
       return {
         reviews: [...prevState.reviews, rating],
-        starrating: false,
+        // starRating: false,
         textbox: "",
       };
     });
+    console.log(this.state.reviews)
   };
+
 
   render() {
     return (
