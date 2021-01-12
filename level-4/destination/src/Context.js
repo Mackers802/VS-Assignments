@@ -27,8 +27,7 @@ class Context extends Component {
   };
 
   // Action 2)
-  requestMovie = () => {
-
+  requestMovie = (e) => {
     // const randomPage = Math.floor(Math.random() * 2);
     // console.log(randomPage);
     const random = Math.floor(Math.random() * 20);
@@ -64,56 +63,51 @@ class Context extends Component {
     console.log("To Review");
   };
 
-//   onValueChange = (e) => {
-//         // e.preventDefault();
-//         this.setState(prevState => {
-//             return{
-//                 ...prevState,
-//               starRating: e.target.value,
-//             }
-//         });
-//       };
+  handleChange = (e) => {
+    e.preventDefault();
+    const { name, value } = e.target.value;
+    this.setState({
+      [name]: value,
+    });
+  };
 
-      onValueChange = (e) => {
-        const { value} = e.target  
-        this.setState(prevState => {
-            return{
-                starRating: value
-            }
-    })
-}
+  onValueChange = (e) => {
+    const { value } = e.target;
+    this.setState((prevState) => {
+      return {
+        // ...this.state,
+        starRating: value,
+      };
+    });
+  };
 
   submitReview = (e) => {
-        e.preventDefault()
-        // console.log(this.state.reviews)
-        this.setState(prevState => {
-          const review = {
-            starRating: this.state.starRating,
-            // textArea: prevState.textArea
-          }
-          return(
-            {
-              reviews: [...prevState.reviews, review],
-            //   review: ""
-            }
-            )
-          })
-          // this.requestData()
-        //   console.log(this.state.reviews)
-      }
+    e.preventDefault();
+    console.log("submit")
+    this.setState(prevState => {
+      const rating = {
+        starRating: prevState.starRating,
+        textbox: prevState.textbox,
+      };
+      return {
+        reviews: [...prevState.reviews, rating],
+        starrating: false,
+        textbox: "",
+      };
+    });
+  };
 
-      
-      render() {
-          return (
-              <Provider
+  render() {
+    return (
+      <Provider
         value={{
           title: this.state.title,
           overview: this.state.overview,
           release_date: this.state.release_date,
           backdrop_path: this.state.backdrop_path,
           id: this.state.id,
-          starRating: this.starRating,
-          value: this.state.value,
+          starRating: this.state.starRating,
+          // value: this.state.value,
           textbox: this.state.textbox,
           reviews: this.state.reviews,
           handleChange: this.handleChange,
@@ -126,7 +120,7 @@ class Context extends Component {
         {this.props.children}
       </Provider>
     );
-}
+  }
 }
 
 export { Context, Consumer };
@@ -136,7 +130,7 @@ export { Context, Consumer };
 //     e.preventDefault()
 //     const {name, value} = e.target
 //     this.setState(prevState => {
-//         return{...prevState, 
+//         return{...prevState,
 //             [name] : value
 //         }
 //     })

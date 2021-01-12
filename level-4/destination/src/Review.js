@@ -13,7 +13,6 @@ export default function Review(props) {
         return (
           <div className="reviewContainer">
               <br></br>
-              {/* <h1>Reviews on {context.title}</h1> */}
               <div className="revImg">
               <Link to="/Movie">
               <img src={context.backdrop_path} alt={context.title} style={{width: "85vw",
@@ -30,7 +29,8 @@ export default function Review(props) {
             <div className="writtenReviews">
                     <div></div>
             </div>
-            <Reviews />
+            {context.reviews.map(review => <Reviews review = {review} />)}
+            {/* <Reviews /> */}
           </div>
         );
       }}
