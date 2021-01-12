@@ -79,6 +79,7 @@ class Context extends Component {
     const { value } = e.target;
     this.setState(prevState => {
       return {
+        ...prevState,
         starRating: value,
       };
     });
@@ -93,12 +94,13 @@ class Context extends Component {
         textbox: this.state.textbox,
       };
       return {
+        ...prevState,
         reviews: [...prevState.reviews, rating],
         // starRating: false,
         textbox: "",
       };
     });
-    console.log(this.state.reviews)
+    // console.log(this.state.reviews)
   };
 
 
@@ -112,7 +114,6 @@ class Context extends Component {
           backdrop_path: this.state.backdrop_path,
           id: this.state.id,
           starRating: this.state.starRating,
-          // value: this.state.value,
           textbox: this.state.textbox,
           reviews: this.state.reviews,
           handleChange: this.handleChange,
