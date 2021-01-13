@@ -14,22 +14,32 @@ class ContextProvider extends Component{
         id: "",
         edit: false
     }
+    // inittial Lifestyle method that calls requestData func
+    componentDidMount = () => {
+        this.requestData()
+      }
 
+    //   API call that loads what is currently held on the API server, 
+    // then it will set the State to whatever is activly being held on the API and storing it in the uglythingsList Array
     requestData = () => {
-        axios.get(`https://api.vschool.io/MackYandowL4/todo`)
+        axios.get(`https://api.vschool.io/mackyandow/thing`)
         .then(res => {
             this.setState({uglyThingsList: res.data})
         })
     }
 
+    // post data is handling the API post request.
+    // when called it is creating a new obj and appending it to the current list on the API
+    // lastly it is requesting the data from the API and updating the state yet again.
     postRequest = () => {
+        
         const newObj = {
             title: this.state.title,
             imgUrl: this.state.imgUrl,
             description: this.state.description
         }
 
-        axios.post(`https://api.vschool.io/MackYandowL4/todo`, newObj)
+        axios.post(`https://api.vschool.io/mackyandow/thing`, newObj)
         .then(res => {
             this.requestData()
         })
@@ -37,10 +47,8 @@ class ContextProvider extends Component{
         this.requestData()
     }
 
-    componentDidMount = () => {
-        this.requestData()
-      }
-
+// handleChange is similtaniousy changeing the key : value pair that is being effected by the specific target location.
+// it is taking its previous state and spreading it as the user ads to the corresponding input values
     handleChange = (e) => {
         e.preventDefault()
         const {name, value} = e.target
@@ -50,9 +58,9 @@ class ContextProvider extends Component{
             }})
         }
 
-        // is expecting the uglyThing (becuase its being passed an individual uglyThing) 
-        // settting the state of each individual ugly thing by tellingn it if the 
-        // setting state with the uglyThing that the user specifically wants to edit 
+        // edit form is expecting the uglyThing (becuase its being passed a specific individual uglyThing ) 
+        // settting the state of each individual ugly thing it is passed by giving it the unique id and 
+        // setting state with the same/new uglyThing that the user specifically wants to edit 
 
     editForm = (thing) => {
 
@@ -68,6 +76,8 @@ class ContextProvider extends Component{
         })
     }
 
+// the delete function is taking a specific and indivdual uglything that it is being passed and deleting it based on its specific ID
+// then it is calling requestData and updating state with the new array
     deleteButton = (thing) => {
         axios.delete(`https://api.vschool.io/mackyandow/thing/${thing._id}`)
         .then( () => {

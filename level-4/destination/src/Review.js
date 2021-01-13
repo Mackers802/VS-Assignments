@@ -1,15 +1,15 @@
 import React from 'react'
 
 
-export default function Review(props) {
+export default function Review({review:{name, starRating, textbox}}) {
     return (
             <div className="reviewDisplay">
-                <h1>{props.review.name} </h1>
-            gave {props.review.starRating} ⭐
+                <h1>{name} </h1>
+            gave {starRating} ⭐
               <p>
               and Said 
               </p>
-                        {props.review.textbox}
+                        {textbox}
             </div>
             );
       }
