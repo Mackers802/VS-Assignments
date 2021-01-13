@@ -34,6 +34,7 @@ export default function Movie(props) {
                   Reviews ⭐⭐⭐ Ratings
                 </button>
               </Link>
+              <br></br>
             </div>
             </div>
           </div>

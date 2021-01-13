@@ -13,6 +13,7 @@ class Context extends Component {
     backdrop_path: "",
     id: "",
     // Extra state
+    name: "",
     starRating: false,
     textbox: "",
     reviews: [],
@@ -27,17 +28,12 @@ class Context extends Component {
 
   // Action 2)
   requestMovie = (e) => {
-    // const randomPage = Math.floor(Math.random() * 2);
-    // console.log(randomPage);
     const random = Math.floor(Math.random() * 20);
-    // console.log(random);
 
     axios
       .get(
         `https://api.themoviedb.org/3/movie/top_rated?api_key=d246833b98ed7223e0d531d6ef59d00f&language=en-US&page=4`
       )
-      // ${randomPage}
-      // (`https://api.themoviedb.org/3/movie/top_rated?api_key=d246833b98ed7223e0d531d6ef59d00f&language=en-US&page=1`)
       .then((res) => {
         this.setState({
           title: res.data.results[random].title,
@@ -52,8 +48,13 @@ class Context extends Component {
   // Potential action 3)
   handleClickChooseNewMovie = () => {
     console.log("Shuffle");
-    this.requestMovie();
+    this.requestMovie()
+    this.clearState()
   };
+
+  clearState = () => {
+      this.setState(this.baseState)
+  }
 
   // Reviews button / Link
 
@@ -67,8 +68,6 @@ class Context extends Component {
     this.setState(prevState => {
       return{
         ...prevState,
-        // starRating: ...starRating, 
-        // textbox: ...this.state.textbox,
         [name]: value,
       }
     });
@@ -92,15 +91,15 @@ class Context extends Component {
       const rating = {
         starRating: this.state.starRating,
         textbox: this.state.textbox,
+        name: this.state.name
       };
       return {
         ...prevState,
         reviews: [...prevState.reviews, rating],
-        // starRating: false,
         textbox: "",
+        name: "",
       };
     });
-    // console.log(this.state.reviews)
   };
 
 
@@ -115,6 +114,7 @@ class Context extends Component {
           id: this.state.id,
           starRating: this.state.starRating,
           textbox: this.state.textbox,
+          name: this.state.name,
           reviews: this.state.reviews,
           handleChange: this.handleChange,
           onValueChange: this.onValueChange,
@@ -130,30 +130,3 @@ class Context extends Component {
 }
 
 export { Context, Consumer };
-
-// State to handle Form change
-//   handleChange = (e) => {
-//     e.preventDefault()
-//     const {name, value} = e.target
-//     this.setState(prevState => {
-//         return{...prevState,
-//             [name] : value
-//         }
-//     })
-// }
-//   onValueChange = (e) => {
-//     e.preventDefault();
-//     this.setState({
-//       selectedOption: e.target.value,
-//     });
-//   };
-
-//   formSubmit = (e) => {
-//     e.preventDefault();
-//     console.log("form submitted");
-//     this.setState(prevState => {
-//         const review = {
-
-//         }
-//     })
-//   }

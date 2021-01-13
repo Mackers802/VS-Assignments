@@ -26,11 +26,12 @@ export default function reviews(props) {
             <div className="formRate">
               <Form />
             </div>
+                <h1>Previous Ratings</h1>
             <div className="writtenReviews">
-                    <div></div>
-            </div>
-            {context.reviews.map(review => <Review review = {review} />)}
+                    {context.reviews.map(review => <Review review = {review} />)}
+                </div>
             {/* <Reviews /> */}
+          <br></br>
           </div>
         );
       }}

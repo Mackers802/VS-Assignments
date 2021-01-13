@@ -8,7 +8,7 @@
 }
 
   .containerHome{
-    font-size: large;
+    font-size: small;
     text-align: center;
     display: inline-block;
   }
@@ -37,18 +37,20 @@
     .movieContainer{
       display: inline-block;
       text-align: center;
+      font-size: medium;
     } 
 
     .movieTitle{
       align-content: center;
       margin: 5px;
-      font-size: x-large;
+      font-size: medium;
     }
 
     .movieOverview{
       margin: 15px;
       padding: 5px 10px;
       text-align: left;
+      font-size: small;
     }
 
     .movieReleaseDate{
@@ -79,10 +81,26 @@
 
     .revImg{
       justify-content: center;
+      font-size: x-large;
     }
 
     .writtenReviews{
-      background-color: rgb(217, 185, 58);
+      /* background-color: rgb(217, 185, 58); */
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      margin: 10px 55px;
+    }
+    
+    .reviewDisplay{
+      width: 250px;
+      height: 200px;
+      margin: 2px 10px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+      background-color: #6f3636;
     }
 
 }
@@ -167,7 +185,22 @@ background-color: rgb(159, 111, 0);
   }
 
   .writtenReviews{
-    background-color: rgb(217, 185, 58);
+    /* background-color: rgb(217, 185, 58); */
+    width: 450px;
+    height: 200px;
+    font-size: x-small;
+  }
+
+  .reviewDisplay{
+    width: 250px;
+    height: 200px;
+    margin: 2px 10px;
+    padding: 10px;
+    display: flex;
+    font-size: x-small;
+    flex-direction: column;
+    justify-content: space-evenly;
+    background-color: #6f3636;
   }
 
 }
@@ -216,9 +249,11 @@ background-color: rgb(159, 111, 0);
   }
 
   .movieOverview{
-    margin: 15px;
+    margin: 25px;
+    width: 85vw;
     padding: 5px 10px;
     text-align: left;
+    font-size: medium;
   }
 
   .movieReleaseDate{
@@ -251,7 +286,26 @@ background-color: rgb(159, 111, 0);
   }
 
   .writtenReviews{
-    background-color: rgb(217, 185, 58);
+    /* background-color: rgb(217, 185, 58);  */
+    margin: 15px 25px;
+    width: 85vw;
+    height: 200px; 
+    display: flex;
+    flex-direction: row; 
+    margin: 15px;
+  }
+
+  .reviewDisplay{
+    width: 150px;
+    height: 150px;
+    margin: 15px 5px;
+    padding: 10px;
+    display: flex;
+    font-size: x-small;
+    flex-direction: column;
+    flex-wrap: wrap-reverse;
+    justify-content: space-evenly;
+    background-color: #6f3636;
   }
 }
 
@@ -314,10 +368,10 @@ background-color: rgb(159, 111, 0);
 /* .writtenReviews{
   background-color: rgb(217, 185, 58);
 } */
-
+/* 
 .formContainer{
   background-color: darkgoldenrod;
-}
+} */
 
 .navbar {
   overflow: hidden;

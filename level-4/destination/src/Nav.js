@@ -11,8 +11,8 @@ export default function Nav() {
       <nav>
         <div className="navbar">
         <div className="dropdown">
-          <button class="dropbtn">🍿</button>
-          <div class="dropdown-content">
+          <button className="dropbtn">🍿</button>
+          <div className="dropdown-content">
             <Link to="/"> 🎞️ </Link>
             <hr></hr>
             <Link to="/Movie"> 📺  </Link>

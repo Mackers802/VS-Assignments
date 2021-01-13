@@ -73,6 +73,17 @@ export default function Form(props) {
                 <label>
                   <input 
                     type="text"
+                    placeholder="Your first Name"
+                    maxlength="15"
+                    value={context.Name}
+                    name="name"
+                    onChange={context.handleChange}
+                  />
+                </label>
+                <label>
+                  <input 
+                    type="text"
+                    maxlength="50"
                     placeholder="Write a review"
                     value={context.textbox}
                     name="textbox"
