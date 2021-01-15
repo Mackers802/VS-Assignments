@@ -7,7 +7,14 @@ app.listen(9000, () => {
 
 app.use(express.json())
 
+// app.use("/object", (req, res, next) => {
+// next()
+// app.use("/object", require("./routes/objectRouter.js"))
+// })
+
 app.use("/object", (req, res, next) => {
-next()
-app.use("/object", require("./routes/objectRouter.js"))
-})
+    console.log('first')
+    next()
+    })
+
+    app.use("/object", require("./routes/objectRouter.js"))
