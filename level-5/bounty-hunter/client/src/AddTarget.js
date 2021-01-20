@@ -17,12 +17,14 @@ export default function AddTarget(props){
     }
 
     return(
-        <form onSubmit={handleSubmit}>
+        <>
+        <form classname="form" onSubmit={handleSubmit}>
             <input type="text" name="firstName" value={inputs.firstName} onChange={handleChange} placeholder="First Name"/>
             <input type="text" name="lastName" value={inputs.lastName} onChange={handleChange} placeholder="Last Name"/>
             <input type="number" name="bountyAmount" value={inputs.bountyAmount} onChange={handleChange} placeholder="Bounty Amount"/>
             <input type="text" name="type" value={inputs.type} onChange={handleChange} placeholder="Sith or Jedi"/>
-            <button>Place new Bounty</button>
+            <button>Add Bounty</button>
         </form>
+        </>
     )
 }

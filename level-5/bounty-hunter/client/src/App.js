@@ -45,11 +45,25 @@ function editBounty(updates, bountyId){
 
   return (
     <div>
+      <div className="header">
+      <img src="https://emojis.slackmojis.com/emojis/images/1493910217/2175/death-star.png?1493910217" alt="Death Star" width="100" height="100"></img>
+        <h1>Death Star and Grill </h1>
+      <img src="https://emojis.slackmojis.com/emojis/images/1550147082/5314/starwars_rebel.png?1550147082" alt="Rebel Seal" width="100" height="100"></img>
+        <img src="https://emojis.slackmojis.com/emojis/images/1450319450/114/empire.png?1450319450" alt="Empire Seal" width="100" height="100"></img>
+        <img src="https://emojis.slackmojis.com/emojis/images/1550147149/5315/starwars_jediorder.png?1550147149" alt="Jedi Seal" width="100" height="100"></img>
+      </div>
+      <br></br>
+    <div className="addTarget">
+    Please order here: 
+      <AddTarget 
+        submit={addBounty}
+        btnText="Add Bounty"
+      />
 
-    <AddTarget 
-      submit={addBounty}
-      btnText="Add Bounty"
-    />
+
+
+    </div>
+    <h1 style={{textAlign: "center"}}>Active Targets</h1>
       {bountys.map(bounty => 
         <Bounty 
         {...bounty} 
