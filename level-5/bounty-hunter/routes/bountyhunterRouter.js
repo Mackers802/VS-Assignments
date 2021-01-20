@@ -10,7 +10,7 @@ const bountys = [
     firstName: "Darth",
     lastName: "Maul", 
     living: true,
-    bountyAmount: "$20M",
+    bountyAmount: "$200000000",
     type: "sith",
     _id: uuid(),
   },
@@ -18,7 +18,7 @@ const bountys = [
     firstName: "Darth",
     lastName: "Vader",
     living: true,
-    bountyAmount: "$10M",
+    bountyAmount: "$1000000000",
     type: "sith",
     _id: uuid(),
   },
@@ -26,15 +26,15 @@ const bountys = [
     firstName: "Luke",
     lastName: "Skywalker", 
     living: true,
-    bountyAmount: "$10M",
+    bountyAmount: "$10000000",
     type: "Jedi",
     _id: uuid(),
   },
   {
-    firstName: "Yoda",
+    firstName: "Yoda", 
     lastName: "Lay-he-ho",
     living: true,
-    bountyAmount: "$5B",
+    bountyAmount: "$5B0000000",
     type: "Jedi",
     _id: uuid(),
   },
@@ -42,7 +42,7 @@ const bountys = [
     firstName: "Princess",
     lastName: "Leia",
     living: true,
-    bountyAmount: "$500k",
+    bountyAmount: "$5000000000000000",
     type: "Jedi",
     _id: uuid(),
   },
@@ -50,7 +50,7 @@ const bountys = [
     firstName: "Sheev",
     lastName: "Palpatine",
     living: true,
-    bountyAmount: "$200k",
+    bountyAmount: "$200000000000000000",
     type: "sith",
     _id: uuid(),
   }
@@ -64,7 +64,7 @@ bountyhunterRouter.route("/")
     // console.log(req)
         const newBounty = req.body /* saving the request in a new obj*/
         bountys.push(newBounty)
-        res.send(`${newBounty.firstName} HAS BEEN ADDED TO BOUNTY LIST`)
+        res.send(newBounty)
     })
 
     bountyhunterRouter.delete("/:bountyId", (req, res) => {
@@ -83,4 +83,4 @@ bountyhunterRouter.route("/")
   }) 
 
 
-module.exports = bountyhunterRouter
+module.exports = bountyhunterRouter 

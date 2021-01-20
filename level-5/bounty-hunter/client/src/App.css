@@ -1,0 +1,30 @@
+body{
+  background-color: darkgray;
+}
+
+.bountyContainer{
+  border: solid 2px red;
+  padding: 10px;
+  margin: 8px;
+}
+
+.bountyName{
+  font-size: large;
+  color: cadetblue;
+  padding: 5px;
+}
+
+.bountyWorth{
+  font-size: medium;
+  text-align: center;
+  color: azure;
+  border: solid 5px rgb(62, 61, 61);
+}
+
+.bountyActions{
+  display: flex;
+  justify-content: space-evenly;
+  border: dashed 5px green;
+  margin: 20px;
+  padding: 10px;
+}
