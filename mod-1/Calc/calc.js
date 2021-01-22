@@ -1,8 +1,8 @@
 
 var readlinesync = require('readline-sync');
-var firstNum = readlinesync.question("Please enter your first number ");
-console.log(firstNum)
-var num2 = readlinesync.question("Please enter your second number ");
+var parseInt(num1) = readlinesync.question("Please enter your first number ");
+console.log(num1)
+var parseInt(num2) = readlinesync.question("Please enter your second number ");
 console.log(num2)
 var action = readlinesync.keyIn("Please enter the operation to perform: add [a], sub [s], mul [m], div [d]]", {limit: "asdm"});
 console.log(action)
@@ -19,7 +19,7 @@ function multiply(num1, num2){
 function divide(num1, num2){
     return num1 / num2;
 }
-var a = add(firstNum, num2)
+var a = add(num1, num2)
 var s = subtract(num1, num2)
 var m = multiply(num1, num2)
 var d = divide(num1, num2)
