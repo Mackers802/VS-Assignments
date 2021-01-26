@@ -4,7 +4,7 @@ const BountyTracker = require('../models/bountyTracker.js')
 
 bountyhunterRouter.use(express.json())
 
-
+// get all
 bountyhunterRouter.get("/", (req, res, next) => {
   BountyTracker.find((err, bounty) => {
     if(err){
@@ -15,6 +15,7 @@ bountyhunterRouter.get("/", (req, res, next) => {
   })
 })
 
+// get one
 bountyhunterRouter.get("/:bountyId", (req, res, next) => {
 BountyTracker.find({type: req.query.type}, (err, bounty) => {
   if(err){
@@ -25,6 +26,7 @@ BountyTracker.find({type: req.query.type}, (err, bounty) => {
 })
 })
 
+// post
 bountyhunterRouter.post("/", (req, res, next) => {
   const newBounty = new BountyTracker(req.body)
   newBounty.save((err, savedBounty) => {
@@ -36,6 +38,7 @@ bountyhunterRouter.post("/", (req, res, next) => {
   })
 })
 
+// delete
 bountyhunterRouter.delete("/:bountyId", (req, res, next) => {
   BountyTracker.findOneAndDelete({_id: req.params.bountyId}, (err, deletedBounty) => {
     if(err){
@@ -46,6 +49,7 @@ bountyhunterRouter.delete("/:bountyId", (req, res, next) => {
   })
 })
 
+// update
 bountyhunterRouter.put("/:bountyId", (req, res, next) => {
   BountyTracker.findOneAndUpdate(
     {_id: req.params.bountyId}, 
