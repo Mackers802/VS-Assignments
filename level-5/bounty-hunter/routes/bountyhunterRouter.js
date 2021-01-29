@@ -34,7 +34,7 @@ bountyhunterRouter.post("/", (req, res, next) => {
       res.status(500)
       return next(err)
     }
-    return res.status(200).send(savedBounty)
+    return res.status(201).send(savedBounty)
   })
 })
 
@@ -45,7 +45,7 @@ bountyhunterRouter.delete("/:bountyId", (req, res, next) => {
       res.status(500)
       return next(err)
     }
-    return res.status(200).send("Item deleted")
+    return res.status(200).send(`${deletedBounty.lastName} Bounty deleted`)
   })
 })
 
@@ -53,14 +53,14 @@ bountyhunterRouter.delete("/:bountyId", (req, res, next) => {
 bountyhunterRouter.put("/:bountyId", (req, res, next) => {
   BountyTracker.findOneAndUpdate(
     {_id: req.params.bountyId}, 
-    req.body,
+    req.body /*.bountyAmount*/ ,
     {new : true},
     (err, updatedBounty) => {
       if(err){
         res.status(500)
         return next(err)
       }
-      return res.status(200).send(updatedBounty)
+      return res.status(201).send(updatedBounty)
     }
   )
 })

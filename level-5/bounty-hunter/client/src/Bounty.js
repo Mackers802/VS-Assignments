@@ -18,12 +18,12 @@ const [editToggle, setEditToggle] = useState(false)
                         </div>
                         <div className="bountyActions">
                             <button 
-                                onClick={() => props.deleteBounty(_id)}>Collect & Remove Bounty</button>
+                                onClick={() => props.deleteBounty(_id)}>Collect Bounty</button>
                             <button 
                                 onClick={ () => setEditToggle(prevToggle => !prevToggle)}>Change Bounty Amount</button>
                         </div>
                 </>
-                :
+                : 
                 <>
                 <AddTarget 
                     firstName={firstName}

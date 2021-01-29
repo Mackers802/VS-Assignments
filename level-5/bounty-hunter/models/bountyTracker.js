@@ -5,17 +5,18 @@ const trackerSchema = new Schema ({
     firstName: {
         type: String,
         required: true,
-        unique: true
+        // unique: true
     },
     lastName: {
         type: String,
         required: true,
-        unique: true
+        // unique: true
     },
     bountyAmount: {
         type: Number,
         required: true
-    },
+    }
+    ,
     type: {
         type: String,
         enumValues: ["Jedi", "Sith"]

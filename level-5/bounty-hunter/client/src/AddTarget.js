@@ -1,12 +1,19 @@
 import React, {useState} from "react"
-const uuid = require("uuid").v4
+// const uuid = require("uuid").v4
 
 export default function AddTarget(props){
-    const initInputs = {firstName: props.firstName || "", lastName: props.lastName || "", bountyAmount: props.bountyAmount || "", living: true, type: props.type || "", _id: uuid()}
+    const initInputs = {
+        firstName: props.firstName || "", 
+        lastName: props.lastName || "", 
+        bountyAmount: props.bountyAmount || "", 
+        living: true, type: props.type || "", 
+        
+        _id: props._id}
+
     const [inputs, setInputs] = useState(initInputs)
 
     function handleChange(e){
-        const {name, value } = e.target
+        const { name, value } = e.target
         setInputs(prevInputs => ({...prevInputs, [name]: value}))
     }
 

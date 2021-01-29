@@ -8,10 +8,10 @@ import React, {useState, useEffect} from "react"
 function App() {
   const [bountys, setBountys] = useState([])
   
-  function getBountys (){
+  function getBountys(){
     axios.get("/bountys")
     .then(res => setBountys(res.data))
-    .catch(err => console.log("error"))
+    .catch(err => console.log("get error"))
   
   }
   useEffect(() => {
@@ -24,7 +24,7 @@ function App() {
     .then(res => {
       setBountys(prevBountys => [...prevBountys, res.data])
     })
-    .catch(err => console.log(err))
+    .catch(err => console.log("post error"))
   } 
 
   function deleteBounty(bountyId){
@@ -32,7 +32,7 @@ function App() {
     .then(res => {
       setBountys(prevBountys => prevBountys.filter(bounty => bounty._id !== bountyId))
     })
-    .catch(err => (console.log(err)))
+    .catch(err => console.log("delete error"))
   }
 
 function editBounty(updates, bountyId){
@@ -40,7 +40,7 @@ function editBounty(updates, bountyId){
   .then(res => {
     setBountys(prevBountys => prevBountys.map(bounty => bounty._id !== bountyId ? bounty : res.data))
   })
-  .catch (err => console.log(err))
+  .catch(err => console.log("edit error"))
 }
 
   return (

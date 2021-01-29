@@ -4,7 +4,7 @@ const mongoose = require("mongoose")
 
 app.use("/bountys" , require("./routes/bountyhunterRouter.js"))
 
-mongoose.connect("mongodb://localhost:27017/cruddb", {
+mongoose.connect("mongodb://localhost:27017/bounty", {
     useNewUrlParser: true,
     useUnifiedTopology: true,
     useCreateIndex: true,
