@@ -28,14 +28,14 @@ issueRouter.post("/", (req, res, next) => {
 
 // get one issue
 issueRouter.get("/:issueId", (req, res, next) => {
-  Issue.find({_id: req.query._id}, (err, issue) => {
-    if(err){
-      res.status(500)
-      return next(err)
+  Issue.find({ _id: req.params.issueId }, (err, issue) => {
+    if (err) {
+      res.status(500);
+      return next(err);
     }
-    return res.status(200).send(issue)
-  })
-})
+    return res.status(200).send(issue);
+  });
+});
 
 // Delete issue - * maybe only Admins *
 issueRouter.delete("/:issueId", (req, res, next) => {
@@ -49,6 +49,22 @@ issueRouter.delete("/:issueId", (req, res, next) => {
       return res
         .status(200)
         .send(`Successfully delete todo: ${deletedIssue.title}`);
+    }
+  );
+});
+
+// Update Issue
+issueRouter.put("/:issueId", (req, res, next) => {
+  Issue.findOneAndUpdate(
+    { _id: req.params.issueId, user: req.user._id },
+    req.body,
+    { new: true },
+    (err, updatedIssue) => {
+      if (err) {
+        req.status(500);
+        return next(err);
+      }
+      return res.status(201).send(updatedIssue);
     }
   );
 });

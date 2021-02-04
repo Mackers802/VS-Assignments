@@ -40,7 +40,7 @@ userRouter.post("/login", (req, res, next) => {
         res.status(403);
         return next(new Error("username or password are incorrect"));
       }
-      if (req.body.username !== user.password) {
+      if (req.body.password !== user.password) {
         res.status(403);
         return next(new Error("username or password are incorrect"));
       }

@@ -16,13 +16,14 @@ commentRouter.get("/", (req, res, next) => {
 
 
 // get user comment
-commentRouter.get("/user", (req, res, next) => {
-    Comment.find({ user: req.user._id }, (err, comments) => {
+commentRouter.get("/:commentId", (req, res, next) => {
+    console.log(req.params)
+    Comment.findOne({ _id: req.params.commentId}, (err, comment) => {
       if (err) {
         res.status(500);
         return next(err);
       }
-      return res.status(200).send(commentss);
+      return res.status(200).send(comment);
     });
   });
 
@@ -66,7 +67,7 @@ commentRouter.delete("/:commentId", (req, res, next) => {
         }
         return res
           .status(200)
-          .send(`Successfully delete todo: ${deletedComment.title}`);
+          .send(`Successfully ${deletedComment}`);
       }
     );
   });
