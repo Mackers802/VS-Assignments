@@ -4,7 +4,7 @@ import AddTarget from "./AddTarget"
 
 export default function Bounty(props){
 // const [bountys, setBountys] = useState([])
-const {firstName, lastName, _id } = props
+const {firstName, lastName, _id, type } = props
 const [editToggle, setEditToggle] = useState(false)
     return(
         <div className="bountyContainer">
@@ -28,6 +28,7 @@ const [editToggle, setEditToggle] = useState(false)
                 <AddTarget 
                     firstName={firstName}
                     lastName={lastName}
+                    type={type}
                     _id={_id}
                     btnText="Submit Edit"
                     // editBounty={props.editBounty}

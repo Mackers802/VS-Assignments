@@ -43,6 +43,19 @@ function editBounty(updates, bountyId){
   .catch(err => console.log("edit error"))
 }
 
+function handleFilter(e){
+  if(e.target.value === "all"){
+      axios.get(`/bountys`)
+      .then(res => setBountys(res.data))
+      .catch(err => console.log(err))
+  } else {
+      axios.get(`/bountys/search/type?type=${e.target.value}`)
+      .then(res => setBountys(res.data))
+      .catch(err => console.log(err))
+  }
+  return axios.get(`/bountys`)
+}
+
   return (
     <div>
       <div className="header">
@@ -54,16 +67,20 @@ function editBounty(updates, bountyId){
       </div>
       <br></br>
     <div className="addTarget">
-    Please order here: 
+    Please order bounty here: 
       <AddTarget 
         submit={addBounty}
         btnText="Add Bounty"
       />
-
-
-
     </div>
     <h1 style={{textAlign: "center"}}>Active Targets</h1>
+    <h3>Filter Bountys</h3>
+            <select onChange={handleFilter} className="filter">
+                <option value= "all">All Bountys</option>
+                <option value="Jedi">Jedi</option>
+                <option value="Sith">Sith</option>
+
+            </select>
       {bountys.map(bounty => 
         <Bounty 
         {...bounty} 

@@ -4,13 +4,11 @@ const Schema = mongoose.Schema
 const trackerSchema = new Schema ({
     firstName: {
         type: String,
-        required: true,
-        // unique: true
+        required: true
     },
     lastName: {
         type: String,
-        required: true,
-        // unique: true
+        required: true
     },
     bountyAmount: {
         type: Number,
