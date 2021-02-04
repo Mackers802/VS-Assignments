@@ -43,7 +43,7 @@ commentRouter.post("/", (req, res, next) => {
 // update comment
 commentRouter.put("/:commentId", (req, res, next) => {
     Comment.findOneAndUpdate(
-      { _id: req.params.commentId, user: req.user._id },
+      { _id: req.params.commentId, user: req.params._id },
       req.body,
       { new: true },
       (err, updatedComment) => {
@@ -59,7 +59,7 @@ commentRouter.put("/:commentId", (req, res, next) => {
 //   delete comment
 commentRouter.delete("/:commentId", (req, res, next) => {
     Comment.findOneAndDelete(
-      { _id: req.params.commentId, user: req.user._id },
+      { _id: req.params.commentId, user: req.params._id },
       (err, deletedComment) => {
         if (err) {
           res.status(500);
