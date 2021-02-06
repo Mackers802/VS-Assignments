@@ -1,10 +1,11 @@
-
+import React from 'react';
+import Nav from "./components/Nav.js"
 import './App.css';
 
-function App() {
+function App(props) {
   return (
     <div>
-      <h1>App page test</h1>
+      <Nav />
     </div>
   );
 }
