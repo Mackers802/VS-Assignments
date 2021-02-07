@@ -1,13 +1,17 @@
 import React, { useContext, useState } from 'react'
 import { UserAuthContext } from '../context/UserAuthProvider.js'
-import AuthForm from "./AuthForm.js"
+import { SignupForm } from "./SignupForm.js"
+// import { LoginForm } from "./LoginForm.js"
 
-const initInputs = { username: "", password: ""}
+const initInputs = { 
+    username: "", 
+    password: ""
+}
 
 export const Auth = () => {
 
-const { signup } = useContext(UserAuthContext)
-const [inputs, setInputs] = useState(initInputs)
+const { signup, login } = useContext(UserAuthContext)
+const [ inputs, setInputs ] = useState(initInputs)
 // const [toggle, setToggle] = useState(false)
 
 
@@ -22,21 +26,30 @@ function handleChange(e){
 function handleSignup(e){
     e.preventDefault()
     signup(inputs)
-    
 }
 
-return (
-        <>
+// function handleLogin(e){
+//     e.preventDefault()
+//     login(inputs)
+// }
 
+return (
+    <>
         <div>
-    
-            <AuthForm 
+            <SignupForm 
                 handleChange={handleChange}
                 handleSubmit={handleSignup}
-                inputs={inputs}
-
+                input={inputs}
             />
         </div>
-        </>
+        {/* <div>
+        <LoginForm 
+                handleChange={handleChange}
+                handleSubmit={handleSignup}
+                handlelogin={handleLogin}
+                input={inputs}
+            />
+        </div> */}
+    </>
     )
 }

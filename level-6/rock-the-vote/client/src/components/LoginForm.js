@@ -1,6 +1,12 @@
 import React from "react";
 
-export default function AuthForm(props) {
+export const LoginForm = (props) => {
+  // const initInputs = {
+  //   username: "", 
+  //   password: ""
+  // }
+
+// const [inputs, setInputs] = useState(initInputs)
   
   return (
     <div>

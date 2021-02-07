@@ -13,11 +13,18 @@ export const UserAuthProvider = (props) => {
       .catch((err) => console.log(err));
   }
 
+  function login(credentials) {
+    axios.post("/auth/login", credentials)
+      .then((res) => console.log(res))
+      .catch((err) => console.log(err));
+  }
+
   return (
     <UserAuthContext.Provider
       value={{
         ...userState,
-        signup
+        signup,
+        login
       }}
     >
       {props.children}
