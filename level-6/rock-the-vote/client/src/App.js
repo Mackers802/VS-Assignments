@@ -1,6 +1,7 @@
-import React from 'react';
-import Nav from "./components/Nav.js"
-import './App.css';
+import React from "react";
+// import { Switch, Route } from "react-router-dom";
+import Nav from "./components/Nav.js";
+import "./App.css";
 
 function App(props) {
   return (

@@ -10,7 +10,7 @@ const initInputs = {
 
 export const Auth = () => {
 
-const { signup, login } = useContext(UserAuthContext)
+const { signup } = useContext(UserAuthContext)
 const [ inputs, setInputs ] = useState(initInputs)
 // const [toggle, setToggle] = useState(false)
 

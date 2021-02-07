@@ -1,7 +1,7 @@
 import React, {useContext} from 'react'
 import { IssueContextProvider } from '../context/IssueContext'
 
-export default function IssuePage() {
+export const IssuePage = () => {
     const context = useContext(IssueContextProvider)
     return (
         <div>
