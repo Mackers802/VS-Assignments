@@ -1,4 +1,49 @@
-.App {
+.navBar{
+  display: flex;
+  justify-content: space-evenly;
+  width: 100vw;
+  background-color: grey;
+}
+
+.authPage{
+  display: inline-block;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  margin-top: 10%;
+  height: 500px;
+  width: 300px;
+  background-color: grey;
+}
+
+.signupForm{
+  display: inline-block;
+  justify-content: center;
+  text-align: left;
+  align-items: center;
+  border: 2px black solid;
+  width: 250px;
+  padding: 15px;
+}
+
+.loginForm{
+  display: inline-block;
+  justify-content: center;
+  text-align: left;
+  align-items: center;
+  border: 2px black solid;
+  width: 250px;
+  padding: 15px;
+}
+
+.profileHeader{
+  background-color: beige;
+  border: solid 2px black;
+}
+
+
+
+/* .App {
   text-align: center;
 }
 
@@ -36,3 +81,4 @@
     transform: rotate(360deg);
   }
 }
+ */

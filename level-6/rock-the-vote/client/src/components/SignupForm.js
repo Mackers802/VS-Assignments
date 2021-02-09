@@ -1,4 +1,4 @@
-import React, { useState} from "react";
+import React, { useState } from "react";
 
 
 export const SignupForm = (props) => {
@@ -8,18 +8,33 @@ export const SignupForm = (props) => {
     password: ""
   }
 
+  function handleChange(e){
+    const {name, value} = e.target
+    setInputs(prevInputs => ({
+        ...prevInputs,
+        [name]: value
+    }))
+}
+
 const [inputs, setInputs] = useState(initInputs)
+
+const handleSubmit = (e) => {
+  e.preventDefault()
+  props.handleSubmit(inputs)
+}
 
   return (
     <div>
-      <form onSubmit={props.handleSubmit} >
+      <form onSubmit={handleSubmit} onChange={handleChange}>
         <label>
-          <input handleChange={props.handleChange} type="text" name={inputs} placeholder="username"/>
-          <input handleChange={props.handleChange} type="text" name={inputs} placeholder="password"/>
+          <input type="text" name="username" placeholder="username"/>
+          <input type="text" name="password" placeholder="password"/>
         </label>
+        <br></br>
         <button >Signup</button>
 
       </form>
     </div>
   );
 }
+

@@ -1,14 +1,17 @@
 import React from 'react'
-import { Link, Switch, Route } from "react-router-dom"
-import  { Auth } from "./Auth.js"
+import { Link } from "react-router-dom"
 export default function Nav (props) {
+    const { logout } = props
     return (
-        <div>
-            <Link to="/Auth" >Auth Page</Link>
+    <>
+        <div className="navBar">
+            <Link to="/Profile">Profile</Link>
+            <Link to="/IssuePage">Issues</Link>
+            <Link to="/Auth" >Member Login</Link>
+            <button onClick={logout}>Logout</button>
 
-            <Switch>
-        <Route path="/Auth" ><Auth /></Route>
-      </Switch>
+            <br></br>
         </div>
+    </>
     )
 }

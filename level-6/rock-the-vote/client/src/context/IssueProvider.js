@@ -1,21 +1,46 @@
-import React, { useState } from "react"
+// import React, { useState } from "react"
+// import axios from "axios"
 
-export const IssueContext = React.createContext()
+// export const IssueContext = React.createContext()
 
-export const IssueProvider = (props) => {
+// const issueAxios = axios.create()
 
-    const initState = {
-        issues: []
-    }
-    const [issueState, setIssueState] = useState(initState)
+// issueAxios.interceptors.request.use(config => {
+//     const token = localStorage.getItem("token")
+//     config.headers.Authorization = `Bearer ${token}`
+//     return config
+//     }
+// )
 
-    return(
-        <IssueContext.Provider
-        value={{
-            ...issueState
-        }}
-        >
-        {props.children}
-        </IssueContext.Provider>
-    )
-}
+// export const IssueProvider = (props) => {
+
+//     const initState = {
+//         user: JSON.parse(localStorage.getItem("user")) || {}, 
+//         token: localStorage.getItem("token") || "",
+//         issues: []
+//     }
+
+//     const [issueState, setIssueState] = useState(initState)
+
+//     function addIssue(newIssue){
+//         issueAxios.post("/api/issue", newIssue)
+//         .then(res => {
+//             setIssueState(prevState => ({
+//                 ...prevState,
+//                 issues: [...prevState.issues, res.data]
+//             }))
+//         })
+//         .catch(err => console.log(err.responde.data.errMsg))
+//     }
+
+//     return(
+//         <IssueContext.Provider
+//         value={{
+//             ...issueState, 
+//             addIssue
+//         }}
+//         >
+//         {props.children}
+//         </IssueContext.Provider>
+//     )
+// }

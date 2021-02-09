@@ -1,55 +1,40 @@
-import React, { useContext, useState } from 'react'
+ import React, { useContext, useState } from 'react'
 import { UserAuthContext } from '../context/UserAuthProvider.js'
 import { SignupForm } from "./SignupForm.js"
-// import { LoginForm } from "./LoginForm.js"
-
-const initInputs = { 
-    username: "", 
-    password: ""
-}
+import { LoginForm } from "./LoginForm.js"
 
 export const Auth = () => {
 
-const { signup } = useContext(UserAuthContext)
-const [ inputs, setInputs ] = useState(initInputs)
-// const [toggle, setToggle] = useState(false)
+const { signup, login } = useContext(UserAuthContext)
+const [toggle, setToggle] = useState(false)
 
 
-function handleChange(e){
-    const {name, value} = e.target
-    setInputs(prevInputs => ({
-        ...prevInputs,
-        [name]: value
-    }))
+function handleSignup(credentials){
+    signup(credentials)
 }
 
-function handleSignup(e){
-    e.preventDefault()
-    signup(inputs)
+function handleLogin(credentials){
+    login(credentials)
 }
-
-// function handleLogin(e){
-//     e.preventDefault()
-//     login(inputs)
-// }
 
 return (
-    <>
-        <div>
-            <SignupForm 
-                handleChange={handleChange}
-                handleSubmit={handleSignup}
-                input={inputs}
-            />
+    <div className="authPage">
+    <h1>Login or Signup</h1>
+    <br></br>
+{
+    !toggle ? 
+        <div className="signupForm">
+            <SignupForm handleSubmit={handleSignup}/>
+            <br></br>
+        <button onClick={()=> setToggle(prev => !prev)}>Already a member? </button>
         </div>
-        {/* <div>
-        <LoginForm 
-                handleChange={handleChange}
-                handleSubmit={handleSignup}
-                handlelogin={handleLogin}
-                input={inputs}
-            />
-        </div> */}
-    </>
-    )
+:
+        <div className="loginForm">
+        <LoginForm handleSubmit={handleLogin}/>
+        <br></br>
+        <button onClick={()=> setToggle(prev => !prev)}>Not a Member? </button>
+        </div>
+}
+    </div>
+)
 }
