@@ -31,7 +31,6 @@ userRouter.post("/signup", (req, res, next) => {
 userRouter.post("/login", (req, res, next) => {
   User.findOne(
     { username: req.body.username.toLowerCase() },
-    { password: req.body.password },
     (err, user) => {
       if (err) {
         res.status(500);

@@ -19,8 +19,6 @@ function handleLogin(credentials){
 
 return (
     <div className="authPage">
-    <h1>Login or Signup</h1>
-    <br></br>
 {
     !toggle ? 
         <div className="signupForm">

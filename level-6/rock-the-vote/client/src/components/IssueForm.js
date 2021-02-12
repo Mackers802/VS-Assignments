@@ -1,11 +1,11 @@
 import React, { useState } from 'react'
-// import { UserAuthContext } from '../context/UserAuthProvider'
 
 export const IssueForm = (props) => {
    
     const initInputs = {
     title: "",
-    description: ""
+    description: "",
+    added: ""
     }
 
     const [inputs, setInputs] = useState(initInputs)
@@ -33,6 +33,7 @@ setInputs(initInputs)
         <label>
           <input type="text" name="title" placeholder="title"/>
           <input type="text" name="description" placeholder="description"/>
+          <input type="date" name="added" placeholder="Date"/>
         </label>
         <br></br>
         <button >Add Issue</button>

@@ -1,10 +1,11 @@
 import React, { useContext }  from "react";
 import { Switch, Route, Redirect} from "react-router-dom"
-import Nav from "./components/Nav.js";
+import { Nav } from "./components/Nav.js";
 import  { Auth } from "./components/Auth.js"
-// import  { Home } from "./components/Home.js"
+import  { IssuePage } from "./components/IssuePage.js"
 import { Profile } from "./components/Profile"
-import { IssueList } from "./components/IssueList.js"
+import { Header } from "./components/Header.js"
+import { Footer } from "./components/Footer.js"
 import { UserAuthContext } from './context/UserAuthProvider.js'
 import "./App.css";
 
@@ -13,25 +14,28 @@ function App(props) {
   const { token, logout } = useContext(UserAuthContext)
 
   return (
-    <div>
+    <>
+    
       <Nav logout={logout} />
+      <Header />
+    
+    <div>
         <Switch>
-          <Route 
-              exact path="/Auth"
-                render={() => token ? <Redirect to="/Profile" /> : <Auth />}
-              />
-          {/* <Route
-              path="/Profile"
-                  render={() => token ? <Redirect to="/Auth" /> : <Profile /> }
-              /> */}
-            <Route
-              path="/IssuePage" 
-                render={() => <IssueList />} />
-            <Route 
-              path="/Profile" 
-                render={() => <Profile />} />
+          <Route exact path="/Profile"> 
+             { token ? <Profile /> : <Redirect to="/Auth" /> }
+          </Route>
+            <Route path="/IssuePage" >
+                { token ? <IssuePage /> : <Redirect to="/Auth" /> }
+          </Route>
+            <Route path="/Auth" >
+                 { token ? <Redirect to="/Profile" /> : <Auth /> }
+            </Route>
         </Switch>
     </div>
+
+      <Footer />
+      
+    </>
   );
 }
 

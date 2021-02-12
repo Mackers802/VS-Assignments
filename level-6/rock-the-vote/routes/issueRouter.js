@@ -26,9 +26,11 @@ issueRouter.post("/", (req, res, next) => {
   });
 });
 
+
+
 // get one issue
-issueRouter.get("/:issueId", (req, res, next) => {
-  Issue.find({ _id: req.params.issueId }, (err, issue) => {
+issueRouter.get("/user", (req, res, next) => {
+  Issue.find({ user: req.user._id }, (err, issue) => {
     if (err) {
       res.status(500);
       return next(err);

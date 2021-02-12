@@ -25,7 +25,9 @@ export const UserAuthProvider = (props) => {
     user: JSON.parse(localStorage.getItem("user")) || {}, 
     token: localStorage.getItem("token") || "",
     issues: [],
-    comments: []
+    userIssues: [],
+    comments: [],
+    userComments: []
   };
 
   const [userState, setUserState] = useState(initState);
@@ -52,7 +54,7 @@ export const UserAuthProvider = (props) => {
         localStorage.setItem("token", token)
         localStorage.setItem("user", JSON.stringify(user))
         getUserIssues()
-        getIssueComments()
+        // getIssueComments()
         setUserState(prevUserState => ({
           ...prevUserState,
           user,
@@ -69,20 +71,32 @@ export const UserAuthProvider = (props) => {
       user: {},
       token: "",
       issues: [],
-      comments: []
+      userIssues: [],
+      comments: [],
+      userComments: []
     })
   }
 
-
   function getUserIssues(){
-    issueAxios.get("/api/issue/")
+    issueAxios.get("/api/issue/user")
     .then(res => { 
       setUserState(prevState => ({
       ...prevState,
-      issues: res.data
+      userIssues: res.data
     }))
   })
     .catch(err => console.log(err.response.data.errMsg))
+}
+
+function getIssuesPage(){
+  issueAxios.get("/api/issue")
+  .then(res => { 
+    setUserState(prevState => ({
+    ...prevState,
+    issues: res.data
+  }))
+})
+  .catch(err => console.log(err.response.data.errMsg))
 }
 
 function addIssue(newIssue){
@@ -92,20 +106,44 @@ function addIssue(newIssue){
           ...prevState,
           issues: [...prevState.issues, res.data]
       }))
+      getUserIssues()
   })
   .catch(err => console.log(err.responde.data.errMsg))
 }
 
-function getIssueComments(){
-  commentsAxios.get("/api/comment/IssueId")
-  .then(res => {
+function getComments(){
+  commentsAxios.get("/api/comment")
+  .then(res => { 
     setUserState(prevState => ({
-      ...prevState,
-      comments: [...prevState.comments, res.data]
-    }))
-  })
+    ...prevState,
+    comments: res.data
+  }))
+})
   .catch(err => console.log(err.response.data.errMsg))
 }
+
+function addComment(newComment){
+  commentsAxios.post("/api/comment", newComment) 
+  .then(res => {
+      setUserState(prevState => ({
+          ...prevState,
+          userComments: [...prevState.userComments, res.data]
+      }))
+  })
+  .catch(err => console.log(err.responde.data.errMsg))
+}
+
+
+// function getIssueComments(){
+//   commentsAxios.get("/api/comment/IssueId")
+//   .then(res => {
+//     setUserState(prevState => ({
+//       ...prevState,
+//       comments: [...prevState.comments, res.data]
+//     }))
+//   })
+//   .catch(err => console.log(err.response.data.errMsg))
+// }
 
   return (
     <UserAuthContext.Provider
@@ -116,7 +154,10 @@ function getIssueComments(){
         logout,
         addIssue,
         getUserIssues,
-        getIssueComments
+        getIssuesPage,
+        addComment,
+        getComments
+        // getIssueComments
       }}
     >
       {props.children}

@@ -10,10 +10,10 @@ const issueSchema = new Schema({
     type: String,
     required: true
   },
-  // added: {
-  //   type: Date,
-  //   required: true,
-  // },
+  added: {
+    type: Date,
+    // required: true,
+  },
   votes: {
     type: Number,
   },

@@ -1,12 +1,14 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import { UserAuthContext } from '../context/UserAuthProvider.js'
 
-export const Comment = (props) => {
+export const Comment = () => {
 
-    const { comment } = props
+    const { comments } = useContext(UserAuthContext)
 
     return (
-        <div>
-            <h1> { comment } </h1>
-        </div>
+       
+                <div>
+                    <h1> Comment { comments } </h1>
+                </div>
     )
 }

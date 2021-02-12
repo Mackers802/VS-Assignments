@@ -5,25 +5,39 @@
   background-color: grey;
 }
 
+.header{
+  background-color: cadetblue;
+}
+
+.footer{
+  background-color: cadetblue;
+  width: 100%;
+}
+
 .authPage{
-  display: inline-block;
+  display: flex;
   justify-content: center;
   text-align: center;
   align-items: center;
   margin-top: 10%;
   height: 500px;
-  width: 300px;
+  width: 100vw;
   background-color: grey;
 }
 
 .signupForm{
-  display: inline-block;
+  display: flex;
   justify-content: center;
   text-align: left;
   align-items: center;
-  border: 2px black solid;
-  width: 250px;
+  border: 15px rgb(236, 165, 165) solid;
+  width: 80vw;
   padding: 15px;
+}
+
+.signupForm > button {
+  background-color:chocolate;
+  float: right;
 }
 
 .loginForm{
@@ -36,9 +50,19 @@
   padding: 15px;
 }
 
+.loginForm > button {
+  background-color: cornflowerblue;
+}
+
 .profileHeader{
   background-color: beige;
   border: solid 2px black;
+}
+
+.issuePage{
+  padding: 15px;
+  margin: 10px 30px;
+  border: 2px black solid;
 }
 
 
