@@ -1,16 +1,19 @@
 import React, { useState, useContext } from 'react'
 import { UserAuthContext } from '../context/UserAuthProvider'
 
-export const CommentForm = () => {
+export const CommentForm = (props) => {
 
+    const { id } = props
+    console.log(id)
     const initInputs = {
-        title: "",
-        description: ""
+            description: ""
         }
+
+    
     
         const [inputs, setInputs] = useState(initInputs)
     
-        const { addComment } = useContext(UserAuthContext)
+        const { addComment} = useContext(UserAuthContext)
     
     function handleChange(e){
         const {name, value} = e.target
@@ -19,13 +22,18 @@ export const CommentForm = () => {
             [name]: value
         }))
     }
-    
+
+    const handleSubmit = (e) => {
+        e.preventDefault()
+        addComment(inputs, id)
+        setInputs(initInputs)
+        }
     
     return (
         <div>
-            <form onSubmit={ addComment } onChange={handleChange} >
+            <form onSubmit={ handleSubmit } onChange={ handleChange } >
         <label>
-          <input type="text" name={inputs.description} placeholder="Add Comment"/>
+          <input type="text" name="description" placeholder="Comment here"/>
         </label>
         <button >Add Comment</button>
 

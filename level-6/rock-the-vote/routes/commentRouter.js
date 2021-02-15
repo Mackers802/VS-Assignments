@@ -14,9 +14,9 @@ commentRouter.get("/", (req, res, next) => {
     });
   });
 
-//   // get issue comment
+//   // get comments by issue
 commentRouter.get("/:issueId", (req, res, next) => {
-  Comment.find({ _id: req.params.issueId}, (err, comment) => {
+  Comment.find({ issue: req.params.issueId}, (err, comment) => {
     if (err) {
       res.status(500);
       return next(err);
@@ -38,10 +38,14 @@ commentRouter.get("/:commentId", (req, res, next) => {
   });
 
 //   add comment
-commentRouter.post("/", (req, res, next) => {
-    req.body.user = req.user._id;
-    req.body.issue = req.user._id;
-    const newComment = new Comment(req.body);
+commentRouter.post("/:issueId", (req, res, next) => {
+  const issue = req.params.issueId
+  const description = req.body.description
+  const user = req.user._id
+  // req.body.issue = req.issue._id;
+console.log("req.body", req.body.user)
+    const newComment = new Comment( {issue: { _id: issue} , description, user: { _id: user} } );
+    console.log(newComment)
     newComment.save((err, savedComment) => {
       if (err) {
         res.status(500);

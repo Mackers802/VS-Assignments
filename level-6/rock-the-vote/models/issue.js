@@ -17,11 +17,11 @@ const issueSchema = new Schema({
   votes: {
     type: Number,
   },
-  comments: {
-    type: Schema.Types.ObjectId,
-    ref: "Comment",
-    required: false
-  },
+  // comments: {
+  //   type: Schema.Types.ObjectId,
+  //   ref: "Comment",
+  //   required: false
+  // },
   user: {
     type: Schema.Types.ObjectId,
     ref: "User",

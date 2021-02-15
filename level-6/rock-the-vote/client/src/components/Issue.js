@@ -5,10 +5,19 @@ import { CommentForm } from "./CommentForm.js"
 
 export const Issue = (props) => {
 
-    const { comments } = useContext(UserAuthContext)
-    const { title, description, votes, added } = props
+    const { comments, getCommentsById } = useContext(UserAuthContext)
+    const { title, description, votes, added, _id } = props
+    console.log("issue ", _id)
+
+    const commentFilter = comments.filter(comment => comment.issue === _id)
 
     const [ toggle, setToggle ] = useState(true)
+
+    function commentGetter(){
+        getCommentsById(_id)
+        // getComments()
+        setToggle(prev => !prev)
+    }
 
     return (
         <>
@@ -21,8 +30,10 @@ export const Issue = (props) => {
                 <p>Number of votes: {votes} </p>
 
                 <button onClick={() => setToggle(prev => !prev)}>Hide Comments</button>
-                    {comments.map(comment => <Comment {...comment} key={comment._id } /> )}
-                <CommentForm />
+                
+                    {commentFilter.map(comment => <Comment {...comment} key={comment._id} /> )}
+                {/* <Comment /> */}
+                <CommentForm id={ _id } />
             </div>
         
         :
@@ -32,7 +43,7 @@ export const Issue = (props) => {
                 <p>{ description }</p>
                 <p>{added}</p>
                 <p>Number of votes: {votes} </p>
-                <button onClick={ () => setToggle(prev => !prev) } >View Comments</button>
+                <button onClick={ commentGetter } >View Comments</button>
             </div>
 }
         </>
