@@ -24,6 +24,7 @@ export const UserAuthProvider = (props) => {
   const initState = { 
     user: JSON.parse(localStorage.getItem("user")) || {}, 
     token: localStorage.getItem("token") || "",
+    errMsg: "",
     issues: [],
     userIssues: [],
     comments: []
@@ -44,7 +45,7 @@ export const UserAuthProvider = (props) => {
           token
         }))
       })
-      .catch((err) => console.log(err.response.data.errMsg));
+      .catch((err) => handleAuthError(err.response.data.errMsg));
   }
 
   function login(credentials) {
@@ -61,7 +62,21 @@ export const UserAuthProvider = (props) => {
           token
         }))
       })
-      .catch((err) => console.log(err.response.data.errMsg));
+      .catch((err) => handleAuthError(err.response.data.errMsg));
+  }
+
+  function handleAuthError(errMsg){
+    setUserState(prevState => ({
+      ...prevState,
+      errMsg
+    }))
+  }
+
+  function authErrorReset(){
+    setUserState(prevState => ({
+      ...prevState,
+      errMsg: ""
+    }))
   }
 
   function logout(){
@@ -72,8 +87,7 @@ export const UserAuthProvider = (props) => {
       token: "",
       issues: [],
       userIssues: [],
-      comments: [],
-      userComments: []
+      comments: []
     })
   }
 
@@ -91,6 +105,7 @@ export const UserAuthProvider = (props) => {
   function addIssue(newIssue){
     issueAxios.post("/api/issue", newIssue) 
     .then(res => {
+      console.log(res.data)
         setUserState(prevState => ({
             ...prevState,
             issues: [...prevState.issues, res.data]
@@ -143,12 +158,36 @@ function addComment(newComment, issueId){
           ...prevState,
           comments: [...prevState.comments, res.data]
       }))
-      // getComments()
+      getComments()
   })
   .catch(err => console.log(err.responde.data.errMsg))
 }
 
-
+  function issueUpVote(issueId){
+    issueAxios.post(`/api/${issueId}`)
+    .then(res => { 
+      console.log(res.data)
+        setUserState(prevState => ({
+        ...prevState,
+        votes: [...prevState.votes, res.data]
+      }))
+    // getIssuesPage()
+    })
+      .catch(err => console.log(err.response.data.errMsg))
+  }
+  
+  function issueDownVote(issueId){
+    issueAxios.post(`/api/${issueId}`)
+      .then(res => { 
+        console.log(res.data)
+        setUserState(prevState => ({
+        ...prevState,
+        votes: [...prevState.votes, res.data]
+      }))
+      // getIssuesPage()
+    })
+      .catch(err => console.log(err.response.data.errMsg))
+  }
 
   return (
     <UserAuthContext.Provider
@@ -163,6 +202,9 @@ function addComment(newComment, issueId){
         addComment,
         getCommentsById,
         getComments,
+        issueUpVote,
+        issueDownVote, 
+        authErrorReset
         // getIssueComments
       }}
     >

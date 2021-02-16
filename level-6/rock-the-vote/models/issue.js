@@ -16,6 +16,7 @@ const issueSchema = new Schema({
   },
   votes: {
     type: Number,
+    default: 0
   },
   // comments: {
   //   type: Schema.Types.ObjectId,

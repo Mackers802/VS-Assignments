@@ -27,7 +27,6 @@ issueRouter.post("/", (req, res, next) => {
 });
 
 
-
 // get one issue
 issueRouter.get("/user", (req, res, next) => {
   Issue.find({ user: req.user._id }, (err, issue) => {
@@ -58,7 +57,8 @@ issueRouter.delete("/:issueId", (req, res, next) => {
 // Update Issue
 issueRouter.put("/:issueId", (req, res, next) => {
   Issue.findOneAndUpdate(
-    { _id: req.params.issueId, user: req.user._id },
+    { _id: req.params.issueId
+      , user: req.user._id },
     req.body,
     { new: true },
     (err, updatedIssue) => {
@@ -70,5 +70,23 @@ issueRouter.put("/:issueId", (req, res, next) => {
     }
   );
 });
+
+// Update Issue vote count
+// issueRouter.put("/:issueId/vote", (req, res, next) => {
+//   Issue.findOneAndUpdate(
+//     { _id: req.params.issueId
+//       // , user: req.user._id 
+//     },
+//     req.body,
+//     { new: true },
+//     (err, updatedVotes) => {
+//       if (err) {
+//         req.status(500);
+//         return next(err);
+//       }
+//       return res.status(201).send(updatedVotes);
+//     }
+//   );
+// });
 
 module.exports = issueRouter;

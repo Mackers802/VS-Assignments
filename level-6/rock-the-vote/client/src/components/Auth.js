@@ -5,7 +5,7 @@ import { LoginForm } from "./LoginForm.js"
 
 export const Auth = () => {
 
-const { signup, login } = useContext(UserAuthContext)
+const { signup, login, errMsg, authErrorReset } = useContext(UserAuthContext)
 const [toggle, setToggle] = useState(false)
 
 
@@ -17,20 +17,25 @@ function handleLogin(credentials){
     login(credentials)
 }
 
+function toggleForm(){
+    setToggle(prev => !prev)
+    authErrorReset()
+}
+
 return (
     <div className="authPage">
 {
     !toggle ? 
         <div className="signupForm">
-            <SignupForm handleSubmit={handleSignup}/>
+            <SignupForm handleSubmit={handleSignup} errMsg={errMsg} />
             <br></br>
-        <button onClick={()=> setToggle(prev => !prev)}>Already a member? </button>
+        <button onClick={ toggleForm }>Already a member? </button>
         </div>
 :
         <div className="loginForm">
-        <LoginForm handleSubmit={handleLogin}/>
+        <LoginForm handleSubmit={handleLogin}  errMsg={errMsg} />
         <br></br>
-        <button onClick={()=> setToggle(prev => !prev)}>Not a Member? </button>
+        <button onClick={ toggleForm }>Not a Member? </button>
         </div>
 }
     </div>

@@ -3,9 +3,9 @@ import React, { useState } from 'react'
 export const IssueForm = (props) => {
    
     const initInputs = {
-    title: "",
-    description: "",
-    added: ""
+        title: "",
+        description: "",
+        added: ""
     }
 
     const [inputs, setInputs] = useState(initInputs)

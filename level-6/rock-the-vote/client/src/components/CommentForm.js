@@ -4,12 +4,10 @@ import { UserAuthContext } from '../context/UserAuthProvider'
 export const CommentForm = (props) => {
 
     const { id } = props
-    console.log(id)
+
     const initInputs = {
             description: ""
         }
-
-    
     
         const [inputs, setInputs] = useState(initInputs)
     

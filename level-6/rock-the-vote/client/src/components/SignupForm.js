@@ -8,6 +8,8 @@ export const SignupForm = (props) => {
     password: ""
   }
 
+  const { errMsg } = props
+
   function handleChange(e){
     const {name, value} = e.target
     setInputs(prevInputs => ({
@@ -36,6 +38,8 @@ const handleSubmit = (e) => {
         <br></br>
         <br></br>
         <button>Signup</button>
+
+        <p style={{color: "red"}}>{errMsg}</p>
       </form>
     </div>
   );

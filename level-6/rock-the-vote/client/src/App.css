@@ -14,6 +14,12 @@
   width: 100%;
 }
 
+.comments{
+  border: solid 2px black;
+  margin: 5px;
+  padding: 5px;
+}
+
 .authPage{
   display: flex;
   justify-content: center;
