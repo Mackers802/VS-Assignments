@@ -27,11 +27,15 @@ export const UserAuthProvider = (props) => {
     errMsg: "",
     issues: [],
     userIssues: [],
-    comments: []
-    // userComments: []
+    comments: [],
   };
 
+  // const initVotes = {
+  //   votes: 0
+  // }
+
   const [userState, setUserState] = useState(initState);
+  // const [votes, setVotes] = useState(initVotes)
 
   function signup(credentials) {
     axios.post("/auth/signup", credentials)
@@ -150,7 +154,6 @@ function getCommentsById(issueId){
 }
 
 function addComment(newComment, issueId){
-  // console.log(newComment, issueId)
   commentsAxios.post(`/api/comment/${issueId}`, newComment) 
   .then(res => {
     console.log(res.data)
@@ -163,31 +166,23 @@ function addComment(newComment, issueId){
   .catch(err => console.log(err.responde.data.errMsg))
 }
 
-  function issueUpVote(issueId){
-    issueAxios.post(`/api/${issueId}`)
+function issueUpVote(issueId){
+    issueAxios.put(`/api/issue/${issueId}/upvote`)
     .then(res => { 
-      console.log(res.data)
-        setUserState(prevState => ({
-        ...prevState,
-        votes: [...prevState.votes, res.data]
-      }))
-    // getIssuesPage()
-    })
-      .catch(err => console.log(err.response.data.errMsg))
-  }
+       getIssuesPage()
+       getUserIssues()
+  })
+  .catch(err => console.log(err.response.data.errMsg))
+}
   
-  function issueDownVote(issueId){
-    issueAxios.post(`/api/${issueId}`)
-      .then(res => { 
-        console.log(res.data)
-        setUserState(prevState => ({
-        ...prevState,
-        votes: [...prevState.votes, res.data]
-      }))
-      // getIssuesPage()
-    })
-      .catch(err => console.log(err.response.data.errMsg))
-  }
+function issueDownVote(issueId){
+  issueAxios.put(`/api/issue/${issueId}/downvote`)
+  .then(res => { 
+    getIssuesPage()
+    getUserIssues()
+})
+.catch(err => console.log(err.response.data.errMsg))
+}
 
   return (
     <UserAuthContext.Provider

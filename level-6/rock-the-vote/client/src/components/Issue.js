@@ -6,17 +6,24 @@ import { CommentForm } from "./CommentForm.js"
 export const Issue = (props) => {
 
     const { comments, getCommentsById, issueUpVote, issueDownVote } = useContext(UserAuthContext)
-    const { title, description, votes, added, _id } = props
+    const { title, description, added, votes, _id } = props
 
     const commentFilter = comments.filter(comment => comment.issue === _id)
 
-
     const [ toggle, setToggle ] = useState(true)
 
-    function commentGetter(){
-        getCommentsById(_id)
-        setToggle(prev => !prev)
-    }
+    const addOne = () => {
+        issueUpVote(_id)
+        }
+        
+        function subOne(){
+            issueDownVote(_id)
+        }
+        
+        function commentGetter(){
+            getCommentsById(_id)
+            setToggle(prev => !prev)
+        }
 
     return (
         <>
@@ -45,8 +52,8 @@ export const Issue = (props) => {
                 <button onClick={ commentGetter } >View Comments</button>
                 <br></br>
                 <h2>Do you enjoy this issue</h2>
-                <button onClick={issueUpVote}> 👍 </button>
-                <button onClick={issueDownVote}> 👎 </button>
+                <button onClick={ addOne }> 👍 </button>
+                <button onClick={ subOne }> 👎 </button>
             </div>
 }
         </>

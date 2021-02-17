@@ -38,6 +38,19 @@ issueRouter.get("/user", (req, res, next) => {
   });
 });
 
+// get one issue
+
+issueRouter.get("/:issueId", (req, res, next) => {
+  Issue.find({ _id: req.params.issueId}, (err, issue) => {
+    if (err) {
+      res.status(500);
+      return next(err);
+    }
+    return res.status(200).send(issue);
+  });
+});
+
+
 // Delete issue - * maybe only Admins *
 issueRouter.delete("/:issueId", (req, res, next) => {
   Issue.findOneAndDelete(
@@ -54,19 +67,34 @@ issueRouter.delete("/:issueId", (req, res, next) => {
   );
 });
 
-// Update Issue
-issueRouter.put("/:issueId", (req, res, next) => {
+// Upvote
+issueRouter.put("/:issueId/upvote", (req, res, next) => {
   Issue.findOneAndUpdate(
-    { _id: req.params.issueId
-      , user: req.user._id },
-    req.body,
-    { new: true },
+    { _id: req.params.issueId },
+    { $inc: { votes: 1} },
+    // { new: true },
     (err, updatedIssue) => {
       if (err) {
         req.status(500);
         return next(err);
       }
-      return res.status(201).send(updatedIssue);
+      return res.status(200).send(updatedIssue);
+    }
+  );
+});
+
+// downvote
+issueRouter.put("/:issueId/downvote", (req, res, next) => {
+  Issue.findOneAndUpdate(
+    { _id: req.params.issueId},
+    { $inc: { votes: -1} },
+    // { new: true },
+    (err, updatedIssue) => {
+      if (err) {
+        req.status(500);
+        return next(err);
+      }
+      return res.status(200).send(updatedIssue);
     }
   );
 });
