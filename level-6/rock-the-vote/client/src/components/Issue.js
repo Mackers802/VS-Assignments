@@ -12,14 +12,14 @@ export const Issue = (props) => {
 
     const [ toggle, setToggle ] = useState(true)
 
-    const addOne = () => {
-        issueUpVote(_id)
+    function upVote(){
+            issueUpVote(_id)
         }
         
-        function subOne(){
+    function downVote(){
             issueDownVote(_id)
         }
-        
+    
         function commentGetter(){
             getCommentsById(_id)
             setToggle(prev => !prev)
@@ -52,8 +52,8 @@ export const Issue = (props) => {
                 <button onClick={ commentGetter } >View Comments</button>
                 <br></br>
                 <h2>Do you enjoy this issue</h2>
-                <button onClick={ addOne }> 👍 </button>
-                <button onClick={ subOne }> 👎 </button>
+                <button onClick={ upVote }> 👍 </button>
+                <button onClick={ downVote }> 👎 </button>
             </div>
 }
         </>

@@ -27,7 +27,9 @@ export const UserAuthProvider = (props) => {
     errMsg: "",
     issues: [],
     userIssues: [],
-    comments: [],
+    comments: []
+    // voted: [],
+    // notVoted: []
   };
 
   // const initVotes = {
@@ -178,6 +180,7 @@ function issueUpVote(issueId){
 function issueDownVote(issueId){
   issueAxios.put(`/api/issue/${issueId}/downvote`)
   .then(res => { 
+    console.log(res.data)
     getIssuesPage()
     getUserIssues()
 })
