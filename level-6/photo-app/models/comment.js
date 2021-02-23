@@ -1,20 +1,20 @@
 const mongoose = require("mongoose")
 const Schema = mongoose.Schema
 
-const commentSchema = new Schema({
-    description: {
+const commentSchema = new Schema ({
+    commentDescription: {
         type: String,
         required: true
     },
-    issue: {
+    post: {
         type: Schema.Types.ObjectId,
-        ref: "Issue",
-        required: true
-      },
-    user: {
+        ref: "Post",
+        required: true,
+    },
+    user: { 
         type: Schema.Types.ObjectId,
         ref: "User",
-        required: false
+        required: true
     }
 })
 

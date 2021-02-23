@@ -14,15 +14,11 @@ const issueSchema = new Schema({
     type: Date,
     // required: true,
   },
-  voted: { 
-    type: [Schema.Types.ObjectId],
-    ref: "User",
-    required: true
+  upVoted: { 
+    type: Array,
   },
-  notVoted: {
-    type: [Schema.Types.ObjectId],
-    ref: "User",
-    required: true
+  downVoted: {
+    type: Array,
   },
   votes: {
     type: Number,
