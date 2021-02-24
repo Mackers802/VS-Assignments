@@ -18,7 +18,22 @@ function handleFilter(e){
 
     return (
 <div className="postsFeed">     
-            <h3>Filter posts</h3>
+            <h3>Camera brand</h3>
+                <select onChange={handleFilter} className="filter">
+                    <option value= "all">All Posts</option>
+                    <option value="Canon">Canon</option> 
+                    <option value="Sony">Sony</option>
+                    <option value= "Nikon">Nikon</option>
+                    <option value="Fujifilm">Fujifilm</option> 
+                    <option value="Olympus">Olympus</option>
+                    <option value= "Panasonic">Panasonic</option>
+                    <option value="Leica">Leica</option> 
+                    <option value="Hassleblad">Hassleblad</option>
+                    <option value= "Iphone">Iphone</option>
+                    <option value="Android">Android</option> 
+                    <option value="Other">Other</option>
+                </select>
+            <h3>Camera lens</h3>
                 <select onChange={handleFilter} className="filter">
                     <option value= "all">All Posts</option>
                     <option value="Canon">Canon</option> 
