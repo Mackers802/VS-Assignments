@@ -1,12 +1,14 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
+import { PostProviderContext } from "../context/PostProvider";
 
 
 export const Login = (props) => {
-
+  
   const initInputs = {
     username: "",
     password: ""
   }
+  const { getUserPosts } = useContext(PostProviderContext)
 
   const { errMsg } = props
 
@@ -16,6 +18,10 @@ export const Login = (props) => {
         ...prevInputs,
         [name]: value
     }))
+}
+
+function handleLogin(){
+  getUserPosts() 
 }
 
 const [inputs, setInputs] = useState(initInputs)
@@ -35,7 +41,7 @@ const handleSubmit = (e) => {
           <input type="text" name="password" placeholder="password"/>
         </label>
         <br></br>
-        <button >Login</button>
+        <button onClick={ handleLogin }> Login </button>
         <p style={{color: "red"}}>{errMsg}</p>
       </form>
     </div>

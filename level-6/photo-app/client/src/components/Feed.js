@@ -1,9 +1,14 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import { PostProviderContext } from '../context/PostProvider'
+import { Post } from "./Post"
 
-export const Feed = () => {
+export const Feed = (props) => {
+
+    const { allPosts } = useContext(PostProviderContext)
+
     return (
-        <div>
-            <h1>Feed Page</h1>
+        <div className="postsFeed">
+            { allPosts.map(post => <Post { ...post} key={post._id}/> ) }
         </div>
     )
 }

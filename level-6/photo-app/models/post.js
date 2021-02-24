@@ -18,7 +18,7 @@ const postSchema = new Schema ({
     },
     style: {
         type: String,
-        enumValues: ["Fashion" , "Portrait", "Wedding", "Landscape", "Street", "Macro", "Sports", "Travel", "Wildlife", "Aerial","Astro", "Food", "Photojournalism", "Underwater", "Architectural", "Night", "Pet", "Product", "Still Life", "Other"],
+        enumValues: ["Fashion" , "Portrait", "Car", "Wedding", "Landscape", "Street", "Macro", "Sports", "Travel", "Wildlife", "Aerial","Astro", "Food", "Photojournalism", "Underwater", "Architectural", "Night", "Pet", "Product", "Still Life", "Other"],
         required: true,
         default: ""
     },

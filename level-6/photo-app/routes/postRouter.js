@@ -38,16 +38,17 @@ postRouter.get("/:postId", (req, res, next) => {
 })
 
   // get all posts by user
-postRouter.get("/user", (req, res, next) => {
-  Post.find({ user: req.user._id }, (err, post) => {
+postRouter.get("/userId", (req, res, next) => {
+  console.log(req.body)
+  Post.find(
+    { _id: req.user._id }, (err, posts) => {
     if (err) {
       res.status(500);
       return next(err);
     }
-    return res.status(200).send(post);
+    return res.status(200).send(posts);
   });
-});
-
+})
 
 // update post ✅ 
 postRouter.put("/:postId", (req, res, next) => {

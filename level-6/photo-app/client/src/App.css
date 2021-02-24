@@ -11,6 +11,15 @@
   height: 3vh;
 }
 
+.navProfile > img{
+  border-radius: 50%;
+}
+
+.navPost > h3{
+  font-size: x-large;
+  text-decoration: none;
+}
+
 .authPage{
   display: flex;
   justify-content: center;
@@ -18,9 +27,44 @@
   height: 50vh;
   margin-top: 15vh;
   align-items: center;
-  background-color: rgb(217, 171, 102);
+  background-color: white;
 }
 
-.profileInfo{
-  display: inline;
+.profilePage{
+  background-color: black;
+  height: 100vh;
+}
+
+.profileContainer{
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+}
+
+.profileContainer > img{
+  border-radius: 50%;
+}
+
+.profileContainer > button{
+  width: 100px;
+}
+
+/* .profileInfo{
+  background-color: violet;
+} */
+
+
+.profileEdit{
+  background-color: rgb(251, 63, 16);
+}
+
+.postsFeed{
+  background-color: white;
+}
+
+.posts{
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
