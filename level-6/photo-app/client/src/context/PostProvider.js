@@ -62,13 +62,27 @@ export const PostProvider = (props) => {
   }
 
   function searchByCamera(camera) {
+    // console.log("camera", camera)
       postsAxios
       .get(`/api/posts/search/type?type=${camera}`)
       .then((res) => {
-          console.loga(res.body);
+          console.log(res)
+          setPostsState((...prevState ) => ({
+              ...prevState,
+              posts: res.data
+          }))
       })
       .catch((err) => console.log(err.response.data.errMsg));
   }
+
+  function searchByStyle(style) {
+    postsAxios
+    .get(`/api/posts/search/type?type=${style}`)
+    .then((res) => {
+          setPostsState(prevPosts => res.filter(post => post.style !== style))
+    })
+    .catch((err) => console.log(err.response.data.errMsg));
+}
 
   return (
     <PostProviderContext.Provider
@@ -78,6 +92,7 @@ export const PostProvider = (props) => {
         getUserPosts,
         newPost,
         searchByCamera,
+        searchByStyle
       }}
     >
       {props.children}

@@ -4,14 +4,14 @@ import { UserAuthContext } from "../context/UserAuthProvider";
 export const Post = (props) => {
 
 const { user: { username } } = useContext(UserAuthContext)
-const { imgUrl, style, lensBrand, caption, camera, accessories, iso, shutterSpeed, lensFocalLength } = props
+const { imgUrl, style, lensBrand, caption, camera, accessories, iso, shutterSpeed, fStop } = props
 
     return (
         <div className="posts">
                 <h3>{ username }</h3>
                 <img src={imgUrl} alt="post img" width="200" height="150"></img>
                 <p>{caption}</p>
-                <p>Settings: { lensFocalLength }, { shutterSpeed }, { iso }</p>
+                <p>Settings: { fStop }, { shutterSpeed }, { iso }</p>
                 <p> Style: { style } </p>
                     <p>
                     Kit: {camera}, {lensBrand}, { accessories }

@@ -37,8 +37,9 @@ postRouter.get("/:postId", (req, res, next) => {
   })
 })
 
+// get posts by camera ✅ 
 postRouter.get("/search/type", (req, res, next) => {
-  Post.find({type: req.query.type}, (err, posts) => {
+  Post.find({camera: req.query.type}, (err, posts) => {
     if(err){
       res.status(500)
       return next(err)
@@ -47,18 +48,41 @@ postRouter.get("/search/type", (req, res, next) => {
   })
   })
 
+// get posts by lens ✅ 
+  postRouter.get("/search/type", (req, res, next) => {
+    Post.find({lensBrand: req.query.type}, (err, posts) => {
+      if(err){
+        res.status(500)
+        return next(err)
+      }
+      return res.status(200).send(posts)
+    })
+    })
+
+    // get posts by Style
+    postRouter.get("/search/type", (req, res, next) => {
+      Post.find({style: req.query.type}, (err, posts) => {
+        if(err){
+          res.status(500)
+          return next(err)
+        }
+        return res.status(200).send(posts)
+      })
+      })
+
   // get all posts by user
-postRouter.get("/userId", (req, res, next) => {
-  console.log(req.body)
-  Post.find(
-    { _id: req.user._id }, (err, posts) => {
-    if (err) {
-      res.status(500);
-      return next(err);
-    }
-    return res.status(200).send(posts);
-  });
-})
+// postRouter.get("/:userId", (req, res, next) => {
+//   Post.find(
+//     console.log(res.body, req.body)
+  //   { user: req.params.userId }, (err, posts) => {
+  //   if (err) {
+  //     res.status(500);
+  //     return next(err);
+  //   }
+  //   return res.status(200).send(posts);
+  // }
+//   );
+// })
 
 // update post ✅ 
 postRouter.put("/:postId", (req, res, next) => {

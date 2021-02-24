@@ -24,13 +24,13 @@ const postSchema = new Schema ({
     },
     camera: {
         type: String,
-        enumValues: ["Canon" , "Sony", "Nikon", "Fujifilm", "Olympus", "Panasonic", "Leica", "Hasselblad", "Iphone", "Android"],
+        enumValues: ["Canon" , "Sony", "Nikon", "Fujifilm", "Olympus", "Panasonic", "Leica", "Hasselblad", "Iphone", "Android", "Other"],
         required: true,
         defualt: ""
     },
     lensBrand: {
         type: String,
-        enumValues: ["Canon" , "Sony", "Nikon", "Fujifilm", "Olympus", "Panasonic", "Leica", "Hasselblad", "Iphone", "Android"],
+        enumValues: ["Canon" , "Sony", "Nikon", "Fujifilm", "Olympus", "Panasonic", "Leica", "Hasselblad", "Iphone", "Android", "Other"],
         required: true,
         default: ""
     },
@@ -46,6 +46,7 @@ const postSchema = new Schema ({
     },
     shutterSpeed: {
         type: Number,
+        enumValues: [ 60 , 30 , 15 , 8 , 4, 2 , 1 , 1/2 , 1/4 , 1/8 , 1/15 , 1/30 , 1/60 , 1/125 , 1/250 , 1/500 , 1/1000 , 1/2000 , 1/4000 , 1/8000 ],
         required: false
         // default: 125
     },
