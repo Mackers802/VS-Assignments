@@ -3,7 +3,7 @@ import { PostProviderContext } from "../context/PostProvider"
 
 export const NewPost = () => {
 
-    const { addPost } = useContext(PostProviderContext)
+    const { newPost } = useContext(PostProviderContext)
 
     const initInputs = {
         caption: "",
@@ -29,7 +29,7 @@ export const NewPost = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        addPost(inputs)
+            newPost(inputs)
         setInputs(initInputs)
         }
 

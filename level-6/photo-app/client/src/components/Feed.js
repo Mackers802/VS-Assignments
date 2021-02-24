@@ -4,11 +4,11 @@ import { Post } from "./Post"
 
 export const Feed = (props) => {
 
-    const { allPosts } = useContext(PostProviderContext)
+    const { posts } = useContext(PostProviderContext)
 
     return (
         <div className="postsFeed">
-            { allPosts.map(post => <Post { ...post} key={post._id}/> ) }
+            { posts.map(post => <Post { ...post} key={post._id}/> ) }
         </div>
     )
 }

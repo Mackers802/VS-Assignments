@@ -1,13 +1,17 @@
-import React  from 'react'
+import React, { useContext }  from 'react'
+import { UserAuthContext } from "../context/UserAuthProvider";
 
 export const Post = (props) => {
 
-    const { imgUrl, style, lensBrand, caption, camera, accessories, _id } = props
+const { user: { username } } = useContext(UserAuthContext)
+const { imgUrl, style, lensBrand, caption, camera, accessories, iso, shutterSpeed, lensFocalLength } = props
+
     return (
         <div className="posts">
-                <h3>{ _id }</h3>
+                <h3>{ username }</h3>
                 <img src={imgUrl} alt="post img" width="200" height="150"></img>
                 <p>{caption}</p>
+                <p>Settings: { lensFocalLength }, { shutterSpeed }, { iso }</p>
                 <p> Style: { style } </p>
                     <p>
                     Kit: {camera}, {lensBrand}, { accessories }

@@ -37,6 +37,16 @@ postRouter.get("/:postId", (req, res, next) => {
   })
 })
 
+postRouter.get("/search/type", (req, res, next) => {
+  Post.find({type: req.query.type}, (err, posts) => {
+    if(err){
+      res.status(500)
+      return next(err)
+    }
+    return res.status(200).send(posts)
+  })
+  })
+
   // get all posts by user
 postRouter.get("/userId", (req, res, next) => {
   console.log(req.body)
