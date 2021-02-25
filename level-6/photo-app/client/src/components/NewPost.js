@@ -213,4 +213,10 @@ export const NewPost = () => {
       </form>
         </div>
     )
+
 }
+
+
+
+
+

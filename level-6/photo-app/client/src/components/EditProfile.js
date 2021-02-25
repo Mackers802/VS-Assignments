@@ -2,10 +2,10 @@ import React, { useContext,useState } from 'react'
 import { UserAuthContext } from "../context/UserAuthProvider"
 
 export const EditProfile = (props) => {
-const { saveProfileChanges } = useContext(UserAuthContext)
+const { saveProfileChanges, user: {profilePicture} } = useContext(UserAuthContext)
 
 const initInputs = {
-    user: JSON.parse(localStorage.getItem("user")) || {}
+    profilePicture: localStorage.getItem( "user.profilePicture" ) || "",
 }
 
 
@@ -28,9 +28,9 @@ const handleSubmit = (e) => {
 
 return ( 
         <div>
-            <form onSubmit={ handleSubmit } onChange={handleChange} >
+            <form onSubmit={ handleSubmit } onChange={ handleChange } >
                 <label>
-                    <input type="text" name={"caption"} placeholder="Add Caption"/>
+                    <input type="text" name={ profilePicture } placeholder={profilePicture} value={ profilePicture }/>
                 </label>
             </form>
             <button> Save Changes</button>
