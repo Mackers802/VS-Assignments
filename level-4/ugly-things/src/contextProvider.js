@@ -99,6 +99,7 @@ class ContextProvider extends Component{
             this.setState(prevState => {
                 return{
                     ...prevState, 
+                    // clear key values 
                     edit: false,
                     id: "",
                     title: "",
@@ -108,9 +109,7 @@ class ContextProvider extends Component{
             }
             }
         )
-
         }
-            // clear key values 
     )
 }
 

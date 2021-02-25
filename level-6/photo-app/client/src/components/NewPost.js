@@ -41,7 +41,7 @@ export const NewPost = () => {
                 <input type="text" name="caption" placeholder="Add Caption"/>
                 <input type="text" name="imgUrl" placeholder="Add Img Url"/>
         
-        {/* ------------ camera -------------------------- */}
+        {/* ------------ style -------------------------- */}
                 <select name="style">
                     <option input="">Style</option> 
                     <option input="Fashion">Fashion</option> 
