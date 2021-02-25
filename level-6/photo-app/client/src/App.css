@@ -35,6 +35,11 @@
   height: 100vh;
 }
 
+.profilePagePosts{
+  display: grid;
+  width: 200px;
+}
+
 .profileContainer{
   justify-content: center;
   align-items: center;

@@ -38,7 +38,7 @@ postRouter.get("/:postId", (req, res, next) => {
 })
 
 // get posts by camera ✅ 
-postRouter.get("/search/type", (req, res, next) => {
+postRouter.get("/search/camera/type", (req, res, next) => {
   Post.find({camera: req.query.type}, (err, posts) => {
     if(err){
       res.status(500)
@@ -49,7 +49,7 @@ postRouter.get("/search/type", (req, res, next) => {
   })
 
 // get posts by lens ✅ 
-  postRouter.get("/search/type", (req, res, next) => {
+  postRouter.get("/search/lens/type", (req, res, next) => {
     Post.find({lensBrand: req.query.type}, (err, posts) => {
       if(err){
         res.status(500)

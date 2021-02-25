@@ -11,10 +11,10 @@ const { imgUrl, style, lensBrand, caption, camera, accessories, iso, shutterSpee
                 <h3>{ username }</h3>
                 <img src={imgUrl} alt="post img" width="200" height="150"></img>
                 <p>{caption}</p>
-                <p>Settings: { fStop }, { shutterSpeed }, { iso }</p>
+                <p> 𝑓 { fStop }, SS: { shutterSpeed }, ISO{ iso }</p>
                 <p> Style: { style } </p>
                     <p>
-                    Kit: {camera}, {lensBrand}, { accessories }
+                    Kit: Cam: {camera}, Lens: {lensBrand}, Acc: { accessories }
                     </p>
                 <hr></hr>
                 <br></br>

@@ -31,6 +31,7 @@ export const NewPost = () => {
         e.preventDefault()
             newPost(inputs)
         setInputs(initInputs)
+        window.location.reload(false)
         }
 
     return (

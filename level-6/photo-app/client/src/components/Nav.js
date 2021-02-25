@@ -20,7 +20,7 @@ const { getAllPosts, getUserPosts } = useContext(PostProviderContext)
         <Link to="/NewPost" className="navPost">
           <h3>➕</h3>
         </Link>
-        <Link onClick={ getUserPosts } to="/Profile" className="navProfile"> 
+        <Link onClick={ getAllPosts } to="/Profile" className="navProfile"> 
           <img src={ profilePicture } alt="V small pro pic" width="25" height="25"></img>
         </Link>
       </div>

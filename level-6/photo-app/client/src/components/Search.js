@@ -6,9 +6,9 @@ import { Post } from "./Post"
 export const Search = () => {
 
 
-const { posts, getAllPosts, searchByCamera } = useContext(PostProviderContext)
+const { posts, getAllPosts, searchByCamera, searchByLens } = useContext(PostProviderContext)
 
-function handleFilter(e){
+function cameraFilter(e){
     if(e.target.value === "all"){
         getAllPosts()
     } else {
@@ -16,10 +16,17 @@ function handleFilter(e){
     }
 }
 
+function lensFilter(e){
+    if(e.target.value === "all"){
+    } else {
+        searchByLens(e.target.value)
+    }
+}
+
     return (
 <div className="postsFeed">     
             <h3>Camera brand</h3>
-                <select onChange={handleFilter} className="filter">
+                <select onChange={cameraFilter} className="filter">
                     <option value= "all">All Posts</option>
                     <option value="Canon">Canon</option> 
                     <option value="Sony">Sony</option>
@@ -34,7 +41,7 @@ function handleFilter(e){
                     <option value="Other">Other</option>
                 </select>
             <h3>Camera lens</h3>
-                <select onChange={handleFilter} className="filter">
+                <select onChange={lensFilter} className="filter">
                     <option value= "all">All Posts</option>
                     <option value="Canon">Canon</option> 
                     <option value="Sony">Sony</option>
