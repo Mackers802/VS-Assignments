@@ -13,6 +13,18 @@ export const TestPost = (props) => {
 				setMakesModels(cameraDataFile);
 	}, []);
 
+	// useEffect(() => {
+	// 	axios
+	// 		.get('URL')
+	// 		.then(function (response) {
+	// 			setMakesModels(response.data);
+	// 		})
+	// 		.catch(function (error) {
+	// 			// handle error
+	// 			console.log(error);
+	// 		});
+	// }, []);
+
 	const handleSubmit = (e) => {
 		// e.preventDefault();
 		// console.log("selected", selected);
@@ -102,7 +114,7 @@ export const TestPost = (props) => {
 					onChange={selectMake}
 					name='make'
 					id='make'>
-					<option value='' disabled selected defaultValue>
+					<option value='' disabled selected defaultValue >
 						Select Brand
 					</option>
 					{makeOptions}
@@ -112,7 +124,7 @@ export const TestPost = (props) => {
 					onChange={handleModelSelect}
 					name='model'
 					id='model'>
-					<option value='' disabled selected defaultValue>
+					<option value='Select Value' disabled selected defaultValue >
 						Select Model
 					</option>
 					{modelOptions}
