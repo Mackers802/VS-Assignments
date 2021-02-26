@@ -801,7 +801,12 @@ const cameraDataFile = {
 // --------------------- Hasslblad ----------------------
     "Hassleblad": [
     // "Select Model",
-    "124 Spider"
+    "907X 50C",
+    "X1D II 50C",
+    "H6X",
+    "H6D",
+    "H6D-100c",
+    "H6D-400c MS",
     ],
 
 // --------------------- Iphone ----------------------
