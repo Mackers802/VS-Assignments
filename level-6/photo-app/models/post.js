@@ -18,19 +18,26 @@ const postSchema = new Schema ({
     },
     style: {
         type: String,
-        enumValues: ["Fashion" , "Portrait", "Car", "Wedding", "Landscape", "Street", "Macro", "Sports", "Travel", "Wildlife", "Aerial","Astro", "Food", "Photojournalism", "Underwater", "Architectural", "Night", "Pet", "Product", "Still Life", "Other"],
         required: true,
         default: ""
     },
-    camera: {
+    cameraBrand: {
         type: String,
-        enumValues: ["Canon" , "Sony", "Nikon", "Fujifilm", "Olympus", "Panasonic", "Leica", "Hasselblad", "Iphone", "Android", "Other"],
+        required: true,
+        defualt: ""
+    },
+    cameraModel: {
+        type: String,
         required: true,
         defualt: ""
     },
     lensBrand: {
         type: String,
-        enumValues: ["Canon" , "Sony", "Nikon", "Fujifilm", "Olympus", "Panasonic", "Leica", "Hasselblad", "Iphone", "Android", "Other"],
+        required: true,
+        default: ""
+    },
+    lensModel: {
+        type: String,
         required: true,
         default: ""
     },

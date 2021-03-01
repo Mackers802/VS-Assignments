@@ -846,14 +846,11 @@ const cameraDataFile = {
 // --------------------- Android ----------------------
     "Android": [
     // "Select Model",
-    "Acadia",
-    "Yukon",
-    "Canyon",
-    "Sierra 1500",
-    "Terrain",
-    "Sierra 2500HD",
-    "Yukon",
-    "Sierra 3500HD"
+    "1",
+    "2",
+    "3",
+    "4",
+    "5",
     ],
 
 // --------------------- Other ----------------------
