@@ -2,111 +2,151 @@ const cameraDataFile = {
     // --------------------- Canon ----------------------
     "Canon": [
         // "Select Model",
-        "lens",
-        "lens",
-        "lens",
-        "lens",
-        "lens",
-        "lens",
+        "12-24mm",
+        "16-35mm",
+        "24-70mm",
+        "70-200mm",
+        "24mm",
+        "35mm",
+        "50mm",
+        "85mm",
+        "105mm",
+        "135mm"
     ],
 // --------------------- Sony ----------------------
     "Sony": [
         // "Select Model",
-        "lens",
-        "lens",
-        "lens",
-        "lens",
-        "lens",
-        "lens",
+        "12-24mm",
+        "16-35mm",
+        "24-70mm",
+        "70-200mm",
+        "24mm",
+        "35mm",
+        "50mm",
+        "85mm",
+        "105mm",
+        "135mm"
     ],
 
 // --------------------- Nikon ----------------------
     "Nikon": [
         // "Select Model",
-        "lens",
-        "lens",
-        "lens",
-        "lens",
-        "lens",
-        "lens",
+        "12-24mm",
+        "16-35mm",
+        "24-70mm",
+        "70-200mm",
+        "24mm",
+        "35mm",
+        "50mm",
+        "85mm",
+        "105mm",
+        "135mm"
     ],
 
 // --------------------- Fujifilm ----------------------
     "Fujifilm": [
     // "Select Model",
-        "lens",
-        "lens",
-        "lens",
-        "lens",
-        "lens",
-        "lens",
+    "12-24mm",
+    "16-35mm",
+    "24-70mm",
+    "70-200mm",
+    "24mm",
+    "35mm",
+    "50mm",
+    "85mm",
+    "105mm",
+    "135mm"
 
     ],
 
 // --------------------- Olympus ----------------------
     "Olympus": [
     // "Select Model",
-        "lens",
-        "lens",
-        "lens",
-        "lens",
-        "lens",
-        "lens",
+    "12-24mm",
+    "16-35mm",
+    "24-70mm",
+    "70-200mm",
+    "24mm",
+    "35mm",
+    "50mm",
+    "85mm",
+    "105mm",
+    "135mm"
     ],
 
 // --------------------- Panasonic ----------------------
     "Panasonic": [
     // "Select Model",
-        "lens",
-        "lens",
-        "lens",
-        "lens",
-        "lens",
-        "lens",
+    "12-24mm",
+    "16-35mm",
+    "24-70mm",
+    "70-200mm",
+    "24mm",
+    "35mm",
+    "50mm",
+    "85mm",
+    "105mm",
+    "135mm"
     ],
 
 // --------------------- Leica ----------------------
     "Leica": [
     // "Select Model",
-        "lens",
-        "lens",
-        "lens",
-        "lens",
-        "lens",
-        "lens",
+    "12-24mm",
+    "16-35mm",
+    "24-70mm",
+    "70-200mm",
+    "24mm",
+    "35mm",
+    "50mm",
+    "85mm",
+    "105mm",
+    "135mm"
     ],
 
 // --------------------- Hasslblad ----------------------
     "Hassleblad": [
     // "Select Model",
-        "lens",
-        "lens",
-        "lens",
-        "lens",
-        "lens",
-        "lens",
+    "12-24mm",
+    "16-35mm",
+    "24-70mm",
+    "70-200mm",
+    "24mm",
+    "35mm",
+    "50mm",
+    "85mm",
+    "105mm",
+    "135mm"
     ],
 
 // --------------------- Iphone ----------------------
     "Iphone": [
     // "Select Model",
-        "lens",
-        "lens",
-        "lens",
-        "lens",
-        "lens",
-        "lens",
+    "12-24mm",
+    "16-35mm",
+    "24-70mm",
+    "70-200mm",
+    "24mm",
+    "35mm",
+    "50mm",
+    "85mm",
+    "105mm",
+    "135mm"
     ],
 
 // --------------------- Android ----------------------
     "Android": [
     // "Select Model",
-        "lens",
-        "lens",
-        "lens",
-        "lens",
-        "lens",
-        "lens",
+    "12-24mm",
+    "16-35mm",
+    "24-70mm",
+    "70-200mm",
+    "24mm",
+    "35mm",
+    "50mm",
+    "85mm",
+    "105mm",
+    "135mm"
     ],
 
 // --------------------- Other ----------------------

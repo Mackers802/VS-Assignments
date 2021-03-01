@@ -50,6 +50,7 @@ export const PostProvider = (props) => {
   }
 
   function getUserPosts(_id) {
+    console.log("userPosts")
     postsAxios
       .get(`/api/posts/${_id}`)
       .then((res) => {
@@ -61,32 +62,61 @@ export const PostProvider = (props) => {
       .catch((err) => console.log(err.response.data.errMsg));
   }
 
-  function searchByCamera(camera) {
-    // console.log("camera", camera)
-      postsAxios
-      .get(`/api/posts/search/camera/type?type=${camera}`)
-      .then((res) => {
-          console.log(res)
-          setPostsState((...prevState ) => ({
-              ...prevState,
-              posts: res.data
-          }))
-      })
-      .catch((err) => console.log(err.response.data.errMsg));
-  }
+  // function search(selected) {
+  //   console.log("search function selected", selected)
+  //     postsAxios
+  //     .get(`/api/posts/search/camera/type?type=${selected}`)
+  //     .then((res) => {
+  //       console.log(res)
+          // console.log(res)
+          // setPostsState((...prevState ) => ({
+          //     ...prevState,
+          //     posts: res.data
+          // }))
+  //     })
+  //     .catch((err) => console.log(err.response.data.errMsg));
+  // }
 
-  function searchByLens(lens) {
-    postsAxios
-    .get(`/api/posts/search/lens/type?type=${lens}`)
-    .then((res) => {
-      console.log(res)
-      setPostsState((...prevState ) => ({
-          ...prevState,
-          posts: res.data
-      }))
-  })
-    .catch((err) => console.log(err.response.data.errMsg));
-}
+//   function searchByStyle(style) {
+//     // console.log("camera", camera)
+//       postsAxios
+//       .get(`/api/posts/search/camera/type?type=${style}`)
+//       .then((res) => {
+//           console.log(res)
+//           setPostsState((...prevState ) => ({
+//               ...prevState,
+//               posts: res.data
+//           }))
+//       })
+//       .catch((err) => console.log(err.response.data.errMsg));
+//   }
+
+//   function searchByCamera(camera) {
+//     // console.log("camera", camera)
+//       postsAxios
+//       .get(`/api/posts/search/camera/type?type=${camera}`)
+//       .then((res) => {
+//           console.log(res)
+//           setPostsState((...prevState ) => ({
+//               ...prevState,
+//               posts: res.data
+//           }))
+//       })
+//       .catch((err) => console.log(err.response.data.errMsg));
+//   }
+
+//   function searchByLens(lens) {
+//     postsAxios
+//     .get(`/api/posts/search/lens/type?type=${lens}`)
+//     .then((res) => {
+//       console.log(res)
+//       setPostsState((...prevState ) => ({
+//           ...prevState,
+//           posts: res.data
+//       }))
+//   })
+//     .catch((err) => console.log(err.response.data.errMsg));
+// }
 
   return (
     <PostProviderContext.Provider
@@ -95,8 +125,10 @@ export const PostProvider = (props) => {
         getAllPosts,
         getUserPosts,
         newPost,
-        searchByCamera,
-        searchByLens
+        // searchByCamera,
+        // searchByLens,
+        // searchByStyle,
+        // search
       }}
     >
       {props.children}

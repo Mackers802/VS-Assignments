@@ -1,47 +1,47 @@
-import React, { useContext, useState } from 'react'
-import { PostProviderContext } from "../context/PostProvider"
-import { CameraForm } from './CameraForm'
+// import React, { useContext, useState } from 'react'
+// import { PostProviderContext } from "../context/PostProvider"
+// import { PostForm } from './PostForm'
 
-export const NewPost = () => {
+// export const NewPost = () => {
 
-    const { newPost } = useContext(PostProviderContext)
+//     const { newPost } = useContext(PostProviderContext)
 
-    const initInputs = {
-        caption: "",
-        imgUrl: "",
-        style: "",
-        cameraBrand: "",
-        cameraModel: "",
-        lensBrand: "",
-        lensModel: "",
-        fStop: true,
-        iso: true,
-        shutterSpeed: true,
-        accessories: "",
-    }
+//     const initInputs = {
+//         caption: "",
+//         imgUrl: "",
+//         style: "",
+//         cameraBrand: "",
+//         cameraModel: "",
+//         lensBrand: "",
+//         lensModel: "",
+//         fStop: true,
+//         iso: true,
+//         shutterSpeed: true,
+//         accessories: "",
+//     }
 
-    const [ inputs, setInputs ] = useState(initInputs)
+//     const [ inputs, setInputs ] = useState(initInputs)
 
-    // function handleChange(e){
-    //     const {name, value} = e.target
-    //     setInputs(prevInputs => ({
-    //         ...prevInputs,
-    //         [name]: value
-    //     }))
-    // }
+//     // function handleChange(e){
+//     //     const {name, value} = e.target
+//     //     setInputs(prevInputs => ({
+//     //         ...prevInputs,
+//     //         [name]: value
+//     //     }))
+//     // }
 
-    const handleSubmit = (e) => {
-        e.preventDefault()
-            newPost(inputs)
-        setInputs(initInputs)
-        window.location.reload(false)
-        }
+//     const handleSubmit = (e) => {
+//         e.preventDefault()
+//             newPost(inputs)
+//         setInputs(initInputs)
+//         window.location.reload(false)
+//         }
 
-    return (
-<div>
-    <CameraForm />
+//     return (
+// <div>
+//     <PostForm />
     
-</div>
+// </div>
 
     //     <div>
     //        <form onSubmit={ handleSubmit } onChange={handleChange} >
@@ -220,9 +220,9 @@ export const NewPost = () => {
 
     //   </form>
     //     </div>
-    )
+//     )
 
-}
+// }
 
 
 

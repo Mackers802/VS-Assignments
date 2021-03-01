@@ -9,7 +9,7 @@ import { Profile } from "./components/Profile"
 import { Feed } from "./components/Feed"
 import { Search } from "./components/Search"
 import { NewPost } from "./components/NewPost"
-import { CameraForm } from "./components/CameraForm"
+import { PostForm } from "./components/PostForm"
 import './App.css';
 
 export const App = () => {
@@ -56,8 +56,8 @@ export const App = () => {
           <Route exact path="/">
             {token ? <Profile/> : <Auth />}
           </Route> 
-          <Route exact path="/CameraForm">
-            {token ? <CameraForm /> : <Auth />}
+          <Route exact path="/PostForm">
+            {token ? <PostForm /> : <Auth />}
           </Route> 
         </Switch>
     </div>
