@@ -5,8 +5,16 @@ import { UserAuthContext } from "../context/UserAuthProvider";
 
 export const Nav = () => {
 
-const { user: { profilePicture } } = useContext(UserAuthContext)
-const { getAllPosts, getUserPosts } = useContext(PostProviderContext)
+  
+  const { user: { profilePicture } } = useContext(UserAuthContext)
+  const {  getAllPosts, getUserPosts } = useContext(PostProviderContext)
+
+  // useEffect(() => {
+  //   getAllPosts();
+  //   setMakesModelsLens(lensDataFile);
+  //   setInputs(initInput)
+    // console.log("selected", selected)
+// }, []);
 
   return (
       <>
@@ -14,9 +22,12 @@ const { getAllPosts, getUserPosts } = useContext(PostProviderContext)
         <Link onClick={ getAllPosts } to="/Feed">
           <h3>Home</h3>
         </Link>
-        <Link onClick={ getAllPosts } to="/Search">
-          <h3>Search</h3>
+        <Link to="/PostSearch">
+          <h3>Search Posts</h3>
         </Link>
+        {/* <Link to="/SearchUsers">
+          <h3>Search Users</h3>
+        </Link> */}
         <Link to="/PostForm" className="navProfile"> 
         <h3>➕</h3>
         </Link>

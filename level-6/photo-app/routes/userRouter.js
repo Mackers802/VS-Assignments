@@ -52,23 +52,5 @@ userRouter.post("/login", (req, res, next) => {
   );
 });
 
-userRouter.put("/userId", (req, res, next) => {
-  console.log(res.body)
-  User.findOneAndUpdate(
-    { user: req.params._id},
-    req.body,
-    { new: true },
-    (err, updatedUser) => {
-      if(err) {
-        res.status(500)
-        return next(err)
-      }
-      console.log(res.body)
-      console.log(req.body)
-      console.log(updatedUser)
-      return res.status(200).send(updatedUser)
-    }
-  )
-})
 
 module.exports = userRouter

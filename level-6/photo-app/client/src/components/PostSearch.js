@@ -5,7 +5,7 @@ import cameraDataFile from "./cameraDataFile.js"
 import lensDataFile from "./lensDataFile.js"
 import { Post } from "./Post"
 
-export const Search = () => {
+export const PostSearch = () => {
 
 const initInputs = {
     style: "",
@@ -15,13 +15,22 @@ const initInputs = {
     lensModel: ""
 }
 
-const { posts, getAllPosts, search } = useContext(PostProviderContext)
+const { 
+    posts, 
+    getAllPosts, 
+    // search,
+    searchByStyle,
+    searchByCameraBrand,
+    searchByCameraModel,
+    searchByLensBrand,
+    searchByLensModel 
+} = useContext(PostProviderContext)
 
 const [makesModelsCam, setMakesModelsCam] = useState({});
 const [makesModelsLens, setMakesModelsLens] = useState({});
 const [camModels, setCamModels] = useState([]);
 const [lensModels, setLensModels] = useState([]);
-const [selected, setSelected] = useState({});
+const [selected, setSelected] = useState(initInputs);
 // const history = useHistory();
 
 // const { newPost } = useContext(PostProviderContext)
@@ -30,7 +39,7 @@ useEffect(() => {
     getAllPosts()
     setMakesModelsLens(lensDataFile);
     setMakesModelsCam(cameraDataFile)
-    setSelected(initInputs)
+    setSelected(selected)
 }, []);
 
 // useEffect(() => {
@@ -45,32 +54,31 @@ useEffect(() => {
 // 		});
 // }, []);
 
-// const postsFilter = posts.filter(post => post.style === selected.style)
-
-function handleSubmit(e, selected, style, cameraBrand, lensBrand){
+function handleSubmit(e){
     e.preventDefault()
-    // search(selected, console.log("selected Search", selected))
-        console.log("submit selected", selected)
-    // if(selected.style === style){
-    //     return (
-    //         console.log("handle Submit style", style)
-    //     )
-    // } else if (selected.cameraBrand === cameraBrand){
-    //     return (
-    //         console.log("handle Submit camera brand", cameraBrand)
-    //     )
-    // } else if (selected.lensBrand === lensBrand){
-    //     return (
-    //         console.log("handle Submit lensBrand", lensBrand)
-    //     )
-    // }
+    // console.log("selected", selected)
+    // console.log("please Make a search selection")
+    searchByStyle(selected)
+    searchByCameraBrand(selected)
+    searchByCameraModel(selected)
+    searchByLensBrand(selected)
+    searchByLensModel(selected)
+    // const selectedStyle = selected.style
+    // const selectedCameraBrand = selected.cameraBrand
+    // const selectedCameraModel = selected.cameraModel
+    // const selectedLensBrand = selected.lensBrand
+    // const selectedLensModel = selected.lensModel
+    // console.log("Selected style", selectedStyle)
+    // console.log("Selected cameraBrand", selectedCameraBrand)
+    // console.log("Selected cameraModel", selectedCameraModel)
+    // console.log("Selected lensBrand", selectedLensBrand)
+    // console.log("Selected lensModel", selectedLensModel)
 }
 
 function handleChange(e){
     const {name, value} = e.target
     setSelected(prevSelected => ({
-        ...prevSelected,
-        [name]: value
+        ...prevSelected, [name]: value
     }))
     console.log("handleChange", selected)
 }
@@ -169,9 +177,9 @@ lensModels
 
 return (
     <div className="postsFeed">     
-           <form onChange={ handleChange } className='flex flex-row space-x-4'>
-			<h3>Select Photography Style</h3>
-			<select name="style">
+           <form onSubmit={ handleSubmit } className='flex flex-row space-x-4'>
+			<h3>Search...</h3>
+			<select onChange={ handleChange } name="style">
                     <option input="" disabled selected defaultValue>Style</option> 
                     <option input="all">All</option> 
                     <option value="Architectural">Architectural</option>
@@ -197,14 +205,12 @@ return (
                     <option value="Wildlife">Wildlife</option> 
                 </select>
 				{/* ~~~~~~~~~~~~~~ camera selection ~~~~~~~~~~~~~~~~~ */}
-			<h3>Search by Camera</h3>
 				<select
 					className='w-56 p-2'
 					onChange={selectMake}
 					name='cameraBrand'
 					id='cameraBrand'>
-					<option value='' disabled selected defaultValue >
-						Select Brand
+					<option value='' disabled selected defaultValue Brand>Camera Brand
 					</option>
 					{cameraBrandOptions}
 				</select>
@@ -213,20 +219,17 @@ return (
 					onChange={handleModelSelect}
 					name='cameraModel'
 					id='cameraModel'>
-					<option value='Select Value' disabled selected defaultValue >
-						Select Model
+					<option value='Select Value' disabled selected defaultValue >Camera Model
 					</option>
 					{cameraOptions}
 				</select>
 				{/* ~~~~~~~~~~~~~~ camera selection ~~~~~~~~~~~~~~~~~ */}
-				<h3>Search by Lens</h3>
 				<select
 					className='w-56 p-2'
 					onChange={selectLensMake}
 					name='lensBrand'
 					id='lensBrand'>
-					<option value='' disabled selected defaultValue >
-						Select Brand
+					<option value='' disabled selected defaultValue >Lens Brand
 					</option>
 					{lensBrandOptions}
 				</select>
@@ -235,18 +238,16 @@ return (
 					onChange={handleLensModelSelect}
 					name='lensModel'
 					id='lensModel'>
-					<option value='Select Value' disabled selected defaultValue >
-						Select Model
+					<option value='Select Value' disabled selected defaultValue >Lens Model
 					</option>
 					{lensOptions}
 				</select>
-                <button onClick={handleSubmit}> 
+                <button> 
                     Search
                 </button>
 			</form>
 
-                { posts.map(post => <Post { ...post} key={post._id}/> ) }
-                {/* { postsFilter.map(post => <Post { ...post} key={post._id}/> ) } */}
+            { posts.map(post => <Post { ...post} key={post._id}/> ) }
         </div>
     )
 }

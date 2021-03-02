@@ -1,13 +1,14 @@
-import React, { useContext,useState } from 'react'
+import React, { useContext, useState} from 'react'
 import { UserAuthContext } from "../context/UserAuthProvider"
 
 export const EditProfile = (props) => {
-const { saveProfileChanges, user: {profilePicture} } = useContext(UserAuthContext)
+const { editUserProfile,  user: { profilePicture, bio, email, _id }, } = useContext(UserAuthContext)
 
 const initInputs = {
-    profilePicture: localStorage.getItem( "user.profilePicture" ) || "",
+   profilePicture: profilePicture,
+   bio: bio, 
+   email: email
 }
-
 
 const [ inputs, setInputs ] = useState(initInputs)
 
@@ -19,21 +20,21 @@ function handleChange(e){
     }))
 }
 
-const handleSubmit = (e) => {
+function handleSubmit(e){
     e.preventDefault()
-    saveProfileChanges(inputs)
-    setInputs(initInputs)
-    window.location.reload(false)
+    editUserProfile(inputs, _id)
     }
 
 return ( 
         <div>
-            <form onSubmit={ handleSubmit } onChange={ handleChange } >
+            <form >
                 <label>
-                    <input type="text" name={ profilePicture } placeholder={profilePicture} value={ profilePicture }/>
+                    <input onChange={ handleChange } type="text" name="profilePicture" placeholder={profilePicture} />
+                    <input onChange={ handleChange } type="text" name="bio" placeholder={ bio } />
+                    <input onChange={ handleChange } type="text" name="email" placeholder={email} />
                 </label>
             </form>
-            <button> Save Changes</button>
+            <button onClick={ handleSubmit }>Save Changes</button>
         </div>
     )
 }

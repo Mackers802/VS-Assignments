@@ -13,6 +13,19 @@ postRouter.get("/", (req, res, next) => {
     });
   });
 
+  // get all posts by userId ✅ 
+postRouter.get("/:user", (req, res, next) => {
+  Post.find(
+    { user: req.params.user }, (err, posts) => {
+    if (err) {
+      res.status(500);
+      return next(err);
+    }
+    return res.status(200).send(posts);
+  }
+  );
+})
+
   // add post ✅ 
   postRouter.post("/", (req, res, next) => {
     req.body.user = req.user._id;
@@ -37,31 +50,9 @@ postRouter.get("/:postId", (req, res, next) => {
   })
 })
 
-// get posts by camera ✅ 
-postRouter.get("/search/camera/type", (req, res, next) => {
-  Post.find({camera: req.query.type}, (err, posts) => {
-    if(err){
-      res.status(500)
-      return next(err)
-    }
-    return res.status(200).send(posts)
-  })
-  })
-
-// get posts by lens ✅ 
-  postRouter.get("/search/lens/type", (req, res, next) => {
-    Post.find({lensBrand: req.query.type}, (err, posts) => {
-      if(err){
-        res.status(500)
-        return next(err)
-      }
-      return res.status(200).send(posts)
-    })
-    })
-
-    // get posts by Style
-    postRouter.get("/search/type", (req, res, next) => {
-      Post.find({style: req.query.type}, (err, posts) => {
+    // get posts by Style ✅ 
+    postRouter.get(`/search/style`, (req, res, next) => {
+      Post.find({style: req.query.style}, (err, posts) => {
         if(err){
           res.status(500)
           return next(err)
@@ -70,24 +61,54 @@ postRouter.get("/search/camera/type", (req, res, next) => {
       })
       })
 
-  // get all posts by user
-// postRouter.get("/:userId", (req, res, next) => {
-//   Post.find(
-//     console.log(res.body, req.body)
-  //   { user: req.params.userId }, (err, posts) => {
-  //   if (err) {
-  //     res.status(500);
-  //     return next(err);
-  //   }
-  //   return res.status(200).send(posts);
-  // }
-//   );
-// })
+       // / get posts by cameraBrand ✅ 
+  postRouter.get("/search/cameraBrand", (req, res, next) => {
+    Post.find({cameraBrand: req.query.cameraBrand}, (err, posts) => {
+      if(err){
+        res.status(500)
+        return next(err)
+      }
+      return res.status(200).send(posts)
+    })
+    })
+
+      // / get posts by cameraModel ✅ 
+  postRouter.get("/search/cameraModel", (req, res, next) => {
+    Post.find({cameraModel: req.query.cameraModel}, (err, posts) => {
+      if(err){
+        res.status(500)
+        return next(err)
+      }
+      return res.status(200).send(posts)
+    })
+    })
+
+      // / get posts by lens ✅ 
+      postRouter.get("/search/lensBrand", (req, res, next) => {
+        Post.find({lensBrand: req.query.lensBrand}, (err, posts) => {
+          if(err){
+            res.status(500)
+            return next(err)
+          }
+          return res.status(200).send(posts)
+        })
+        })
+
+        // / get posts by lensModel ✅ 
+      postRouter.get("/search/lensModel", (req, res, next) => {
+        Post.find({lensModel: req.query.lensModel}, (err, posts) => {
+          if(err){
+            res.status(500)
+            return next(err)
+          }
+          return res.status(200).send(posts)
+        })
+        })
 
 // update post ✅ 
 postRouter.put("/:postId", (req, res, next) => {
   Post.findOneAndUpdate(
-    { _id: req.params.postId },
+    { _id: req.params._id },
     req.body,
     { new: true },
     (err, updatedPost) => {

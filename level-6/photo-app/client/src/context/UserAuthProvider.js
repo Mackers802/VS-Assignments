@@ -15,12 +15,14 @@ export const UserAuthProvider = (props) => {
   const initState = {
     user: JSON.parse(localStorage.getItem("user")) || {},
     token: localStorage.getItem("token") || "",
-    email: "",
-    profilePicture: "",
-    bio: "",
     errMsg: "",
   };
+
+  // const initAllUsers = {
+  //   allUsers: []
+  // }
   const [userState, setUserState] = useState(initState);
+  // const [allUsersState, setAllUsersState] = useState(initAllUsers)
 
  // -------------------------------------------- Authorization -----------------------------------------------------
 
@@ -56,6 +58,23 @@ export const UserAuthProvider = (props) => {
       .catch((err) => handleAuthError(err.response.data.errMsg));
   }
 
+   // ------------------------------------- Profile Change Updates ------------------------------------------------------
+
+   function editUserProfile(inputs, _id){
+    console.log("Auth provider _id", _id)
+    console.log("Auth provider inputs", inputs)
+    userAxios
+    .put(`/api/profile/${_id}`, inputs)
+      .then((res) => {
+        setUserState((prevUserState) => ({
+          ...prevUserState,
+          user: res.data
+        }));
+      })
+      .catch((err) => console.log(err.response.data.errMsg)); 
+      console.log("userState", userState)
+  }
+
   
   function logout() {
     localStorage.removeItem("token");
@@ -82,22 +101,18 @@ export const UserAuthProvider = (props) => {
     }));
   }
 
-  // ------------------------------------- Profile Change Updates ------------------------------------------------------
-
-  function saveProfileChanges() {
-  //   userAxios.put(`/api/user`)
-  }
-
   return (
     <UserAuthContext.Provider
       value={{
         ...userState,
+        // ...allUsersState,
         signup,
         login,
         logout,
         authErrorReset,
         handleAuthError,
-        saveProfileChanges
+        editUserProfile,
+        // getAllUsers
       }}
     >
       {props.children}
