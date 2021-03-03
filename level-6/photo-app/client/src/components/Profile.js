@@ -1,7 +1,7 @@
 import React, { useContext, useState, useEffect } from "react";
 import { UserAuthContext } from "../context/UserAuthProvider";
 import { PostProviderContext } from "../context/PostProvider";
-import { Post } from "./Post";
+import { ProfilePost } from "./ProfilePost";
 
 export const Profile = (props) => {
   const {
@@ -10,14 +10,15 @@ export const Profile = (props) => {
     editUserProfile,
   } = useContext(UserAuthContext);
 
-  const { userPosts, getUserPosts } = useContext(PostProviderContext);
+  const { userPosts, getUserPosts, deletePost, editPost } = useContext(PostProviderContext);
 
   const initInputs = {
-    profilePicture: profilePicture,
-    bio: bio,
-    email: email,
+    profilePicture: profilePicture || "",
+    bio: bio || "",
+    email: email || "",
   };
 
+  
   const [inputs, setInputs] = useState(initInputs);
   const [toggle, setToggle] = useState(false);
 
@@ -25,9 +26,19 @@ export const Profile = (props) => {
     setToggle((prev) => !prev);
   }
 
+  // useEffect(() => {
+  //   getUserProfile(_id)
+  // })
+
+
   useEffect(() => {
     getUserPosts(_id)
+    // getUserProfile(_id)
 }, []);
+
+// useEffect(() => {
+//   getUserProfile(_id)
+// }, []);
 
   function handleChange(e) {
     const { name, value } = e.target;
@@ -40,6 +51,7 @@ export const Profile = (props) => {
   function handleSubmit(e) {
     e.preventDefault();
     editUserProfile(inputs, _id);
+    // logout()
   }
 
   return (
@@ -63,12 +75,12 @@ export const Profile = (props) => {
             </div>
             <div className="profilePagePosts">
               {userPosts.map((post) => (
-                <Post {...post} key={post._id}/>
+                <ProfilePost {...post} key={post._id} deletePost={deletePost} editPost={editPost}/>
               ))}
             </div>
-            <button onClick={toggleForm}>Edit Profile</button>
+            <button onClick={toggleForm}>Profile Settings</button>
             <br></br>
-            <button onClick={logout}> Signout </button>
+            {/* <button onClick={logout}> Signout </button> */}
           </div>
         </div>
       ) : (
@@ -90,9 +102,8 @@ export const Profile = (props) => {
               {/* <br></br> */}
             </div>
             <div className="profilePagePosts"></div>
-            <button onClick={toggleForm}>Edit Profile</button>
+            {/* <button onClick={toggleForm}>Edit Profile</button> */}
             <br></br>
-            <button onClick={logout}> Signout </button>
           </div>
           <form>
             <label>
@@ -100,23 +111,26 @@ export const Profile = (props) => {
                 onChange={handleChange}
                 type="text"
                 name="profilePicture"
-                placeholder="Profile Pic"              />
+                placeholder="Change Profile Picture?"              />
               <input
                 onChange={handleChange}
                 type="text"
                 name="bio"
-                placeholder="Bio"
+                placeholder="Change Bio"
               />
               <input
                 onChange={handleChange}
                 type="text"
                 name="email"
-                placeholder={email}
+                placeholder="Change Email?"
               />
             </label>
+            <br></br>
+          <h1>User Will Be Signed out and required to Sign back in to make any changes</h1>
             <button onClick={handleSubmit}>Save Changes</button>
           </form>
-          <button onClick={toggleForm}>Back</button>
+            <button onClick={logout}> Signout </button>
+            <button onClick={toggleForm}>Back</button>
         </div>
       )}
     </div>

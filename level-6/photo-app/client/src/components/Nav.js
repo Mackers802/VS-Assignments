@@ -7,13 +7,13 @@ export const Nav = () => {
 
   
   const { user: { profilePicture } } = useContext(UserAuthContext)
-  const {  getAllPosts, getUserPosts } = useContext(PostProviderContext)
+  const {  getAllPosts } = useContext(PostProviderContext)
 
-  // useEffect(() => {
-  //   getAllPosts();
-  //   setMakesModelsLens(lensDataFile);
-  //   setInputs(initInput)
-    // console.log("selected", selected)
+//   useEffect(() => {
+//     getAllPosts();
+//     setMakesModelsLens(lensDataFile);
+//     setInputs(initInput)
+//     console.log("selected", selected)
 // }, []);
 
   return (
@@ -34,7 +34,7 @@ export const Nav = () => {
         {/* <Link to="/NewPost" className="navPost">
           <h3>➕</h3>
         </Link> */}
-        <Link onClick={ getUserPosts } to="/Profile" className="navProfile"> 
+        <Link to="/Profile" className="navProfile"> 
           <img src={ profilePicture } alt="V small pro pic" width="25" height="25"></img>
         </Link>
       </div>

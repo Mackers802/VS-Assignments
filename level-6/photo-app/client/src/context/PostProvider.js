@@ -50,7 +50,7 @@ export const PostProvider = (props) => {
   }
 
   function getUserPosts(_id) {
-    console.log("getUserPosts", _id)
+    console.log("getUserPosts user ID", _id)
     postsAxios
       .get(`/api/posts/${_id}`)
       .then((res) => {
@@ -144,18 +144,19 @@ export const PostProvider = (props) => {
     // .catch((err) => console.log(err.response.data.errMsg));
   }
 
-  function editPost(_id){
+  function editPost(inputs, _id){
     console.log("edit Post", _id)
-    // postsAxios
-    // .delete(`/api/posts/${_id}`)
-    // .then((res) => {
-    //   // console.log(res)
-    //     setPostsState((...prevState ) => ({
-    //         ...prevState,
-    //         posts: res.data
-    //     }))
-    // })
-    // .catch((err) => console.log(err.response.data.errMsg));
+    // console.log("edit Post inputs", inputs)
+    postsAxios
+    .put(`/api/posts/${_id}`, inputs)
+    .then((res) => {
+        setPostsState((...prevPostsState ) => ({
+            ...prevPostsState,
+            userPosts: res.data
+        }))
+    })
+    .catch((err) => console.log(err.response.data.errMsg));
+    console.log(postsState)
   }
 
   return (

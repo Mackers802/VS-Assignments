@@ -1,8 +1,6 @@
-import React, { useContext } from 'react'
+import React, { useContext, useEffect } from 'react'
 import { Switch, Route } from "react-router-dom"
 import { UserAuthContext } from "./context/UserAuthProvider"
-// import { PostProviderContext } from "./context/PostProvider.js"
-// import { ProtectedRoute } from "./components/ProtectedRoute"
 import { Nav } from "./components/Nav"
 import { Auth } from "./components/Auth"
 import { Profile } from "./components/Profile"
@@ -14,7 +12,10 @@ import './App.css';
 
 export const App = () => {
   const { token, logout } = useContext( UserAuthContext )
-  // const {} = useContext( PostProviderContext )
+
+  // useEffect(() => {
+  //        getUserProfile("userProfile from App", _id)
+  // }, []);
 
   return (
     <div>

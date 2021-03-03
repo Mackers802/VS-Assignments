@@ -1,170 +1,58 @@
-import { useEffect, useState, useContext } from 'react';
-// import { useHistory } from 'react-router-dom';
-import cameraDataFile from "./cameraDataFile.js"
-import lensDataFile from "./lensDataFile.js"
+import { useState, useContext, useEffect } from 'react';
 import { PostProviderContext } from "../context/PostProvider"
 // const axios = require('axios');
 
-export const PostForm = (props) => {
+export const EditPostForm = (props) => {
+    const { editPost, deletePost} = useContext(PostProviderContext)
+    const { caption, style, _id, fStop, iso, shutterSpeed,  } = props
 
-	const initInput = {
-		caption: "",
+    const initInputs = {
+        caption: caption,
+        style: style,
+        post: {_id},
+        fStop: fStop,
+        iso: iso,
+        shutterSpeed: shutterSpeed
+    }
 
-	}
+    useEffect(() => {
+        console.log(_id)
+    }, []);
 
-	const [makesModelsCam, setMakesModelsCam] = useState({});
-	const [makesModelsLens, setMakesModelsLens] = useState({});
-	const [camModels, setCamModels] = useState([]);
-	const [lensModels, setLensModels] = useState([]);
-	const [input, setInputs ] = useState(initInput)
-	const [selected, setSelected] = useState({});
+	const [inputs, setInputs ] = useState(initInputs)
 	// const history = useHistory();
 
-	const { newPost } = useContext(PostProviderContext)
-
-	useEffect(() => {
-				setMakesModelsCam(cameraDataFile);
-				setMakesModelsLens(lensDataFile);
-				setInputs(initInput)
-				// console.log("selected", selected)
-	}, []);
-
-	// useEffect(() => {
-	// 	axios
-	// 		.get('URL')
-	// 		.then(function (response) {
-	// 			setMakesModels(response.data);
-	// 		})
-	// 		.catch(function (error) {
-	// 			// handle error
-	// 			console.log(error);
-	// 		});
-	// }, []);
-
-	const handleSubmit = (e) => {
+	function handleDeleteSubmit(e){
 		e.preventDefault();
-		console.log("selected Submit", selected)
-		newPost(selected)
-		setInputs("")
-		// const { make, model } = selected;
-		// if (model !== undefined) {
-		// 	history.push(`/collection/?make=${encodeURIComponent(make)}&model=${encodeURIComponent(model)}`);
-		// }	
-		// setModels("")
+        deletePost(_id)
+        console.log("deleteFunc ID", _id)
+		// console.log("selected Submit", selected)
 	};
+
+function editPostSubmit(e){
+    e.preventDefault()
+    editPost(inputs, _id)
+}
 	
 	function handleChange(e){
         const {name, value} = e.target
-        setSelected(prevSelected => ({
-			...prevSelected,
+        setInputs(prevInputs => ({
+			...prevInputs,
             [name]: value
         }))
-		console.log("handleChange", selected)
+		console.log("handleChange", inputs)
     }
-	
-	//* -------------   camera selection -------------   */
-
-	const selectMake = (e) => {
-		const { name, value } = e.target;
-		setCamModels(makesModelsCam[value]);
-		setSelected((prevState) => {
-			return { ...prevState, [name]: value };
-		});
-	};
-
-
-	const handleModelSelect = (e) => {
-		const { name, value } = e.target;
-		setSelected((prevState) => {
-			return { ...prevState, [name]: value };
-		});
-		console.log("selected model", selected);
-	};
-	// console.log(Object.keys(makesmodels));
-
-
-	const cameraBrandOptions =
-		makesModelsCam &&
-		Object.keys(makesModelsCam)
-			.sort((a, b) => a.localeCompare(b))
-				.map((camBrand, idx) => {
-					return (
-						<option key={idx} value={camBrand}>
-							{camBrand}
-						</option>
-					);
-			});
-
-	const cameraOptions =
-		camModels &&
-		camModels
-			.sort((a, b) => a.localeCompare(b))
-			.map((camModel, idx) => {
-				return (
-					<option className='p-4' key={idx} value={camModel}>
-						{camModel}
-					</option>
-				);
-			});
-
-	/* -------------    lens selection ~~~-------------    */
-
-	const selectLensMake = (e) => {
-		const { name, value } = e.target;
-		setLensModels(makesModelsLens[value]);
-		setSelected((prevState) => {
-			return { ...prevState, [name]: value };
-		});
-	};
-
-
-	const handleLensModelSelect = (e) => {
-		const { name, value } = e.target;
-		setSelected((prevState) => {
-			return { ...prevState, [name]: value };
-		});
-	};
-	// console.log(Object.keys(makesmodels));
-
-
-
-	const lensBrandOptions =
-	makesModelsLens &&
-	Object.keys(makesModelsLens)
-		.sort((a, b) => a.localeCompare(b))
-			.map((lensBrand, idx) => {
-				return (
-					<option key={idx} value={lensBrand}>
-						{lensBrand}
-					</option>
-				);
-		});
-
-const lensOptions =
-	lensModels &&
-	lensModels
-		.sort((a, b) => a.localeCompare(b))
-		.map((lensModel, idx) => {
-			return (
-				<option className='p-4' key={idx} value={lensModel}>
-					{lensModel}
-				</option>
-			);
-		});
-
 
 	return (
 		<div className='flex justify-center '>
 			<form onChange={ handleChange } className='flex flex-row space-x-4'>
 			<label>
 			<h3>Caption</h3>
-				<input type="text" name="caption" placeholder="Add Caption"/>
-			<h3>Image Url</h3>
-				<input type="text" name="imgUrl" placeholder="Add Caption"/>
+				<input type="text" name="caption" placeholder={caption}/>
 			</label>
 			<h3>Select Style</h3>
-			<select name="style">
-                    <option input="">Style</option> 
+			<select name="style" >
+                    <option input="">{style}</option> 
                     <option value="Architectural">Architectural</option>
                     <option value="Astro">Astro</option> 
                     <option value="Car">Car</option>
@@ -187,55 +75,10 @@ const lensOptions =
                     <option value="Wedding">Wedding</option> 
                     <option value="Wildlife">Wildlife</option> 
                 </select>
-				{/* ~~~~~~~~~~~~~~ camera selection ~~~~~~~~~~~~~~~~~ */}
-			<h3>Camera</h3>
-				<select
-					className='w-56 p-2'
-					onChange={selectMake}
-					name='cameraBrand'
-					id='cameraBrand'>
-					<option value='' disabled selected defaultValue >
-						Select Brand
-					</option>
-					{cameraBrandOptions}
-				</select>
-				<select
-					className='w-56 p-2'
-					onChange={handleModelSelect}
-					name='cameraModel'
-					id='cameraModel'>
-					<option value='Select Value' disabled selected defaultValue >
-						Select Model
-					</option>
-					{cameraOptions}
-				</select>
-				{/* ~~~~~~~~~~~~~~ camera selection ~~~~~~~~~~~~~~~~~ */}
-				<h3>Lens</h3>
-				<select
-					className='w-56 p-2'
-					onChange={selectLensMake}
-					name='lensBrand'
-					id='lensBrand'>
-					<option value='' disabled selected defaultValue >
-						Select Brand
-					</option>
-					{lensBrandOptions}
-				</select>
-				<select
-					className='w-56 p-2'
-					onChange={handleLensModelSelect}
-					name='lensModel'
-					id='lensModel'>
-					<option value='Select Value' disabled selected defaultValue >
-						Select Model
-					</option>
-					{lensOptions}
-				</select>
-				<br></br>
 				<h3>Settings</h3>
   {/* ------------ FStop 𝑓 --------------------------  */}
                 <select name="fStop">
-                    <option value="">𝑓-Stop</option> 
+                    <option value="">{fStop}</option> 
                     <option value="45">45</option> 
                     <option value="32">32</option>
                     <option value="22">22</option>
@@ -270,7 +113,7 @@ const lensOptions =
 
          {/* ------------ Iso -------------------------- */}
                  <select name="iso">
-                     <option value="">ISO</option> 
+                     <option value="">{iso}</option> 
                      <option value="50">50</option> 
                      <option value="65">65</option> 
                      <option value="100">100</option>
@@ -299,7 +142,7 @@ const lensOptions =
 
                  {/* ------------ Shuttter Speed-------------------------- */}
                  <select name="shutterSpeed">
-                     <option value="">Shutter Speed</option> 
+                     <option value="">{shutterSpeed}</option> 
                      <option value="60">60</option> 
                      <option value="30">30</option>
                      <option value="15">15</option>
@@ -340,9 +183,9 @@ const lensOptions =
                      <option value="1/8000">1/8000</option>
                  </select>
 
-				<button onClick={handleSubmit} type="button" className='w-56'>
-					Post
-				</button>
+				<button onClick={editPostSubmit}>Save Post</button>
+                <button onClick={() => handleDeleteSubmit() }>Delete Post</button>
+                {/* <button onClick={() => editPost(_id) }>Edit Post</button> */}
 			</form>
 		</div>
 	);

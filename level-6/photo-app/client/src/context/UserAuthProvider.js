@@ -61,8 +61,8 @@ export const UserAuthProvider = (props) => {
    // ------------------------------------- Profile Change Updates ------------------------------------------------------
 
    function editUserProfile(inputs, _id){
-    console.log("Auth provider _id", _id)
-    console.log("Auth provider inputs", inputs)
+    // console.log("Auth provider _id", _id)
+    // console.log("Auth provider inputs", inputs)
     userAxios
     .put(`/api/profile/${_id}`, inputs)
       .then((res) => {
@@ -72,10 +72,9 @@ export const UserAuthProvider = (props) => {
         }));
       })
       .catch((err) => console.log(err.response.data.errMsg)); 
-      console.log("userState", userState)
+      // console.log("userState", userState)
   }
 
-  
   function logout() {
     localStorage.removeItem("token");
     localStorage.removeItem("user");
@@ -83,6 +82,19 @@ export const UserAuthProvider = (props) => {
       user: {},
       token: ""
     });
+  }
+
+  function getUserProfile(_id){
+    console.log("profile Update", _id)
+    userAxios
+    .get(`/api/profile/${_id}`)
+      .then((res) => {
+        setUserState((prevUserState) => ({
+          ...prevUserState,
+          user: res.data
+        }));
+      })
+      .catch((err) => console.log(err.response.data.errMsg)); 
   }
 
 // ----------------------------------------- Err Handlers ------------------------------------------------------
@@ -112,6 +124,7 @@ export const UserAuthProvider = (props) => {
         authErrorReset,
         handleAuthError,
         editUserProfile,
+        getUserProfile
         // getAllUsers
       }}
     >
