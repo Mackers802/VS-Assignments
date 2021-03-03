@@ -63,7 +63,7 @@ export const Profile = (props) => {
             </div>
             <div className="profilePagePosts">
               {userPosts.map((post) => (
-                <Post {...post} key={post._id} />
+                <Post {...post} key={post._id}/>
               ))}
             </div>
             <button onClick={toggleForm}>Edit Profile</button>
@@ -80,6 +80,7 @@ export const Profile = (props) => {
               alt="Profile"
               width="150"
               height="150"
+              placeholder="Profile Pic"
             ></img>
             <div className="profileInfo">
               {/* <br></br> */}
@@ -99,13 +100,12 @@ export const Profile = (props) => {
                 onChange={handleChange}
                 type="text"
                 name="profilePicture"
-                placeholder={profilePicture}
-              />
+                placeholder="Profile Pic"              />
               <input
                 onChange={handleChange}
                 type="text"
                 name="bio"
-                placeholder={bio}
+                placeholder="Bio"
               />
               <input
                 onChange={handleChange}

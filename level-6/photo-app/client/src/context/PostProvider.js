@@ -63,7 +63,7 @@ export const PostProvider = (props) => {
       .catch((err) => console.log(err.response.data.errMsg));
   }
 
-  
+
 
   function searchByStyle(selected) {
       postsAxios
@@ -130,6 +130,34 @@ export const PostProvider = (props) => {
     .catch((err) => console.log(err.response.data.errMsg));
   }
 
+  function deletePost(_id){
+    console.log("delete Post", _id)
+    // postsAxios
+    // .delete(`/api/posts/${_id}`)
+    // .then((res) => {
+    //   // console.log(res)
+    //     setPostsState((...prevState ) => ({
+    //         ...prevState,
+    //         posts: res.data
+    //     }))
+    // })
+    // .catch((err) => console.log(err.response.data.errMsg));
+  }
+
+  function editPost(_id){
+    console.log("edit Post", _id)
+    // postsAxios
+    // .delete(`/api/posts/${_id}`)
+    // .then((res) => {
+    //   // console.log(res)
+    //     setPostsState((...prevState ) => ({
+    //         ...prevState,
+    //         posts: res.data
+    //     }))
+    // })
+    // .catch((err) => console.log(err.response.data.errMsg));
+  }
+
   return (
     <PostProviderContext.Provider
       value={{
@@ -137,6 +165,8 @@ export const PostProvider = (props) => {
         getAllPosts,
         getUserPosts,
         newPost,
+        deletePost,
+        editPost,
         searchByStyle,
         // search,
         searchByCameraBrand,
@@ -148,4 +178,4 @@ export const PostProvider = (props) => {
       {props.children}
     </PostProviderContext.Provider>
   );
-};
+}
