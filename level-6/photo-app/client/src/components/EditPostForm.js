@@ -6,7 +6,7 @@ export const EditPostForm = (props) => {
   const { editPost, deletePost, getUserPosts } = useContext(
     PostProviderContext
   );
-  const { caption, style, _id, fStop, iso, shutterSpeed } = props;
+  const { caption, _id } = props;
 
   const initInputs = {
     caption: caption,
