@@ -18,7 +18,7 @@ export const App = () => {
   // }, []);
 
   return (
-    <div>
+    <div className="app">
       { token && <Nav logout={logout} /> }
         <Switch>
           {/* <Route path="/Profile">

@@ -1,13 +1,13 @@
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
-import { PostProviderContext } from "../context/PostProvider";
+// import { PostProviderContext } from "../context/PostProvider";
 import { UserAuthContext } from "../context/UserAuthProvider";
 
 export const Nav = () => {
 
   
   const { user: { profilePicture } } = useContext(UserAuthContext)
-  const {  getAllPosts } = useContext(PostProviderContext)
+  // const {  getAllPosts } = useContext(PostProviderContext)
 
 //   useEffect(() => {
 //     getAllPosts();
@@ -17,20 +17,19 @@ export const Nav = () => {
 // }, []);
 
   return (
-      <>
       <div className="navBar">
-        <Link onClick={ getAllPosts } to="/Feed">
+        <Link to="/Feed">
           <h3>Home</h3>
         </Link>
         <Link to="/PostSearch">
-          <h3>Search Posts</h3>
+          <h3>Search</h3>
         </Link>
         <Link to="/SearchUsers">
           <h3>Friends</h3>
         </Link>
-        <Link to="/PostForm" className="navProfile"> 
-        <h3>➕</h3>
-        </Link>
+        {/* <Link to="/PostForm" className="navProfile"> 
+          <h3>➕</h3>
+        </Link> */}
         {/* <Link to="/NewPost" className="navPost">
           <h3>➕</h3>
         </Link> */}
@@ -38,6 +37,5 @@ export const Nav = () => {
           <img src={ profilePicture } alt="V small pro pic" width="25" height="25"></img>
         </Link>
       </div>
-    </>
   );
 };

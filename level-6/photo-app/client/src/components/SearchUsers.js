@@ -1,5 +1,6 @@
 import React, { useState, useContext } from "react";
 import { UserAuthContext } from "../context/UserAuthProvider";
+import { Friend } from "./Friend"
 // import JSONData from "./JSONData"
 // import { PostProviderContext } from '../context/PostProvider'
 
@@ -43,11 +44,9 @@ function handleChange(e){
                 } 
               }).map((val, key) => {
                 return (
-                  <div className="friendsList">
-                    <h3>
-                      {val}
-                    </h3>
-                  </div>
+                  <>
+                      <Friend val={val} key={key} />
+                  </>
                 )
               })
               }

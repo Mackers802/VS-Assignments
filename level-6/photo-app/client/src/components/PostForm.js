@@ -9,7 +9,14 @@ export const PostForm = (props) => {
 
 	const initInput = {
 		caption: "",
-
+		style: "",
+		cameraBrand: "",
+		cameraModel: "",
+		lensBrand: "",
+		lensModel: "",
+		fStop: "",
+		iso: "",
+		shutterSpeed: ""
 	}
 
 	const [makesModelsCam, setMakesModelsCam] = useState({});
@@ -45,7 +52,6 @@ export const PostForm = (props) => {
 		e.preventDefault();
 		console.log("selected Submit", selected)
 		newPost(selected)
-		setInputs("")
 		// const { make, model } = selected;
 		// if (model !== undefined) {
 		// 	history.push(`/collection/?make=${encodeURIComponent(make)}&model=${encodeURIComponent(model)}`);
@@ -154,15 +160,14 @@ const lensOptions =
 
 
 	return (
-		<div className='flex justify-center '>
-			<form onChange={ handleChange } className='flex flex-row space-x-4'>
+		<div className="postForm">
+			<form onChange={ handleChange } >
 			<label>
-			<h3>Caption</h3>
 				<input type="text" name="caption" placeholder="Add Caption"/>
-			<h3>Image Url</h3>
-				<input type="text" name="imgUrl" placeholder="Add Caption"/>
+				<br></br>
+				<input type="text" name="imgUrl" placeholder="Add Image URL"/>
 			</label>
-			<h3>Select Style</h3>
+			<br></br>
 			<select name="style">
                     <option input="">Style</option> 
                     <option value="Architectural">Architectural</option>
@@ -188,7 +193,7 @@ const lensOptions =
                     <option value="Wildlife">Wildlife</option> 
                 </select>
 				{/* ~~~~~~~~~~~~~~ camera selection ~~~~~~~~~~~~~~~~~ */}
-			<h3>Camera</h3>
+				<h4>Camera</h4>
 				<select
 					className='w-56 p-2'
 					onChange={selectMake}
@@ -210,7 +215,7 @@ const lensOptions =
 					{cameraOptions}
 				</select>
 				{/* ~~~~~~~~~~~~~~ camera selection ~~~~~~~~~~~~~~~~~ */}
-				<h3>Lens</h3>
+				<h4>Lens</h4>
 				<select
 					className='w-56 p-2'
 					onChange={selectLensMake}
@@ -232,7 +237,8 @@ const lensOptions =
 					{lensOptions}
 				</select>
 				<br></br>
-				<h3>Settings</h3>
+				<h4>Settings</h4>
+				<br></br>
   {/* ------------ FStop 𝑓 --------------------------  */}
                 <select name="fStop">
                     <option value="">𝑓-Stop</option> 
@@ -339,7 +345,7 @@ const lensOptions =
                      <option value="1/6400">1/6400</option>
                      <option value="1/8000">1/8000</option>
                  </select>
-
+				<br></br>
 				<button onClick={handleSubmit} type="button" className='w-56'>
 					Post
 				</button>

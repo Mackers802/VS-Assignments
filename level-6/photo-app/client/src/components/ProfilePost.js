@@ -1,14 +1,17 @@
 import React, { useContext, useState }  from 'react'
-// import { PostProviderContext } from '../context/PostProvider';
 import { UserAuthContext } from "../context/UserAuthProvider";
 import { EditPostForm } from "./EditPostForm"
  
 export const ProfilePost = (props) => {
 
 const { user: { username } } = useContext(UserAuthContext)
-const { imgUrl , style, cameraBrand, cameraModel, lensBrand, lensModel, caption, iso, shutterSpeed, fStop , _id }  = props
+const { imgUrl , caption, _id }  = props
 
-const [Toggle, setToggle ] =useState(false) 
+const [Toggle, setToggle ] = useState(false) 
+
+function changeToggle(){
+            setToggle(prevToggle => !prevToggle)
+    }
 
 // useEffect(() => {
 //     console.log(_id)
@@ -17,11 +20,10 @@ const [Toggle, setToggle ] =useState(false)
     return (
         <>
         {!Toggle ?
-        <div className="posts">
-                <h3>{ username }</h3>
-                <h3>{caption}</h3>
-                <img src={ imgUrl } alt="post img" width="200" height="150"></img>
-                <p>Settings: 𝑓 { fStop }, SS: { shutterSpeed }, ISO{ iso }</p>
+        <div className="userPosts">
+                <img src={ imgUrl } alt="post img" width="200" height="150" onClick={ changeToggle }></img>
+                 {/* <button onClick={() => setToggle(prevToggle => !prevToggle) }>Edit Post</button> */}
+                {/* <p>Settings: 𝑓 { fStop }, SS: { shutterSpeed }, ISO{ iso }</p>
                 <p>{caption}</p>
                 <p> Style: { style } </p>
                     <p>
@@ -32,16 +34,15 @@ const [Toggle, setToggle ] =useState(false)
                     Lens: {lensBrand}, {lensModel}
                         <br></br>
                         {/* accessories: { accessories } */}
-                    </p>
-                 <button onClick={() => setToggle(prevToggle => !prevToggle) }>Edit Post</button>
+                    {/* </p> */}
                 {/* <button onClick={() => props.editPost(props._id) }>Edit Post</button> */}
                 <hr></hr>
                 <br></br>
         </div>
         :
         <div className="posts">
-                <EditPostForm caption={caption} style={style} fStop={fStop} iso={iso} shutterSpeed={shutterSpeed} _id={_id}  />
-                <button onClick={ () => setToggle(prevToggle => !prevToggle)}>Close</button>
+                <EditPostForm caption={caption} _id={_id}  />
+                {/* <button onClick={ () => setToggle(prevToggle => !prevToggle)}>Close</button> */}
         </div>
     }
     </>

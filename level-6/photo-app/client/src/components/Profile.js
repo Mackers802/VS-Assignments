@@ -45,38 +45,27 @@ export const Profile = (props) => {
   }
 
   return (
-    <div className="profilePage">
+    <>
       {!toggle ? (
-        <div className="profileBox">
-          <div className="profileContainer">
-            <br></br>
+        <div className="profileCont">
             <img
               src={profilePicture}
               alt="Profile"
               width="150"
               height="150"
             ></img>
-            <div className="profileInfo">
-              {/* <br></br> */}
               <h1>{username}</h1>
               <h4>{bio}</h4>
               <h4>{email} </h4>
-              {/* <br></br> */}
-            </div>
-            <div className="profilePagePosts">
-              {userPosts.map((post) => (
-                <ProfilePost {...post} key={post._id} deletePost={deletePost} editPost={editPost}/>
-              ))}
-            </div>
+              <div className="profilePostsGrid">
+                {userPosts.map((post) => (
+                  <ProfilePost {...post} key={post._id} deletePost={deletePost} editPost={editPost}/>
+                ))}
+              </div>
             <button onClick={toggleForm}>Profile Settings</button>
-            <br></br>
-            {/* <button onClick={logout}> Signout </button> */}
-          </div>
         </div>
       ) : (
-        <div className="profileEdit">
-          <div className="profileContainer">
-            <br></br>
+        <div className="editProfile">
             <img
               src={profilePicture}
               alt="Profile"
@@ -85,16 +74,13 @@ export const Profile = (props) => {
               placeholder="Profile Pic"
             ></img>
             <div className="profileInfo">
-              {/* <br></br> */}
+              <br></br>
               <h1>{username}</h1>
               <h4>{bio}</h4>
               <h4>{email} </h4>
-              {/* <br></br> */}
+              <br></br>
             </div>
-            <div className="profilePagePosts"></div>
-            {/* <button onClick={toggleForm}>Edit Profile</button> */}
-            <br></br>
-          </div>
+            <button onClick={toggleForm}>Edit Profile</button>
           <form>
             <label>
               <input
@@ -121,8 +107,8 @@ export const Profile = (props) => {
           </form>
             <button onClick={logout}> Signout </button>
             <button onClick={toggleForm}>Back</button>
-        </div>
-      )}
     </div>
+      )}
+      </>
   );
 };
