@@ -2,6 +2,7 @@ import React, { useContext, useState, useEffect } from "react";
 import { UserAuthContext } from "../context/UserAuthProvider";
 import { PostProviderContext } from "../context/PostProvider";
 import { ProfilePost } from "./ProfilePost";
+import { EditProfile } from "./EditProfile";
 
 export const Profile = (props) => {
   const {
@@ -62,52 +63,12 @@ export const Profile = (props) => {
                   <ProfilePost {...post} key={post._id} deletePost={deletePost} editPost={editPost}/>
                 ))}
               </div>
-            <button onClick={toggleForm}>Profile Settings</button>
+            <button onClick={toggleForm} className="button">Profile Settings</button>
         </div>
       ) : (
-        <div className="editProfile">
-            <img
-              src={profilePicture}
-              alt="Profile"
-              width="150"
-              height="150"
-              placeholder="Profile Pic"
-            ></img>
-            <div className="profileInfo">
-              <br></br>
-              <h1>{username}</h1>
-              <h4>{bio}</h4>
-              <h4>{email} </h4>
-              <br></br>
-            </div>
-            <button onClick={toggleForm}>Edit Profile</button>
-          <form>
-            <label>
-              <input
-                onChange={handleChange}
-                type="text"
-                name="profilePicture"
-                placeholder="Change Profile Picture?"              />
-              <input
-                onChange={handleChange}
-                type="text"
-                name="bio"
-                placeholder="Change Bio"
-              />
-              <input
-                onChange={handleChange}
-                type="text"
-                name="email"
-                placeholder="Change Email?"
-              />
-            </label>
-            <br></br>
-          <h1>User Will Be Signed out and required to Sign back in to make any changes</h1>
-            <button onClick={handleSubmit}>Save Changes</button>
-          </form>
-            <button onClick={logout}> Signout </button>
-            <button onClick={toggleForm}>Back</button>
-    </div>
+        <>
+            <EditProfile />
+        </>
       )}
       </>
   );

@@ -346,7 +346,7 @@ const lensOptions =
                      <option value="1/8000">1/8000</option>
                  </select>
 				<br></br>
-				<button onClick={handleSubmit} type="button" className='w-56'>
+				<button onClick={handleSubmit} type="button" className="button">
 					Post
 				</button>
 			</form>

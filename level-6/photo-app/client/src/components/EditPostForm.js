@@ -49,8 +49,8 @@ export const EditPostForm = (props) => {
           <input type="text" name="caption" placeholder={caption} />
         </label>
         <br></br>
-        <button onClick={editPostSubmit}>Save Post</button>
-        <button onClick={handleDeleteSubmit}>Delete Post</button>
+        <button onClick={editPostSubmit} className="button">Save Post</button>
+        <button onClick={handleDeleteSubmit} className="button">Delete Post</button>
       </form>
     </div>
   );

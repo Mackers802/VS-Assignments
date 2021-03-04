@@ -25,7 +25,7 @@ export const Nav = () => {
           <h3>Search</h3>
         </Link>
         <Link to="/SearchUsers">
-          <h3>Friends</h3>
+          <h3>Search🔍</h3>
         </Link>
         {/* <Link to="/PostForm" className="navProfile"> 
           <h3>➕</h3>

@@ -25,7 +25,7 @@ export const Feed = (props) => {
             !toggle ?
             (
                 <div className="feedCont">
-                    <button onClick={handleToggle}>New Post</button>
+                    <button onClick={handleToggle} className="button">New Post</button>
                     <br></br>
                         { posts.map(post => <Post { ...post} key={post._id}/> ) }
                 </div>
@@ -36,7 +36,7 @@ export const Feed = (props) => {
                 <PostForm />
                 <br></br>
                 <hr></hr>
-            <button onClick={handleToggle}>Home</button>
+            <button onClick={handleToggle} className="button">Home</button>
             </div>
         )
         }

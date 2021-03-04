@@ -242,7 +242,7 @@ return (
 					</option>
 					{lensOptions}
 				</select>
-                <button> 
+                <button className="button"> 
                     Search
                 </button>
 			</form>
