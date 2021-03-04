@@ -108,7 +108,7 @@ postRouter.get("/:postId", (req, res, next) => {
 // update post ✅ 
 postRouter.put("/:postId", (req, res, next) => {
   Post.findOneAndUpdate(
-    { _id: req.params._id },
+    { _id: req.params.postId },
     req.body,
     { new: true },
     (err, updatedPost) => {

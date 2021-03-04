@@ -19,6 +19,7 @@ const [Toggle, setToggle ] =useState(false)
         {!Toggle ?
         <div className="posts">
                 <h3>{ username }</h3>
+                <h3>{caption}</h3>
                 <img src={ imgUrl } alt="post img" width="200" height="150"></img>
                 <p>Settings: 𝑓 { fStop }, SS: { shutterSpeed }, ISO{ iso }</p>
                 <p>{caption}</p>

@@ -17,10 +17,6 @@ export const EditPostForm = (props) => {
     shutterSpeed: shutterSpeed,
   };
 
-  // useEffect(() => {
-  //     getUserPosts(user._id)
-  // }, []);
-
   const [inputs, setInputs] = useState(initInputs);
   // const history = useHistory();
 
@@ -34,7 +30,6 @@ export const EditPostForm = (props) => {
   function editPostSubmit(e) {
     e.preventDefault();
     editPost(inputs, _id);
-    console.log("editPost postForm", inputs, _id);
   }
 
   function handleChange(e) {

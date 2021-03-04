@@ -66,8 +66,8 @@ export const UserAuthProvider = (props) => {
     userAxios
     .put(`/api/profile/${_id}`, inputs)
       .then((res) => {
-        setUserState((prevUserState) => ({
-          ...prevUserState,
+        setUserState((prevState) => ({
+          ...prevState,
           user: res.data
         }));
       })

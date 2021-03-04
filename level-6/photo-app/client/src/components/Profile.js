@@ -26,19 +26,9 @@ export const Profile = (props) => {
     setToggle((prev) => !prev);
   }
 
-  // useEffect(() => {
-  //   getUserProfile(_id)
-  // })
-
-
   useEffect(() => {
     getUserPosts(_id)
-    // getUserProfile(_id)
 }, []);
-
-// useEffect(() => {
-//   getUserProfile(_id)
-// }, []);
 
   function handleChange(e) {
     const { name, value } = e.target;
