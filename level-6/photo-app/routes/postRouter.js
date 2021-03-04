@@ -16,7 +16,7 @@ postRouter.get("/", (req, res, next) => {
   // get all posts by userId ✅ 
 postRouter.get("/:user", (req, res, next) => {
   Post.find(
-    { user: req.params.user }, (err, posts) => {
+    { user: req.user._id }, (err, posts) => {
     if (err) {
       res.status(500);
       return next(err);

@@ -18,7 +18,7 @@ export const Profile = (props) => {
     email: email || "",
   };
 
-  
+  // console.log("userPosts", userPosts)
   const [inputs, setInputs] = useState(initInputs);
   const [toggle, setToggle] = useState(false);
 

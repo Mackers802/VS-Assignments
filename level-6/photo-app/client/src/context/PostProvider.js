@@ -132,31 +132,30 @@ export const PostProvider = (props) => {
 
   function deletePost(_id){
     console.log("delete Post", _id)
-    // postsAxios
-    // .delete(`/api/posts/${_id}`)
-    // .then((res) => {
-    //   // console.log(res)
-    //     setPostsState((...prevState ) => ({
-    //         ...prevState,
-    //         posts: res.data
-    //     }))
-    // })
-    // .catch((err) => console.log(err.response.data.errMsg));
+    postsAxios
+    .delete(`/api/posts/${_id}`)
+      .then((res) => (
+        setPostsState(prevState => ({
+          ...prevState,
+          userPosts: prevState.userPosts.filter(post => post._id !== _id)
+        }))
+      ))
+      .catch((err) => console.log(err.response.data.errMsg));
   }
 
   function editPost(inputs, _id){
-    console.log("edit Post", _id)
-    // console.log("edit Post inputs", inputs)
+    console.log("edit Post Id", _id)
+    console.log("edit Post Inputs", inputs)
     postsAxios
     .put(`/api/posts/${_id}`, inputs)
-    .then((res) => {
-        setPostsState((...prevPostsState ) => ({
-            ...prevPostsState,
-            userPosts: res.data
-        }))
-    })
+    .then((res) => (
+      setPostsState(prevState => ({
+        ...prevState,
+        userPosts: prevState.userPosts.filter(post => post._id !== _id)
+      }))
+    ))
     .catch((err) => console.log(err.response.data.errMsg));
-    console.log(postsState)
+    console.log("editPosts postsState", postsState)
   }
 
   return (

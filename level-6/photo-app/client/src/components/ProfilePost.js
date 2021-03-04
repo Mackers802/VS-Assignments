@@ -1,4 +1,4 @@
-import React, { useContext, useState, useEffect }  from 'react'
+import React, { useContext, useState }  from 'react'
 // import { PostProviderContext } from '../context/PostProvider';
 import { UserAuthContext } from "../context/UserAuthProvider";
 import { EditPostForm } from "./EditPostForm"
@@ -39,7 +39,7 @@ const [Toggle, setToggle ] =useState(false)
         </div>
         :
         <div className="posts">
-                <EditPostForm caption={caption} style={style} fStop={fStop} iso={iso} shutterSpeed={shutterSpeed} _id={_id} />
+                <EditPostForm caption={caption} style={style} fStop={fStop} iso={iso} shutterSpeed={shutterSpeed} _id={_id}  />
                 <button onClick={ () => setToggle(prevToggle => !prevToggle)}>Close</button>
         </div>
     }
