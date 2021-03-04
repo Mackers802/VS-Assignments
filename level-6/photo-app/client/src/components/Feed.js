@@ -6,7 +6,6 @@ import { Post } from "./Post"
 export const Feed = (props) => {
 
     const { posts } = useContext(PostProviderContext)
-    const allPosts = posts
 
     // const { getAllPosts } = useContext(UserAuthContext)
 
@@ -15,8 +14,8 @@ export const Feed = (props) => {
     // }, []);
 
     return (
-        <div className="postsFeed">
-            { allPosts.map(post => <Post { ...post} key={post._id}/> ) }
+        <div className="feed">
+            { posts.map(post => <Post { ...post} key={post._id}/> ) }
         </div>
     )
 }

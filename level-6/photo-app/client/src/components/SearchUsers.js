@@ -1,55 +1,56 @@
 import React, { useState, useContext } from "react";
 import { UserAuthContext } from "../context/UserAuthProvider";
-import JSONData from "./JSONData"
+// import JSONData from "./JSONData"
+// import { PostProviderContext } from '../context/PostProvider'
 
 export const SearchUsers = () => {
 
-  const { getUserProfile } = useContext(UserAuthContext)
+  const { user: { friends } } = useContext(UserAuthContext)
+  // const { getAllPosts } = useContext(PostProviderContext)
   const [searchTerm, setSearchTerm] = useState("")
 
 function handleChange(e){
   setSearchTerm(e.target.value)
 }
 
-function handleSubmit(e){
-  e.preventDefault()
-  getUserProfile(searchTerm)
-}
+// function handleSubmit(e){
+//   e.preventDefault()
+//   getUserProfile(searchTerm)
+// }
 
   // useEffect(() => {
   //   getAllPosts();
-  //   setMakesModelsLens(lensDataFile);
-  //   setInputs(initInput)
+    // getUserProfile(_id)
+    // setMakesModelsLens(lensDataFile);
+    // setInputs(initInput)
     // console.log("selected", selected)
 // }, []);
 
   return (
-    <div>
-      <form>
+    <div className="friendsListCont">
+      <form className="friendSearch">
         <input 
             type="text" 
-            placeholder="User Search" 
+            placeholder="Search Friends List" 
             onChange={handleChange} 
             />
-            <button onClick={handleSubmit}>
-              Find Users Profile
-            </button>
-            {JSONData.filter((val) => {
-              if (searchTerm === ""){
-                return val
-              } else if (val.firstName.toLowerCase().includes(searchTerm.toLowerCase())){
-                return val
-              }
-            }).map((val, key) => {
-              return (
-                <div>
-                  <h1>{val.firstName}</h1>
-                </div>
-
-              )
-            })
-            }
       </form>
+              {friends.sort((a, b) => a.localeCompare(b)).filter((val) => {
+                if (searchTerm === ""){
+                  return val
+                } else if (val.toLowerCase().includes(searchTerm.toLowerCase())){
+                  return val
+                } 
+              }).map((val, key) => {
+                return (
+                  <div className="friendsList">
+                    <h3>
+                      {val}
+                    </h3>
+                  </div>
+                )
+              })
+              }
     </div>
   );
 };

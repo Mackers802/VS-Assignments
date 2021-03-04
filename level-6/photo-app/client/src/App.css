@@ -1,3 +1,6 @@
+.body{
+  background-color: black;
+}
 .navBar{
   display: flex;
   justify-content: space-evenly;
@@ -64,12 +67,62 @@
   background-color: rgb(251, 63, 16);
 }
 
-.postsFeed{
-  background-color: white;
+.feed{
+  margin-top: 15px;
+  background-color: rgb(0, 0, 0); 
 }
 
-.posts{
+.post{
+  background-color: aquamarine;
   justify-content: center;
   align-items: center;
   text-align: center;
+  margin-top: 30px;
+  margin-bottom: 15px;
+  margin: 30px;
+}
+
+.post > h3 {
+  justify-content: center;
+  width: 50px;
+  margin-bottom: 0px;
+}
+
+.settings{
+  margin-top: 0px;
+  background-color: chartreuse;
+}
+
+.caption{
+  background-color: burlywood;
+}
+
+.styleKit{
+  background-color: blue;
+}
+
+.friendsListCont{
+  background-color: rgba(0, 0, 0, 0.772);
+  border: 3px solid darkgray;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.friendSearch > input{
+  width: 29vw;
+  margin-left: 10px;
+  margin-top: 5px;
+  border: 3px solid darkgray;
+}
+
+.friendsList > h3{
+  width: 30vw;
+  height: 25px;
+  margin-left: 10px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  background-color: rgba(255, 255, 255, 0.896);
+  border: 3px solid darkgray;
+  text-align: center;
+  align-items: center;
 }

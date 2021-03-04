@@ -26,7 +26,7 @@ export const PostProvider = (props) => {
     postsAxios
       .get("/api/posts")
       .then((res) => {
-        console.log(res);
+        // console.log(res);
         setPostsState((prevState) => ({
           ...prevState,
           posts: res.data,

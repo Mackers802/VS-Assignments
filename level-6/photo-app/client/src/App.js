@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from 'react'
+import React, { useContext  } from 'react'
 import { Switch, Route } from "react-router-dom"
 import { UserAuthContext } from "./context/UserAuthProvider"
 import { Nav } from "./components/Nav"
@@ -30,6 +30,9 @@ export const App = () => {
             redirectTo="/Auth"
             token={token} 
             />  */}
+            <Route exact path="/PostSearch">
+            {token ? <PostSearch /> : <Auth />}
+          </Route>
           <Route exact path="/Feed">
             {token ? <Feed /> : <Auth />}
           </Route>

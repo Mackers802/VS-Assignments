@@ -27,6 +27,11 @@ const userSchema = new Schema ({
         required: false,
         default: ""
     },
+    friends: {
+        type: Array,
+        required: true,
+        default: []
+    },
     admin: {
         type: Boolean,
         required: false,
