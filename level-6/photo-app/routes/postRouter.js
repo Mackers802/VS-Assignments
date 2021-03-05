@@ -29,6 +29,7 @@ postRouter.get("/:user", (req, res, next) => {
   // add post ✅ 
   postRouter.post("/", (req, res, next) => {
     req.body.user = req.user._id;
+    req.body.username = req.user.username
     const newPost = new Post(req.body);
     newPost.save((err, savedPost) => {
       if (err) {

@@ -24,7 +24,7 @@ function changeToggle(){
                 <img src={ imgUrl } alt="post img" width="200" height="150" onClick={ changeToggle }></img>
         </div>
         :
-        <div className="posts">
+        <div className="postEditForm">
                 <EditPostForm caption={caption} _id={_id}  />
                 {/* <button onClick={ () => setToggle(prevToggle => !prevToggle)}>Close</button> */}
         </div>

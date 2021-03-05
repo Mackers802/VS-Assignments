@@ -39,7 +39,7 @@ export const EditProfile = (props) => {
   }
 
   return (
-        <div className="profileCont">
+        <div className="postEditForm">
             <img
               src={profilePicture}
               alt="Profile"

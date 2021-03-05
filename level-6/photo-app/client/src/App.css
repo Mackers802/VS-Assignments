@@ -2,265 +2,796 @@
   background-color: black;
 }
 
-.app{
-  margin-left: -10px;
-  margin-right: -10px;
-  margin-top: 5px;
-  margin-bottom: 5px;
-  text-decoration: none;
-}
-
 .button{
   background-color: rgba(76, 74, 74, 0.772);
   color: white
 }
 
-.navBar{
-  display: flex;
-  width: 100vw;
-  justify-content: space-evenly;
-  font-size: x-small;
-  align-items: center;
-  text-align: center;
-  text-decoration: none; 
-  background-size: cover;
-  margin-left: 15px;
-  margin-right: 15px;
-  margin-bottom: -5px;
-  padding: 5px;
-  background-color: darkgray;
-  border: 5px solid rgba(0, 0, 0, 0.772);
+@media only screen and (max-width: 320px) {
+  .app{
+    margin-left: -10px;
+    margin-right: -10px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    text-decoration: none;
+  }
+
+  .navBar{
+    display: flex;
+    width: 100vw;
+    justify-content: space-evenly;
+    font-size: x-small;
+    align-items: center;
+    text-align: center;
+    text-decoration: none; 
+    background-size: cover;
+    margin-left: 15px;
+    margin-right: 15px;
+    margin-bottom: -5px;
+    padding: 5px;
+    background-color: darkgray;
+    border: 5px solid rgba(0, 0, 0, 0.772);
+  }
+  
+  .navProfile > img{
+    border-radius: 50%;
+  }
+  
+  .navPost > h3{
+    font-size: x-large;
+    text-decoration: none;
+  }
+  
+  .authPage{
+    display: flex;
+    justify-content: center;
+    width: 100vw;
+    height: 50vh;
+    margin-top: 15vh;
+    align-items: center;
+    background-color: white;
+  }
+  
+  .profileCont{
+    display: inline-block;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: rgb(0, 0, 0);
+    border: 5px solid darkgray;
+    width: 90vw;
+    margin-top: 10px;
+    margin-right: 25px;
+    margin-left: 25px;
+    margin-bottom: 10px;
+    color: white;
+  }
+  
+  .profileCont > img{
+    width: 50vw;
+    height: 30vh;
+    border-radius: 50%;
+    margin-top: 15px
+  }
+  
+  .profilePagePosts{
+    display: grid;
+    width: 200px;
+  }
+  
+  .profilePostsGrid > img{
+    background-color: darkgray;
+    width: 25px;
+    height: auto;
+    display: grid;
+    grid-template-columns: repeat(3);
+    grid-template-rows: repeat(2);
+  }
+  
+  .editProfile{
+    background-color: darkgray;
+    display: flex;
+    justify-content: center;
+    width: 80vw;
+    margin-top: 15px;
+  }
+  
+  .userPosts > button{
+   margin-left: -20px
+  }
+  
+  /* .profileContainer{
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+  } */
+  
+  /* .profileContainer > img{
+    border-radius: 50%;
+  } */
+  
+  /* .profileContainer > button{
+    width: 100px;
+  } */
+  
+  /* .profileInfo{
+    background-color: violet;
+  } */
+  
+  
+  /* .profileEdit{
+    background-color: rgb(251, 63, 16);
+  } */
+  
+  .feedCont > button{
+    margin-top: 8px;
+    margin-right: 20px;
+    border: 2px red solid;
+    float: right;
+    /* background-color: rgb(0, 0, 0);  */
+  }
+  
+  .postFormCont{
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .postForm{
+    display: inline-block;
+    background-color: darkgray;
+    border: 5px solid rgba(0, 0, 0, 0.772);
+    align-items: center;
+    text-align: left;
+    margin-top: 10px;
+    margin-left: 10px;
+    margin-right: 20px;
+    padding: 10px;
+  }
+  
+  
+  .post{
+    background-color: rgba(0, 0, 0, 0.624);
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    margin-left: 25px;
+    margin-right: 25px;
+    border: 2px solid black;
+  }
+  
+  .post > img {
+    width: 75vw;
+    height: auto;
+  }
+  
+  .post > h2 {
+    color: white;
+    font-size: small;
+    width: 50vw;
+    height: auto;
+  }
+  
+  .postProfPic{
+    display: flex;
+  }
+  
+  .postProfPic > img{
+    width: 30px;
+    height: auto;
+    border-radius: 75%;
+    float: left;
+    margin: 10px;
+    margin-right: 10px;
+  
+  }
+  
+  .post > p {
+    justify-content: center;
+    width: 70vw;
+    text-align: center;
+    margin-top: -20;
+    margin-left: 25px
+  }
+  
+  .post > h3 {
+    justify-content: center;
+    width: 50px;
+    margin-bottom: 0px;
+  }
+  
+  .userPosts{
+    display: flex;
+    justify-content: center;
+    margin: 10px
+  }
+  
+  .userPosts > img{
+    border: solid 2px azure;
+    border-radius: 25%;
+  }
+
+  .postEditForm{
+    background-color: violet;
+  }
+  
+  .settings{
+    margin-top: 0px;
+    background-color: chartreuse;
+  }
+  
+  .caption{
+    background-color: burlywood;
+  }
+  
+  .styleKit{
+    background-color: blue;
+  }
+  
+  .friendsListCont{
+    background-color: rgba(0, 0, 0, 0.772);
+    border: 5px solid darkgray;
+    margin-top: 10px;
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+  
+  .friendSearch > input{
+    width: 69vw;
+    margin-left: 10px;
+    margin-top: 5px;
+    border: 3px solid darkgray;
+  }
+  
+  .friendsList > button{
+    width: 70vw;
+    height: 30px;
+    font-family: 'monospace', 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: large;
+    font-weight:800;
+    font-style: italic;
+    margin-left: 10px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    background-color: rgba(255, 255, 255, 0.896);
+    border: 3px solid darkgray;
+    text-align: left;
+    align-items: center;
+  }
+  
+  .editProfile{
+    display: flex;
+    justify-content: center;
+  }
+  
+  .warning{
+    color: red;
+  }
 }
 
-.navProfile > img{
-  border-radius: 50%;
+@media only screen and (max-width: 768px) {
+  .app{
+    margin-left: -10px;
+    margin-right: -10px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    text-decoration: none;
+  }
+
+  .navBar{
+    display: flex;
+    width: 100vw;
+    justify-content: space-evenly;
+    font-size: x-small;
+    align-items: center;
+    text-align: center;
+    text-decoration: none; 
+    background-size: cover;
+    margin-left: 15px;
+    margin-right: 15px;
+    margin-bottom: -5px;
+    padding: 5px;
+    background-color: rgb(190, 45, 45);
+    border: 5px solid rgba(0, 0, 0, 0.772);
+  }
+  
+  .navProfile > img{
+    border-radius: 50%;
+  }
+  
+  .navPost > h3{
+    font-size: x-large;
+    text-decoration: none;
+  }
+  
+  .authPage{
+    display: flex;
+    justify-content: center;
+    width: 100vw;
+    height: 50vh;
+    margin-top: 15vh;
+    align-items: center;
+    background-color: white;
+  }
+  
+  .profileCont{
+    display: inline-block;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: rgb(0, 0, 0);
+    border: 5px solid darkgray;
+    width: 90vw;
+    margin-top: 10px;
+    margin-right: 25px;
+    margin-left: 25px;
+    margin-bottom: 10px;
+    color: white;
+  }
+  
+  .profileCont > img{
+    width: 50vw;
+    height: 30vh;
+    border-radius: 50%;
+    margin-top: 15px
+  }
+  
+  .profilePagePosts{
+    display: grid;
+    width: 200px;
+  }
+  
+  .profilePostsGrid > img{
+    background-color: darkgray;
+    width: 25px;
+    height: auto;
+    display: grid;
+    grid-template-columns: repeat(3);
+    grid-template-rows: repeat(2);
+  }
+  
+  .editProfile{
+    background-color: darkgray;
+    display: flex;
+    justify-content: center;
+    width: 80vw;
+    margin-top: 15px;
+  }
+  
+  .userPosts > button{
+   margin-left: -20px
+  }
+  
+  /* .profileContainer{
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+  } */
+  
+  /* .profileContainer > img{
+    border-radius: 50%;
+  } */
+  
+  /* .profileContainer > button{
+    width: 100px;
+  } */
+  
+  /* .profileInfo{
+    background-color: violet;
+  } */
+  
+  
+  /* .profileEdit{
+    background-color: rgb(251, 63, 16);
+  } */
+  
+  .feedCont > button{
+    margin-top: 8px;
+    margin-right: 20px;
+    border: 2px red solid;
+    float: right;
+    /* background-color: rgb(0, 0, 0);  */
+  }
+  
+  .postFormCont{
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .postForm{
+    display: inline-block;
+    background-color: darkgray;
+    border: 5px solid rgba(0, 0, 0, 0.772);
+    align-items: center;
+    text-align: left;
+    margin-top: 10px;
+    margin-left: 10px;
+    margin-right: 20px;
+    padding: 10px;
+  }
+  
+  
+  .post{
+    background-color: rgba(0, 0, 0, 0.624);
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    margin-left: 25px;
+    margin-right: 25px;
+    border: 2px solid black;
+  }
+  
+  .post > img {
+    width: 75vw;
+    height: auto;
+  }
+  
+  .post > h2 {
+    color: white;
+    font-size: small;
+    width: 50vw;
+    height: auto;
+  }
+  
+  .postProfPic{
+    display: flex;
+  }
+  
+  .postProfPic > img{
+    width: 30px;
+    height: auto;
+    border-radius: 75%;
+    float: left;
+    margin: 10px;
+    margin-right: 10px;
+  
+  }
+  
+  .post > p {
+    justify-content: center;
+    width: 70vw;
+    text-align: center;
+    margin-top: -20;
+    margin-left: 25px
+  }
+  
+  .post > h3 {
+    justify-content: center;
+    width: 50px;
+    margin-bottom: 0px;
+  }
+  
+  .userPosts{
+    display: flex;
+    justify-content: center;
+    margin: 10px
+  }
+  
+  .userPosts > img{
+    border: solid 2px azure;
+    border-radius: 25%;
+  }
+  
+  .settings{
+    margin-top: 0px;
+    background-color: chartreuse;
+  }
+  
+  .caption{
+    background-color: burlywood;
+  }
+  
+  .styleKit{
+    background-color: blue;
+  }
+  
+  .friendsListCont{
+    background-color: rgba(0, 0, 0, 0.772);
+    border: 5px solid darkgray;
+    margin-top: 10px;
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+  
+  .friendSearch > input{
+    width: 69vw;
+    margin-left: 10px;
+    margin-top: 5px;
+    border: 3px solid darkgray;
+  }
+  
+  .friendsList > button{
+    width: 70vw;
+    height: 30px;
+    font-family: 'monospace', 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: large;
+    font-weight:800;
+    font-style: italic;
+    margin-left: 10px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    background-color: rgba(255, 255, 255, 0.896);
+    border: 3px solid darkgray;
+    text-align: left;
+    align-items: center;
+  }
+  
+  .editProfile{
+    display: flex;
+    justify-content: center;
+  }
+  
+  .warning{
+    color: red;
+  }
 }
 
-.navPost > h3{
-  font-size: x-large;
-  text-decoration: none;
+@media only screen and (min-width: 769px) {
+  .app{
+    margin-left: -10px;
+    margin-right: -10px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    text-decoration: none;
+  }
+
+  .navBar{
+    display: flex;
+    width: 100vw;
+    justify-content: space-evenly;
+    font-size: x-small;
+    align-items: center;
+    text-align: center;
+    text-decoration: none; 
+    background-size: cover;
+    margin-left: 15px;
+    margin-right: 15px;
+    margin-bottom: -5px;
+    padding: 5px;
+    background-color: rgb(149, 226, 27);
+    border: 5px solid rgba(0, 0, 0, 0.772);
+  }
+  
+  .navProfile > img{
+    border-radius: 50%;
+  }
+  
+  .navPost > h3{
+    font-size: x-large;
+    text-decoration: none;
+  }
+  
+  .authPage{
+    display: flex;
+    justify-content: center;
+    width: 100vw;
+    height: 50vh;
+    margin-top: 15vh;
+    align-items: center;
+    background-color: white;
+  }
+  
+  .profileCont{
+    display: inline-block;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: rgb(0, 0, 0);
+    border: 5px solid darkgray;
+    width: 90vw;
+    margin-top: 10px;
+    margin-right: 25px;
+    margin-left: 25px;
+    margin-bottom: 10px;
+    color: white;
+  }
+  
+  .profileCont > img{
+    width: 40vw;
+    height: 30vh;
+    border-radius: 50%;
+    margin-top: 15px
+  }
+  
+  .profilePagePosts{
+    display: grid;
+    width: 200px;
+  }
+  
+  .profilePostsGrid > img{
+    background-color: darkgray;
+    width: 25px;
+    height: auto;
+    display: grid;
+    grid-template-columns: repeat(3);
+    grid-template-rows: repeat(2);
+  }
+  
+  .editProfile{
+    background-color: darkgray;
+    display: flex;
+    justify-content: center;
+    width: 80vw;
+    margin-top: 15px;
+  }
+  
+  .userPosts > button{
+   margin-left: -20px
+  }
+  
+  /* .profileContainer{
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+  } */
+  
+  /* .profileContainer > img{
+    border-radius: 50%;
+  } */
+  
+  /* .profileContainer > button{
+    width: 100px;
+  } */
+  
+  /* .profileInfo{
+    background-color: violet;
+  } */
+  
+  
+  /* .profileEdit{
+    background-color: rgb(251, 63, 16);
+  } */
+  
+  .feedCont > button{
+    margin-top: 8px;
+    margin-right: 20px;
+    border: 2px red solid;
+    float: right;
+    /* background-color: rgb(0, 0, 0);  */
+  }
+  
+  .postFormCont{
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .postForm{
+    display: inline-block;
+    background-color: darkgray;
+    border: 5px solid rgba(0, 0, 0, 0.772);
+    align-items: center;
+    text-align: left;
+    margin-top: 10px;
+    margin-left: 10px;
+    margin-right: 20px;
+    padding: 10px;
+  }
+  
+  
+  .post{
+    background-color: rgba(0, 0, 0, 0.624);
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    margin-left: 25px;
+    margin-right: 25px;
+    border: 2px solid black;
+  }
+  
+  .post > img {
+    width: 75vw;
+    height: auto;
+  }
+  
+  .post > h2 {
+    color: white;
+    font-size: small;
+    width: 50vw;
+    height: auto;
+  }
+  
+  .postProfPic{
+    display: flex;
+  }
+  
+  .postProfPic > img{
+    width: 30px;
+    height: auto;
+    border-radius: 75%;
+    float: left;
+    margin: 10px;
+    margin-right: 10px;
+  
+  }
+  
+  .post > p {
+    justify-content: center;
+    width: 70vw;
+    text-align: center;
+    margin-top: -20;
+    margin-left: 25px
+  }
+  
+  .post > h3 {
+    justify-content: center;
+    width: 50px;
+    margin-bottom: 0px;
+  }
+  
+  .userPosts{
+    display: flex;
+    justify-content: center;
+    margin: 10px
+  }
+  
+  .userPosts > img{
+    border: solid 2px azure;
+    border-radius: 25%;
+  }
+  
+  .settings{
+    margin-top: 0px;
+    background-color: chartreuse;
+  }
+  
+  .caption{
+    background-color: burlywood;
+  }
+  
+  .styleKit{
+    background-color: blue;
+  }
+  
+  .friendsListCont{
+    background-color: rgba(0, 0, 0, 0.772);
+    border: 5px solid darkgray;
+    margin-top: 10px;
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+  
+  .friendSearch > input{
+    width: 69vw;
+    margin-left: 10px;
+    margin-top: 5px;
+    border: 3px solid darkgray;
+  }
+  
+  .friendsList > button{
+    width: 70vw;
+    height: 30px;
+    font-family: 'monospace', 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: large;
+    font-weight:800;
+    font-style: italic;
+    margin-left: 10px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    background-color: rgba(255, 255, 255, 0.896);
+    border: 3px solid darkgray;
+    text-align: left;
+    align-items: center;
+  }
+  
+  .editProfile{
+    display: flex;
+    justify-content: center;
+  }
+  
+  .warning{
+    color: red;
+  }
 }
 
-.authPage{
-  display: flex;
-  justify-content: center;
-  width: 100vw;
-  height: 50vh;
-  margin-top: 15vh;
-  align-items: center;
-  background-color: white;
-}
 
-.profileCont{
-  display: inline-block;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  background-color: rgb(0, 0, 0);
-  border: 5px solid darkgray;
-  width: 90vw;
-  margin-top: 10px;
-  margin-right: 25px;
-  margin-left: 25px;
-  margin-bottom: 10px;
-  color: white;
-}
-
-.profileCont > img{
-  width: 50vw;
-  height: 30vh;
-  border-radius: 50%;
-  margin-top: 15px
-}
-
-.profilePagePosts{
-  display: grid;
-  width: 200px;
-}
-
-.profilePostsGrid > img{
-  background-color: darkgray;
-  width: 25px;
-  height: auto;
-  display: grid;
-  grid-template-columns: repeat(3);
-  grid-template-rows: repeat(2);
-}
-
-.editProfile{
-  background-color: darkgray;
-  display: flex;
-  justify-content: center;
-  width: 80vw;
-  margin-top: 15px;
-}
-
-.userPosts > button{
- margin-left: -20px
-}
-
-/* .profileContainer{
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  color: white;
-} */
-
-/* .profileContainer > img{
-  border-radius: 50%;
-} */
-
-/* .profileContainer > button{
-  width: 100px;
-} */
-
-/* .profileInfo{
-  background-color: violet;
-} */
-
-
-/* .profileEdit{
-  background-color: rgb(251, 63, 16);
-} */
-
-.feedCont > button{
-  margin-top: 8px;
-  margin-right: 20px;
-  border: 2px red solid;
-  float: right;
-  /* background-color: rgb(0, 0, 0);  */
-}
-
-.postFormCont{
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
-
-.postForm{
-  display: inline-block;
-  background-color: darkgray;
-  border: 5px solid rgba(0, 0, 0, 0.772);
-  align-items: center;
-  text-align: left;
-  margin-top: 10px;
-  margin-left: 10px;
-  margin-right: 20px;
-  padding: 10px;
-}
-
-
-.post{
-  background-color: rgba(0, 0, 0, 0.624);
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  margin-top: 15px;
-  margin-bottom: 15px;
-  margin-left: 25px;
-  margin-right: 25px;
-  border: 2px solid black;
-}
-
-.post > img {
-  width: 75vw;
-  height: auto;
-}
-
-.post > h2 {
-  text-size-adjust: auto;
-  width: 50vw;
-  height: auto;
-}
-
-.postProfPic{
-  display: flex;
-}
-
-.postProfPic > img{
-  width: 30px;
-  height: auto;
-  border-radius: 75%;
-  float: left;
-  margin: 10px;
-  margin-right: 10px;
-
-}
-
-.post > p {
-  justify-content: center;
-  width: 70vw;
-  text-align: center;
-  margin-top: -20;
-  margin-left: 25px
-}
-
-.post > h3 {
-  justify-content: center;
-  width: 50px;
-  margin-bottom: 0px;
-}
-
-.userPosts{
-  display: flex;
-  justify-content: center;
-  margin: 10px
-}
-
-.userPosts > img{
-  border: solid 2px azure;
-  border-radius: 25%;
-}
-
-.settings{
-  margin-top: 0px;
-  background-color: chartreuse;
-}
-
-.caption{
-  background-color: burlywood;
-}
-
-.styleKit{
-  background-color: blue;
-}
-
-.friendsListCont{
-  background-color: rgba(0, 0, 0, 0.772);
-  border: 5px solid darkgray;
-  margin-top: 10px;
-  margin-left: 20px;
-  margin-right: 20px;
-}
-
-.friendSearch > input{
-  width: 69vw;
-  margin-left: 10px;
-  margin-top: 5px;
-  border: 3px solid darkgray;
-}
-
-.friendsList > button{
-  width: 70vw;
-  height: 30px;
-  font-family: 'monospace', 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-  font-size: large;
-  font-weight:800;
-  font-style: italic;
-  margin-left: 10px;
-  margin-top: 5px;
-  margin-bottom: 5px;
-  background-color: rgba(255, 255, 255, 0.896);
-  border: 3px solid darkgray;
-  text-align: left;
-  align-items: center;
-}
-
-.editProfile{
-  display: flex;
-  justify-content: center;
-}
-
-.warning{
-  color: red;
-}

@@ -16,8 +16,8 @@ export const Feed = (props) => {
     // const { getAllPosts } = useContext(UserAuthContext)
 
     useEffect(() => {
-           getAllPosts()
-    },);
+           getAllPosts("all Posts")
+    }, []);
 
     return (
         <>
