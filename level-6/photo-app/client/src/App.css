@@ -294,7 +294,7 @@
     margin-right: 15px;
     margin-bottom: -5px;
     padding: 5px;
-    background-color: rgb(190, 45, 45);
+    background-color: rgb(173, 173, 173);
     border: 5px solid rgba(0, 0, 0, 0.772);
   }
   
@@ -365,29 +365,6 @@
    margin-left: -20px
   }
   
-  /* .profileContainer{
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    color: white;
-  } */
-  
-  /* .profileContainer > img{
-    border-radius: 50%;
-  } */
-  
-  /* .profileContainer > button{
-    width: 100px;
-  } */
-  
-  /* .profileInfo{
-    background-color: violet;
-  } */
-  
-  
-  /* .profileEdit{
-    background-color: rgb(251, 63, 16);
-  } */
   
   .feedCont > button{
     margin-top: 8px;
@@ -472,6 +449,16 @@
     display: flex;
     justify-content: center;
     margin: 10px
+  }
+
+  .postSearchBar{
+    width: 100vw;
+  background-color: rgb(119, 119, 119);
+  }
+
+  .postSearchBar > img{
+    width: 100px;
+    height: auto;
   }
   
   .userPosts > img{

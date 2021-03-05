@@ -1,256 +1,256 @@
-import React, { useContext, useState, useEffect } from 'react'
-// import { UserAuthContext } from "../context/UserAuthProvider";
-import { PostProviderContext } from '../context/PostProvider'
-import cameraDataFile from "./cameraDataFile.js"
-import lensDataFile from "./lensDataFile.js"
-import { Post } from "./Post"
+// import React, { useContext, useState, useEffect } from 'react'
+// // import { UserAuthContext } from "../context/UserAuthProvider";
+// import { PostProviderContext } from '../context/PostProvider'
+// import cameraDataFile from "./cameraDataFile.js"
+// import lensDataFile from "./lensDataFile.js"
+// import { Post } from "./Post"
 
-export const PostSearch = () => {
+// export const PostSearch = () => {
 
-const initInputs = {
-    style: "",
-    cameraBrand: "",
-    cameraModel: "",
-    lensBrand: "",
-    lensModel: ""
-}
+// const initInputs = {
+//     style: "",
+//     cameraBrand: "",
+//     cameraModel: "",
+//     lensBrand: "",
+//     lensModel: ""
+// }
 
-const { 
-    posts, 
-    getAllPosts, 
-    // search,
-    searchByStyle,
-    searchByCameraBrand,
-    searchByCameraModel,
-    searchByLensBrand,
-    searchByLensModel 
-} = useContext(PostProviderContext)
+// const { 
+//     posts, 
+//     getAllPosts, 
+//     // search,
+//     searchByStyle,
+//     searchByCameraBrand,
+//     searchByCameraModel,
+//     searchByLensBrand,
+//     searchByLensModel 
+// } = useContext(PostProviderContext)
 
-const [makesModelsCam, setMakesModelsCam] = useState({});
-const [makesModelsLens, setMakesModelsLens] = useState({});
-const [camModels, setCamModels] = useState([]);
-const [lensModels, setLensModels] = useState([]);
-const [selected, setSelected] = useState(initInputs);
-// const history = useHistory();
+// const [makesModelsCam, setMakesModelsCam] = useState({});
+// const [makesModelsLens, setMakesModelsLens] = useState({});
+// const [camModels, setCamModels] = useState([]);
+// const [lensModels, setLensModels] = useState([]);
+// const [selected, setSelected] = useState(initInputs);
+// // const history = useHistory();
 
-// const { newPost } = useContext(PostProviderContext)
-
-useEffect(() => {
-    getAllPosts()
-    setMakesModelsLens(lensDataFile);
-    setMakesModelsCam(cameraDataFile)
-    setSelected(selected)
-}, []);
+// // const { newPost } = useContext(PostProviderContext)
 
 // useEffect(() => {
-// 	axios
-// 		.get('URL')
-// 		.then(function (response) {
-// 			setMakesModels(response.data);
-// 		})
-// 		.catch(function (error) {
-// 			// handle error
-// 			console.log(error);
-// 		});
+//     getAllPosts()
+//     setMakesModelsLens(lensDataFile);
+//     setMakesModelsCam(cameraDataFile)
+//     setSelected(selected)
 // }, []);
 
-function handleSubmit(e){
-    e.preventDefault()
-    // console.log("selected", selected)
-    // console.log("please Make a search selection")
-    searchByStyle(selected)
-    searchByCameraBrand(selected)
-    searchByCameraModel(selected)
-    searchByLensBrand(selected)
-    searchByLensModel(selected)
-    // const selectedStyle = selected.style
-    // const selectedCameraBrand = selected.cameraBrand
-    // const selectedCameraModel = selected.cameraModel
-    // const selectedLensBrand = selected.lensBrand
-    // const selectedLensModel = selected.lensModel
-    // console.log("Selected style", selectedStyle)
-    // console.log("Selected cameraBrand", selectedCameraBrand)
-    // console.log("Selected cameraModel", selectedCameraModel)
-    // console.log("Selected lensBrand", selectedLensBrand)
-    // console.log("Selected lensModel", selectedLensModel)
-}
+// // useEffect(() => {
+// // 	axios
+// // 		.get('URL')
+// // 		.then(function (response) {
+// // 			setMakesModels(response.data);
+// // 		})
+// // 		.catch(function (error) {
+// // 			// handle error
+// // 			console.log(error);
+// // 		});
+// // }, []);
 
-function handleChange(e){
-    const {name, value} = e.target
-    setSelected(prevSelected => ({
-        ...prevSelected, [name]: value
-    }))
-    console.log("handleChange", selected)
-}
+// function handleSubmit(e){
+//     e.preventDefault()
+//     // console.log("selected", selected)
+//     // console.log("please Make a search selection")
+//     searchByStyle(selected)
+//     searchByCameraBrand(selected)
+//     searchByCameraModel(selected)
+//     searchByLensBrand(selected)
+//     searchByLensModel(selected)
+//     // const selectedStyle = selected.style
+//     // const selectedCameraBrand = selected.cameraBrand
+//     // const selectedCameraModel = selected.cameraModel
+//     // const selectedLensBrand = selected.lensBrand
+//     // const selectedLensModel = selected.lensModel
+//     // console.log("Selected style", selectedStyle)
+//     // console.log("Selected cameraBrand", selectedCameraBrand)
+//     // console.log("Selected cameraModel", selectedCameraModel)
+//     // console.log("Selected lensBrand", selectedLensBrand)
+//     // console.log("Selected lensModel", selectedLensModel)
+// }
 
-//* -------------   camera selection -------------   */
+// function handleChange(e){
+//     const {name, value} = e.target
+//     setSelected(prevSelected => ({
+//         ...prevSelected, [name]: value
+//     }))
+//     console.log("handleChange", selected)
+// }
 
-const selectMake = (e) => {
-    const { name, value } = e.target;
-    setCamModels(makesModelsCam[value]);
-    setSelected((prevState) => {
-        return { ...prevState, [name]: value };
-    });
-};
+// //* -------------   camera selection -------------   */
 
-
-const handleModelSelect = (e) => {
-    const { name, value } = e.target;
-    setSelected((prevState) => {
-        return { ...prevState, [name]: value };
-    });
-    console.log("selected model", selected);
-};
-// console.log(Object.keys(makesmodels));
-
-
-const cameraBrandOptions =
-    makesModelsCam &&
-    Object.keys(makesModelsCam)
-        .sort((a, b) => a.localeCompare(b))
-            .map((camBrand, idx) => {
-                return (
-                    <option key={idx} value={camBrand}>
-                        {camBrand}
-                    </option>
-                );
-        });
-
-const cameraOptions =
-    camModels &&
-    camModels
-        .sort((a, b) => a.localeCompare(b))
-        .map((camModel, idx) => {
-            return (
-                <option className='p-4' key={idx} value={camModel}>
-                    {camModel}
-                </option>
-            );
-        });
-
-/* -------------    lens selection ~~~-------------    */
-
-const selectLensMake = (e) => {
-    const { name, value } = e.target;
-    setLensModels(makesModelsLens[value]);
-    setSelected((prevState) => {
-        return { ...prevState, [name]: value };
-    });
-};
+// const selectMake = (e) => {
+//     const { name, value } = e.target;
+//     setCamModels(makesModelsCam[value]);
+//     setSelected((prevState) => {
+//         return { ...prevState, [name]: value };
+//     });
+// };
 
 
-const handleLensModelSelect = (e) => {
-    const { name, value } = e.target;
-    setSelected((prevState) => {
-        return { ...prevState, [name]: value };
-    });
-};
-// console.log(Object.keys(makesmodels));
+// const handleModelSelect = (e) => {
+//     const { name, value } = e.target;
+//     setSelected((prevState) => {
+//         return { ...prevState, [name]: value };
+//     });
+//     console.log("selected model", selected);
+// };
+// // console.log(Object.keys(makesmodels));
 
 
+// const cameraBrandOptions =
+//     makesModelsCam &&
+//     Object.keys(makesModelsCam)
+//         .sort((a, b) => a.localeCompare(b))
+//             .map((camBrand, idx) => {
+//                 return (
+//                     <option key={idx} value={camBrand}>
+//                         {camBrand}
+//                     </option>
+//                 );
+//         });
 
-const lensBrandOptions =
-makesModelsLens &&
-Object.keys(makesModelsLens)
-    .sort((a, b) => a.localeCompare(b))
-        .map((lensBrand, idx) => {
-            return (
-                <option key={idx} value={lensBrand}>
-                    {lensBrand}
-                </option>
-            );
-    });
+// const cameraOptions =
+//     camModels &&
+//     camModels
+//         .sort((a, b) => a.localeCompare(b))
+//         .map((camModel, idx) => {
+//             return (
+//                 <option className='p-4' key={idx} value={camModel}>
+//                     {camModel}
+//                 </option>
+//             );
+//         });
 
-const lensOptions =
-lensModels &&
-lensModels
-    .sort((a, b) => a.localeCompare(b))
-    .map((lensModel, idx) => {
-        return (
-            <option className='p-4' key={idx} value={lensModel}>
-                {lensModel}
-            </option>
-        );
-    });
+// /* -------------    lens selection ~~~-------------    */
+
+// const selectLensMake = (e) => {
+//     const { name, value } = e.target;
+//     setLensModels(makesModelsLens[value]);
+//     setSelected((prevState) => {
+//         return { ...prevState, [name]: value };
+//     });
+// };
+
+
+// const handleLensModelSelect = (e) => {
+//     const { name, value } = e.target;
+//     setSelected((prevState) => {
+//         return { ...prevState, [name]: value };
+//     });
+// };
+// // console.log(Object.keys(makesmodels));
 
 
 
-return (
-    <div className="postsFeed">     
-           <form onSubmit={ handleSubmit } className='flex flex-row space-x-4'>
-			<h3>Search...</h3>
-			<select onChange={ handleChange } name="style">
-                    <option input="" disabled selected defaultValue>Style</option> 
-                    <option input="all">All</option> 
-                    <option value="Architectural">Architectural</option>
-                    <option value="Astro">Astro</option> 
-                    <option value="Car">Car</option>
-                    <option input="Fashion">Fashion</option> 
-                    <option value="Food">Food</option>
-                    <option value="Landscape">Landscape</option>
-                    <option value="Portrait">Portrait</option>
-                    <option value="Macro">Macro</option> 
-					<option value="Nature">Nature</option>
-                    <option value="Night">Night</option>
-                    <option value="Other">Other</option> 
-                    <option value="Pet">Pet</option> 
-                    <option value="Photojournalism">Photojournalism</option>
-                    <option value="Product">Product</option>
-                    <option value="Sports">Sports</option>
-                    <option value="Still Life">Still Life</option>
-                    <option value="Street">Street</option>
-                    <option value="Travel">Travel</option>
-                    <option value="Underwater">Underwater</option> 
-                    <option value="Wedding">Wedding</option> 
-                    <option value="Wildlife">Wildlife</option> 
-                </select>
-				{/* ~~~~~~~~~~~~~~ camera selection ~~~~~~~~~~~~~~~~~ */}
-				<select
-					className='w-56 p-2'
-					onChange={selectMake}
-					name='cameraBrand'
-					id='cameraBrand'>
-					<option value='' disabled selected defaultValue Brand>Camera Brand
-					</option>
-					{cameraBrandOptions}
-				</select>
-				<select
-					className='w-56 p-2'
-					onChange={handleModelSelect}
-					name='cameraModel'
-					id='cameraModel'>
-					<option value='Select Value' disabled selected defaultValue >Camera Model
-					</option>
-					{cameraOptions}
-				</select>
-				{/* ~~~~~~~~~~~~~~ camera selection ~~~~~~~~~~~~~~~~~ */}
-				<select
-					className='w-56 p-2'
-					onChange={selectLensMake}
-					name='lensBrand'
-					id='lensBrand'>
-					<option value='' disabled selected defaultValue >Lens Brand
-					</option>
-					{lensBrandOptions}
-				</select>
-				<select
-					className='w-56 p-2'
-					onChange={handleLensModelSelect}
-					name='lensModel'
-					id='lensModel'>
-					<option value='Select Value' disabled selected defaultValue >Lens Model
-					</option>
-					{lensOptions}
-				</select>
-                <button className="button"> 
-                    Search
-                </button>
-			</form>
+// const lensBrandOptions =
+// makesModelsLens &&
+// Object.keys(makesModelsLens)
+//     .sort((a, b) => a.localeCompare(b))
+//         .map((lensBrand, idx) => {
+//             return (
+//                 <option key={idx} value={lensBrand}>
+//                     {lensBrand}
+//                 </option>
+//             );
+//     });
 
-            { posts.map(post => <Post { ...post} key={post._id}/> ) }
-        </div>
-    )
-}
+// const lensOptions =
+// lensModels &&
+// lensModels
+//     .sort((a, b) => a.localeCompare(b))
+//     .map((lensModel, idx) => {
+//         return (
+//             <option className='p-4' key={idx} value={lensModel}>
+//                 {lensModel}
+//             </option>
+//         );
+//     });
+
+
+
+// return (
+//     <div className="postsFeed">     
+//            <form onSubmit={ handleSubmit } className='flex flex-row space-x-4'>
+// 			<h3>Search...</h3>
+// 			<select onChange={ handleChange } name="style">
+//                     <option input="" disabled selected defaultValue>Style</option> 
+//                     <option input="all">All</option> 
+//                     <option value="Architectural">Architectural</option>
+//                     <option value="Astro">Astro</option> 
+//                     <option value="Car">Car</option>
+//                     <option input="Fashion">Fashion</option> 
+//                     <option value="Food">Food</option>
+//                     <option value="Landscape">Landscape</option>
+//                     <option value="Portrait">Portrait</option>
+//                     <option value="Macro">Macro</option> 
+// 					<option value="Nature">Nature</option>
+//                     <option value="Night">Night</option>
+//                     <option value="Other">Other</option> 
+//                     <option value="Pet">Pet</option> 
+//                     <option value="Photojournalism">Photojournalism</option>
+//                     <option value="Product">Product</option>
+//                     <option value="Sports">Sports</option>
+//                     <option value="Still Life">Still Life</option>
+//                     <option value="Street">Street</option>
+//                     <option value="Travel">Travel</option>
+//                     <option value="Underwater">Underwater</option> 
+//                     <option value="Wedding">Wedding</option> 
+//                     <option value="Wildlife">Wildlife</option> 
+//                 </select>
+// 				{/* ~~~~~~~~~~~~~~ camera selection ~~~~~~~~~~~~~~~~~ */}
+// 				<select
+// 					className='w-56 p-2'
+// 					onChange={selectMake}
+// 					name='cameraBrand'
+// 					id='cameraBrand'>
+// 					<option value='' disabled selected defaultValue Brand>Camera Brand
+// 					</option>
+// 					{cameraBrandOptions}
+// 				</select>
+// 				<select
+// 					className='w-56 p-2'
+// 					onChange={handleModelSelect}
+// 					name='cameraModel'
+// 					id='cameraModel'>
+// 					<option value='Select Value' disabled selected defaultValue >Camera Model
+// 					</option>
+// 					{cameraOptions}
+// 				</select>
+// 				{/* ~~~~~~~~~~~~~~ camera selection ~~~~~~~~~~~~~~~~~ */}
+// 				<select
+// 					className='w-56 p-2'
+// 					onChange={selectLensMake}
+// 					name='lensBrand'
+// 					id='lensBrand'>
+// 					<option value='' disabled selected defaultValue >Lens Brand
+// 					</option>
+// 					{lensBrandOptions}
+// 				</select>
+// 				<select
+// 					className='w-56 p-2'
+// 					onChange={handleLensModelSelect}
+// 					name='lensModel'
+// 					id='lensModel'>
+// 					<option value='Select Value' disabled selected defaultValue >Lens Model
+// 					</option>
+// 					{lensOptions}
+// 				</select>
+//                 <button className="button"> 
+//                     Search
+//                 </button>
+// 			</form>
+
+//             { posts.map(post => <Post { ...post} key={post._id}/> ) }
+//         </div>
+//     )
+// }
 
 // function handleChange(e){
 //     styleFilter(e.target)
@@ -281,3 +281,75 @@ return (
 //         searchByLens(e.target.value)
 //     }
 // }
+
+// ---------------------- test ------------------------
+// ---------------------- test ------------------------
+// ---------------------- test ------------------------
+
+
+import React, { useState, useContext, useEffect } from "react";
+import { PostProviderContext } from "../context/PostProvider";
+import { UserAuthContext } from "../context/UserAuthProvider";
+import { Ps } from "./Ps"
+// import JSONData from "./JSONData"
+// import { PostProviderContext } from '../context/PostProvider'
+
+export const PostSearch = () => {
+
+  const { posts, getAllPosts } = useContext(PostProviderContext)
+  // const { getAllPosts } = useContext(PostProviderContext)
+  const [searchTerm, setSearchTerm] = useState("")
+
+function handleChange(e){
+  setSearchTerm(e.target.value)
+}
+
+// function handleSubmit(e){
+//   e.preventDefault()
+//   getUserProfile(searchTerm)
+// }
+
+  useEffect(() => {
+    getAllPosts()
+    // getUserProfile(_id)
+    // setMakesModelsLens(lensDataFile);
+    // setInputs(initInput)
+    // console.log("selected", selected)
+}, []);
+
+  return (
+    <div className="friendsListCont">
+      <form className="friendSearch">
+        <input 
+            type="text" 
+            placeholder="Search by Style, Brand, Camera or Lens "  
+            onChange={handleChange} 
+            />
+      </form>
+              {posts.filter((val) => {
+                if (searchTerm === ""){
+                  return val
+                } else if (val.style.toLowerCase().includes(searchTerm.toLowerCase())){
+                  return val.style
+                } else if (val.cameraBrand.toLowerCase().includes(searchTerm.toLowerCase())){
+                  return val.cameraBrand
+                } else if (val.cameraModel.toLowerCase().includes(searchTerm.toLowerCase())){
+                  return val.cameraModel
+                } else if (val.lensBrand.toLowerCase().includes(searchTerm.toLowerCase())){
+                  return val.lensBrand
+                } else if (val.lensModel.toLowerCase().includes(searchTerm.toLowerCase())){
+                  return val.lensModel
+                }
+              }).map((val, key) => {
+                return (
+                  <>
+                  <button>
+                      <Ps val={val} key={key} />
+                  </button>
+                  </>
+                )
+              })
+              }
+    </div>
+  );
+};
