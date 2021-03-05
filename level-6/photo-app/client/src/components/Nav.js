@@ -19,13 +19,13 @@ export const Nav = () => {
   return (
       <div className="navBar">
         <Link to="/Feed">
-          <h3>Home</h3>
+          <h1>🎞️</h1>
         </Link>
-        <Link to="/PostSearch">
-          <h3>Search</h3>
+        <Link to="/Explore">
+          <h1>🧭</h1>
         </Link>
         <Link to="/SearchUsers">
-          <h3>Search🔍</h3>
+          <h1>🫂</h1>
         </Link>
         {/* <Link to="/PostForm" className="navProfile"> 
           <h3>➕</h3>

@@ -5,7 +5,7 @@ import { Nav } from "./components/Nav"
 import { Auth } from "./components/Auth"
 import { Profile } from "./components/Profile"
 import { Feed } from "./components/Feed"
-import { PostSearch } from "./components/PostSearch"
+import { Explore } from "./components/Explore"
 import { PostForm } from "./components/PostForm"
 import { SearchUsers } from "./components/SearchUsers"
 import './App.css';
@@ -30,8 +30,8 @@ export const App = () => {
             redirectTo="/Auth"
             token={token} 
             />  */}
-            <Route exact path="/PostSearch">
-            {token ? <PostSearch /> : <Auth />}
+            <Route exact path="/Explore">
+            {token ? <Explore /> : <Auth />}
           </Route>
           <Route exact path="/Feed">
             {token ? <Feed /> : <Auth />}
@@ -42,8 +42,8 @@ export const App = () => {
             redirectTo="/Auth"
             token={token}
             />  */}
-            <Route exact path="/PostSearch">
-            {token ? <PostSearch /> : <Auth />}
+            <Route exact path="/Explore">
+            {token ? <Explore /> : <Auth />}
             </Route>
             <Route exact path="/SearchUsers">
               <SearchUsers />

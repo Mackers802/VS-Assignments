@@ -282,74 +282,114 @@
 //     }
 // }
 
-// ---------------------- test ------------------------
-// ---------------------- test ------------------------
-// ---------------------- test ------------------------
+              // ---------------------- test 1------------------------
+              // ---------------------- test 1------------------------
+              // ---------------------- test 1------------------------
 
+// import React, { useState, useContext, useEffect } from "react";
+// import { PostProviderContext } from "../context/PostProvider";
+// import { Ps } from "./Ps"
+
+// export const Explore = () => {
+
+// const { posts, getAllPosts } = useContext(PostProviderContext)
+// const [searchTerm, setSearchTerm] = useState("")
+
+// function handleChange(e){
+// setSearchTerm(e.target.value)
+// }
+
+// useEffect(() => {
+// getAllPosts()
+// }, []);
+
+// return (
+// <div className="friendsListCont">
+// <form className="friendSearch">
+// <input 
+// type="text" 
+// placeholder="Search by Style, Brand, Camera or Lens "  
+// onChange={handleChange} 
+// />
+// </form>
+
+//   {posts.filter((val) => {
+//     if (searchTerm === ""){
+//       return val
+//     } 
+//     else if (val.style.toLowerCase().includes(searchTerm.toLowerCase())){
+//       return val
+//     } else if (val.cameraBrand.toLowerCase().includes(searchTerm.toLowerCase())){
+//       return val
+//     } else if (val.cameraModel.toLowerCase().includes(searchTerm.toLowerCase())){
+//       return val
+//     } else if (val.lensBrand.toLowerCase().includes(searchTerm.toLowerCase())){
+//       return val
+//     } else if (val.lensModel.toLowerCase().includes(searchTerm.toLowerCase())){
+//       return val
+//     }
+//   }).map((val, key) => {
+//     return (
+//       <>
+//       <button>
+//           <Ps val={val} key={key} />
+//       </button>
+//       </>
+//     )
+//   })
+//   }
+// </div>
+// );
+// };
+
+// ---------------------- test 2------------------------
+// ---------------------- test 2------------------------
+// ---------------------- test 2------------------------
 
 import React, { useState, useContext, useEffect } from "react";
 import { PostProviderContext } from "../context/PostProvider";
-import { UserAuthContext } from "../context/UserAuthProvider";
-import { Ps } from "./Ps"
-// import JSONData from "./JSONData"
-// import { PostProviderContext } from '../context/PostProvider'
+// import { Ps } from "./Ps"
 
-export const PostSearch = () => {
-
-  const { posts, getAllPosts } = useContext(PostProviderContext)
-  // const { getAllPosts } = useContext(PostProviderContext)
-  const [searchTerm, setSearchTerm] = useState("")
-
-function handleChange(e){
-  setSearchTerm(e.target.value)
-}
-
-// function handleSubmit(e){
-//   e.preventDefault()
-//   getUserProfile(searchTerm)
-// }
-
-  useEffect(() => {
-    getAllPosts()
-    // getUserProfile(_id)
-    // setMakesModelsLens(lensDataFile);
-    // setInputs(initInput)
-    // console.log("selected", selected)
-}, []);
-
-  return (
-    <div className="friendsListCont">
-      <form className="friendSearch">
-        <input 
-            type="text" 
-            placeholder="Search by Style, Brand, Camera or Lens "  
-            onChange={handleChange} 
-            />
-      </form>
-              {posts.filter((val) => {
-                if (searchTerm === ""){
-                  return val
-                } else if (val.style.toLowerCase().includes(searchTerm.toLowerCase())){
-                  return val.style
-                } else if (val.cameraBrand.toLowerCase().includes(searchTerm.toLowerCase())){
-                  return val.cameraBrand
-                } else if (val.cameraModel.toLowerCase().includes(searchTerm.toLowerCase())){
-                  return val.cameraModel
-                } else if (val.lensBrand.toLowerCase().includes(searchTerm.toLowerCase())){
-                  return val.lensBrand
-                } else if (val.lensModel.toLowerCase().includes(searchTerm.toLowerCase())){
-                  return val.lensModel
-                }
-              }).map((val, key) => {
-                return (
-                  <>
-                  <button>
-                      <Ps val={val} key={key} />
-                  </button>
-                  </>
-                )
-              })
-              }
-    </div>
-  );
-};
+export const Explore = () => {
+  
+    const { posts, getAllPosts } = useContext(PostProviderContext)
+    const [searchTerm, setSearchTerm] = useState("")
+  
+  function handleChange(e){
+        setSearchTerm(e.target.value)
+    }
+    
+    const lowercaseFilter = searchTerm
+    const filteredData = posts.filter(item => {
+        return Object.keys(item).some(key => 
+          item[key].toLowerCase().includes(lowercaseFilter)
+          )
+      })
+      
+        useEffect(() => {
+            getAllPosts()
+        }, []);
+        
+          return (
+              <div className="friendsListCont">
+                <form className="friendSearch">
+                  <input 
+                      type="text" 
+                      onChange={handleChange} 
+                      placeholder="Search by Style, Brand, Camera or Lens "  
+                      />
+                </form>
+                {filteredData.map(item => (
+                    <div>
+                    <div key={item}>
+                      {/* {item.style} {item.cameraBrand} {item.cameraStyle} */}
+                    </div>
+                    </div>
+                  ))
+                  }
+                </div>
+              );
+            };
+            
+            
+            
