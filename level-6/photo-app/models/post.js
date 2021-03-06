@@ -64,10 +64,7 @@ const postSchema = new Schema ({
         required: false
         // default: ""
     },
-    addLike: {
-        type: Boolean,
-        required: false
-        // default: false
+    likes: {
     },
     removeLike: {
         type: Boolean,
