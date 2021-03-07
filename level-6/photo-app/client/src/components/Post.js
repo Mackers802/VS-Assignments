@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { Comments } from "./Comments"
 // import { UserAuthContext } from "../context/UserAuthProvider";
 
 export const Post = (props) => {
@@ -39,6 +40,7 @@ const { user, imgUrl , style, cameraBrand, cameraModel, lensBrand, lensModel, ca
                                     <br></br>
                                     {/* accessories: { accessories } */}
                 </p>
+                    <Comments />
                 </div>
             </button>
         }

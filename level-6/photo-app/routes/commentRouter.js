@@ -14,6 +14,18 @@ commentRouter.get("/", (req, res, next) => {
     });
   });
 
+  //   // get comments by post 
+  commentRouter.get("/:postId", (req, res, next) => {
+    Comment.find({ post: req.params.postId }, (err, comment) => {
+      if (err) {
+        res.status(500);
+        return next(err);
+      }
+      return res.status(200).send(comment);
+    });
+  });
+
+  
   //   add comment ✅ 
   commentRouter.post("/:postId", (req, res, next) => {
     const post = req.params.postId
@@ -46,16 +58,6 @@ commentRouter.get("/:commentId", (req, res, next) => {
 
 
 
-//   // get comments by post 
-commentRouter.get("/:postId", (req, res, next) => {
-  Comment.find({ post: req.params.postId }, (err, comment) => {
-    if (err) {
-      res.status(500);
-      return next(err);
-    }
-    return res.status(200).send(comment);
-  });
-});
 
 
 // update comment
