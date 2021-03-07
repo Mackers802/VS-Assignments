@@ -60,7 +60,7 @@ export const App = () => {
           <Route exact path="/">
             {token ? <Profile/> : <Auth />}
           </Route> 
-          <Route exact path="/PostForm">
+          <Route exact path="/AddPost">
             {token ? <PostForm /> : <Auth />}
           </Route> 
         </Switch>

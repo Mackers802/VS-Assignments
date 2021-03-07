@@ -2,6 +2,7 @@ import React, { useContext, useState, useEffect } from "react";
 import { UserAuthContext } from "../context/UserAuthProvider";
 import { PostProviderContext } from "../context/PostProvider";
 import { ProfilePost } from "./ProfilePost";
+import { Nav2 } from "./Nav2"
 
 export const Profile = (props) => {
   const {
@@ -47,23 +48,26 @@ export const Profile = (props) => {
   return (
     <>
       {!toggle ? (
-        <div className="profileCont">
-            <img
-              src={profilePicture}
-              alt="Profile"
-              width="150"
-              height="150"
-            ></img>
-              <h1>{username}</h1>
-              <h4>{bio}</h4>
-              <h4>{email} </h4>
-              <div className="profilePostsGrid">
-                {userPosts.map((post) => (
-                  <ProfilePost {...post} key={post._id} deletePost={deletePost} editPost={editPost}/>
-                ))}
-              </div>
-            <button onClick={toggleForm} className="button">Profile Settings</button>
-        </div>
+        <>
+          <Nav2 />
+          <div className="profileCont">
+              <img
+                src={profilePicture}
+                alt="Profile"
+                width="150"
+                height="150"
+              ></img>
+                <h1>{username}</h1>
+                <h4>{bio}</h4>
+                <h4>{email} </h4>
+                <div className="profilePostsGrid">
+                  {userPosts.map((post) => (
+                    <ProfilePost {...post} key={post._id} deletePost={deletePost} editPost={editPost}/>
+                  ))}
+                </div>
+              <button onClick={toggleForm} className="button">Profile Settings</button>
+          </div>
+        </>
       ) : (
         <div className="profileCont">
             <img

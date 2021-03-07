@@ -7,6 +7,14 @@
   color: white
 }
 
+.postButton{
+  background-color: rgb(0, 0, 0);
+}
+
+.postButtonReverse{
+  background-color: rgb(226, 226, 226);
+}
+
 @media only screen and (max-width: 320px) {
   .app{
     margin-left: -10px;

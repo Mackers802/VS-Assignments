@@ -48,10 +48,29 @@ export const PostForm = (props) => {
 	// 		});
 	// }, []);
 
+	// function toFeed (){
+	// 	<Route to="/Feed"></Route>
+	// }
+
 	const handleSubmit = (e) => {
 		e.preventDefault();
-		console.log("selected Submit", selected)
+		// console.log("selected Submit", selected)
 		newPost(selected)
+		console.log("selected", selected)
+		window.location.reload(false)
+		// setCamModels({
+		// 	cameraModel: "",
+		// })
+		// setLensModels({
+		// 	lensModel: "",
+		// })
+		// setMakesModelsCam({
+		// 	cameraBrand: "",
+		// })
+		// setMakesModelsLens({
+		// 	lensBrand: "",
+		// })
+
 		// const { make, model } = selected;
 		// if (model !== undefined) {
 		// 	history.push(`/collection/?make=${encodeURIComponent(make)}&model=${encodeURIComponent(model)}`);
@@ -65,7 +84,8 @@ export const PostForm = (props) => {
 			...prevSelected,
             [name]: value
         }))
-		console.log("handleChange", selected)
+		console.log("HC selected", selected)
+		// console.log("handleChange", selected)
     }
 	
 	//* -------------   camera selection -------------   */
