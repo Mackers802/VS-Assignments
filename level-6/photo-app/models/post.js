@@ -7,6 +7,11 @@ const postSchema = new Schema ({
         ref: "User",
         required: true
     },
+    time : { 
+        type : Date, 
+        required: true,
+        default: Date.now 
+    },
     caption: {
         type: String,
         required: true
@@ -65,6 +70,8 @@ const postSchema = new Schema ({
         // default: ""
     },
     likes: {
+        type: Number,
+        defualt: { up: [], down: []}
     },
     removeLike: {
         type: Boolean,

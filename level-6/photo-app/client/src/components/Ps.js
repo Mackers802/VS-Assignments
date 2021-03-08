@@ -12,8 +12,8 @@ export const Ps = (props) => {
     return (
         <>{
         ! toggle ?
-            <div className="postSearchBar" onClick={handleToggle}>
-            <img src={val.imgUrl} alt=" post img url"></img>
+            <div className="explorePost" onClick={handleToggle}>
+                <img src={val.imgUrl} alt=" post img url"></img>
             </div>
         :
             <div onClick={handleToggle}>

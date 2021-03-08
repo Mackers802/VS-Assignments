@@ -79,7 +79,8 @@ commentRouter.put("/:commentId", (req, res, next) => {
 //   delete comment
 commentRouter.delete("/:commentId", (req, res, next) => {
     Comment.findOneAndDelete(
-      { _id: req.params.commentId },
+      { _id: req.params.commentId,
+        user: req.user._id },
       (err, deletedComment) => {
         if (err) {
           res.status(500);

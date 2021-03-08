@@ -172,9 +172,9 @@ export const PostProvider = (props) => {
     .catch((err) => console.log(err.response.data.errMsg));
   }
 
-  function addComment(_id, inputs) {
+  function addComment(commentId, inputs) {
     postsAxios
-      .post(`/api/comments/${_id}`, inputs)
+      .post(`/api/comments/${commentId}`, inputs)
         .then((res) => {
           // console.log(res.data);
           setPostsState((prevState) => ({
@@ -186,26 +186,26 @@ export const PostProvider = (props) => {
       .catch((err) => console.log(err.responde.data.errMsg));
   }
 
-  function editComment(_id, inputs){
+  function editComment(commentId, _id, inputs){
     postsAxios
-    .put(`/api/comments/${_id}`, inputs)
+    .put(`/api/comments/${commentId}`, inputs)
     .then((res) => (
       setPostsState(prevState => ({
         ...prevState,
-        comments: prevState.comments.filter(post => post._id !== _id)
+        comments: prevState.comments.filter(post => post.commentId !== commentId)
       }))
     ))
     .catch((err) => console.log(err.response.data.errMsg));
   }
 
-  function deleteComment(_id){
-    console.log("delete Comment", _id)
+  function deleteComment(commentId, _id){
+    console.log("delete Comment", commentId)
     postsAxios
-    .delete(`/api/comments/${_id}`)
+    .delete(`/api/comments/${commentId}`)
       .then((res) => (
         setPostsState(prevState => ({
           ...prevState,
-          comments: prevState.comments.filter(comment => comment._id !== _id)
+          comments: prevState.comments.filter(comment => comment.commentId !== commentId)
         }))
       ))
       .catch((err) => console.log(err.response.data.errMsg));

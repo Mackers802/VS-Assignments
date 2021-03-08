@@ -6,7 +6,7 @@ import { Post } from "./Post"
 
 export const Feed = (props) => {
 
-    const { posts, getAllPosts} = useContext(PostProviderContext)
+    const { posts, getAllPosts } = useContext(PostProviderContext)
 
     useEffect(() => {
            getAllPosts("all Posts")
@@ -16,7 +16,7 @@ export const Feed = (props) => {
         <>
             <Nav2 />
             <div className="feedCont">
-                { posts.map(post => <Post { ...post} key={post._id}/> ) }
+                { posts.map(post => <Post { ...post} key={post._id} /> ) }
             </div>
         </>
     )

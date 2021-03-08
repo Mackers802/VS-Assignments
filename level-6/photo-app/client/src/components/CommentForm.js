@@ -24,6 +24,7 @@ export const CommentForm = (props) => {
     const handleSubmit = (e) => {
         e.preventDefault()
         addComment(_id, inputs)
+            setInputs(inputs)
         }
     
     return (

@@ -1,8 +1,10 @@
-import React, { useState } from 'react'
+import React, { useState, useContext } from 'react'
+import { UserAuthContext } from "../context/UserAuthProvider"
 
 export const Comment = (props) => {
 
-    const { commentDescription, deleteComment, editComment, _id} = props
+    const { user: _id } = useContext(UserAuthContext)
+    const { commentDescription, deleteComment, editComment, commentId} = props
 
     const initInputs = {
         commentDescription: commentDescription
@@ -11,12 +13,12 @@ export const Comment = (props) => {
     const [inputs, setInputs ] = useState(initInputs)
 
     function deleteCom(){
-        deleteComment(_id)
+        deleteComment(commentId, _id)
     }
 
     function editCom(){
         setInputs(inputs)
-        editComment(_id)
+        editComment(commentId, _id)
     }
 
     return (

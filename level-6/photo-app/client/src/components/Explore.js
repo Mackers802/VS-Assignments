@@ -19,12 +19,13 @@ useEffect(() => {
 getAllPosts()
 }, []);
 
+
 return (
-<div className="friendsListCont">
-<form className="friendSearch">
+<div className="explorePost">
+<form >
 <input 
 type="text" 
-placeholder="Search by Style, Brand, Camera or Lens "  
+placeholder="Search"  
 onChange={handleChange} 
 />
 </form>
@@ -44,7 +45,7 @@ onChange={handleChange}
     } else if (val.lensModel.toLowerCase().includes(searchTerm.toLowerCase())){
       return val
     }
-  }).map((val, key) => {
+  }).map((val, key, a, b) => {
     return (
       <>
       <button>
