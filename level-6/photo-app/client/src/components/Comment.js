@@ -1,33 +1,40 @@
-import React, { useState, useContext } from 'react'
-import { UserAuthContext } from "../context/UserAuthProvider"
+import React, { useState } from "react";
+import { CommentForm } from "./CommentForm"
+// import { UserAuthContext } from "../context/UserAuthProvider"
 
 export const Comment = (props) => {
+  // const { user: _id } = useContext(UserAuthContext)
+  const { commentDescription, _id } = props;
 
-    const { user: _id } = useContext(UserAuthContext)
-    const { commentDescription, deleteComment, editComment, commentId} = props
+  const [toggle, setToggle ] = useState(false)
 
-    const initInputs = {
-        commentDescription: commentDescription
+  // function togglePage(){
+  //   setToggle(prev => !prev)
+  // }
+
+  // function deleteCom() {
+  //   deleteComment(_id);
+  // }
+
+  // function editCom() {
+  //   editComment(_id);
+  //   setInputs(inputs);
+  // }
+
+  return (
+    <>
+    {
+      !toggle ?
+    <div className="comment">
+      <h3>{commentDescription}</h3>
+      <button onClick={() => setToggle(prev => !prev)}>Edit</button>
+    </div>
+      :
+      <div className="comment">
+        <CommentForm btnText="Submit Edit" _id={_id}/>
+        <button onClick={() => setToggle(prev => !prev)}>Close</button>
+    </div>
     }
-
-    const [inputs, setInputs ] = useState(initInputs)
-
-    function deleteCom(){
-        deleteComment(commentId, _id)
-    }
-
-    function editCom(){
-        setInputs(inputs)
-        editComment(commentId, _id)
-    }
-
-    return (
-        <div className="comment">
-            <button onClick={deleteCom}>Delete</button>
-            <button onClick={editCom}>Edit</button>
-            <p>
-                {commentDescription}
-            </p>
-        </div>
-    )
-}
+    </>
+  );
+};

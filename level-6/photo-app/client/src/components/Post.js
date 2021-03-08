@@ -21,8 +21,14 @@ export const Post = (props) => {
   } = props;
 
   const [toggle, setToggle] = useState(false);
-
-  const { getCommentsById, comments, deleteComment, editComment, addPostLike } = useContext(PostProviderContext);
+  const {
+    getCommentsById,
+    comments,
+    deleteComment,
+    editComment,
+    addPostLike,
+    commentDescription
+  } = useContext(PostProviderContext);
 
   function get() {
     setToggle((prev) => !prev);
@@ -40,15 +46,11 @@ export const Post = (props) => {
       {!toggle ? (
         <div className="post">
           <br></br>
-            <img src={imgUrl} alt="post img" onDoubleClick={addPostLike}></img>
+          <img src={imgUrl} alt="post img" onDoubleClick={addPostLike}></img>
 
           <ul>
-            <li>
-              {caption}
-            </li>
-            <li>
-                {style}
-            </li>
+            <li>{caption}</li>
+            <li>{style}</li>
             <li>
               Settings: 𝑓 {fStop}, SS: {shutterSpeed}, ISO{iso}
             </li>
@@ -67,7 +69,6 @@ export const Post = (props) => {
       ) : (
         <div className="post">
           <br></br>
-
           <img src={imgUrl} alt="post img"></img>
 
           <ul>
@@ -88,9 +89,14 @@ export const Post = (props) => {
           </ul>
 
           {commentFilter.map((comment) => (
-            <Comment {...comment} key={comment._id} deleteComment={deleteComment} editComment={editComment}/>
+            <Comment
+              {...comment}
+              key={comment._id}
+              deleteComment={deleteComment}
+              editComment={editComment}
+            />
           ))}
-          <CommentForm commentId={ _id } />
+          <CommentForm _id={_id} commentDescription={commentDescription} btnText="Add Comment"/>
           <button onClick={toggleComments}>Hide Comments</button>
         </div>
       )}

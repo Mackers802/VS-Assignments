@@ -125,8 +125,7 @@ postRouter.put("/:postId", (req, res, next) => {
   //   delete post ✅ 
   postRouter.delete("/:postId", (req, res, next) => {
     Post.findOneAndDelete(
-      { _id: req.params.postId,
-        user: req.user._id },
+      { _id: req.params.postId },
       (err, deletedPost) => {
         if (err) {
           res.status(500);

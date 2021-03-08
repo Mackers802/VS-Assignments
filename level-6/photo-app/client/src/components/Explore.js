@@ -1,62 +1,66 @@
-              // ---------------------- test 1------------------------
-              // ---------------------- test 1------------------------
-              // ---------------------- test 1------------------------
+// ---------------------- test 1------------------------
+// ---------------------- test 1------------------------
+// ---------------------- test 1------------------------
 
 import React, { useState, useContext, useEffect } from "react";
 import { PostProviderContext } from "../context/PostProvider";
-import { Ps } from "./Ps"
+import { Ps } from "./Ps";
 
 export const Explore = () => {
+  const { posts, getAllPosts } = useContext(PostProviderContext);
+  const [searchTerm, setSearchTerm] = useState("");
 
-const { posts, getAllPosts } = useContext(PostProviderContext)
-const [searchTerm, setSearchTerm] = useState("")
-
-function handleChange(e){
-setSearchTerm(e.target.value)
-}
-
-useEffect(() => {
-getAllPosts()
-}, []);
-
-
-return (
-<div className="explorePost">
-<form >
-<input 
-type="text" 
-placeholder="Search"  
-onChange={handleChange} 
-/>
-</form>
-
-  {posts.filter((val) => {
-    if (searchTerm === ""){
-      return val
-    } 
-    else if (val.style.toLowerCase().includes(searchTerm.toLowerCase())){
-      return val
-    } else if (val.cameraBrand.toLowerCase().includes(searchTerm.toLowerCase())){
-      return val
-    } else if (val.cameraModel.toLowerCase().includes(searchTerm.toLowerCase())){
-      return val
-    } else if (val.lensBrand.toLowerCase().includes(searchTerm.toLowerCase())){
-      return val
-    } else if (val.lensModel.toLowerCase().includes(searchTerm.toLowerCase())){
-      return val
-    }
-  }).map((val, key, a, b) => {
-    return (
-      <>
-      <button>
-          <Ps val={val} key={key} />
-      </button>
-      </>
-    )
-  })
+  function handleChange(e) {
+    setSearchTerm(e.target.value);
   }
-</div>
-);
+
+  useEffect(() => {
+    getAllPosts();
+  }, []);
+
+  return (
+    <div className="explorePost">
+      <form>
+        <input type="text" placeholder="Search" onChange={handleChange} />
+      </form>
+
+      {posts
+        .filter((val) => {
+          if (searchTerm === "") {
+            return val;
+          } else if (
+            val.style.toLowerCase().includes(searchTerm.toLowerCase())
+          ) {
+            return val;
+          } else if (
+            val.cameraBrand.toLowerCase().includes(searchTerm.toLowerCase())
+          ) {
+            return val;
+          } else if (
+            val.cameraModel.toLowerCase().includes(searchTerm.toLowerCase())
+          ) {
+            return val;
+          } else if (
+            val.lensBrand.toLowerCase().includes(searchTerm.toLowerCase())
+          ) {
+            return val;
+          } else if (
+            val.lensModel.toLowerCase().includes(searchTerm.toLowerCase())
+          ) {
+            return val;
+          }
+        })
+        .map((val, key, a, b) => {
+          return (
+            <>
+              <button>
+                <Ps val={val} key={key} />
+              </button>
+            </>
+          );
+        })}
+    </div>
+  );
 };
 
 // ---------------------- test 2------------------------
@@ -68,35 +72,35 @@ onChange={handleChange}
 // // import { Ps } from "./Ps"
 
 // export const Explore = () => {
-  
+
 //     const { posts, getAllPosts } = useContext(PostProviderContext)
 //     const [searchTerm, setSearchTerm] = useState("")
 
 //     console.log("posts", posts)
-    
+
 //     function handleChange(e){
 //       setSearchTerm(e.target.value)
 //       console.log("searchTerm", searchTerm)
 //     }
-    
+
 //     const lowercaseFilter = searchTerm
 //     const filteredData = posts.filter(item => {
-//       return Object.keys(item).some(key => 
+//       return Object.keys(item).some(key =>
 //         item[key].toLowerCase().includes(lowercaseFilter)
 //         )
 //       })
-      
+
 //         useEffect(() => {
 //             getAllPosts()
 //         }, []);
-        
+
 //           return (
 //               <div className="friendsListCont">
 //                 <form className="friendSearch">
-//                   <input 
-//                       type="text" 
-//                       onChange={handleChange} 
-//                       placeholder="Search by Style, Brand, Camera or Lens "  
+//                   <input
+//                       type="text"
+//                       onChange={handleChange}
+//                       placeholder="Search by Style, Brand, Camera or Lens "
 //                       />
 //                 </form>
 //                 {filteredData.map(item => (
@@ -111,12 +115,9 @@ onChange={handleChange}
 //               );
 //             };
 
-
 // ---------------------- test 3 ------------------------
 // ---------------------- test 3 ------------------------
 // ---------------------- test 3 ------------------------
-
-
 
 // import React, { useContext, useState, useEffect } from 'react'
 // // import { UserAuthContext } from "../context/UserAuthProvider";
@@ -135,15 +136,15 @@ onChange={handleChange}
 //     lensModel: ""
 // }
 
-// const { 
-//     posts, 
-//     getAllPosts, 
+// const {
+//     posts,
+//     getAllPosts,
 //     // search,
 //     searchByStyle,
 //     searchByCameraBrand,
 //     searchByCameraModel,
 //     searchByLensBrand,
-//     searchByLensModel 
+//     searchByLensModel
 // } = useContext(PostProviderContext)
 
 // const [makesModelsCam, setMakesModelsCam] = useState({});
@@ -213,7 +214,6 @@ onChange={handleChange}
 //     });
 // };
 
-
 // const handleModelSelect = (e) => {
 //     const { name, value } = e.target;
 //     setSelected((prevState) => {
@@ -222,7 +222,6 @@ onChange={handleChange}
 //     console.log("selected model", selected);
 // };
 // // console.log(Object.keys(makesmodels));
-
 
 // const cameraBrandOptions =
 //     makesModelsCam &&
@@ -258,7 +257,6 @@ onChange={handleChange}
 //     });
 // };
 
-
 // const handleLensModelSelect = (e) => {
 //     const { name, value } = e.target;
 //     setSelected((prevState) => {
@@ -266,8 +264,6 @@ onChange={handleChange}
 //     });
 // };
 // // console.log(Object.keys(makesmodels));
-
-
 
 // const lensBrandOptions =
 // makesModelsLens &&
@@ -293,36 +289,34 @@ onChange={handleChange}
 //         );
 //     });
 
-
-
 // return (
-//     <div className="postsFeed">     
+//     <div className="postsFeed">
 //            <form onSubmit={ handleSubmit } className='flex flex-row space-x-4'>
 // 			<h3>Search...</h3>
 // 			<select onChange={ handleChange } name="style">
-//                     <option input="" disabled selected defaultValue>Style</option> 
-//                     <option input="all">All</option> 
+//                     <option input="" disabled selected defaultValue>Style</option>
+//                     <option input="all">All</option>
 //                     <option value="Architectural">Architectural</option>
-//                     <option value="Astro">Astro</option> 
+//                     <option value="Astro">Astro</option>
 //                     <option value="Car">Car</option>
-//                     <option input="Fashion">Fashion</option> 
+//                     <option input="Fashion">Fashion</option>
 //                     <option value="Food">Food</option>
 //                     <option value="Landscape">Landscape</option>
 //                     <option value="Portrait">Portrait</option>
-//                     <option value="Macro">Macro</option> 
+//                     <option value="Macro">Macro</option>
 // 					<option value="Nature">Nature</option>
 //                     <option value="Night">Night</option>
-//                     <option value="Other">Other</option> 
-//                     <option value="Pet">Pet</option> 
+//                     <option value="Other">Other</option>
+//                     <option value="Pet">Pet</option>
 //                     <option value="Photojournalism">Photojournalism</option>
 //                     <option value="Product">Product</option>
 //                     <option value="Sports">Sports</option>
 //                     <option value="Still Life">Still Life</option>
 //                     <option value="Street">Street</option>
 //                     <option value="Travel">Travel</option>
-//                     <option value="Underwater">Underwater</option> 
-//                     <option value="Wedding">Wedding</option> 
-//                     <option value="Wildlife">Wildlife</option> 
+//                     <option value="Underwater">Underwater</option>
+//                     <option value="Wedding">Wedding</option>
+//                     <option value="Wildlife">Wildlife</option>
 //                 </select>
 // 				{/* ~~~~~~~~~~~~~~ camera selection ~~~~~~~~~~~~~~~~~ */}
 // 				<select
@@ -362,7 +356,7 @@ onChange={handleChange}
 // 					</option>
 // 					{lensOptions}
 // 				</select>
-//                 <button className="button"> 
+//                 <button className="button">
 //                     Search
 //                 </button>
 // 			</form>
@@ -401,5 +395,3 @@ onChange={handleChange}
 //         searchByLens(e.target.value)
 //     }
 // }
-            
-            

@@ -30,7 +30,7 @@ export const EditPostForm = (props) => {
   function editPostSubmit(e) {
     e.preventDefault();
     editPost(inputs, _id);
-    getUserPosts(_id)
+    getUserPosts(_id);
   }
 
   function handleChange(e) {
@@ -49,8 +49,12 @@ export const EditPostForm = (props) => {
           <input type="text" name="caption" placeholder={caption} />
         </label>
         <br></br>
-        <button onClick={editPostSubmit} className="button">Save Post</button>
-        <button onClick={handleDeleteSubmit} className="button">Delete Post</button>
+        <button onClick={editPostSubmit} className="button">
+          Save Post
+        </button>
+        <button onClick={handleDeleteSubmit} className="button">
+          Delete Post
+        </button>
       </form>
     </div>
   );

@@ -1,43 +1,40 @@
-import React, { useContext, useState } from 'react'
-import { UserAuthContext } from "../context/UserAuthProvider"
-import { Signup } from "./Signup.js"
-import { Login } from "./Login.js"
+import React, { useContext, useState } from "react";
+import { UserAuthContext } from "../context/UserAuthProvider";
+import { Signup } from "./Signup.js";
+import { Login } from "./Login.js";
 
 export const Auth = () => {
+  const { signup, login, errMsg, authErrorReset } = useContext(UserAuthContext);
+  const [toggle, setToggle] = useState(false);
 
-const { signup, login, errMsg, authErrorReset } = useContext(UserAuthContext)
-const [toggle, setToggle] = useState(false)
+  function handleSignup(credentials) {
+    signup(credentials);
+  }
 
+  function handleLogin(credentials) {
+    login(credentials);
+  }
 
-function handleSignup(credentials){
-    signup(credentials)
-}
+  function toggleForm() {
+    setToggle((prev) => !prev);
+    authErrorReset();
+  }
 
-function handleLogin(credentials){
-    login(credentials)
-}
-
-function toggleForm(){
-    setToggle(prev => !prev)
-    authErrorReset()
-}
-
-return (
+  return (
     <div className="authPage">
-{
-    !toggle ? 
+      {!toggle ? (
         <div className="signup">
-            <Signup handleSubmit={handleSignup} errMsg={errMsg} />
-            <br></br>
-        <button onClick={ toggleForm }>Already a User? </button>
+          <Signup handleSubmit={handleSignup} errMsg={errMsg} />
+          <br></br>
+          <button onClick={toggleForm}>Already a User? </button>
         </div>
-:
+      ) : (
         <div className="login">
-        <Login handleSubmit={handleLogin}  errMsg={errMsg} />
-        <br></br>
-        <button onClick={ toggleForm }>Not a User? </button>
+          <Login handleSubmit={handleLogin} errMsg={errMsg} />
+          <br></br>
+          <button onClick={toggleForm}>Not a User? </button>
         </div>
-}
+      )}
     </div>
-)
-}
+  );
+};

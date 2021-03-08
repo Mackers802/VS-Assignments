@@ -148,10 +148,10 @@ export const PostProvider = (props) => {
     console.log("edit Post Inputs", inputs)
     postsAxios
     .put(`/api/posts/${_id}`, inputs)
-    .then((res) => (
+      .then((res) => (
       setPostsState(prevState => ({
         ...prevState,
-        userPosts: prevState.userPosts.filter(post => post._id !== _id)
+          userPosts: prevState.userPosts.filter(post => post._id !== _id)
       }))
     ))
     .catch((err) => console.log(err.response.data.errMsg));
@@ -172,9 +172,9 @@ export const PostProvider = (props) => {
     .catch((err) => console.log(err.response.data.errMsg));
   }
 
-  function addComment(commentId, inputs) {
+  function addComment(_id, inputs) {
     postsAxios
-      .post(`/api/comments/${commentId}`, inputs)
+      .post(`/api/comments/${_id}`, inputs)
         .then((res) => {
           // console.log(res.data);
           setPostsState((prevState) => ({
@@ -186,26 +186,29 @@ export const PostProvider = (props) => {
       .catch((err) => console.log(err.responde.data.errMsg));
   }
 
-  function editComment(commentId, _id, inputs){
+  function editComment(_id, inputs){
+    // console.log("comment id", _id)
+    // console.log("comment inputs", inputs)
     postsAxios
-    .put(`/api/comments/${commentId}`, inputs)
+    .put(`/api/comments/${_id}`, inputs)
     .then((res) => (
       setPostsState(prevState => ({
         ...prevState,
-        comments: prevState.comments.filter(post => post.commentId !== commentId)
+        comments: prevState.comments.filter(comment => comment._id !== _id)
       }))
     ))
     .catch((err) => console.log(err.response.data.errMsg));
   }
 
-  function deleteComment(commentId, _id){
-    console.log("delete Comment", commentId)
+
+  function deleteComment(_id){
+    console.log("delete Comment", _id)
     postsAxios
-    .delete(`/api/comments/${commentId}`)
+    .delete(`/api/comments/${_id}`)
       .then((res) => (
         setPostsState(prevState => ({
           ...prevState,
-          comments: prevState.comments.filter(comment => comment.commentId !== commentId)
+          comments: prevState.comments.filter(comment => comment._id !== _id)
         }))
       ))
       .catch((err) => console.log(err.response.data.errMsg));
