@@ -1,49 +1,100 @@
-import React, { useState } from 'react'
-import { Comments } from "./Comments"
+import React, { useContext, useState } from "react";
+import { PostProviderContext } from "../context/PostProvider";
+import { Comment } from "./Comment";
+import { CommentForm } from "./CommentForm";
 // import { UserAuthContext } from "../context/UserAuthProvider";
 
 export const Post = (props) => {
+  const {
+    _id,
+    imgUrl,
+    style,
+    cameraBrand,
+    cameraModel,
+    lensBrand,
+    lensModel,
+    caption,
+    iso,
+    shutterSpeed,
+    fStop,
+    /* accessories */
+  } = props;
 
-    const [toggle, setToggle ] = useState(false)
+  const [toggle, setToggle] = useState(false);
 
-    function handleToggle(){
-        setToggle(prev => !prev)
-    }
+  const { getCommentsById, comments, deleteComment, editComment } = useContext(PostProviderContext);
 
-// const { user: { username, profilePicture } } = useContext(UserAuthContext)
-const { user, imgUrl , style, cameraBrand, cameraModel, lensBrand, lensModel, caption, iso, shutterSpeed, fStop/* accessories */ } = props
+  function get() {
+    setToggle((prev) => !prev);
+    getCommentsById(_id);
+  }
 
-    return (
-        <>
-        {
-            !toggle ?
-            <button onClick={handleToggle} className="postButton">
+  function toggleComments() {
+    setToggle((prev) => !prev);
+  }
+
+  const commentFilter = comments.filter((comment) => comment.post === _id);
+
+  return (
+    <>
+      {!toggle ? (
         <div className="post">
-                <h2>{ user }</h2>
-                <img src={ imgUrl } alt="post img" 
-                // width="250" height="175"
-                ></img>
+          <br></br>
+
+          <img src={imgUrl} alt="post img"></img>
+
+          <ul>
+            <li>
+              {caption}
+            </li>
+            <li>
+                {style}
+            </li>
+            <li>
+              Settings: 𝑓 {fStop}, SS: {shutterSpeed}, ISO{iso}
+            </li>
+            <li>
+              Camera: {cameraBrand}, {cameraModel}
+              <br></br>
+              Lens: {lensBrand}, {lensModel}
+              <br></br>
+              {/* accessories: { accessories } */}
+            </li>
+          </ul>
+          <div>
+            <button onClick={get}>Comments</button>
+          </div>
         </div>
-            </button>
-            :
-            <button onClick={handleToggle} className="postButtonReverse"> 
-                <div className="post">
-                <p>Settings: 𝑓 { fStop }, SS: { shutterSpeed }, ISO{ iso }</p>
-                            <p>{caption}</p>
-                            <p> { style } </p>
-                                <p>
-                                Kit: 
-                                <br></br>
-                                Camera: {cameraBrand}, {cameraModel}
-                                    <br></br>
-                                Lens: {lensBrand}, {lensModel}
-                                    <br></br>
-                                    {/* accessories: { accessories } */}
-                </p>
-                    <Comments />
-                </div>
-            </button>
-        }
-        </>
-    )
-}
+      ) : (
+        <div className="post">
+          <br></br>
+
+          <img src={imgUrl} alt="post img"></img>
+
+          <ul>
+            <li>
+              <p>{caption}</p>
+            </li>
+            <li>{style}</li>
+            <li>
+              Settings: 𝑓 {fStop}, SS: {shutterSpeed}, ISO{iso}
+            </li>
+            <li>
+              Camera: {cameraBrand}, {cameraModel}
+              <br></br>
+              Lens: {lensBrand}, {lensModel}
+              <br></br>
+              {/* accessories: { accessories } */}
+            </li>
+          </ul>
+
+          {commentFilter.map((comment) => (
+            <Comment {...comment} key={comment._id} deleteComment={deleteComment} editComment={editComment}/>
+          ))}
+          <CommentForm _id={ _id } />
+          <button onClick={toggleComments}>Hide Comments</button>
+        </div>
+      )}
+    </>
+  );
+};

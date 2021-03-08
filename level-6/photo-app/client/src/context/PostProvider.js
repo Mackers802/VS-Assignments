@@ -16,9 +16,9 @@ export const PostProvider = (props) => {
   const initState = {
     posts: [],
     userPosts: [],
-    comments: [],
+    comments: []
   };
-  const [postsState, setPostsState] = useState(initState);
+  const [ postsState, setPostsState] = useState(initState);
 
   //  ----------- Functions --------------------------------------
 
@@ -158,6 +158,59 @@ export const PostProvider = (props) => {
     console.log("editPosts postsState", postsState)
   }
 
+  function getCommentsById(postId){
+    // console.log("provider comment Id", postId)
+  postsAxios
+    .get(`/api/comments/${postId}`)
+    .then((res) => {
+      // console.log(res);
+      setPostsState((prev) => ({
+        ...prev,
+        comments: res.data,
+      }));
+    })
+    .catch((err) => console.log(err.response.data.errMsg));
+  }
+
+  function addComment(_id, inputs) {
+    postsAxios
+      .post(`/api/comments/${_id}`, inputs)
+        .then((res) => {
+          // console.log(res.data);
+          setPostsState((prevState) => ({
+            ...prevState,
+            comments: [...prevState.comments, res.data],
+          }));
+          // getCommentsById();
+        })
+      .catch((err) => console.log(err.responde.data.errMsg));
+  }
+
+  function editComment(_id, inputs){
+    postsAxios
+    .put(`/api/comments/${_id}`, inputs)
+    .then((res) => (
+      setPostsState(prevState => ({
+        ...prevState,
+        comments: prevState.comments.filter(post => post._id !== _id)
+      }))
+    ))
+    .catch((err) => console.log(err.response.data.errMsg));
+  }
+
+  function deleteComment(_id){
+    console.log("delete Comment", _id)
+    postsAxios
+    .delete(`/api/comments/${_id}`)
+      .then((res) => (
+        setPostsState(prevState => ({
+          ...prevState,
+          comments: prevState.comments.filter(comment => comment._id !== _id)
+        }))
+      ))
+      .catch((err) => console.log(err.response.data.errMsg));
+  }
+
   return (
     <PostProviderContext.Provider
       value={{
@@ -168,7 +221,10 @@ export const PostProvider = (props) => {
         deletePost,
         editPost,
         searchByStyle,
-        // search,
+        getCommentsById,
+        addComment,
+        deleteComment,
+        editComment,
         searchByCameraBrand,
         searchByCameraModel,
         searchByLensBrand,
