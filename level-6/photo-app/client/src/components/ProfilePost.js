@@ -1,11 +1,11 @@
-import React, { useContext, useState } from "react";
-import { UserAuthContext } from "../context/UserAuthProvider";
+import React, { useState } from "react";
+// import { UserAuthContext } from "../context/UserAuthProvider";
 import { EditPostForm } from "./EditPostForm";
 
 export const ProfilePost = (props) => {
-  const {
-    user: { username },
-  } = useContext(UserAuthContext);
+  // const {
+  //   user: { username },
+  // } = useContext(UserAuthContext);
   const { imgUrl, caption, _id } = props;
 
   const [Toggle, setToggle] = useState(false);
@@ -32,7 +32,11 @@ export const ProfilePost = (props) => {
         </div>
       ) : (
         <div className="postEditForm">
-          <EditPostForm caption={caption} _id={_id} changeToggle={changeToggle} />
+          <EditPostForm
+            caption={caption}
+            _id={_id}
+            changeToggle={changeToggle}
+          />
           {/* <button onClick={ () => setToggle(prevToggle => !prevToggle)}>Close</button> */}
         </div>
       )}

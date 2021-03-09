@@ -44,41 +44,40 @@ export const Profile = (props) => {
   function handleSubmit(e) {
     e.preventDefault();
     editUserProfile(inputs, _id);
+    getUserPosts(_id);
     // logout()
   }
 
   return (
-    <>
+    <div className="profileCont">
       {!toggle ? (
         <>
           <PostBar />
-          <div className="profileCont">
-            <img
-              src={profilePicture}
-              alt="Profile"
-              width="150"
-              height="150"
-            ></img>
-            <h1>{username}</h1>
-            <h4>{bio}</h4>
-            <h4>{email} </h4>
-            <div className="profilePostsGrid">
-              {userPosts.map((post) => (
-                <ProfilePost
-                  {...post}
-                  key={post._id}
-                  deletePost={deletePost}
-                  editPost={editPost}
-                />
-              ))}
-            </div>
-            <button onClick={toggleForm} className="button">
-              Profile Settings
-            </button>
+          <img
+            src={profilePicture}
+            alt="Profile"
+            width="150"
+            height="150"
+          ></img>
+          <h1>{username}</h1>
+          <h4>{bio}</h4>
+          <h4>{email} </h4>
+          <div className="profilePostsGrid">
+            {userPosts.map((post) => (
+              <ProfilePost
+                {...post}
+                key={post._id}
+                deletePost={deletePost}
+                editPost={editPost}
+              />
+            ))}
           </div>
+          <button onClick={toggleForm} className="button">
+            Profile Settings
+          </button>
         </>
       ) : (
-        <div className="profileCont">
+        <>
           <img
             src={profilePicture}
             alt="Profile"
@@ -128,8 +127,8 @@ export const Profile = (props) => {
             {" "}
             Signout{" "}
           </button>
-        </div>
+        </>
       )}
-    </>
+    </div>
   );
 };

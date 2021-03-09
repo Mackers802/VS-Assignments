@@ -1,4 +1,4 @@
-import { useState, useContext, useEffect } from "react";
+import { useState, useContext } from "react";
 import { PostProviderContext } from "../context/PostProvider";
 // const axios = require('axios');
 
@@ -23,6 +23,7 @@ export const EditPostForm = (props) => {
   function handleDeleteSubmit(e) {
     e.preventDefault();
     deletePost(_id);
+    getUserPosts(_id);
     console.log("deletePost ID", _id);
     // console.log("selected Submit", selected)
   }
@@ -33,8 +34,8 @@ export const EditPostForm = (props) => {
     getUserPosts(_id);
   }
 
-  function closeEdit(){
-    changeToggle()
+  function closeEdit() {
+    changeToggle();
   }
 
   function handleChange(e) {
@@ -59,7 +60,9 @@ export const EditPostForm = (props) => {
         <button onClick={handleDeleteSubmit} className="button">
           Delete Post
         </button>
-        <button onClick={closeEdit} className="button" >Close</button>
+        <button onClick={closeEdit} className="button">
+          Close
+        </button>
       </form>
     </div>
   );

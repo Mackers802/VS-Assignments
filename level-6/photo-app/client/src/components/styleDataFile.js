@@ -1,6 +1,5 @@
-const cameraDataFile = {
+const styleDataFile = {
   // --------------------- Canon ----------------------
-  Select: [],
   Style: [
     "Fashion",
     "Portrait",
@@ -24,4 +23,4 @@ const cameraDataFile = {
     "Other",
   ],
 };
-export default cameraDataFile;
+export default styleDataFile;

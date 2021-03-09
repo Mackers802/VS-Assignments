@@ -3,11 +3,11 @@ import { useEffect, useState, useContext } from "react";
 import cameraDataFile from "./cameraDataFile.js";
 import lensDataFile from "./lensDataFile.js";
 import { PostProviderContext } from "../context/PostProvider";
+import { UserAuthContext } from "../context/UserAuthProvider.js";
 // const axios = require('axios');
 
 export const PostForm = (props) => {
-
-  const { setToggle } = props
+  const { setToggle } = props;
 
   const initInput = {
     caption: "",
@@ -29,12 +29,16 @@ export const PostForm = (props) => {
   const [selected, setSelected] = useState({});
   // const history = useHistory();
 
-  const { newPost } = useContext(PostProviderContext);
+  const {
+    user: { _id },
+  } = useContext(UserAuthContext);
+  const { newPost, getUserPosts } = useContext(PostProviderContext);
 
   useEffect(() => {
     setMakesModelsCam(cameraDataFile);
     setMakesModelsLens(lensDataFile);
     setInputs(initInput);
+
     // console.log("selected", selected)
   }, []);
 
@@ -57,7 +61,8 @@ export const PostForm = (props) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     newPost(selected);
-    setToggle()
+    setToggle();
+    getUserPosts(_id);
     // window.location.reload(false);
     // const { make, model } = selected;
     // if (model !== undefined) {

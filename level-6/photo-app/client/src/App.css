@@ -1,21 +1,21 @@
-.body{
+.body {
   background-color: black;
 }
 
-.button{
+.button {
   background-color: rgba(76, 74, 74, 0.772);
-  color: white
+  color: white;
 }
 
-.postButton{
+.postButton {
   background-color: rgb(0, 0, 0);
 }
 
-.postButtonReverse{
+.postButtonReverse {
   background-color: rgb(226, 226, 226);
 }
 
-.app{
+.app {
   margin-left: -10px;
   margin-right: -10px;
   margin-top: 5px;
@@ -23,14 +23,14 @@
   text-decoration: none;
 }
 
-.navBar{
+.navBar {
   display: flex;
   width: 100vw;
   justify-content: space-evenly;
   font-size: x-small;
   align-items: center;
   text-align: center;
-  text-decoration: none; 
+  text-decoration: none;
   background-size: cover;
   margin-left: 15px;
   margin-right: 15px;
@@ -40,16 +40,16 @@
   border: 5px solid rgba(0, 0, 0, 0.772);
 }
 
-.navProfile > img{
+.navProfile > img {
   border-radius: 50%;
 }
 
-.navPost > h3{
+.navPost > h3 {
   font-size: x-large;
   text-decoration: none;
 }
 
-.authPage{
+.authPage {
   display: flex;
   justify-content: center;
   width: 100vw;
@@ -59,7 +59,7 @@
   background-color: white;
 }
 
-.profileCont{
+.profileCont {
   display: inline-block;
   justify-content: center;
   align-items: center;
@@ -74,19 +74,19 @@
   color: white;
 }
 
-.profileCont > img{
+.profileCont > img {
   width: 50vw;
   height: 30vh;
   border-radius: 50%;
-  margin-top: 15px
+  margin-top: 15px;
 }
 
-.profilePagePosts{
+.profilePagePosts {
   display: grid;
   width: 200px;
 }
 
-.profilePostsGrid > img{
+.profilePostsGrid > img {
   background-color: darkgray;
   width: 25px;
   height: auto;
@@ -95,7 +95,7 @@
   grid-template-rows: repeat(2);
 }
 
-.editProfile{
+.editProfile {
   background-color: darkgray;
   display: flex;
   justify-content: center;
@@ -103,8 +103,8 @@
   margin-top: 15px;
 }
 
-.userPosts > button{
- margin-left: -20px
+.userPosts > button {
+  margin-left: -20px;
 }
 
 /* .profileContainer{
@@ -126,12 +126,11 @@
   background-color: violet;
 } */
 
-
 /* .profileEdit{
   background-color: rgb(251, 63, 16);
 } */
 
-.feedCont > button{
+.feedCont > button {
   margin-top: 8px;
   margin-right: 20px;
   border: 2px red solid;
@@ -139,13 +138,13 @@
   /* background-color: rgb(0, 0, 0);  */
 }
 
-.postFormCont{
+.postFormCont {
   justify-content: center;
   align-items: center;
   text-align: center;
 }
 
-.postForm{
+.postForm {
   display: inline-block;
   background-color: darkgray;
   border: 5px solid rgba(0, 0, 0, 0.772);
@@ -157,8 +156,7 @@
   padding: 10px;
 }
 
-
-.post{
+.post {
   background-color: rgba(0, 0, 0, 0.624);
   justify-content: center;
   align-items: center;
@@ -173,11 +171,9 @@
 .post > img {
   width: 25vw;
   height: auto;
-} 
+}
 
-
-
-.post > ul{
+.post > ul {
   list-style-type: none;
 }
 
@@ -188,18 +184,17 @@
   height: auto;
 }
 
-.postProfPic{
+.postProfPic {
   display: flex;
 }
 
-.postProfPic > img{
+.postProfPic > img {
   width: 30px;
   height: auto;
   border-radius: 75%;
   float: left;
   margin: 10px;
   margin-right: 10px;
-
 }
 
 .post > p {
@@ -207,7 +202,7 @@
   width: 70vw;
   text-align: center;
   margin-top: -20;
-  margin-left: 25px
+  margin-left: 25px;
 }
 
 .post > h3 {
@@ -216,22 +211,22 @@
   margin-bottom: 0px;
 }
 
-.userPosts{
+.userPosts {
   display: flex;
   justify-content: center;
-  margin: 10px
+  margin: 10px;
 }
 
-.userPosts > img{
+.userPosts > img {
   border: solid 2px azure;
   border-radius: 25%;
 }
 
-.postEditForm{
+.postEditForm {
   background-color: rgb(224, 220, 224);
 }
 
-.explorePost{
+.explorePost {
   background-color: rgba(0, 0, 0, 0.624);
   justify-content: center;
   align-items: center;
@@ -243,15 +238,15 @@
   border: 2px solid black;
 }
 
-.explorePost > img{
+.explorePost > img {
   width: 20vw;
 }
 
-.explorePost > input{
+.explorePost > input {
   width: 50vw;
 }
 
-.explorePostText{
+.explorePostText {
   background-color: rgba(0, 0, 0, 0.624);
   height: 100px;
   width: 110px;
@@ -265,25 +260,25 @@
   border: 2px solid black;
 }
 
-.comment{
+.comment {
   background-color: rgb(197, 197, 197);
   text-align: left;
 }
 
-.settings{
+.settings {
   margin-top: 0px;
   background-color: chartreuse;
 }
 
-.caption{
+.caption {
   background-color: burlywood;
 }
 
-.styleKit{
+.styleKit {
   background-color: blue;
 }
 
-.friendsListCont{
+.friendsListCont {
   background-color: rgba(0, 0, 0, 0.772);
   border: 5px solid darkgray;
   margin-top: 10px;
@@ -291,19 +286,20 @@
   margin-right: 20px;
 }
 
-.friendSearch > input{
+.friendSearch > input {
   width: 69vw;
   margin-left: 10px;
   margin-top: 5px;
   border: 3px solid darkgray;
 }
 
-.friendsList > button{
+.friendsList > button {
   width: 70vw;
   height: 30px;
-  font-family: 'monospace', 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-family: "monospace", "Franklin Gothic Medium", "Arial Narrow", Arial,
+    sans-serif;
   font-size: large;
-  font-weight:800;
+  font-weight: 800;
   font-style: italic;
   margin-left: 10px;
   margin-top: 5px;
@@ -314,12 +310,12 @@
   align-items: center;
 }
 
-.editProfile{
+.editProfile {
   display: flex;
   justify-content: center;
 }
 
-.warning{
+.warning {
   color: red;
 }
 
@@ -423,21 +419,20 @@
     text-align: center;
     color: white;
   } */
-  
-  /* .profileContainer > img{
+
+/* .profileContainer > img{
     border-radius: 50%;
   } */
-  
-  /* .profileContainer > button{
+
+/* .profileContainer > button{
     width: 100px;
   } */
-  
-  /* .profileInfo{
+
+/* .profileInfo{
     background-color: violet;
   } */
-  
-  
-  /* .profileEdit{
+
+/* .profileEdit{
     background-color: rgb(251, 63, 16);
   } 
   
@@ -940,21 +935,20 @@
     text-align: center;
     color: white;
   } */
-  
-  /* .profileContainer > img{
+
+/* .profileContainer > img{
     border-radius: 50%;
   } */
-  
-  /* .profileContainer > button{
+
+/* .profileContainer > button{
     width: 100px;
   } */
-  
-  /* .profileInfo{
+
+/* .profileInfo{
     background-color: violet;
   } */
-  
-  
-  /* .profileEdit{
+
+/* .profileEdit{
     background-color: rgb(251, 63, 16);
   } 
   
@@ -1101,5 +1095,3 @@
     color: red;
   }
 /* }  */
-
-

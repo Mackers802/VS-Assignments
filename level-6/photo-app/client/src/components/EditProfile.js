@@ -9,9 +9,7 @@ export const EditProfile = (props) => {
     editUserProfile,
   } = useContext(UserAuthContext);
 
-  const { getUserPosts, deletePost, editPost } = useContext(
-    PostProviderContext
-  );
+  const { getUserPosts } = useContext(PostProviderContext);
 
   const initInputs = {
     profilePicture: profilePicture || "",

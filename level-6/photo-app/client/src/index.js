@@ -1,10 +1,10 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import { BrowserRouter as Router } from "react-router-dom"
-import './index.css';
-import { App } from './App';
-import { UserAuthProvider } from "./context/UserAuthProvider"
-import { PostProvider } from "./context/PostProvider"
+import React from "react";
+import ReactDOM from "react-dom";
+import { BrowserRouter as Router } from "react-router-dom";
+import "./index.css";
+import { App } from "./App";
+import { UserAuthProvider } from "./context/UserAuthProvider";
+import { PostProvider } from "./context/PostProvider";
 
 ReactDOM.render(
   <Router>
@@ -13,7 +13,7 @@ ReactDOM.render(
         <App />
       </PostProvider>
     </UserAuthProvider>
-  </Router>
+  </Router>,
 
-  ,document.getElementById('root')
+  document.getElementById("root")
 );

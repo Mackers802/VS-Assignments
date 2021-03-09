@@ -4,48 +4,44 @@ import { Comment } from "./Comment";
 import { CommentForm } from "./CommentForm";
 
 export const Post = (props) => {
+  const {
+    getCommentsById,
+    comments,
+    deleteComment,
+    editComment,
+    addPostLike,
+    addComment,
+  } = useContext(PostProviderContext);
 
- const {
-   getCommentsById,
-   comments,
-   deleteComment,
-   editComment,
-   addPostLike,
-   addComment
- } = useContext(PostProviderContext);
-
- const {
-   postId,
-   imgUrl,
-   style,
-   cameraBrand,
-   cameraModel,
-   lensBrand,
-   lensModel,
-   caption,
-   iso,
-   shutterSpeed,
-   fStop,
-   /* accessories */
+  const {
+    postId,
+    imgUrl,
+    style,
+    cameraBrand,
+    cameraModel,
+    lensBrand,
+    lensModel,
+    caption,
+    iso,
+    shutterSpeed,
+    fStop,
+    /* accessories */
   } = props;
-  
-  
+
   const [toggle, setToggle] = useState(false);
-  
-  
+
   function get() {
     setToggle((prev) => !prev);
     getCommentsById(postId);
-    console.log("postId ", postId)
+    console.log("postId ", postId);
   }
-
 
   const commentFilter = comments.filter((comment) => comment.post === postId);
 
   return (
-    <>
+    <div className="post">
       {!toggle ? (
-        <div className="post">
+        <>
           <br></br>
           <img src={imgUrl} alt="post img" onDoubleClick={addPostLike}></img>
 
@@ -66,9 +62,9 @@ export const Post = (props) => {
           <div>
             <button onClick={get}>Comments</button>
           </div>
-        </div>
+        </>
       ) : (
-        <div className="post">
+        <>
           <br></br>
           <img src={imgUrl} alt="post img"></img>
 
@@ -98,11 +94,17 @@ export const Post = (props) => {
               editComment={editComment}
             />
           ))}
-          
-          <CommentForm postId={postId} submit={addComment} btnText="add Comment"/>
-          <button onClick={() => setToggle((prev) => !prev)}>Hide Comments</button>
-        </div>
+
+          <CommentForm
+            postId={postId}
+            submit={addComment}
+            btnText="add Comment"
+          />
+          <button onClick={() => setToggle((prev) => !prev)}>
+            Hide Comments
+          </button>
+        </>
       )}
-    </>
+    </div>
   );
 };

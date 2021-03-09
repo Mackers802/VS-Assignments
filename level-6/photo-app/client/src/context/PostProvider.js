@@ -188,14 +188,16 @@ export const PostProvider = (props) => {
 
   function editComment(inputs, commentId) {
     postsAxios
-    .put(`/api/comments/${commentId}`, inputs)
-    .then((res) =>
-    // console.log(typeof res)
-          setPostsState(prevState => ({
-            ...prevState,
-            comments: prevState.comments.map(comment => comment._id !== commentId ? comment : res.data)
-          }))
-          )
+      .put(`/api/comments/${commentId}`, inputs)
+      .then((res) =>
+        // console.log(typeof res)
+        setPostsState((prevState) => ({
+          ...prevState,
+          comments: prevState.comments.map((comment) =>
+            comment._id !== commentId ? comment : res.data
+          ),
+        }))
+      )
       .catch((err) => console.log(err.response.data.errMsg));
   }
 

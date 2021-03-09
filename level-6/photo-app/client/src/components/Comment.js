@@ -13,14 +13,14 @@ export const Comment = (props) => {
   }
 
   return (
-    <>
+    <div className="comment">
       {!toggle ? (
-        <div className="comment">
+        <>
           <h3>{commentDescription}</h3>
           <button onClick={() => setToggle((prev) => !prev)}>Edit</button>
-        </div>
+        </>
       ) : (
-        <div className="comment">
+        <>
           <CommentForm
             btnText="Submit Edit"
             commentId={commentId}
@@ -29,8 +29,8 @@ export const Comment = (props) => {
           />
           <button onClick={deleteCom}>Delete</button>
           <button onClick={() => setToggle((prev) => !prev)}>Close</button>
-        </div>
+        </>
       )}
-    </>
+    </div>
   );
 };

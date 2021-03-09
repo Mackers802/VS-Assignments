@@ -3,13 +3,11 @@ import { PostProviderContext } from "../context/PostProvider";
 import { UserAuthContext } from "../context/UserAuthProvider";
 
 export const CommentForm = (props) => {
-  const { user } = useContext(UserAuthContext)
+  const { user } = useContext(UserAuthContext);
   const { postId, commentDescription, commentId } = props;
-  console.log("commentForm commentId", commentId)
+  console.log("commentForm commentId", commentId);
 
-  const { setToggle } = props
-
-
+  const { setToggle } = props;
 
   const initInputs = {
     commentDescription: commentDescription || "",
@@ -18,8 +16,7 @@ export const CommentForm = (props) => {
   const [inputs, setInputs] = useState(initInputs);
   const { addComment, editComment } = useContext(PostProviderContext);
 
-// console.log("inputs on CommentForm", inputs)
-
+  // console.log("inputs on CommentForm", inputs)
 
   function handleChange(e) {
     const { name, value } = e.target;
@@ -33,11 +30,11 @@ export const CommentForm = (props) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     addComment(postId, inputs, user);
-    editComment(inputs, commentId, user)
-    if(setToggle){
-      setToggle(false)
-    } 
-    // window.location.reload(); 
+    editComment(inputs, commentId, user);
+    if (setToggle) {
+      setToggle(false);
+    }
+    // window.location.reload();
   };
 
   return (
@@ -51,7 +48,7 @@ export const CommentForm = (props) => {
             onChange={handleChange}
           />
         </label>
-        <button onClick={handleSubmit}>{ props.btnText }</button>
+        <button onClick={handleSubmit}>{props.btnText}</button>
       </form>
     </div>
   );
