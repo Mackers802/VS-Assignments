@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext, useState } from "react";
 import { PostProviderContext } from "../context/PostProvider";
 import { Comment } from "./Comment";
 import { CommentForm } from "./CommentForm";
@@ -98,6 +98,7 @@ export const Post = (props) => {
               editComment={editComment}
             />
           ))}
+          
           <CommentForm postId={postId} submit={addComment} btnText="add Comment"/>
           <button onClick={() => setToggle((prev) => !prev)}>Hide Comments</button>
         </div>

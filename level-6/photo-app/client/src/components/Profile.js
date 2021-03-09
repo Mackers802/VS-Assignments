@@ -2,7 +2,7 @@ import React, { useContext, useState, useEffect } from "react";
 import { UserAuthContext } from "../context/UserAuthProvider";
 import { PostProviderContext } from "../context/PostProvider";
 import { ProfilePost } from "./ProfilePost";
-import { Nav2 } from "./Nav2";
+import { PostBar } from "./PostBar";
 
 export const Profile = (props) => {
   const {
@@ -51,7 +51,7 @@ export const Profile = (props) => {
     <>
       {!toggle ? (
         <>
-          <Nav2 />
+          <PostBar />
           <div className="profileCont">
             <img
               src={profilePicture}
@@ -101,19 +101,19 @@ export const Profile = (props) => {
                 onChange={handleChange}
                 type="text"
                 name="profilePicture"
-                placeholder="Change Profile Picture?"
+                placeholder={profilePicture}
               />
               <input
                 onChange={handleChange}
                 type="text"
                 name="bio"
-                placeholder="Change Bio"
+                placeholder={bio}
               />
               <input
                 onChange={handleChange}
                 type="text"
                 name="email"
-                placeholder="Change Email?"
+                placeholder={email}
               />
             </label>
             <br></br>

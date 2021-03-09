@@ -32,7 +32,7 @@ export const ProfilePost = (props) => {
         </div>
       ) : (
         <div className="postEditForm">
-          <EditPostForm caption={caption} _id={_id} />
+          <EditPostForm caption={caption} _id={_id} changeToggle={changeToggle} />
           {/* <button onClick={ () => setToggle(prevToggle => !prevToggle)}>Close</button> */}
         </div>
       )}

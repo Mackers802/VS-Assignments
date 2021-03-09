@@ -7,6 +7,10 @@ export const CommentForm = (props) => {
   const { postId, commentDescription, commentId } = props;
   console.log("commentForm commentId", commentId)
 
+  const { setToggle } = props
+
+
+
   const initInputs = {
     commentDescription: commentDescription || "",
   };
@@ -28,9 +32,12 @@ export const CommentForm = (props) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // addComment(postId, inputs, user);
+    addComment(postId, inputs, user);
     editComment(inputs, commentId, user)
-    setInputs(initInputs);
+    if(setToggle){
+      setToggle(false)
+    } 
+    // window.location.reload(); 
   };
 
   return (

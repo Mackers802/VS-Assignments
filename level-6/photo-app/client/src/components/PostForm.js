@@ -6,6 +6,9 @@ import { PostProviderContext } from "../context/PostProvider";
 // const axios = require('axios');
 
 export const PostForm = (props) => {
+
+  const { setToggle } = props
+
   const initInput = {
     caption: "",
     style: "",
@@ -53,23 +56,9 @@ export const PostForm = (props) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // console.log("selected Submit", selected)
     newPost(selected);
-    console.log("selected", selected);
-    window.location.reload(false);
-    // setCamModels({
-    // 	cameraModel: "",
-    // })
-    // setLensModels({
-    // 	lensModel: "",
-    // })
-    // setMakesModelsCam({
-    // 	cameraBrand: "",
-    // })
-    // setMakesModelsLens({
-    // 	lensBrand: "",
-    // })
-
+    setToggle()
+    // window.location.reload(false);
     // const { make, model } = selected;
     // if (model !== undefined) {
     // 	history.push(`/collection/?make=${encodeURIComponent(make)}&model=${encodeURIComponent(model)}`);

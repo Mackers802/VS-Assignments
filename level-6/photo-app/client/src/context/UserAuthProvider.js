@@ -61,19 +61,30 @@ export const UserAuthProvider = (props) => {
    // ------------------------------------- Profile Change Updates ------------------------------------------------------
 
    function editUserProfile(inputs, _id){
-    // console.log("Auth provider _id", _id)
-    // console.log("Auth provider inputs", inputs)
     userAxios
     .put(`/api/profile/${_id}`, inputs)
       .then((res) => {
-        setUserState((prevState) => ({
-          ...prevState,
+        setUserState(prevUserState => ({
+          ...prevUserState,
           user: res.data
         }));
       })
       .catch((err) => console.log(err.response.data.errMsg)); 
       // console.log("userState", userState)
   }
+
+  // function editComment(inputs, commentId) {
+  //   postsAxios
+  //   .put(`/api/comments/${commentId}`, inputs)
+  //   .then((res) =>
+  //   // console.log(typeof res)
+  //         setPostsState(prevState => ({
+  //           ...prevState,
+  //           comments: prevState.comments.map(comment => comment._id !== commentId ? comment : res.data)
+  //         }))
+  //         )
+  //     .catch((err) => console.log(err.response.data.errMsg));
+  // }
 
   function logout() {
     localStorage.removeItem("token");

@@ -6,7 +6,7 @@ export const EditPostForm = (props) => {
   const { editPost, deletePost, getUserPosts } = useContext(
     PostProviderContext
   );
-  const { caption, _id } = props;
+  const { caption, _id, changeToggle } = props;
 
   const initInputs = {
     caption: caption,
@@ -33,6 +33,10 @@ export const EditPostForm = (props) => {
     getUserPosts(_id);
   }
 
+  function closeEdit(){
+    changeToggle()
+  }
+
   function handleChange(e) {
     const { name, value } = e.target;
     setInputs((prevInputs) => ({
@@ -55,6 +59,7 @@ export const EditPostForm = (props) => {
         <button onClick={handleDeleteSubmit} className="button">
           Delete Post
         </button>
+        <button onClick={closeEdit} className="button" >Close</button>
       </form>
     </div>
   );

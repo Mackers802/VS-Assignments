@@ -183,20 +183,19 @@ export const PostProvider = (props) => {
         }));
         // getCommentsById();
       })
-      .catch((err) => console.log(err.responde.data.errMsg));
+      .catch((err) => console.log(err.response.data.errMsg));
   }
 
   function editComment(inputs, commentId) {
-    // console.log("comment id", _id)
-    // console.log("comment inputs", inputs)
     postsAxios
-      .put(`/api/comments/${commentId}`, inputs)
-      .then((res) =>
+    .put(`/api/comments/${commentId}`, inputs)
+    .then((res) =>
+    // console.log(typeof res)
           setPostsState(prevState => ({
             ...prevState,
             comments: prevState.comments.map(comment => comment._id !== commentId ? comment : res.data)
           }))
-      )
+          )
       .catch((err) => console.log(err.response.data.errMsg));
   }
 
