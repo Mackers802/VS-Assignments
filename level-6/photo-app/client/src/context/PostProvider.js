@@ -16,9 +16,9 @@ export const PostProvider = (props) => {
   const initState = {
     posts: [],
     userPosts: [],
-    comments: []
+    comments: [],
   };
-  const [ postsState, setPostsState] = useState(initState);
+  const [postsState, setPostsState] = useState(initState);
 
   //  ----------- Functions --------------------------------------
 
@@ -50,7 +50,7 @@ export const PostProvider = (props) => {
   }
 
   function getUserPosts(_id) {
-    console.log("getUserPosts user ID", _id)
+    console.log("getUserPosts user ID", _id);
     postsAxios
       .get(`/api/posts/${_id}`)
       .then((res) => {
@@ -63,154 +63,153 @@ export const PostProvider = (props) => {
       .catch((err) => console.log(err.response.data.errMsg));
   }
 
-
-
   function searchByStyle(selected) {
-      postsAxios
+    postsAxios
       .get(`/api/posts/search/style?style=${selected.style}`)
       .then((res) => {
         // console.log(res)
-          setPostsState((...prevState ) => ({
-              ...prevState,
-              posts: res.data
-          }))
+        setPostsState((...prevState) => ({
+          ...prevState,
+          posts: res.data,
+        }));
       })
       .catch((err) => console.log(err.response.data.errMsg));
-    }
-
-  function searchByCameraBrand(selected){
-    postsAxios
-    .get(`/api/posts/search/cameraBrand?cameraBrand=${selected.cameraBrand}`)
-    .then((res) => {
-      // console.log(res)
-        setPostsState((...prevState ) => ({
-            ...prevState,
-            posts: res.data
-        }))
-    })
-    .catch((err) => console.log(err.response.data.errMsg));
   }
 
-  function searchByCameraModel(selected){
+  function searchByCameraBrand(selected) {
     postsAxios
-    .get(`/api/posts/search/cameraModel?cameraModel=${selected.cameraModel}`)
-    .then((res) => {
-      // console.log(res)
-        setPostsState((...prevState ) => ({
-            ...prevState,
-            posts: res.data
-        }))
-    })
-    .catch((err) => console.log(err.response.data.errMsg));
-  }
-
-  function searchByLensBrand(selected){
-    postsAxios
-    .get(`/api/posts/search/lensBrand?lensBrand=${selected.lensBrand}`)
-    .then((res) => {
-      // console.log(res)
-        setPostsState((...prevState ) => ({
-            ...prevState,
-            posts: res.data
-        }))
-    })
-    .catch((err) => console.log(err.response.data.errMsg));
-  }
-
-  function searchByLensModel(selected){
-    postsAxios
-    .get(`/api/posts/search/lensModel?lensModel=${selected.lensModel}`)
-    .then((res) => {
-      // console.log(res)
-        setPostsState((...prevState ) => ({
-            ...prevState,
-            posts: res.data
-        }))
-    })
-    .catch((err) => console.log(err.response.data.errMsg));
-  }
-
-  function deletePost(_id){
-    console.log("delete Post", _id)
-    postsAxios
-    .delete(`/api/posts/${_id}`)
-      .then((res) => (
-        setPostsState(prevState => ({
+      .get(`/api/posts/search/cameraBrand?cameraBrand=${selected.cameraBrand}`)
+      .then((res) => {
+        // console.log(res)
+        setPostsState((...prevState) => ({
           ...prevState,
-          userPosts: prevState.userPosts.filter(post => post._id !== _id)
-        }))
-      ))
+          posts: res.data,
+        }));
+      })
       .catch((err) => console.log(err.response.data.errMsg));
   }
 
-  function editPost(inputs, _id){
-    console.log("edit Post Id", _id)
-    console.log("edit Post Inputs", inputs)
+  function searchByCameraModel(selected) {
     postsAxios
-    .put(`/api/posts/${_id}`, inputs)
-      .then((res) => (
-      setPostsState(prevState => ({
-        ...prevState,
-          userPosts: prevState.userPosts.filter(post => post._id !== _id)
-      }))
-    ))
-    .catch((err) => console.log(err.response.data.errMsg));
-    console.log("editPosts postsState", postsState)
+      .get(`/api/posts/search/cameraModel?cameraModel=${selected.cameraModel}`)
+      .then((res) => {
+        // console.log(res)
+        setPostsState((...prevState) => ({
+          ...prevState,
+          posts: res.data,
+        }));
+      })
+      .catch((err) => console.log(err.response.data.errMsg));
   }
 
-  function getCommentsById(postId){
+  function searchByLensBrand(selected) {
+    postsAxios
+      .get(`/api/posts/search/lensBrand?lensBrand=${selected.lensBrand}`)
+      .then((res) => {
+        // console.log(res)
+        setPostsState((...prevState) => ({
+          ...prevState,
+          posts: res.data,
+        }));
+      })
+      .catch((err) => console.log(err.response.data.errMsg));
+  }
+
+  function searchByLensModel(selected) {
+    postsAxios
+      .get(`/api/posts/search/lensModel?lensModel=${selected.lensModel}`)
+      .then((res) => {
+        // console.log(res)
+        setPostsState((...prevState) => ({
+          ...prevState,
+          posts: res.data,
+        }));
+      })
+      .catch((err) => console.log(err.response.data.errMsg));
+  }
+
+  function deletePost(_id) {
+    console.log("delete Post", _id);
+    postsAxios
+      .delete(`/api/posts/${_id}`)
+      .then((res) =>
+        setPostsState((prevState) => ({
+          ...prevState,
+          userPosts: prevState.userPosts.filter((post) => post._id !== _id),
+        }))
+      )
+      .catch((err) => console.log(err.response.data.errMsg));
+  }
+
+  function editPost(inputs, _id) {
+    console.log("edit Post Id", _id);
+    console.log("edit Post Inputs", inputs);
+    postsAxios
+      .put(`/api/posts/${_id}`, inputs)
+      .then((res) =>
+        setPostsState((prevState) => ({
+          ...prevState,
+          userPosts: prevState.userPosts.filter((post) => post._id !== _id),
+        }))
+      )
+      .catch((err) => console.log(err.response.data.errMsg));
+    console.log("editPosts postsState", postsState);
+  }
+
+  function getCommentsById(postId) {
     // console.log("provider comment Id", postId)
-  postsAxios
-    .get(`/api/comments/${postId}`)
-    .then((res) => {
-      // console.log(res);
-      setPostsState((prev) => ({
-        ...prev,
-        comments: res.data,
-      }));
-    })
-    .catch((err) => console.log(err.response.data.errMsg));
+    postsAxios
+      .get(`/api/comments/${postId}`)
+      .then((res) => {
+        // console.log(res);
+        setPostsState((prev) => ({
+          ...prev,
+          comments: res.data,
+        }));
+      })
+      .catch((err) => console.log(err.response.data.errMsg));
   }
 
-  function addComment(_id, inputs) {
+  function addComment(_id, inputs, user) {
+    console.log("comment Id", _id);
+    // const req.user.body = req.params._id
     postsAxios
       .post(`/api/comments/${_id}`, inputs)
-        .then((res) => {
-          // console.log(res.data);
-          setPostsState((prevState) => ({
-            ...prevState,
-            comments: [...prevState.comments, res.data],
-          }));
-          // getCommentsById();
-        })
+      .then((res) => {
+        // console.log(res.data);
+        setPostsState((prevState) => ({
+          ...prevState,
+          comments: [...prevState.comments, res.data],
+        }));
+        // getCommentsById();
+      })
       .catch((err) => console.log(err.responde.data.errMsg));
   }
 
-  function editComment(_id, inputs){
+  function editComment(inputs, commentId) {
     // console.log("comment id", _id)
     // console.log("comment inputs", inputs)
     postsAxios
-    .put(`/api/comments/${_id}`, inputs)
-    .then((res) => (
-      setPostsState(prevState => ({
-        ...prevState,
-        comments: prevState.comments.filter(comment => comment._id !== _id)
-      }))
-    ))
-    .catch((err) => console.log(err.response.data.errMsg));
+      .put(`/api/comments/${commentId}`, inputs)
+      .then((res) =>
+          setPostsState(prevState => ({
+            ...prevState,
+            comments: prevState.comments.map(comment => comment._id !== commentId ? comment : res.data)
+          }))
+      )
+      .catch((err) => console.log(err.response.data.errMsg));
   }
 
-
-  function deleteComment(_id){
-    console.log("delete Comment", _id)
+  function deleteComment(_id) {
+    console.log("delete Comment", _id);
     postsAxios
-    .delete(`/api/comments/${_id}`)
-      .then((res) => (
-        setPostsState(prevState => ({
+      .delete(`/api/comments/${_id}`)
+      .then((res) =>
+        setPostsState((prevState) => ({
           ...prevState,
-          comments: prevState.comments.filter(comment => comment._id !== _id)
+          comments: prevState.comments.filter((comment) => comment._id !== _id),
         }))
-      ))
+      )
       .catch((err) => console.log(err.response.data.errMsg));
   }
 
@@ -231,10 +230,10 @@ export const PostProvider = (props) => {
         searchByCameraBrand,
         searchByCameraModel,
         searchByLensBrand,
-        searchByLensModel
+        searchByLensModel,
       }}
     >
       {props.children}
     </PostProviderContext.Provider>
   );
-}
+};

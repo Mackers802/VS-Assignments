@@ -1,18 +1,21 @@
 import React, { useState, useContext } from "react";
 import { PostProviderContext } from "../context/PostProvider";
+import { UserAuthContext } from "../context/UserAuthProvider";
 
 export const CommentForm = (props) => {
-  const { _id } = useContext(PostProviderContext);
+  const { user } = useContext(UserAuthContext)
+  const { postId, commentDescription, commentId } = props;
+  console.log("commentForm commentId", commentId)
 
   const initInputs = {
-    commentDescription: "",
+    commentDescription: commentDescription || "",
   };
 
   const [inputs, setInputs] = useState(initInputs);
-  const { addComment } = useContext(PostProviderContext);
+  const { addComment, editComment } = useContext(PostProviderContext);
 
-console.log("inputs on CommentForm", inputs)
-console.log("_id on CommentForm", _id)
+// console.log("inputs on CommentForm", inputs)
+
 
   function handleChange(e) {
     const { name, value } = e.target;
@@ -25,8 +28,9 @@ console.log("_id on CommentForm", _id)
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    addComment(_id, inputs);
-    setInputs(inputs);
+    // addComment(postId, inputs, user);
+    editComment(inputs, commentId, user)
+    setInputs(initInputs);
   };
 
   return (
@@ -36,10 +40,11 @@ console.log("_id on CommentForm", _id)
           <input
             type="text"
             name="commentDescription"
-            placeholder="Edit Comment"
+            placeholder={commentDescription}
+            onChange={handleChange}
           />
         </label>
-        <button onClick={handleSubmit}>{props.btnText}</button>
+        <button onClick={handleSubmit}>{ props.btnText }</button>
       </form>
     </div>
   );

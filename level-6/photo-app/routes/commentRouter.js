@@ -60,7 +60,8 @@ commentRouter.get("/:commentId", (req, res, next) => {
 commentRouter.put("/:commentId", (req, res, next) => {
     Comment.findOneAndUpdate(
       { _id: req.params.commentId,
-      user: user.params._id },
+      // user: user.params._id 
+    },
       req.body,
       { new: true },
       (err, updatedComment) => {

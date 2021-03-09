@@ -1,25 +1,17 @@
 import React, { useState } from "react";
 import { CommentForm } from "./CommentForm"
-// import { UserAuthContext } from "../context/UserAuthProvider"
 
 export const Comment = (props) => {
-  // const { user: _id } = useContext(UserAuthContext)
-  const { commentDescription, _id } = props;
+  const { commentDescription, _id, deleteComment, commentId } = props;
 
   const [toggle, setToggle ] = useState(false)
 
-  // function togglePage(){
-  //   setToggle(prev => !prev)
-  // }
+  console.log("commment Id", commentId)
 
-  // function deleteCom() {
-  //   deleteComment(_id);
-  // }
+  function deleteCom() {
+    deleteComment(_id);
+  }
 
-  // function editCom() {
-  //   editComment(_id);
-  //   setInputs(inputs);
-  // }
 
   return (
     <>
@@ -31,8 +23,9 @@ export const Comment = (props) => {
     </div>
       :
       <div className="comment">
-        <CommentForm btnText="Submit Edit" _id={_id}/>
-        <button onClick={() => setToggle(prev => !prev)}>Close</button>
+        <CommentForm btnText="Submit Edit" commentId={commentId} commentDescription={commentDescription}/>
+          <button onClick={deleteCom}>Delete</button>
+          <button onClick={() => setToggle(prev => !prev)}>Close</button>
     </div>
     }
     </>

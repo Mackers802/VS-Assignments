@@ -1,45 +1,46 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { PostProviderContext } from "../context/PostProvider";
 import { Comment } from "./Comment";
 import { CommentForm } from "./CommentForm";
-// import { UserAuthContext } from "../context/UserAuthProvider";
 
 export const Post = (props) => {
-  const {
-    _id,
-    imgUrl,
-    style,
-    cameraBrand,
-    cameraModel,
-    lensBrand,
-    lensModel,
-    caption,
-    iso,
-    shutterSpeed,
-    fStop,
-    /* accessories */
+
+ const {
+   getCommentsById,
+   comments,
+   deleteComment,
+   editComment,
+   addPostLike,
+   addComment
+ } = useContext(PostProviderContext);
+
+ const {
+   postId,
+   imgUrl,
+   style,
+   cameraBrand,
+   cameraModel,
+   lensBrand,
+   lensModel,
+   caption,
+   iso,
+   shutterSpeed,
+   fStop,
+   /* accessories */
   } = props;
-
+  
+  
   const [toggle, setToggle] = useState(false);
-  const {
-    getCommentsById,
-    comments,
-    deleteComment,
-    editComment,
-    addPostLike,
-    commentDescription
-  } = useContext(PostProviderContext);
-
+  
+  
   function get() {
     setToggle((prev) => !prev);
-    getCommentsById(_id);
+    getCommentsById(postId);
+    console.log("postId ", postId)
   }
 
-  function toggleComments() {
-    setToggle((prev) => !prev);
-  }
 
-  const commentFilter = comments.filter((comment) => comment.post === _id);
+  const commentFilter = comments.filter((comment) => comment.post === postId);
 
   return (
     <>
@@ -92,12 +93,13 @@ export const Post = (props) => {
             <Comment
               {...comment}
               key={comment._id}
+              commentId={comment._id}
               deleteComment={deleteComment}
               editComment={editComment}
             />
           ))}
-          <CommentForm _id={_id} commentDescription={commentDescription} btnText="Add Comment"/>
-          <button onClick={toggleComments}>Hide Comments</button>
+          <CommentForm postId={postId} submit={addComment} btnText="add Comment"/>
+          <button onClick={() => setToggle((prev) => !prev)}>Hide Comments</button>
         </div>
       )}
     </>
