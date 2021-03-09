@@ -55,9 +55,9 @@ export const Profile = (props) => {
           <PostBar />
           <img
             src={profilePicture}
-            alt="Profile"
-            width="150"
-            height="150"
+            alt="Profile-Pic"
+            // width="150"
+            // height="150"
           ></img>
           <h1>{username}</h1>
           <h4>{bio}</h4>
@@ -100,19 +100,19 @@ export const Profile = (props) => {
                 onChange={handleChange}
                 type="text"
                 name="profilePicture"
-                placeholder={profilePicture}
+                placeholder={profilePicture || "Add profile picture"}
               />
               <input
                 onChange={handleChange}
                 type="text"
                 name="bio"
-                placeholder={bio}
+                placeholder={bio || "About me"}
               />
               <input
                 onChange={handleChange}
                 type="text"
                 name="email"
-                placeholder={email}
+                placeholder={email || "Email"}
               />
             </label>
             <br></br>
