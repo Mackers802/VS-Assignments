@@ -17,7 +17,7 @@ mongoose.connect(
     useCreateIndex: true,
     useFindAndModify: false,
   },
-  () => console.log("connected to Photog Friends Db")
+  () => console.log("connected to Golden Hour")
 );
 
 app.use("/users", require("./routes/usersRouter.js"));

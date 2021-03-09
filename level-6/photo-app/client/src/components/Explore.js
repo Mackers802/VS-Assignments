@@ -6,7 +6,8 @@ import React, { useState, useContext, useEffect } from "react";
 import { PostProviderContext } from "../context/PostProvider";
 import { Ps } from "./Ps";
 
-export const Explore = () => {
+export const Explore = (props) => {
+  const { username } = props
   const { posts, getAllPosts } = useContext(PostProviderContext);
   const [searchTerm, setSearchTerm] = useState("");
 
@@ -16,7 +17,7 @@ export const Explore = () => {
 
   useEffect(() => {
     getAllPosts();
-  }, []);
+  }, [getAllPosts]);
 
   return (
     <div className="explorePost">
@@ -54,7 +55,7 @@ export const Explore = () => {
           return (
             <>
               <button>
-                <Ps val={val} key={key} />
+                <Ps val={val} key={key} username={username} />
               </button>
             </>
           );

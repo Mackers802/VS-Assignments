@@ -4,6 +4,7 @@ import cameraDataFile from "./cameraDataFile.js";
 import lensDataFile from "./lensDataFile.js";
 import { PostProviderContext } from "../context/PostProvider";
 import { UserAuthContext } from "../context/UserAuthProvider.js";
+import ImageUploader from 'react-images-upload';
 // const axios = require('axios');
 
 export const PostForm = (props) => {
@@ -26,7 +27,9 @@ export const PostForm = (props) => {
   const [camModels, setCamModels] = useState([]);
   const [lensModels, setLensModels] = useState([]);
   const [input, setInputs] = useState(initInput);
+  const [pictures, setPictures ] = useState([])
   const [selected, setSelected] = useState({});
+
   // const history = useHistory();
 
   const {
@@ -38,6 +41,7 @@ export const PostForm = (props) => {
     setMakesModelsCam(cameraDataFile);
     setMakesModelsLens(lensDataFile);
     setInputs(initInput);
+
 
     // console.log("selected", selected)
   }, []);
@@ -80,6 +84,14 @@ export const PostForm = (props) => {
     console.log("HC selected", selected);
     // console.log("handleChange", selected)
   }
+
+  
+  //   function onDrop(picture) {
+  //     setPictures({
+  //         pictures: [pictures.concat(picture)],
+  //     });
+  
+  // }
 
   //* -------------   camera selection -------------   */
 
@@ -172,6 +184,13 @@ export const PostForm = (props) => {
         <label>
           <input type="text" name="caption" placeholder="Add Caption" />
           <br></br>
+          {/* <ImageUploader
+                withIcon={true}
+                buttonText='Choose images'
+                onChange={onDrop}
+                imgExtension={['.jpg', '.gif', '.png', '.gif']}
+                maxFileSize={5242880}
+            /> */}
           <input type="text" name="imgUrl" placeholder="Add Image URL" />
         </label>
         <br></br>

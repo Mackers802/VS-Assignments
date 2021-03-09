@@ -12,6 +12,7 @@ export const Ps = (props) => {
     <>
       {!toggle ? (
         <div className="explorePost" onClick={handleToggle}>
+        <h3 className="username">{val.username}</h3>
           <img src={val.imgUrl} alt=" post img url"></img>
         </div>
       ) : (

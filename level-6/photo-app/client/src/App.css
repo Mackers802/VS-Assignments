@@ -7,6 +7,10 @@
   color: white;
 }
 
+.username{
+  color: chocolate;
+}
+
 .postButton {
   background-color: rgb(0, 0, 0);
 }

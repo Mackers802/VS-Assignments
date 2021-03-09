@@ -25,6 +25,7 @@ export const Post = (props) => {
     iso,
     shutterSpeed,
     fStop,
+    username
     /* accessories */
   } = props;
 
@@ -42,6 +43,7 @@ export const Post = (props) => {
     <div className="post">
       {!toggle ? (
         <>
+            <h2 className="username">{username}</h2>
           <br></br>
           <img src={imgUrl} alt="post img" onDoubleClick={addPostLike}></img>
 
@@ -66,8 +68,8 @@ export const Post = (props) => {
       ) : (
         <>
           <br></br>
+          <h2 className="username">{username}</h2>
           <img src={imgUrl} alt="post img"></img>
-
           <ul>
             <li>
               <p>{caption}</p>

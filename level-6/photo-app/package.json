@@ -17,7 +17,8 @@
     "express-jwt": "^6.0.0",
     "mongoose": "^5.11.15",
     "morgan": "^1.10.0",
-    "node": "^15.8.0"
+    "node": "^15.8.0",
+    "react-images-upload": "^1.2.8"
   },
   "description": ""
 }
