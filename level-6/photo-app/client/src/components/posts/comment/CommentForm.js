@@ -1,6 +1,6 @@
 import React, { useState, useContext } from "react";
-import { PostProviderContext } from "../context/PostProvider";
-import { UserAuthContext } from "../context/UserAuthProvider";
+import { PostProviderContext } from "../../../context/PostProvider";
+import { UserAuthContext } from "../../../context/UserAuthProvider";
 
 export const CommentForm = (props) => {
   const { user } = useContext(UserAuthContext);

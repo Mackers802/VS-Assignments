@@ -1,8 +1,8 @@
 import React, { useContext, useState, useEffect } from "react";
-import { UserAuthContext } from "../context/UserAuthProvider";
-import { PostProviderContext } from "../context/PostProvider";
-import { ProfilePost } from "./ProfilePost";
-import { PostBar } from "./PostBar";
+import { UserAuthContext } from "../../context/UserAuthProvider";
+import { PostProviderContext } from "../../context/PostProvider";
+import { ProfilePost } from "../profile/ProfilePost";
+import { PostBar } from "../posts/PostBar";
 
 export const Profile = (props) => {
   const {

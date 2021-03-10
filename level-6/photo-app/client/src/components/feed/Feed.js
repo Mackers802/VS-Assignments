@@ -1,7 +1,7 @@
 import React, { useContext, useEffect } from "react";
-import { PostProviderContext } from "../context/PostProvider";
-import { PostBar } from "./PostBar";
-import { Post } from "./Post";
+import { PostProviderContext } from "../../context/PostProvider";
+import { PostBar } from "../posts/PostBar";
+import { Post } from "../posts/Post";
 
 export const Feed = (props) => {
   const { posts, getAllPosts } = useContext(PostProviderContext);

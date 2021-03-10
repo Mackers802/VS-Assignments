@@ -1,13 +1,13 @@
 import React, { useContext } from "react";
 import { Switch, Route } from "react-router-dom";
 import { UserAuthContext } from "./context/UserAuthProvider";
-import { Nav } from "./components/Nav";
-import { Auth } from "./components/Auth";
-import { Profile } from "./components/Profile";
-import { Feed } from "./components/Feed";
-import { Explore } from "./components/Explore";
-import { PostForm } from "./components/PostForm";
-import { SearchUsers } from "./components/SearchUsers";
+import { Nav } from "./components/nav/Nav";
+import { Auth } from "./components/auth/Auth";
+import { Profile } from "./components/profile/Profile";
+import { Feed } from "./components/feed/Feed";
+import { Explore } from "./components/explore/Explore";
+import { PostForm } from "./components/posts/PostForm";
+import { SearchUsers } from "./components/searchUsers/SearchUsers";
 import "./App.css";
 
 export const App = () => {

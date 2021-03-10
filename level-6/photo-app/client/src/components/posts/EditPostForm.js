@@ -1,5 +1,5 @@
 import { useState, useContext } from "react";
-import { PostProviderContext } from "../context/PostProvider";
+import { PostProviderContext } from "../../context/PostProvider";
 // const axios = require('axios');
 
 export const EditPostForm = (props) => {

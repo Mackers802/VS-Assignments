@@ -1,7 +1,7 @@
 import React, { useContext, useState } from "react";
-import { PostProviderContext } from "../context/PostProvider";
-import { Comment } from "./Comment";
-import { CommentForm } from "./CommentForm";
+import { PostProviderContext } from "../../context/PostProvider";
+import { Comment } from "./comment/Comment";
+import { CommentForm } from "./comment/CommentForm";
 
 export const Post = (props) => {
   const {

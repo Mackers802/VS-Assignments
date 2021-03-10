@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 // import { UserAuthContext } from "../context/UserAuthProvider";
-import { EditPostForm } from "./EditPostForm";
+import { EditPostForm } from "../posts/EditPostForm";
 
 export const ProfilePost = (props) => {
   // const {

@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 // import { PostProviderContext } from "../context/PostProvider";
-import { UserAuthContext } from "../context/UserAuthProvider";
+import { UserAuthContext } from "../../context/UserAuthProvider";
 
 export const Nav = () => {
   const {

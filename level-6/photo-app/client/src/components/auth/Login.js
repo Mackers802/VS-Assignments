@@ -1,5 +1,5 @@
 import React, { useState, useContext } from "react";
-import { PostProviderContext } from "../context/PostProvider";
+import { PostProviderContext } from "../../context/PostProvider";
 
 export const Login = (props) => {
   const initInputs = {

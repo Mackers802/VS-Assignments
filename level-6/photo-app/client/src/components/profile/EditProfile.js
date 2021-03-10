@@ -1,6 +1,6 @@
 import React, { useContext, useState, useEffect } from "react";
-import { UserAuthContext } from "../context/UserAuthProvider";
-import { PostProviderContext } from "../context/PostProvider";
+import { UserAuthContext } from "../../context/UserAuthProvider";
+import { PostProviderContext } from "../../context/PostProvider";
 
 export const EditProfile = (props) => {
   const {

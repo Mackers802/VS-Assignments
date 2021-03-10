@@ -1,10 +1,10 @@
 import { useEffect, useState, useContext } from "react";
 // import { useHistory } from 'react-router-dom';
-import cameraDataFile from "./cameraDataFile.js";
-import lensDataFile from "./lensDataFile.js";
-import { PostProviderContext } from "../context/PostProvider";
-import { UserAuthContext } from "../context/UserAuthProvider.js";
-import ImageUploader from 'react-images-upload';
+import cameraDataFile from "../dataFiles/cameraDataFile.js";
+import lensDataFile from "../dataFiles/lensDataFile.js";
+import { PostProviderContext } from "../../context/PostProvider";
+import { UserAuthContext } from "../../context/UserAuthProvider.js";
+// import ImageUploader from 'react-images-upload';
 // const axios = require('axios');
 
 export const PostForm = (props) => {
@@ -27,7 +27,7 @@ export const PostForm = (props) => {
   const [camModels, setCamModels] = useState([]);
   const [lensModels, setLensModels] = useState([]);
   const [input, setInputs] = useState(initInput);
-  const [pictures, setPictures ] = useState([])
+  // const [pictures, setPictures ] = useState([])
   const [selected, setSelected] = useState({});
 
   // const history = useHistory();
@@ -376,9 +376,8 @@ export const PostForm = (props) => {
           <option value="1/8000">1/8000</option>
         </select>
         <br></br>
-        <button onClick={handleSubmit} type="button" className="button">
-          Post
-        </button>
+        <button onClick={handleSubmit} type="button" className="button">Post </button>
+        <buttom onClick={() => setToggle(prev => !prev) } className="button">close</buttom>
       </form>
     </div>
   );

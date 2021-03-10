@@ -3,7 +3,7 @@
 // ---------------------- test 1------------------------
 
 import React, { useState, useContext, useEffect } from "react";
-import { PostProviderContext } from "../context/PostProvider";
+import { PostProviderContext } from "../../context/PostProvider";
 import { Ps } from "./Ps";
 
 export const Explore = (props) => {

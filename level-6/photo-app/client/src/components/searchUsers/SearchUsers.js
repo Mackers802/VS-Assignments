@@ -1,5 +1,5 @@
 import React, { useState, useContext } from "react";
-import { UserAuthContext } from "../context/UserAuthProvider";
+import { UserAuthContext } from "../../context/UserAuthProvider";
 import { Friend } from "./Friend";
 // import JSONData from "./JSONData"
 // import { PostProviderContext } from '../context/PostProvider'
@@ -45,7 +45,8 @@ export const SearchUsers = () => {
           } else if (val.toLowerCase().includes(searchTerm.toLowerCase())) {
             return val;
           }
-        })
+        }
+        )
         .map((val, key) => {
           return (
             <>

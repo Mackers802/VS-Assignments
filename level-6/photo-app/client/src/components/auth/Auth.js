@@ -1,5 +1,5 @@
 import React, { useContext, useState } from "react";
-import { UserAuthContext } from "../context/UserAuthProvider";
+import { UserAuthContext } from "../../context/UserAuthProvider";
 import { Signup } from "./Signup.js";
 import { Login } from "./Login.js";
 
