@@ -1,21 +1,30 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
+import { Link } from "react-router-dom"
 import { PostForm } from "./PostForm";
-// import { UserAuthContext } from "../context/UserAuthProvider";
+import { UserAuthContext } from "../../context/UserAuthProvider";
 
 export const PostBar = () => {
+  const { user: { username } } = useContext(UserAuthContext)
   const [toggle, setToggle] = useState(false);
 
+
   return (
-    <div className="PostBar">
+    <>
       {!toggle ? (
-        <>
-          <button onClick={() => setToggle((prev) => !prev)} className="button"> New Post</button>
-        </>
+        <div className="fullPostBar">
+        <Link to="/Profile">
+          <h2>{username}</h2> 
+        </Link>
+          <img src="/images/g-h-Logo.png" alt="GH-logo"></img>
+          <button onClick={() => setToggle((prev) => !prev)} className="postButton"> 
+            <img src="/images/camera-logo.png" alt="cam-logo"></img>
+          </button>
+        </div>
       ) : (
         <>
           <PostForm setToggle={setToggle} />
         </>
       )}
-    </div>
+    </>
   );
 };
