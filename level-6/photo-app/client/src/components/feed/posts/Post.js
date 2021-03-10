@@ -40,9 +40,9 @@ export const Post = (props) => {
   const commentFilter = comments.filter((comment) => comment.post === postId);
 
   return (
-    <div className="post">
+    <>
       {!toggle ? (
-        <>
+        <div className="post">
             <h2 className="username">{username}</h2>
           <br></br>
           <img src={imgUrl} alt="post img" onDoubleClick={addPostLike}></img>
@@ -64,9 +64,11 @@ export const Post = (props) => {
           <div>
             <button onClick={get}>Comments</button>
           </div>
-        </>
+          <br></br>
+          <hr></hr>
+        </div>
       ) : (
-        <>
+        <div className="postWithComments">
           <br></br>
           <h2 className="username">{username}</h2>
           <img src={imgUrl} alt="post img"></img>
@@ -105,8 +107,8 @@ export const Post = (props) => {
           <button onClick={() => setToggle((prev) => !prev)}>
             Hide Comments
           </button>
-        </>
+        </div>
       )}
-    </div>
+    </>
   );
 };

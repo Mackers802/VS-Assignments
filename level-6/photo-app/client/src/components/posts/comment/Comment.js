@@ -6,8 +6,6 @@ export const Comment = (props) => {
 
   const [toggle, setToggle] = useState(false);
 
-  console.log("commment Id", commentId);
-
   function deleteCom() {
     deleteComment(_id);
   }
@@ -17,7 +15,7 @@ export const Comment = (props) => {
       {!toggle ? (
         <>
           <h3>{commentDescription}</h3>
-          <button onClick={() => setToggle((prev) => !prev)}>Edit</button>
+          <button onClick={() => setToggle(prev=> !prev)}>Edit</button>
         </>
       ) : (
         <>

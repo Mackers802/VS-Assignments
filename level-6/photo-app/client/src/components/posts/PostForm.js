@@ -181,8 +181,7 @@ export const PostForm = (props) => {
   return (
     <div className="postForm">
       <form onChange={handleChange}>
-        <label>
-          <input type="text" name="caption" placeholder="Add Caption" />
+          <input type="text" name="caption" placeholder="Add Caption"/>
           <br></br>
           {/* <ImageUploader
                 withIcon={true}
@@ -191,10 +190,11 @@ export const PostForm = (props) => {
                 imgExtension={['.jpg', '.gif', '.png', '.gif']}
                 maxFileSize={5242880}
             /> */}
+
           <input type="text" name="imgUrl" placeholder="Add Image URL" />
-        </label>
-        <br></br>
-        <select name="style">
+          <br></br>
+          <br></br>
+        <select name="style" className="selector">
           <option input="">Style</option>
           <option value="Architectural">Architectural</option>
           <option value="Astro">Astro</option>
@@ -218,10 +218,11 @@ export const PostForm = (props) => {
           <option value="Wedding">Wedding</option>
           <option value="Wildlife">Wildlife</option>
         </select>
+
         {/* ~~~~~~~~~~~~~~ camera selection ~~~~~~~~~~~~~~~~~ */}
         <h4>Camera</h4>
         <select
-          className="w-56 p-2"
+          className="selector"
           onChange={selectMake}
           name="cameraBrand"
           id="cameraBrand"
@@ -232,7 +233,7 @@ export const PostForm = (props) => {
           {cameraBrandOptions}
         </select>
         <select
-          className="w-56 p-2"
+          className="selector"
           onChange={handleModelSelect}
           name="cameraModel"
           id="cameraModel"
@@ -245,7 +246,7 @@ export const PostForm = (props) => {
         {/* ~~~~~~~~~~~~~~ camera selection ~~~~~~~~~~~~~~~~~ */}
         <h4>Lens</h4>
         <select
-          className="w-56 p-2"
+          className="selector"
           onChange={selectLensMake}
           name="lensBrand"
           id="lensBrand"
@@ -256,7 +257,7 @@ export const PostForm = (props) => {
           {lensBrandOptions}
         </select>
         <select
-          className="w-56 p-2"
+          className="selector"
           onChange={handleLensModelSelect}
           name="lensModel"
           id="lensModel"
@@ -270,7 +271,7 @@ export const PostForm = (props) => {
         <h4>Settings</h4>
         <br></br>
         {/* ------------ FStop 𝑓 --------------------------  */}
-        <select name="fStop">
+        <select name="fStop" className="selector">
           <option value="">𝑓-Stop</option>
           <option value="45">45</option>
           <option value="32">32</option>
@@ -305,7 +306,7 @@ export const PostForm = (props) => {
         </select>
 
         {/* ------------ Iso -------------------------- */}
-        <select name="iso">
+        <select name="iso" className="selector">
           <option value="">ISO</option>
           <option value="50">50</option>
           <option value="65">65</option>
@@ -334,7 +335,7 @@ export const PostForm = (props) => {
         </select>
 
         {/* ------------ Shuttter Speed-------------------------- */}
-        <select name="shutterSpeed">
+        <select name="shutterSpeed" className="selector">
           <option value="">Shutter Speed</option>
           <option value="60">60</option>
           <option value="30">30</option>
@@ -376,8 +377,9 @@ export const PostForm = (props) => {
           <option value="1/8000">1/8000</option>
         </select>
         <br></br>
-        <button onClick={handleSubmit} type="button" className="button">Post </button>
-        <buttom onClick={() => setToggle(prev => !prev) } className="button">close</buttom>
+        <br></br>
+        <button onClick={handleSubmit} type="button" className="buttonPost">Post </button>
+        <buttom onClick={() => setToggle(prev => !prev) } className="buttonWarning">close</buttom>
       </form>
     </div>
   );

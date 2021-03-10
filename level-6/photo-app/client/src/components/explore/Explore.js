@@ -17,7 +17,7 @@ export const Explore = (props) => {
 
   useEffect(() => {
     getAllPosts();
-  }, [getAllPosts]);
+  }, []);
 
   return (
     <div className="explorePost">

@@ -11,13 +11,11 @@ export const Feed = (props) => {
   }, []);
 
   return (
-    <div>
+    <div className="feedCont">
       <PostBar />
-      <div className="feedCont">
         {posts.map((post) => (
           <Post {...post} key={post._id} postId={post._id} />
         ))}
-      </div>
     </div>
   );
 };

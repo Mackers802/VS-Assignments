@@ -6,10 +6,10 @@ export const PostBar = () => {
   const [toggle, setToggle] = useState(false);
 
   return (
-    <div className="navBar">
+    <div className="PostBar">
       {!toggle ? (
         <>
-          <button onClick={() => setToggle((prev) => !prev)}> New Post</button>
+          <button onClick={() => setToggle((prev) => !prev)} className="button"> New Post</button>
         </>
       ) : (
         <>

@@ -18,42 +18,21 @@ export const App = () => {
   // }, []);
 
   return (
-    <div className="app">
+    <>
       {token && <Nav logout={logout} />}
       <Switch>
-        {/* <Route path="/Profile">
-            {token ? <Redirect to="/Profile" /> : <Auth />}
-          </Route> */}
-        {/* <ProtectedRoute
-            path="/Profile"
-            component={ Profile } 
-            redirectTo="/Auth"
-            token={token} 
-            />  */}
         <Route exact path="/Explore">
           {token ? <Explore /> : <Auth />}
         </Route>
         <Route exact path="/Feed">
           {token ? <Feed /> : <Auth />}
         </Route>
-        {/* <ProtectedRoute 
-            path="/IssuePage"
-            component={ Feed }
-            redirectTo="/Auth"
-            token={token}
-            />  */}
         <Route exact path="/Explore">
           {token ? <Explore /> : <Auth />}
         </Route>
         <Route exact path="/SearchUsers">
           <SearchUsers />
         </Route>
-        {/* <ProtectedRoute 
-            path="/Search"
-            component={ Search } 
-            redirectTo="/Auth"
-            token={token} 
-         /> */}
         <Route path="/Profile">{token ? <Profile /> : <Auth />}</Route>
         <Route exact path="/">
           {token ? <Profile /> : <Auth />}
@@ -62,6 +41,31 @@ export const App = () => {
           {token ? <PostForm /> : <Auth />}
         </Route>
       </Switch>
-    </div>
+    </>
   );
 };
+
+/* <Route path="/Profile">
+    {token ? <Redirect to="/Profile" /> : <Auth />}
+  </Route> */
+
+/* <ProtectedRoute
+    path="/Profile"
+    component={ Profile } 
+    redirectTo="/Auth"
+    token={token} 
+    />  */
+
+/* <ProtectedRoute 
+    path="/IssuePage"
+    component={ Feed }
+    redirectTo="/Auth"
+    token={token}
+    />  */
+
+/* <ProtectedRoute 
+    path="/Search"
+    component={ Search } 
+    redirectTo="/Auth"
+    token={token} 
+ /> */
