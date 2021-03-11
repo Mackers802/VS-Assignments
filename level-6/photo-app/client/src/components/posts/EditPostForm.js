@@ -48,19 +48,19 @@ export const EditPostForm = (props) => {
   }
 
   return (
-    <div className="editProfile">
+    <div className="editPosts">
       <form onChange={handleChange}>
         <label>
           <input type="text" name="caption" placeholder={caption} />
         </label>
         <br></br>
-        <button onClick={editPostSubmit} className="button">
+        <button onClick={editPostSubmit} className="miniButton">
           Save Post
         </button>
-        <button onClick={handleDeleteSubmit} className="button">
+        <button onClick={handleDeleteSubmit} className="miniButton">
           Delete Post
         </button>
-        <button onClick={closeEdit} className="button">
+        <button onClick={closeEdit} className="miniButton">
           Close
         </button>
       </form>

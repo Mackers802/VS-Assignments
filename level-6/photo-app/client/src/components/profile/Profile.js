@@ -52,8 +52,9 @@ export const Profile = (props) => {
   return (
     <div className="appCont">
           <PostBar />
-      {!toggle ? (
         <div div className="profile">
+      {!toggle ? (
+        <div>
           <img
             src={profilePicture}
             alt="Profile-Pic"
@@ -66,7 +67,7 @@ export const Profile = (props) => {
           <button onClick={toggleForm} className="buttonSkinny">
             Profile Settings
           </button>
-          <div className="profileGrid">
+          <br></br>
             {userPosts.map((post) => (
               <ProfilePost
                 {...post}
@@ -75,26 +76,19 @@ export const Profile = (props) => {
                 editPost={editPost}
               />
             ))}
-          </div>
-          <Nav />
         </div>
       ) : (
         <div className="profileEdit">
           <img
             src={profilePicture}
             alt="Profile"
-            width="150"
-            height="150"
             placeholder="Profile Pic"
           ></img>
-          <br></br>
-          <div className="profileInfo">
-            <br></br>
+          <>
             <h1>{username}</h1>
             <h4>{bio}</h4>
             <h4>{email} </h4>
-            <br></br>
-          </div>
+          </>
           {/* <button onClick={toggleForm} className="button">Edit Profile</button> */}
           <form>
             <label>
@@ -131,6 +125,8 @@ export const Profile = (props) => {
           </button>
         </div>
       )}
+      </div>
+          <Nav />
     </div>
   );
 };

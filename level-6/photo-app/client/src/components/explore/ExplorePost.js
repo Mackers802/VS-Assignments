@@ -9,27 +9,26 @@ export const ExplorePost = (props) => {
 
   const { val } = props;
   return (
-    <div className="explorePost">
-      {!toggle ? (
         <>
+      {!toggle ? (
+    <div className="explorePost">
           <h3>{val.username}</h3>
           <img src={val.imgUrl} alt=" post img url" onClick={handleToggle}></img>
-        </>
+    </div>
       ) : (
-        <div onClick={handleToggle}>
+        <div className="explorePostInfo" onClick={handleToggle}>
          <h1>{val.username}</h1>
           <br></br>
           Style {val.style},
           <br></br>
-          Camera Brand: {val.cameraBrand},
+          Camera: {val.cameraBrand}, {val.cameraModel},
           <br></br>
-          Camera Model: {val.cameraModel},
+          Lens: {val.lensBrand}, {val.lensModel},
           <br></br>
-          Lens Brand {val.lensBrand},
           <br></br>
-          Lens Model {val.lensModel},
+          <br></br>
         </div>
       )}
-    </div>
+        </>
   );
 };

@@ -19,27 +19,23 @@ export const ProfilePost = (props) => {
   // }, []);
 
   return (
-    <>
+    <div className="userPosts">
+    <br></br>
       {!Toggle ? (
-        <div className="userPosts">
           <img
             src={imgUrl}
             alt="post img"
-            width="200"
-            height="150"
+            // width="200"
+            // height="150"
             onClick={changeToggle}
           ></img>
-        </div>
       ) : (
-        <div className="postEditForm">
           <EditPostForm
             caption={caption}
             _id={_id}
             changeToggle={changeToggle}
           />
-          {/* <button onClick={ () => setToggle(prevToggle => !prevToggle)}>Close</button> */}
-        </div>
       )}
-    </>
+    </div>
   );
 };

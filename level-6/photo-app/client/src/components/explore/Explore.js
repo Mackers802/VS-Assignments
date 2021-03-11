@@ -26,7 +26,7 @@ export const Explore = (props) => {
       <PostBar />
       <div className="explore">
         <form>
-          <input type="text" placeholder="Search" onChange={handleChange}/>
+          <input type="text" placeholder="Search" className="input" onChange={handleChange}/>
         </form>
         <br></br>
         {posts

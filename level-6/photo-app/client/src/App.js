@@ -6,7 +6,6 @@ import { Auth } from "./components/auth/Auth";
 import { Profile } from "./components/profile/Profile";
 import { Feed } from "./components/feed/Feed";
 import { Explore } from "./components/explore/Explore";
-import { PostForm } from "./components/posts/PostForm";
 import { SearchUsers } from "./components/searchUsers/SearchUsers";
 import "./App.css";
 
@@ -36,9 +35,6 @@ export const App = () => {
         <Route path="/Profile">{token ? <Profile /> : <Auth />}</Route>
         <Route exact path="/">
           {token ? <Profile /> : <Auth />}
-        </Route>
-        <Route exact path="/AddPost">
-          {token ? <PostForm /> : <Auth />}
         </Route>
       </Switch>
     </>

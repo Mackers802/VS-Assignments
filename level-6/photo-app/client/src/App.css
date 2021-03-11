@@ -186,6 +186,25 @@
   display: inline-block;
   text-decoration: none;
   cursor: pointer;
+  background-color: rgb(96, 96, 96);
+  border-style: double;
+  border-color: whitesmoke;
+}
+
+.input:hover{
+  border: none;
+  color: rgb(0, 0, 0);
+  padding: 5px 16px;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  font-size: 16px;
+  font-weight: 800;
+  margin: 4px 8px;
+  /* opacity: 0.6; */
+  display: inline-block;
+  text-decoration: none;
+  cursor: pointer;
   background-color: rgb(255, 255, 255);
   border-style: double;
 }
@@ -343,6 +362,7 @@
 }
 
 .postForm {
+  margin-right: .5em;
   background: linear-gradient(to bottom right,rgba(67,67,67), rgba(232,232,232));
   justify-content: center;
   align-items: center;
@@ -416,10 +436,6 @@
 
 .commentContainer{
   margin-top: -15px;
-  /* border-top: solid 8px rgb(255, 255, 255);
-  border-bottom: solid 8px rgb(255, 255, 255);
-  border-left: solid 8px rgb(255, 255, 255);
-  border-right: solid 8px rgb(255, 255, 255); */
   border-radius: 1em;
   margin: .5em;
   justify-content: center;
@@ -437,7 +453,6 @@
   justify-content: center;
   align-items: center;
   text-align: center;
-  /* background-color: rgb(255, 255, 255); */
   padding: .2em .2em;
 }
 
@@ -447,10 +462,6 @@
   align-items: right;
   text-align: right;
 }
-
-/* .exploreContainer{
-  padding: .5rem;
-} */
 
 .explore {
   position: absolute;
@@ -483,18 +494,30 @@
   border-bottom: 5px solid rgb(0, 0, 0);
   border-left: 5px solid rgb(0, 0, 0);
   border-right: 5px solid rgb(0, 0, 0);
-  padding-top: 2rem;
-  padding-bottom: 2.5rem;
+  padding-top: .5rem;
+  padding-bottom: .5rem;
 }
 
 .explorePost > img{
-  max-width: 50%;
+  max-width: 150px;
   max-height: auto;
-  border-top: solid 20px rgb(255, 255, 255);
-  border-bottom: solid 8px rgb(255, 255, 255);
-  border-left: solid 8px rgb(255, 255, 255);
-  border-right: solid 8px rgb(255, 255, 255);
   border-radius: 1em;
+}
+
+.explorePostInfo{
+  background: linear-gradient(to bottom right, rgba(232,232,232), rgba(67,67,67));
+  justify-content: center;
+  display: inline-block;
+  align-items: center;
+  text-align: left;
+  line-height: 2.5rem;
+  width: 15em;
+  margin: .5em;
+  border-top: 5px solid rgb(0, 0, 0);
+  border-bottom: 5px solid rgb(0, 0, 0);
+  border-left: 5px solid rgb(0, 0, 0);
+  border-right: 5px solid rgb(0, 0, 0);
+  padding-left: .3rem;
 }
 
 .friendsList > form > input{
@@ -513,7 +536,7 @@
   background-color: rgb(209, 209, 209);
 }
 
-.search:hover{
+/* .search:hover{
   display: flex;
   position: relative;
   top: 0;
@@ -530,11 +553,11 @@
   margin-left: 5em;
   margin-right: 5em;
   background-color: rgba(255, 255, 255);
-}
+} */
 
-.searchUsersContainer{
+/* .searchUsersContainer{
   margin: .5rem
-}
+} */
 
 .friendsList{
   background: linear-gradient(to bottom right, rgba(232,232,232), rgba(67,67,67));
@@ -544,7 +567,6 @@
   border-left: 3px solid rgb(0, 0, 0);
   border-right: 3px solid rgb(0, 0, 0);
   border-bottom: 5px solid rgb(0, 0, 0);
-  padding-bottom: 5rem;
 }
 
 /* .friendsList > form > .search{
@@ -590,49 +612,43 @@
 .friend{
   color: red;
   display: inline-block;
-  margin: .5em;
+  margin: .25em;
+  padding: .5rem;
   width: 50%;
-  height: 2em;
 }
 
 .friend > button{
   display: flex;
-  /* position: relative; */
   justify-content: center;
   text-align: center;
   align-items: center;
   border: solid 5px black;
-  width: 40vw;
+  width: 15rem;
   color: rgb(132, 131, 131);
-  padding: 16px 32px;
+  padding: 8px 16px;
   font-size: 16px;
   font-weight: 800;
   text-decoration: none;
   cursor: pointer;
   background-color: rgba(255, 255, 255, 0.772);
-  margin-top: 5em;
-  margin-bottom: -4em;
-  margin-left: -7em;
+  margin: .5rem;
 }
 
 .friend > button:hover{
   display: flex;
-  position: relative;
   justify-content: center;
   text-align: center;
   align-items: center;
   border: solid 5px black;
-  width: 40vw;
-  color: rgb(132, 131, 131);
-  padding: 16px 32px;
+  width: 15rem;
+  color: rgb(0, 0, 0);
+  padding: 8px 16px;
   font-size: 16px;
   font-weight: 800;
   text-decoration: none;
   cursor: pointer;
-  background-color: rgb(255, 255, 255);
-  margin-top: 5em;
-  margin-bottom: -4em;
-  margin-left: -7em;
+  margin: .5rem;
+  background-color: rgba(132, 255, 0, 0.587);
 }
 
 .profileContainer{
@@ -647,40 +663,91 @@
   border-left: 3px solid rgb(0, 0, 0);
   border-right: 3px solid rgb(0, 0, 0);
   border-bottom: 3px solid rgb(0, 0, 0);
-  padding-bottom: 5rem;
+  padding-bottom: 6rem;
 }
 
-.profile > img{
+.profile > div > img{
   border: 5px double black;
   margin: 2em;
   min-width: 20vw;
   max-width: 25vw;
-  min-height: auto;
-  max-height: 25vw;
+  min-height: 25vh;
+  max-height: 30vw;
   border-radius: 60%;
 }
 
-.profileGrid{
-  position: relative;
+.userPosts{
+  display: inline-flex;
+  width: 10rem;
+  height: auto;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin: .5rem;
+}
+
+.userPosts > img{
+  display: inline-flex;
+  background-color: whitesmoke;
+  width: 25rem;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin: .2rem;
+  padding: 1rem;
+  max-width: 10rem;
+  min-width: 5rem;
+}
+
+.profileEdit{
   background: linear-gradient(to bottom right, rgba(232,232,232), rgba(67,67,67));
   justify-content: center;
   align-items: center;
   text-align: center;
-  width: 15em;
-  min-height: 15vh;
-  border-top: 5px solid rgb(0, 0, 0);
-  border-bottom: 5px solid rgb(0, 0, 0);
-  border-left: 5px solid rgb(0, 0, 0);
-  border-right: 5px solid rgb(0, 0, 0);
-  padding-top: .5rem;
-  padding-bottom: .5rem;
-  padding-left: .5rem;
-  padding-right: .5rem;
+  padding-bottom: 5rem;
 }
 
-.postGrid > img{
-  min-width: 1em;
-  position: relative;
-  display: flex;
+.profileEdit > img{
+  border: 5px double black;
+  margin: 2em;
+  min-width: 20vw;
+  max-width: 25vw;
+  min-height: 20vh;
+  max-height: 25vw;
+  border-radius: 60%;
 }
+
+.editPosts{
+  margin: .1rem;
+  padding: .1rem;
+}
+
+.miniButton {
+  display: inline-block;
+  border: none;
+  color: white;
+  padding: 4px 8px;
+  text-align: center;
+  font-size: 8px;
+  font-weight: 800;
+  margin: 2px 2px;
+  text-decoration: none;
+  cursor: pointer;
+  background-color: rgba(47, 46, 46, 0.772);
+}
+
+.miniButton:hover{
+  display: inline-block;
+  border: none;
+  color: white;
+  padding: 8px 12px;
+  text-align: center;
+  font-size: 8px;
+  font-weight: 800;
+  margin: 2px 2px;
+  text-decoration: none;
+  cursor: pointer;
+  background-color: rgba(47, 46, 46, 0.772);
+}
+
 
