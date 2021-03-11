@@ -10,7 +10,7 @@ app.use(express.json());
 app.use(morgan("dev"));
 
 mongoose.connect(
-  "mongodb://localhost:27017/Golden-Hour",
+  "mongodb://localhost:27017/photogfriends",
   {
     useNewUrlParser: true,
     useUnifiedTopology: true,

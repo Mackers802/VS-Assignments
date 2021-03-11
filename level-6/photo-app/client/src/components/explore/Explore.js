@@ -5,6 +5,8 @@
 import React, { useState, useContext, useEffect } from "react";
 import { PostProviderContext } from "../../context/PostProvider";
 import { ExplorePost } from "./ExplorePost";
+import { PostBar } from "../posts/PostBar"
+import { Nav } from  "../nav/Nav"
 
 export const Explore = (props) => {
   const { username } = props
@@ -20,6 +22,8 @@ export const Explore = (props) => {
   }, []);
 
   return (
+    <>
+    <PostBar />
     <div className="explore">
       <form>
         <input type="text" placeholder="Search" className="search" onChange={handleChange}/>
@@ -57,6 +61,8 @@ export const Explore = (props) => {
           );
         })}
     </div>
+    <Nav />
+    </>
   );
 };
 

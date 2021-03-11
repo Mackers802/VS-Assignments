@@ -42,7 +42,7 @@ export const Post = (props) => {
   return (
     <div className="post">
       {!toggle ? (
-        <div className="post2">
+        <>
           <h2>Taken by {username}</h2>
           <img src={imgUrl} alt="post img" onDoubleClick={addPostLike}></img>
           <li>
@@ -56,10 +56,10 @@ export const Post = (props) => {
             <h1>{username} {caption}</h1>
           </ul>
           <button onClick={get} className="button">Comments</button>
-        </div>
+        </>
       ) : (
         <>
-          <div className="post2">
+          <>
             <h2>Shot by: {username}</h2>
             <img src={imgUrl} alt="post img" onDoubleClick={addPostLike}></img>
             <li>
@@ -91,7 +91,7 @@ export const Post = (props) => {
                 />
               </div>
             </div>
-          </div>
+          </>
             <button onClick={() => setToggle((prev) => !prev)} className="button">
               Hide Comments
             </button>

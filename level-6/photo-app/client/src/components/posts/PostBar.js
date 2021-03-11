@@ -15,7 +15,9 @@ export const PostBar = () => {
         <Link to="/Profile">
           <h2>{username}</h2> 
         </Link>
+        <Link to="/Feed" >
           <img src="/images/g-h-Logo.png" alt="GH-logo"></img>
+        </Link>
           <button onClick={() => setToggle((prev) => !prev)} className="postButton"> 
             <img src="/images/camera-logo.png" alt="cam-logo"></img>
           </button>

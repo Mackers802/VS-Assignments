@@ -49,9 +49,9 @@ export const Profile = (props) => {
   }
 
   return (
-    <div className="profileCont">
+    <div className="profileWrapper">
       {!toggle ? (
-        <>
+        <div div className="profile">
           <PostBar />
           <img
             src={profilePicture}
@@ -62,7 +62,10 @@ export const Profile = (props) => {
           <h1>{username}</h1>
           <h4>{bio}</h4>
           <h4>{email} </h4>
-          <div className="profilePostsGrid">
+          <button onClick={toggleForm} className="buttonSkinny">
+            Profile Settings
+          </button>
+          <div className="profileGrid">
             {userPosts.map((post) => (
               <ProfilePost
                 {...post}
@@ -72,12 +75,9 @@ export const Profile = (props) => {
               />
             ))}
           </div>
-          <button onClick={toggleForm} className="button">
-            Profile Settings
-          </button>
-        </>
+        </div>
       ) : (
-        <>
+        <div className="profileEdit">
           <img
             src={profilePicture}
             alt="Profile"
@@ -127,7 +127,7 @@ export const Profile = (props) => {
             {" "}
             Signout{" "}
           </button>
-        </>
+        </div>
       )}
     </div>
   );
