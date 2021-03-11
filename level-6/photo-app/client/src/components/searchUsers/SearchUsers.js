@@ -1,6 +1,8 @@
 import React, { useState, useContext } from "react";
 import { UserAuthContext } from "../../context/UserAuthProvider";
 import { Friend } from "./Friend";
+import { PostBar } from "../posts/PostBar"
+import { Nav } from "../nav/Nav"
 // import JSONData from "./JSONData"
 // import { PostProviderContext } from '../context/PostProvider'
 
@@ -29,16 +31,17 @@ export const SearchUsers = () => {
   // }, []);
 
   return (
-    <div className="friendsListContainer">
+    <div className="appCont">
+    <PostBar />
+    <div className="friendsList">
       <form>
         <input
           type="text"
-          placeholder="Search Friends List"
+          placeholder="Search"
           className="search"
           onChange={handleChange}
         />
       </form>
-      
       {friends
         .sort((a, b) => a.localeCompare(b))
         .filter((val) => {
@@ -51,11 +54,11 @@ export const SearchUsers = () => {
         )
         .map((val, key) => {
           return (
-            <>
               <Friend val={val} key={key} />
-            </>
           );
         })}
+    </div>
+      <Nav />
     </div>
   );
 };

@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import { Switch, Route } from "react-router-dom";
 import { UserAuthContext } from "./context/UserAuthProvider";
-import { Nav } from "./components/nav/Nav";
+// import { Nav } from "./components/nav/Nav";
 import { Auth } from "./components/auth/Auth";
 import { Profile } from "./components/profile/Profile";
 import { Feed } from "./components/feed/Feed";
@@ -19,7 +19,7 @@ export const App = () => {
 
   return (
     <>
-      {token && <Nav logout={logout} />}
+      {/* {token && <Nav logout={logout} />} */}
       <Switch>
         <Route exact path="/Explore">
           {token ? <Explore /> : <Auth />}

@@ -3,6 +3,7 @@ import { UserAuthContext } from "../../context/UserAuthProvider";
 import { PostProviderContext } from "../../context/PostProvider";
 import { ProfilePost } from "../profile/ProfilePost";
 import { PostBar } from "../posts/PostBar";
+import { Nav } from "../nav/Nav"
 
 export const Profile = (props) => {
   const {
@@ -49,10 +50,10 @@ export const Profile = (props) => {
   }
 
   return (
-    <div className="profileWrapper">
+    <div className="appCont">
+          <PostBar />
       {!toggle ? (
         <div div className="profile">
-          <PostBar />
           <img
             src={profilePicture}
             alt="Profile-Pic"
@@ -75,6 +76,7 @@ export const Profile = (props) => {
               />
             ))}
           </div>
+          <Nav />
         </div>
       ) : (
         <div className="profileEdit">

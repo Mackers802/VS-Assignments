@@ -1,7 +1,7 @@
-#root{
+/* #root{
   margin: 0;
   padding: 0;
-}
+} */
 
 .body {
   background: linear-gradient(to bottom right, rgba(232,232,232), rgba(67,67,67))
@@ -233,7 +233,7 @@
   display: flex;
   position: fixed;
   bottom: 0;
-  width: 100%;
+  width: 100vw;
   justify-content: space-evenly;
   font-size: x-small;
   align-items: center;
@@ -242,10 +242,10 @@
   background-size: cover;
   padding: 5px;
   background: linear-gradient(to top left, rgba(239, 81, 42), rgba(255, 223, 16));
-  border-top: 5px solid rgba(134,15,15);
-  border-bottom: 5px solid rgba(134,15,15);
-  border-left: 5px solid rgba(134,15,15);
-  border-right: 5px solid rgba(134,15,15);
+  border-top: 3px solid rgb(0, 0, 0);
+  border-bottom: 3px solid rgb(0, 0, 0);
+  border-left: 3px solid rgb(0, 0, 0);
+  border-right: 3px solid rgb(0, 0, 0);
 }
 
 .navProfile > img{
@@ -337,7 +337,7 @@
   margin-left: -20px;
 }
 
-.feedCont{
+.appCont{
   margin: .5em;
   background-color: rgba(232,232,232);
 }
@@ -448,21 +448,25 @@
   text-align: right;
 }
 
+/* .exploreContainer{
+  padding: .5rem;
+} */
+
 .explore {
-  position: relative;
+  position: absolute;
   background: linear-gradient(to bottom right, rgba(232,232,232), rgba(67,67,67));
   justify-content: center;
   align-items: center;
   text-align: center;
   max-width: 100vw;
   min-height: 100vw;
-  border-top: 5px solid rgb(0, 0, 0);
-  border-bottom: 5px solid rgb(0, 0, 0);
-  border-left: 5px solid rgb(0, 0, 0);
-  border-right: 5px solid rgb(0, 0, 0);
+  border-bottom: 3px solid rgb(0, 0, 0);
+  border-left: 3px solid rgb(0, 0, 0);
+  border-right: 3px solid rgb(0, 0, 0);
+  margin-right: 8px;
   padding-top: 1.5rem;
   padding-bottom: 5rem;
-  /* margin: .2em; */
+  /* margin: ; */
 }
 
 .explorePost{
@@ -474,8 +478,7 @@
   text-align: center;
   width: 15em;
   height: auto;
-  margin: .3em;
-  margin-top: 3em;
+  margin: .5em;
   border-top: 5px solid rgb(0, 0, 0);
   border-bottom: 5px solid rgb(0, 0, 0);
   border-left: 5px solid rgb(0, 0, 0);
@@ -494,7 +497,23 @@
   border-radius: 1em;
 }
 
-.search{
+.friendsList > form > input{
+  display: inline-block;
+  justify-content: left;
+  text-align: left;
+  align-items: left;
+  max-width: 80vw;
+  color: rgb(0, 0, 0);
+  padding: 16px 32px;
+  font-size: 16px;
+  font-weight: 800;
+  text-decoration: none;
+  cursor: pointer;
+  margin-top: .5em;
+  background-color: rgb(209, 209, 209);
+}
+
+.search:hover{
   display: flex;
   position: relative;
   top: 0;
@@ -507,45 +526,28 @@
   font-weight: 800;
   text-decoration: none;
   cursor: pointer;
-  background-color: rgb(209, 209, 209);
   margin-top: .5em;
   margin-left: 5em;
   margin-right: 5em;
-}
-
-.explore > form .search:hover{
-  display: flex;
-  position: relative;
-  top: 0;
-  justify-content: center;
-  text-align: center;
-  width: 100%;
-  color: rgb(0, 0, 0);
-  padding: 16px 32px;
-  font-size: 16px;
-  font-weight: 800;
-  text-decoration: none;
-  cursor: pointer;
   background-color: rgba(255, 255, 255);
-  margin-top: -2em;
 }
 
-.friendsListContainer{
+.searchUsersContainer{
+  margin: .5rem
+}
+
+.friendsList{
   background: linear-gradient(to bottom right, rgba(232,232,232), rgba(67,67,67));
   justify-content: center;
   align-items: center;
   text-align: center;
-  width: 100%;
-  height: auto;
-  border-top: 5px solid rgb(0, 0, 0);
+  border-left: 3px solid rgb(0, 0, 0);
+  border-right: 3px solid rgb(0, 0, 0);
   border-bottom: 5px solid rgb(0, 0, 0);
-  border-left: 5px solid rgb(0, 0, 0);
-  border-right: 5px solid rgb(0, 0, 0);
-  padding-top: 1.5rem;
   padding-bottom: 5rem;
 }
 
-.friendsListContainer > form > .search{
+/* .friendsList > form > .search{
   display: flex;
   position: fixed;
   justify-content: center;
@@ -563,9 +565,9 @@
   text-decoration: none;
   cursor: pointer;
   background-color: rgb(209, 209, 209);
-}
+} */
 
-.friendsListContainer > form .search:hover{
+/* .friendsList > form .search:hover{
   display: flex;
   position: fixed;
   justify-content: center;
@@ -583,12 +585,11 @@
   text-decoration: none;
   cursor: pointer;
   background-color: rgb(255, 255, 255);
-}
+} */
 
 .friend{
   color: red;
   display: inline-block;
-  margin-bottom: .8em;
   margin: .5em;
   width: 50%;
   height: 2em;
@@ -634,19 +635,19 @@
   margin-left: -7em;
 }
 
-.profileWrapper{
+.profileContainer{
+  margin: .5rem;
+}
+
+.profile{
   background: linear-gradient(to bottom right, rgba(232,232,232), rgba(67,67,67));
   justify-content: center;
   align-items: center;
   text-align: center;
-  border-left: 5px solid rgb(0, 0, 0);
-  border-right: 5px solid rgb(0, 0, 0);
-  border-bottom: 5px solid rgb(0, 0, 0);
+  border-left: 3px solid rgb(0, 0, 0);
+  border-right: 3px solid rgb(0, 0, 0);
+  border-bottom: 3px solid rgb(0, 0, 0);
   padding-bottom: 5rem;
-}
-
-.profile{
-  padding: .5em
 }
 
 .profile > img{
@@ -658,8 +659,6 @@
   max-height: 25vw;
   border-radius: 60%;
 }
-
-
 
 .profileGrid{
   position: relative;

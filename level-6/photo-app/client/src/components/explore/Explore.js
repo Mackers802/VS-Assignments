@@ -22,47 +22,47 @@ export const Explore = (props) => {
   }, []);
 
   return (
-    <>
-    <PostBar />
-    <div className="explore">
-      <form>
-        <input type="text" placeholder="Search" className="search" onChange={handleChange}/>
-      </form>
-      <br></br>
-      {posts
-        .filter((val) => {
-          if (searchTerm === "") {
-            return val;
-          } else if (
-            val.style.toLowerCase().includes(searchTerm.toLowerCase())
-          ) {
-            return val;
-          } else if (
-            val.cameraBrand.toLowerCase().includes(searchTerm.toLowerCase())
-          ) {
-            return val;
-          } else if (
-            val.cameraModel.toLowerCase().includes(searchTerm.toLowerCase())
-          ) {
-            return val;
-          } else if (
-            val.lensBrand.toLowerCase().includes(searchTerm.toLowerCase())
-          ) {
-            return val;
-          } else if (
-            val.lensModel.toLowerCase().includes(searchTerm.toLowerCase())
-          ) {
-            return val;
-          }
-        })
-        .map((val, key, a, b) => {
-          return (
-                <ExplorePost val={val} key={key} username={username} />
-          );
-        })}
-    </div>
-    <Nav />
-    </>
+    <div className="appCont">
+      <PostBar />
+      <div className="explore">
+        <form>
+          <input type="text" placeholder="Search" onChange={handleChange}/>
+        </form>
+        <br></br>
+        {posts
+          .filter((val) => {
+            if (searchTerm === "") {
+              return val;
+            } else if (
+              val.style.toLowerCase().includes(searchTerm.toLowerCase())
+            ) {
+              return val;
+            } else if (
+              val.cameraBrand.toLowerCase().includes(searchTerm.toLowerCase())
+            ) {
+              return val;
+            } else if (
+              val.cameraModel.toLowerCase().includes(searchTerm.toLowerCase())
+            ) {
+              return val;
+            } else if (
+              val.lensBrand.toLowerCase().includes(searchTerm.toLowerCase())
+            ) {
+              return val;
+            } else if (
+              val.lensModel.toLowerCase().includes(searchTerm.toLowerCase())
+            ) {
+              return val;
+            }
+          })
+          .map((val, key, a, b) => {
+            return (
+                  <ExplorePost val={val} key={key} username={username} />
+            );
+          })}
+      </div>
+        <Nav />
+      </div>
   );
 };
 
