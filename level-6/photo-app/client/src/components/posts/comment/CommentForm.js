@@ -44,11 +44,12 @@ export const CommentForm = (props) => {
           <input
             type="text"
             name="commentDescription"
-            placeholder={commentDescription}
+            placeholder= {commentDescription}
             onChange={handleChange}
+            className="input"
           />
         </label>
-        <button onClick={handleSubmit}>{props.btnText}</button>
+        <button onClick={handleSubmit} className="buttonSkinny">{props.btnText}</button>
       </form>
     </div>
   );

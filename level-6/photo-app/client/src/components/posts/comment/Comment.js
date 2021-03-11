@@ -15,7 +15,7 @@ export const Comment = (props) => {
       {!toggle ? (
         <>
           <h3>{commentDescription}</h3>
-          <button onClick={() => setToggle(prev=> !prev)}>Edit</button>
+          <button onClick={() => setToggle(prev=> !prev)} className="buttonSkinny">Edit</button>
         </>
       ) : (
         <>
@@ -25,8 +25,8 @@ export const Comment = (props) => {
             commentDescription={commentDescription}
             setToggle={setToggle}
           />
-          <button onClick={deleteCom}>Delete</button>
-          <button onClick={() => setToggle((prev) => !prev)}>Close</button>
+          <button onClick={deleteCom} className="buttonSkinnyDelete">Delete</button>
+          <button onClick={() => setToggle((prev) => !prev)} className="buttonSkinny">Close</button>
         </>
       )}
     </div>

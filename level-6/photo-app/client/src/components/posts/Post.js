@@ -43,7 +43,7 @@ export const Post = (props) => {
     <div className="post">
       {!toggle ? (
         <div className="post2">
-          <h2>Shot by: {username}</h2>
+          <h2>Taken by {username}</h2>
           <img src={imgUrl} alt="post img" onDoubleClick={addPostLike}></img>
           <li>
             Settings: 𝑓 {fStop}, SS: {shutterSpeed}, ISO: {iso}
@@ -53,9 +53,9 @@ export const Post = (props) => {
           </li>
 
           <ul>
-            <p>{caption}</p>
+            <h1>{username} {caption}</h1>
           </ul>
-          <button onClick={get}>Comments</button>
+          <button onClick={get} className="button">Comments</button>
         </div>
       ) : (
         <>
@@ -69,11 +69,10 @@ export const Post = (props) => {
               Shot with {cameraBrand} {cameraModel} & {lensBrand} {lensModel}
             </li>
             <ul>
-              <p>{caption}</p>
+              <h1>{username} {caption}</h1>
             </ul>
-
             <div className="commentContainer">
-              <div className="comments">
+              <div className="commentsList">
                 {commentFilter.map((comment) => (
                   <Comment
                     {...comment}
@@ -92,10 +91,10 @@ export const Post = (props) => {
                 />
               </div>
             </div>
-            <button onClick={() => setToggle((prev) => !prev)}>
+          </div>
+            <button onClick={() => setToggle((prev) => !prev)} className="button">
               Hide Comments
             </button>
-          </div>
         </>
       )}
     </div>
