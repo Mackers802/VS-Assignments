@@ -25,7 +25,7 @@ export const Post = (props) => {
     iso,
     shutterSpeed,
     fStop,
-    username
+    username,
     /* accessories */
   } = props;
 
@@ -42,69 +42,60 @@ export const Post = (props) => {
   return (
     <div className="post">
       {!toggle ? (
-        <>
-            <h2 className="username">{username}</h2>
-          <br></br>
+        <div className="post2">
+          <h2>Shot by: {username}</h2>
           <img src={imgUrl} alt="post img" onDoubleClick={addPostLike}></img>
+          <li>
+            Settings: 𝑓 {fStop}, SS: {shutterSpeed}, ISO: {iso}
+          </li>
+          <li>
+            Shot with {cameraBrand} {cameraModel} & {lensBrand} {lensModel}
+          </li>
 
           <ul>
-            <li>{caption}</li>
-            <li>{style}</li>
-            <li>
-              Settings: 𝑓 {fStop}, SS: {shutterSpeed}, ISO{iso}
-            </li>
-            <li>
-              Camera: {cameraBrand}, {cameraModel}
-              <br></br>
-              Lens: {lensBrand}, {lensModel}
-              <br></br>
-              {/* accessories: { accessories } */}
-            </li>
+            <p>{caption}</p>
           </ul>
-          <div>
-            <button onClick={get}>Comments</button>
-          </div>
-        </>
+          <button onClick={get}>Comments</button>
+        </div>
       ) : (
         <>
-          <br></br>
-          <h2 className="username">{username}</h2>
-          <img src={imgUrl} alt="post img"></img>
-          <ul>
+          <div className="post2">
+            <h2>Shot by: {username}</h2>
+            <img src={imgUrl} alt="post img" onDoubleClick={addPostLike}></img>
             <li>
+              Settings: 𝑓 {fStop}, SS: {shutterSpeed}, ISO: {iso}
+            </li>
+            <li>
+              Shot with {cameraBrand} {cameraModel} & {lensBrand} {lensModel}
+            </li>
+            <ul>
               <p>{caption}</p>
-            </li>
-            <li>{style}</li>
-            <li>
-              Settings: 𝑓 {fStop}, SS: {shutterSpeed}, ISO{iso}
-            </li>
-            <li>
-              Camera: {cameraBrand}, {cameraModel}
-              <br></br>
-              Lens: {lensBrand}, {lensModel}
-              <br></br>
-              {/* accessories: { accessories } */}
-            </li>
-          </ul>
+            </ul>
 
-          {commentFilter.map((comment) => (
-            <Comment
-              {...comment}
-              key={comment._id}
-              commentId={comment._id}
-              deleteComment={deleteComment}
-              editComment={editComment}
-            />
-          ))}
-
-          <CommentForm
-            postId={postId}
-            submit={addComment}
-            btnText="add Comment"
-          />
-          <button onClick={() => setToggle((prev) => !prev)}>
-            Hide Comments
-          </button>
+            <div className="commentContainer">
+              <div className="comments">
+                {commentFilter.map((comment) => (
+                  <Comment
+                    {...comment}
+                    key={comment._id}
+                    commentId={comment._id}
+                    deleteComment={deleteComment}
+                    editComment={editComment}
+                  />
+                ))}
+              </div>
+              <div className="commentForm">
+                <CommentForm
+                  postId={postId}
+                  submit={addComment}
+                  btnText="add Comment"
+                />
+              </div>
+            </div>
+            <button onClick={() => setToggle((prev) => !prev)}>
+              Hide Comments
+            </button>
+          </div>
         </>
       )}
     </div>

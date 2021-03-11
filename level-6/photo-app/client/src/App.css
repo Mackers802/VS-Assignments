@@ -240,23 +240,54 @@
   padding-bottom: 5rem;
 }
 
-.post > img {
-  width: 50vw;
-  height: auto;
-  border: solid 8px rgb(255, 255, 255);
-  border-radius: 1.5em;
+.post2{
+  margin: .1em;
+  padding: .5em;
 }
 
-.post > ul {
+.post2 > h2 {
+  color: rgb(0, 0, 0);
+  font-size: 1.2em;
+  width: 50vw;
+  height: auto;
+  margin-top: .2em;
+  margin-bottom: 1.2em;
+  margin-left: -6em;
+  padding-left: 2em;
+}
+
+.post2 > img {
+  max-width: 100%;
+  height: auto;
+  margin-top: -15px;
+  border-top: solid 20px rgb(255, 255, 255);
+  border-bottom: solid 8px rgb(255, 255, 255);
+  border-left: solid 8px rgb(255, 255, 255);
+  border-right: solid 8px rgb(255, 255, 255);
+  border-radius: 1em;
+}
+
+.post2 > li{
   list-style-type: none;
+  text-align: center;
+  font-size: 1em;
+  font-weight: 450;
+  letter-spacing: .1em;
+  padding: 0px 10px
 }
 
-.post > h2 {
-  color: white;
-  font-size: small;
-  width: 50vw;
-  height: auto;
+.post2 > ul > p{
+  list-style-type: none;
+  text-align: left;
+  font-size: .8em;
+  font-weight: 450;
+  margin-left: 3.5em
 }
+
+.comments{
+  
+}
+
 
 .postProfPic {
   display: flex;
