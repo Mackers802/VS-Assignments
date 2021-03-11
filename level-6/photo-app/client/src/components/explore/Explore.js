@@ -1,10 +1,10 @@
-// ---------------------- test 1------------------------
+  // ---------------------- test 1------------------------
 // ---------------------- test 1------------------------
 // ---------------------- test 1------------------------
 
 import React, { useState, useContext, useEffect } from "react";
 import { PostProviderContext } from "../../context/PostProvider";
-import { Ps } from "./Ps";
+import { Ps } from "./ExplorePost";
 
 export const Explore = (props) => {
   const { username } = props
@@ -20,9 +20,9 @@ export const Explore = (props) => {
   }, []);
 
   return (
-    <div className="explorePost">
+    <div className="explore">
       <form>
-        <input type="text" placeholder="Search" onChange={handleChange} />
+        <input type="text" placeholder="Search" onChange={handleChange} className="search"/>
       </form>
 
       {posts
@@ -53,11 +53,7 @@ export const Explore = (props) => {
         })
         .map((val, key, a, b) => {
           return (
-            <>
-              <button>
                 <Ps val={val} key={key} username={username} />
-              </button>
-            </>
           );
         })}
     </div>

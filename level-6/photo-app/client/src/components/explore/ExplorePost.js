@@ -9,14 +9,14 @@ export const Ps = (props) => {
 
   const { val } = props;
   return (
-    <>
+    <div className="explorePost">
       {!toggle ? (
-        <div className="explorePost" onClick={handleToggle}>
-        <h3 className="username">{val.username}</h3>
+        <div onClick={handleToggle}>
+          <h3>{val.username}</h3>
           <img src={val.imgUrl} alt=" post img url"></img>
         </div>
       ) : (
-        <div onClick={handleToggle} className="explorePostText">
+        <div onClick={handleToggle}>
           Style {val.style},<br></br>
           Camera Brand: {val.cameraBrand},<br></br>
           Camera Model: {val.cameraModel},<br></br>
@@ -24,6 +24,6 @@ export const Ps = (props) => {
           Lens Model {val.lensModel},
         </div>
       )}
-    </>
+    </div>
   );
 };

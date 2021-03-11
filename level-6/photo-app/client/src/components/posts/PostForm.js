@@ -181,8 +181,7 @@ export const PostForm = (props) => {
   return (
     <div className="postForm">
       <form onChange={handleChange}>
-          <input type="text" name="caption" placeholder="Add Caption"/>
-          <br></br>
+          <input type="text" name="caption" placeholder="Add Caption" className="input"/>
           {/* <ImageUploader
                 withIcon={true}
                 buttonText='Choose images'
@@ -190,9 +189,8 @@ export const PostForm = (props) => {
                 imgExtension={['.jpg', '.gif', '.png', '.gif']}
                 maxFileSize={5242880}
             /> */}
-
-          <input type="text" name="imgUrl" placeholder="Add Image URL" />
-          <br></br>
+            <br></br>
+          <input type="text" name="imgUrl" placeholder="Add Image URL" className="input"/>
           <br></br>
         <select name="style" className="selector">
           <option input="">Style</option>
@@ -218,9 +216,8 @@ export const PostForm = (props) => {
           <option value="Wedding">Wedding</option>
           <option value="Wildlife">Wildlife</option>
         </select>
-
+        <br></br>
         {/* ~~~~~~~~~~~~~~ camera selection ~~~~~~~~~~~~~~~~~ */}
-        <h4>Camera</h4>
         <select
           className="selector"
           onChange={selectMake}
@@ -228,7 +225,7 @@ export const PostForm = (props) => {
           id="cameraBrand"
         >
           <option value="" disabled selected defaultValue>
-            Select Brand
+            Camera Brand
           </option>
           {cameraBrandOptions}
         </select>
@@ -239,12 +236,11 @@ export const PostForm = (props) => {
           id="cameraModel"
         >
           <option value="Select Value" disabled selected defaultValue>
-            Select Model
+            Camera Model
           </option>
           {cameraOptions}
         </select>
         {/* ~~~~~~~~~~~~~~ camera selection ~~~~~~~~~~~~~~~~~ */}
-        <h4>Lens</h4>
         <select
           className="selector"
           onChange={selectLensMake}
@@ -252,7 +248,7 @@ export const PostForm = (props) => {
           id="lensBrand"
         >
           <option value="" disabled selected defaultValue>
-            Select Brand
+            Lens Brand
           </option>
           {lensBrandOptions}
         </select>
@@ -263,12 +259,10 @@ export const PostForm = (props) => {
           id="lensModel"
         >
           <option value="Select Value" disabled selected defaultValue>
-            Select Model
+            Lens Model
           </option>
           {lensOptions}
         </select>
-        <br></br>
-        <h4>Settings</h4>
         <br></br>
         {/* ------------ FStop 𝑓 --------------------------  */}
         <select name="fStop" className="selector">
@@ -333,7 +327,6 @@ export const PostForm = (props) => {
           <option value="10000">10000</option>
           <option value="125000">125000</option>
         </select>
-
         {/* ------------ Shuttter Speed-------------------------- */}
         <select name="shutterSpeed" className="selector">
           <option value="">Shutter Speed</option>
@@ -347,7 +340,6 @@ export const PostForm = (props) => {
           <option value="1/2">1/2</option>
           <option value="1/4">1/4</option>
           <option value="1/8">1/8</option>
-          <option value="1/15">Camera</option>
           <option value="1/20">1/20</option>
           <option value="1/25">1/25</option>
           <option value="1/30">1/30</option>
@@ -377,9 +369,8 @@ export const PostForm = (props) => {
           <option value="1/8000">1/8000</option>
         </select>
         <br></br>
-        <br></br>
-        <button onClick={handleSubmit} type="button" className="buttonPost">Post </button>
-        <buttom onClick={() => setToggle(prev => !prev) } className="buttonWarning">close</buttom>
+        <button onClick={handleSubmit} type="button" className="button">Post </button>
+        <buttom onClick={() => setToggle(prev => !prev) } className="button">close</buttom>
       </form>
     </div>
   );
