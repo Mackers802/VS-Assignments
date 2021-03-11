@@ -4,7 +4,7 @@
 
 import React, { useState, useContext, useEffect } from "react";
 import { PostProviderContext } from "../../context/PostProvider";
-import { Ps } from "./ExplorePost";
+import { ExplorePost } from "./ExplorePost";
 
 export const Explore = (props) => {
   const { username } = props
@@ -22,9 +22,9 @@ export const Explore = (props) => {
   return (
     <div className="explore">
       <form>
-        <input type="text" placeholder="Search" onChange={handleChange} className="search"/>
+        <input type="text" placeholder="Search" className="search" onChange={handleChange}/>
       </form>
-
+      <br></br>
       {posts
         .filter((val) => {
           if (searchTerm === "") {
@@ -53,7 +53,7 @@ export const Explore = (props) => {
         })
         .map((val, key, a, b) => {
           return (
-                <Ps val={val} key={key} username={username} />
+                <ExplorePost val={val} key={key} username={username} />
           );
         })}
     </div>

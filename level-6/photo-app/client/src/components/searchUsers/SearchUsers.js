@@ -29,14 +29,16 @@ export const SearchUsers = () => {
   // }, []);
 
   return (
-    <div className="friendsListCont">
-      <form className="friendSearch">
+    <div className="friendsListContainer">
+      <form>
         <input
           type="text"
           placeholder="Search Friends List"
+          className="search"
           onChange={handleChange}
         />
       </form>
+      
       {friends
         .sort((a, b) => a.localeCompare(b))
         .filter((val) => {
