@@ -30,7 +30,7 @@ export const Signup = (props) => {
         <h1>Create Username</h1>
         <input type="text" name="username" placeholder="username" className="input2"/>
         <h1>Create Password</h1>
-          <input type="text" name="password" placeholder="password" className="input2"/>
+          <input type="password" name="password" placeholder="password" className="input2"/>
         <h1>Email</h1>
         <input type="text" name="email" placeholder="Email" className="input2"/>
         </label>

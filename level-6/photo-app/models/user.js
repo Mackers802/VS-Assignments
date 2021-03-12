@@ -20,12 +20,12 @@ const userSchema = new Schema({
   profilePicture: {
     type: String,
     required: false,
-    default: "",
+    default: "https://images.unsplash.com/photo-1495616811223-4d98c6e9c869?ixid=MXwxMjA3fDB8MHxzZWFyY2h8NXx8c3Vuc2V0fGVufDB8fDB8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
   },
   bio: {
     type: String,
     required: false,
-    default: "",
+    default: "Add something about yourself",
   },
   friends: {
     type: Array,
