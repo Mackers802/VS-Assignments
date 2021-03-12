@@ -10,14 +10,14 @@ app.use(express.json());
 app.use(morgan("dev"));
 
 mongoose.connect(
-  "mongodb://localhost:27017/photogfriends",
+  "mongodb://localhost:27017/Golden-Hour",
   {
     useNewUrlParser: true,
     useUnifiedTopology: true,
     useCreateIndex: true,
     useFindAndModify: false,
   },
-  () => console.log("connected to photog frineds")
+  () => console.log("connected to golden-hour")
 );
 
 app.use("/users", require("./routes/usersRouter.js"));

@@ -54,4 +54,24 @@ const userSchema = new Schema({
   },
 });
 
+// pre save encryption hook
+userSchema.pre("save", function(next){
+  const user = this
+  if(!user.isModified("password")) return next()
+  bcrypt.hash(user.password, 10, (err, hash) => {
+    if(err) return next(err)
+    user.password = hash
+    next()
+  })
+})
+
+// encrypted pass check
+userSchema.methods.checkPassword = function(passwordAttempt, callback){
+  bcrypt.compare(passwordAttempt, this.password, (err, isMatch) => {
+    if(err) callback(err)
+    return callback(null, isMatch)
+  })
+}
+
+
 module.exports = mongoose.model("User", userSchema);
