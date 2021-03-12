@@ -16,7 +16,6 @@ export const Post = (props) => {
   const {
     postId,
     imgUrl,
-    style,
     cameraBrand,
     cameraModel,
     lensBrand,

@@ -232,6 +232,7 @@ export const PostProvider = (props) => {
         searchByCameraModel,
         searchByLensBrand,
         searchByLensModel,
+        setPostsState
       }}
     >
       {props.children}

@@ -1,7 +1,3 @@
-  // ---------------------- test 1------------------------
-// ---------------------- test 1------------------------
-// ---------------------- test 1------------------------
-
 import React, { useState, useContext, useEffect } from "react";
 import { PostProviderContext } from "../../context/PostProvider";
 import { ExplorePost } from "./ExplorePost";
@@ -65,59 +61,3 @@ export const Explore = (props) => {
       </div>
   );
 };
-
-// ---------------------- test 2------------------------
-// ---------------------- test 2------------------------
-// ---------------------- test 2------------------------
-
-// import React, { useState, useContext, useEffect } from "react";
-// import { PostProviderContext } from "../context/PostProvider";
-// // import { Ps } from "./Ps"
-
-// export const Explore = () => {
-
-//     const { posts, getAllPosts } = useContext(PostProviderContext)
-//     const [searchTerm, setSearchTerm] = useState("")
-
-//     console.log("posts", posts)
-
-//     function handleChange(e){
-//       setSearchTerm(e.target.value)
-//       console.log("searchTerm", searchTerm)
-//     }
-
-//     const lowercaseFilter = searchTerm
-//     const filteredData = posts.filter(item => {
-//       return Object.keys(item).some(key =>
-//         item[key].toLowerCase().includes(lowercaseFilter)
-//         )
-//       })
-
-//         useEffect(() => {
-//             getAllPosts()
-//         }, []);
-
-//           return (
-//               <div className="friendsListCont">
-//                 <form className="friendSearch">
-//                   <input
-//                       type="text"
-//                       onChange={handleChange}
-//                       placeholder="Search by Style, Brand, Camera or Lens "
-//                       />
-//                 </form>
-//                 {filteredData.map(item => (
-//                     <div>
-//                     <div key={item}>
-//                       {/* {item.style} {item.cameraBrand} {item.cameraStyle} */}
-//                     </div>
-//                     </div>
-//                   ))
-//                   }
-//                 </div>
-//               );
-//             };
-
-// ---------------------- test 3 ------------------------
-// ---------------------- test 3 ------------------------
-// ---------------------- test 3 ------------------------
