@@ -1,16 +1,6 @@
-/* #root{
-  margin: 0;
-  padding: 0;
-} */
-
 .body {
   background: linear-gradient(to bottom right, rgba(232,232,232), rgba(67,67,67))
 }
-
-/* .app{
-  width: 100%;
-  background: linear-gradient(to bottom right, rgba(232,232,232), rgba(67,67,67))
-} */
 
 .button {
   border: none;
@@ -52,7 +42,6 @@
   width: 1.5em;
   text-align: center;
   margin: 4px 2px;
-  /* opacity: 0.6; */
   display: inline-block;
   text-decoration: none;
   cursor: pointer;
@@ -66,7 +55,6 @@
   text-align: center;
   font-size: 20px;
   font-weight: 800;
-  /* opacity: 1; */
   display: inline-block;
   text-decoration: none;
   cursor: pointer;
@@ -82,7 +70,6 @@
   font-size: 16px;
   font-weight: 800;
   margin: 4px 2px;
-  /* opacity: 0.6; */
   transition: 0.3s;
   display: inline-block;
   text-decoration: none;
@@ -99,7 +86,6 @@
   font-size: 16px;
   font-weight: 800;
   margin: 4px 2px;
-  /* opacity: 0.6; */
   transition: 0.3s;
   display: inline-block;
   text-decoration: none;
@@ -116,7 +102,6 @@
   font-size: 16px;
   font-weight: 800;
   margin: 4px 2px;
-  /* opacity: 0.6; */
   transition: 0.3s;
   display: inline-block;
   text-decoration: none;
@@ -133,7 +118,6 @@
   font-size: 16px;
   font-weight: 800;
   margin: 4px 2px;
-  /* opacity: 0.6; */
   transition: 0.3s;
   display: inline-block;
   text-decoration: none;
@@ -150,7 +134,6 @@
   font-size: 16px;
   font-weight: 800;
   margin: 8px 8px;
-  /* opacity: 0.6; */
   display: inline-block;
   text-decoration: none;
   cursor: pointer;
@@ -164,7 +147,6 @@
   padding: 5px 16px;
   text-align: center;
   margin: 8px 8px;
-  /* opacity: 1; */
   display: inline-block;
   text-decoration: none;
   cursor: pointer;
@@ -182,7 +164,6 @@
   font-size: 16px;
   font-weight: 800;
   margin: 4px 8px;
-  /* opacity: 0.6; */
   display: inline-block;
   text-decoration: none;
   cursor: pointer;
@@ -201,11 +182,45 @@
   font-size: 16px;
   font-weight: 800;
   margin: 4px 8px;
-  /* opacity: 0.6; */
   display: inline-block;
   text-decoration: none;
   cursor: pointer;
   background-color: rgb(255, 255, 255);
+  border-style: double;
+}
+
+.input2{
+  border: none;
+  color: rgb(0, 0, 0);
+  padding: 5px 16px;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  font-size: 16px;
+  font-weight: 800;
+  margin: 4px 8px;
+  display: inline-block;
+  text-decoration: none;
+  cursor: pointer;
+  background-color: rgb(255, 255, 255);
+  border-style: double;
+  border-color: whitesmoke;
+}
+
+.input2:hover{
+  border: none;
+  color: rgb(255, 255, 255);
+  padding: 5px 16px;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  font-size: 16px;
+  font-weight: 800;
+  margin: 4px 8px;
+  display: inline-block;
+  text-decoration: none;
+  cursor: pointer;
+  background-color: rgb(96, 96, 96);
   border-style: double;
 }
 
@@ -217,7 +232,6 @@
   font-size: 16px;
   font-weight: 800;
   margin: 4px 8px;
-  /* opacity: 0.6; */
   display: inline-block;
   text-decoration: none;
   cursor: pointer;
@@ -231,7 +245,6 @@
   padding: 5px 16px;
   text-align: center;
   margin: 4px 8px;
-  /* opacity: 1; */
   display: inline-block;
   text-decoration: none;
   cursor: pointer;
@@ -242,7 +255,6 @@
 .username{
   color: chocolate;
 }
-
 
 .postButtonReverse {
   background-color: rgb(226, 226, 226);
@@ -281,22 +293,12 @@
   text-align: center;
   text-decoration: none;
   background-size: cover;
-  /* background-color: rgba(132,132,132); */
   background: linear-gradient(to bottom right, rgba(239, 81, 42, 0.964), rgba(255, 223, 16, 0.875));
   border-top: 3px solid rgb(0, 0, 0);
   border-bottom: 3px solid rgb(0, 0, 0);
   border-left: 3px solid rgb(0, 0, 0);
   border-right: 3px solid rgb(0, 0, 0);
 }
-
-/* .navProfile > img {
-  border-radius: 50%;
-}
-
-.navPost > h3 {
-  font-size: x-large;
-  text-decoration: none;
-} */
 
 .authPage {
   display: flex;
@@ -308,7 +310,7 @@
   background-color: white;
 }
 
-.profileCont {
+/* .profileCont {
   display: inline-block;
   justify-content: center;
   align-items: center;
@@ -321,36 +323,36 @@
   margin-left: 25px;
   margin-bottom: 10px;
   color: white;
-}
+} */
 
-.profileCont > img {
+/* .profileCont > img {
   width: 50vw;
   height: 30vh;
   border-radius: 50%;
   margin-top: 15px;
-}
+} */
 
-.profilePagePosts {
+/* .profilePagePosts {
   display: grid;
   width: 200px;
-}
+} */
 
-.profilePostsGrid > img {
+/* .profilePostsGrid > img {
   background-color: darkgray;
   width: 25px;
   height: auto;
   display: grid;
   grid-template-columns: repeat(3);
   grid-template-rows: repeat(2);
-}
+} */
 
-.editProfile {
+/* .editProfile {
   background-color: darkgray;
   display: flex;
   justify-content: center;
   width: 80vw;
   margin-top: 15px;
-}
+} */
 
 .userPosts > button {
   margin-left: -20px;
@@ -384,7 +386,6 @@
   text-align: center;
   max-width: 100vw;
   height: 70%;
-  /* border-top: 5px solid rgb(0, 0, 0); */
   border-left: 3px solid rgb(0, 0, 0);
   border-right: 3px solid rgb(0, 0, 0);
   padding-top: 1rem;
@@ -477,7 +478,6 @@
   margin-right: 8px;
   padding-top: 1.5rem;
   padding-bottom: 5rem;
-  /* margin: ; */
 }
 
 .explorePost{
@@ -496,6 +496,12 @@
   border-right: 5px solid rgb(0, 0, 0);
   padding-top: .5rem;
   padding-bottom: .5rem;
+}
+
+.explorePost > h3{
+  margin-left: .8rem;
+  margin-top: -.1rem;
+  text-align: left;
 }
 
 .explorePost > img{
@@ -520,6 +526,12 @@
   padding-left: .3rem;
 }
 
+.explorePostInfo > h3{
+  text-align: center;
+  margin-bottom: -3.5rem;
+  padding: .8rem;
+}
+
 .friendsList > form > input{
   display: inline-block;
   justify-content: left;
@@ -536,29 +548,6 @@
   background-color: rgb(209, 209, 209);
 }
 
-/* .search:hover{
-  display: flex;
-  position: relative;
-  top: 0;
-  justify-content: center;
-  text-align: center;
-  max-width: 80vw;
-  color: rgb(0, 0, 0);
-  padding: 16px 32px;
-  font-size: 16px;
-  font-weight: 800;
-  text-decoration: none;
-  cursor: pointer;
-  margin-top: .5em;
-  margin-left: 5em;
-  margin-right: 5em;
-  background-color: rgba(255, 255, 255);
-} */
-
-/* .searchUsersContainer{
-  margin: .5rem
-} */
-
 .friendsList{
   background: linear-gradient(to bottom right, rgba(232,232,232), rgba(67,67,67));
   justify-content: center;
@@ -568,46 +557,6 @@
   border-right: 3px solid rgb(0, 0, 0);
   border-bottom: 5px solid rgb(0, 0, 0);
 }
-
-/* .friendsList > form > .search{
-  display: flex;
-  position: fixed;
-  justify-content: center;
-  text-align: center;
-  border: solid 5px black;
-  max-width: 80%;
-  margin-top: .5em;
-  margin-bottom: .5em;
-  margin-left: 3em;
-  margin-right: 3em;
-  color: rgb(0, 0, 0);
-  padding: 16px 32px;
-  font-size: 16px;
-  font-weight: 800;
-  text-decoration: none;
-  cursor: pointer;
-  background-color: rgb(209, 209, 209);
-} */
-
-/* .friendsList > form .search:hover{
-  display: flex;
-  position: fixed;
-  justify-content: center;
-  text-align: center;
-  border: solid 5px black;
-  width: 80%;
-  margin-top: .5em;
-  margin-bottom: .5em;
-  margin-left: 3em;
-  margin-right: 3em;
-  color: rgb(0, 0, 0);
-  padding: 16px 32px;
-  font-size: 16px;
-  font-weight: 800;
-  text-decoration: none;
-  cursor: pointer;
-  background-color: rgb(255, 255, 255);
-} */
 
 .friend{
   color: red;
@@ -748,6 +697,55 @@
   text-decoration: none;
   cursor: pointer;
   background-color: rgba(47, 46, 46, 0.772);
+}
+
+.auth{
+    margin: .5em;
+    /* padding: -2rem; */
+}
+
+.signup{
+  position: sticky;
+  background: linear-gradient(to top left, rgba(239, 81, 42), rgba(255, 223, 16));
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  max-width: 100vw;
+  min-height: auto;
+  margin-top: 2rem;
+  padding-top: .3rem;
+  padding-bottom: 5rem;
+  padding-left: 3rem;
+  padding-right: 3rem;
+  border-top: 5px solid rgb(0, 0, 0);
+  border-bottom: 5px solid rgb(0, 0, 0);
+  border-left: 5px solid rgb(0, 0, 0);
+  border-right: 5px solid rgb(0, 0, 0);
+}
+
+.input2{
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
+
+.login{
+  position: sticky;
+  background: linear-gradient(to top left, rgba(239, 81, 42), rgba(255, 223, 16));
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  max-width: 100vw;
+  min-height: auto;
+  margin-top: 2rem;
+  padding-top: .3rem;
+  padding-bottom: 5rem;
+  padding-left: 3rem;
+  padding-right: 3rem;
+  border-top: 5px solid rgb(0, 0, 0);
+  border-bottom: 5px solid rgb(0, 0, 0);
+  border-left: 5px solid rgb(0, 0, 0);
+  border-right: 5px solid rgb(0, 0, 0);
 }
 
 

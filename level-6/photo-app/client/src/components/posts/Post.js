@@ -43,7 +43,7 @@ export const Post = (props) => {
     <div className="post">
       {!toggle ? (
         <>
-          <h2>Taken by {username}</h2>
+          <h2>{username}</h2>
           <img src={imgUrl} alt="post img" onDoubleClick={addPostLike}></img>
           <li>
             Settings: 𝑓 {fStop}, SS: {shutterSpeed}, ISO: {iso}

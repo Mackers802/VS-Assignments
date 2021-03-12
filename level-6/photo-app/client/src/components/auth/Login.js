@@ -30,18 +30,18 @@ export const Login = (props) => {
   };
 
   return (
-    <div>
+    <>
       <form onSubmit={handleSubmit} onChange={handleChange}>
         <label>
           <h1>Username:</h1>
-          <input type="text" name="username" placeholder="username" />
+          <input type="text" name="username" placeholder="username" className="input2"/>
           <h1>Password:</h1>
-          <input type="text" name="password" placeholder="password" />
+          <input type="text" name="password" placeholder="password" className="input2"/>
         </label>
         <br></br>
         <button onClick={handleLogin}> Login </button>
         <p style={{ color: "red" }}>{errMsg}</p>
       </form>
-    </div>
+    </>
   );
 };

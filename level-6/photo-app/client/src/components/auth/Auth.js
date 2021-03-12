@@ -21,18 +21,18 @@ export const Auth = () => {
   }
 
   return (
-    <div className="authPage">
+    <div className="auth">
       {!toggle ? (
         <div className="signup">
+          <img src="/images/GH-Logo.png" alt="GH-logo"></img>
           <Signup handleSubmit={handleSignup} errMsg={errMsg} />
-          <br></br>
-          <button onClick={toggleForm}>Already a User? </button>
+          <button onClick={toggleForm} className="button">Already a User? </button>
         </div>
       ) : (
         <div className="login">
+          <img src="/images/GH-Logo.png" alt="GH-logo"></img>
           <Login handleSubmit={handleLogin} errMsg={errMsg} />
-          <br></br>
-          <button onClick={toggleForm}>Not a User? </button>
+          <button onClick={toggleForm} className="button">Not a User? </button>
         </div>
       )}
     </div>

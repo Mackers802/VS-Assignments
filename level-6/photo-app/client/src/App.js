@@ -1,7 +1,6 @@
 import React, { useContext } from "react";
 import { Switch, Route } from "react-router-dom";
 import { UserAuthContext } from "./context/UserAuthProvider";
-// import { Nav } from "./components/nav/Nav";
 import { Auth } from "./components/auth/Auth";
 import { Profile } from "./components/profile/Profile";
 import { Feed } from "./components/feed/Feed";
@@ -10,7 +9,7 @@ import { SearchUsers } from "./components/searchUsers/SearchUsers";
 import "./App.css";
 
 export const App = () => {
-  const { token, logout } = useContext(UserAuthContext);
+  const { token } = useContext(UserAuthContext);
 
   // useEffect(() => {
   //        getUserProfile("userProfile from App", _id)
@@ -18,24 +17,32 @@ export const App = () => {
 
   return (
     <>
-      {/* {token && <Nav logout={logout} />} */}
       <Switch>
-        <Route exact path="/Explore">
-          {token ? <Explore /> : <Auth />}
-        </Route>
-        <Route exact path="/Feed">
-          {token ? <Feed /> : <Auth />}
-        </Route>
-        <Route exact path="/Explore">
-          {token ? <Explore /> : <Auth />}
-        </Route>
-        <Route exact path="/SearchUsers">
-          <SearchUsers />
-        </Route>
-        <Route path="/Profile">{token ? <Profile /> : <Auth />}</Route>
+
         <Route exact path="/">
           {token ? <Profile /> : <Auth />}
         </Route>
+
+        <Route path="/Profile">
+          {token ? <Profile /> : <Auth />}
+        </Route>
+
+        <Route exact path="/Explore">
+          {token ? <Explore /> : <Auth />}
+        </Route>
+
+        <Route exact path="/Feed">
+          {token ? <Feed /> : <Auth />}
+        </Route>
+
+        <Route exact path="/Explore">
+          {token ? <Explore /> : <Auth />}
+        </Route>
+
+        <Route exact path="/SearchUsers">
+        {token ? <SearchUsers /> : <Auth />}
+        </Route>
+
       </Switch>
     </>
   );

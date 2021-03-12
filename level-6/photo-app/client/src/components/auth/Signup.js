@@ -24,22 +24,19 @@ export const Signup = (props) => {
   };
 
   return (
-    <div>
+    <>
       <form onSubmit={handleSubmit} onChange={handleChange}>
         <label>
-          <h4>Create Username</h4>
-          <input type="text" name="username" placeholder="username" />
-          <h4>Create Password</h4>
-          <input type="text" name="password" placeholder="password" />
-          <h4>Email</h4>
-          <input type="text" name="email" placeholder="Email" />
+          Create Username <input type="text" name="username" placeholder="username" className="input2"/>
+          <br></br>
+          Create Password <input type="text" name="password" placeholder="password" className="input2"/>
+          <br></br>
+          Email<input type="text" name="email" placeholder="Email" className="input2"/>
         </label>
         <br></br>
-        <br></br>
-        <button>Signup</button>
-
+        <button className="button">Signup</button>
         <p style={{ color: "red" }}>{errMsg}</p>
       </form>
-    </div>
+    </>
   );
 };

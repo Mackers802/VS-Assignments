@@ -61,12 +61,13 @@ export const Profile = (props) => {
             // width="150"
             // height="150"
           ></img>
-          <h1>{username}</h1>
-          <h4>{bio}</h4>
-          <h4>{email} </h4>
+          <br></br>
           <button onClick={toggleForm} className="buttonSkinny">
             Profile Settings
           </button>
+          <h1>{username}</h1>
+          <h4>{bio}</h4>
+          <h4>{email} </h4>
           <br></br>
             {userPosts.map((post) => (
               <ProfilePost

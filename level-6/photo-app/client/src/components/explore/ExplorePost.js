@@ -17,7 +17,7 @@ export const ExplorePost = (props) => {
     </div>
       ) : (
         <div className="explorePostInfo" onClick={handleToggle}>
-         <h1>{val.username}</h1>
+         <h3>{val.username}</h3>
           <br></br>
           Style {val.style},
           <br></br>
