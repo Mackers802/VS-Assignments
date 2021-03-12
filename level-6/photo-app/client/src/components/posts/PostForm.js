@@ -179,8 +179,9 @@ export const PostForm = (props) => {
       });
 
   return (
-    <div className="postForm">
-      <form onChange={handleChange}>
+    // <div className="appCont" >
+      <div className="postForm">
+        <form onChange={handleChange}>
           <input type="text" name="caption" placeholder="Add Caption" className="input"/>
           {/* <ImageUploader
                 withIcon={true}
@@ -373,5 +374,6 @@ export const PostForm = (props) => {
         <buttom onClick={() => setToggle(prev => !prev) } className="button">close</buttom>
       </form>
     </div>
+  //  </div>
   );
 };

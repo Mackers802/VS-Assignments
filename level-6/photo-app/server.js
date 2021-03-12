@@ -17,15 +17,12 @@ mongoose.connect(
     useCreateIndex: true,
     useFindAndModify: false,
   },
-  () => console.log("connected to Golden Hour")
+  () => console.log("connected to photog frineds")
 );
 
 app.use("/users", require("./routes/usersRouter.js"));
 app.use("/auth", require("./routes/userRouter.js")); /* ✅  */
-app.use(
-  "/api",
-  expressJwt({ secret: process.env.SECRET, algorithms: ["HS256"] })
-); /* ✅  */
+app.use("/api", expressJwt({ secret: process.env.SECRET, algorithms: ["HS256"] })); /* ✅  */
 app.use("/api/profile", require("./routes/userProfileRouter.js")); /* ✅  */
 app.use("/api/posts", require("./routes/postRouter.js"));
 app.use("/api/comments", require("./routes/commentRouter.js"));

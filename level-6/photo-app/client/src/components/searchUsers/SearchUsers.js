@@ -57,8 +57,8 @@ export const SearchUsers = () => {
               <Friend val={val} key={key} />
           );
         })}
-    </div>
       <Nav />
+    </div>
     </div>
   );
 };
