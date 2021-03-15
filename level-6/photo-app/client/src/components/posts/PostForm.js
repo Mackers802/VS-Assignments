@@ -195,6 +195,7 @@ export const PostForm = (props) => {
           <br></br>
         <select name="style" className="selector">
           <option input="">Style</option>
+          <option value="Animal">Animal</option>
           <option value="Architectural">Architectural</option>
           <option value="Astro">Astro</option>
           <option value="Car">Car</option>
